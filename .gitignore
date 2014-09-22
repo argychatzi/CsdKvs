@@ -3,6 +3,9 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+#everything contained in .metadata
+.metadata/
+
 # Package Files #
 *.jar
 *.war
