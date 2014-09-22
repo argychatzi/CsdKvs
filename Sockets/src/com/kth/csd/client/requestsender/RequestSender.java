@@ -16,7 +16,7 @@ public class RequestSender {
 
 	public void sendRequest(String host, int port){
         System.out.println("Send Request");
-        Socket clientSocket = null;
+        Socket clientSocket = null; // hi everyone 
 
         try {
             clientSocket = new Socket(host, port);
