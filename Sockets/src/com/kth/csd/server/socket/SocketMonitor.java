@@ -29,11 +29,12 @@ public class SocketMonitor {
 		mStopListening = false;
 		
 		while( !mStopListening ){
+			
 			//This block will break only when the stopListening() is called.
+			//Ada: but seems stopListening() is never called 
 			
 			try{
 				Socket socket = mServerSocket.accept();
-
                 //The code bellow is blocked until a connection is received by mServerSocket.accept().
 				//Handle the socket in a separate thread in order to be able to handle multiple sockets simultaneously.
 				System.out.println("Received socket!");
