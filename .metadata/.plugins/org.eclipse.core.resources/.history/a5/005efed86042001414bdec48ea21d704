@@ -1,0 +1,5 @@
+package com.kth.csd.client.requestsender;
+
+public class RequestSender {
+
+}

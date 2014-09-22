@@ -1,0 +1,51 @@
+package com.kth.csd.server.socket;
+
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.net.Socket;
+
+/**
+ * @author georgios.savvidis
+ *
+ */
+public class SocketHandler extends Thread{
+	private Socket mSocket;
+	
+	public SocketHandler(Socket socket){
+		mSocket = socket;
+	}
+	
+	@Override
+	public void run() {
+		super.run();
+		
+		try{
+//			InputStream inputStream = mSocket.getInputStream();
+			InputStreamReader streamReader = new InputStreamReader(mSocket.getInputStream());
+
+			 String text = null;
+			    try (final Reader reader = new InputStreamReader(inputStream)) {
+			        text = CharStreams.toString(reader);
+			    }
+
+			
+			
+//			Object receivedObject = objectInput.readObject();
+			System.out.println("Received message: " + streamReader.toString());
+			//TODO handle received object
+			
+			
+			streamReader.close();
+//			objectInput.close();
+			mSocket.close();
+			
+		} catch (IOException e){
+			e.printStackTrace();
+			System.out.println("Failed to get InputStream");
+//		} catch (ClassNotFoundException e) {
+//			e.printStackTrace();
+//			System.out.println("Could not cast InputStream.");
+		}
+	}
+}
