@@ -121,5 +121,4 @@ public class Logger {
 			errorLog(tag, message, false);
 		}
 	}
-
 }
