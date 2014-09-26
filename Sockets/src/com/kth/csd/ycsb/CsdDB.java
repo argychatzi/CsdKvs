@@ -4,11 +4,14 @@ import java.util.HashMap;
 import java.util.Set;
 import java.util.Vector;
 
+import com.kth.csd.utils.Logger;
 import com.yahoo.ycsb.ByteIterator;
 import com.yahoo.ycsb.DB;
 
 
 public class CsdDB extends DB{
+
+	private static final String TAG = "CsdDB";
 
 	@Override
 	public int delete(String arg0, String arg1) {
@@ -26,7 +29,7 @@ public class CsdDB extends DB{
 	@Override
 	public int read(String arg0, String arg1, Set<String> arg2,
 			HashMap<String, ByteIterator> arg3) {
-		// TODO Auto-generated method stub
+		Logger.d(TAG, "performing read");
 		return 0;
 	}
 
