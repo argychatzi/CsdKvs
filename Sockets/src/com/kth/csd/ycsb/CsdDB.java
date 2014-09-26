@@ -15,14 +15,14 @@ public class CsdDB extends DB{
 
 	@Override
 	public int delete(String arg0, String arg1) {
-		// TODO Auto-generated method stub
+		Logger.d(TAG, "performing delete");
 		return 0;
 	}
 
 	@Override
 	public int insert(String arg0, String arg1,
 			HashMap<String, ByteIterator> arg2) {
-		// TODO Auto-generated method stub
+		Logger.d(TAG, "performing insert");
 		return 0;
 	}
 
@@ -36,14 +36,14 @@ public class CsdDB extends DB{
 	@Override
 	public int scan(String arg0, String arg1, int arg2, Set<String> arg3,
 			Vector<HashMap<String, ByteIterator>> arg4) {
-		// TODO Auto-generated method stub
+		Logger.d(TAG, "performing scan");
 		return 0;
 	}
 
 	@Override
 	public int update(String arg0, String arg1,
 			HashMap<String, ByteIterator> arg2) {
-		// TODO Auto-generated method stub
+		Logger.d(TAG, "performing update");
 		return 0;
 	}
 

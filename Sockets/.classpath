@@ -4,5 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="/Users/argychatzi/Desktop/CSD/ycsb/ycsb-0.1.4/core/lib/core-0.1.4.jar"/>
+	<classpathentry kind="lib" path="/Users/argychatzi/Desktop/mockito-all-1.9.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
