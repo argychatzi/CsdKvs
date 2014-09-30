@@ -6,6 +6,7 @@
 
 \f0\fs24 \cf0 Contributors:\
 \
+CONTRIBUTORS::
 Ahmed Sadek <don1559@gmail.com>\
 Anargyros Chatzaras <anacha@kth.se>\
 Georgios Savvidis <gsav@kth.se>\
