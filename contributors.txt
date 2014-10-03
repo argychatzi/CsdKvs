@@ -8,7 +8,7 @@
 \
 CONTRIBUTORS::
 Ahmed Sadek <don1559@gmail.com>\
-Anargyros Chatzaras <anacha@kth.se>\
+Anargyros Chatzaras <anacha@kth.se> my comment\
 Georgios Savvidis <gsav@kth.se>\
 Jawad Munir <jawadmunir713@gmail.com>\
 Mihret Getye Sideley <mihretgetye@gmail.com>\
