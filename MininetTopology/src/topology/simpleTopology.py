@@ -7,6 +7,7 @@ Created on Oct 5, 2014
 
 '''
 
+from mininet.cli import CLI
 from mininet.log import setLogLevel
 from mininet.net import Mininet
 from mininet.topo import Topo
@@ -19,20 +20,26 @@ class SingleSwitchNetwork():
         
         # Initialize topology and default options
         switch = topo.addSwitch('s%s.1' % netId)
-        # Python's range(N) generates 0..N-1
+        
+        #Add a client
+        clientAddress = address[:-1] + '%s' % firstNodeIp
+        client = topo.addHost('c%s.1' % netId, ip = clientAddress)
+        topo.addLink(client, switch)
+
+        # Create n nodes
         for i in range(n):
-            hostAddress = address[:-1] + '%s' % (i + firstNodeIp)
-            host = topo.addHost('h%s.%s' % (netId, (i + 1)), ip = hostAddress + '/' + mask)
-            topo.addLink(host, switch)
+            nodeAddress = address[:-1] + '%s' % (i + 1 + firstNodeIp)
+            node = topo.addHost('n%s.%s' % (netId, (i + 1)), ip = nodeAddress + '/' + mask)
+            topo.addLink(node, switch)
           
 class SimpleTopology(Topo):
     ''' The created topology looks like this:
     
-        h1.1     h1.2        h2.1     h2.2       h3.1     h3.2
-            \   /               \   /               \   / 
-            s1.1 -------------- s2.1 -------------- s3.1
-            /  \                                    /  \
-        h1.3    h1.4                            h3.3    h3.4
+            n1.1     n1.2        n2.1     n2.2       n3.1     n3.2
+                \   /               \   /               \   / 
+       c1.1 --- s1.1 -------------- s2.1 -------------- s3.1 --- c3.1
+                /  \                 /                  /  \
+            n1.3    n1.4           c2.1             n3.3    n3.4
     '''
     
     
@@ -40,8 +47,8 @@ class SimpleTopology(Topo):
         # Initialize topology and default options
         Topo.__init__(self, **opts)
         SingleSwitchNetwork(self, n=4, address='192.168.0.0', firstNodeIp=1, netId=1)
-        SingleSwitchNetwork(self, n=2, address='192.168.0.0', firstNodeIp=5, netId=2)
-        SingleSwitchNetwork(self, n=4, address='192.168.0.0', firstNodeIp=7, netId=3)
+        SingleSwitchNetwork(self, n=2, address='192.168.0.0', firstNodeIp=6, netId=2)
+        SingleSwitchNetwork(self, n=4, address='192.168.0.0', firstNodeIp=9, netId=3)
 
         s1 = 's1.1'
         s2 = 's2.1'
@@ -60,15 +67,19 @@ def simpleTest():
     topo = SimpleTopology()
     net = Mininet(topo)
     net.start()
-    print "Dumping host connections"
+    print 'Dumping host connections'
     dumpNodeConnections(net.hosts)
     
     hosts = net.hosts
     for i in range(len(hosts)):
         print "%s IP: %s" % (hosts[i], hosts[i].IP())
+
+    print "Executing Java program..."
+    result = net.get('c1.1').cmd('java HelloWorld')
+    print result
     
-    print "Testing network connectivity"
-    net.pingAll()
+    #print "Testing network connectivity"
+    #net.pingAll()
 
     #CLI( net )
     
@@ -76,5 +87,6 @@ def simpleTest():
 
 if __name__ == '__main__':
 # Tell mininet to print useful information
+    #print "test"
     setLogLevel('info')
     simpleTest()
