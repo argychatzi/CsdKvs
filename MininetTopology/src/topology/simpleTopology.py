@@ -12,7 +12,11 @@ from mininet.log import setLogLevel
 from mininet.net import Mininet
 from mininet.topo import Topo
 from mininet.util import dumpNodeConnections
+from mininet.node import Node, Host
 
+#class CustomHost(Host):
+#	def __init__(self, name, inNamespace=True, **params):
+#		Host.__init__(self, name, inNamespace=inNamespace, **params)
 
 class SingleSwitchNetwork():
     
@@ -31,8 +35,9 @@ class SingleSwitchNetwork():
             nodeAddress = address[:-1] + '%s' % (i + 1 + firstNodeIp)
             node = topo.addHost('n%s.%s' % (netId, (i + 1)), ip = nodeAddress + '/' + mask)
             topo.addLink(node, switch)
+
           
-class SimpleTopology(Topo):
+class CsdTopology(Topo):
     ''' The created topology looks like this:
     
             n1.1     n1.2        n2.1     n2.2       n3.1     n3.2
@@ -62,9 +67,9 @@ class SimpleTopology(Topo):
    
 
 #Test SimpleTopology
-def simpleTest():
+def run():
     "Create and test a simple network"
-    topo = SimpleTopology()
+    topo = CsdTopology()
     net = Mininet(topo)
     net.start()
     print 'Dumping host connections'
@@ -75,7 +80,8 @@ def simpleTest():
         print "%s IP: %s" % (hosts[i], hosts[i].IP())
 
     print "Executing Java program..."
-    result = net.get('c1.1').cmd('java HelloWorld')
+    net.get('c1.1').cmd('javac network/HelloWorld.java')
+    result = net.get('c1.1').cmd('java network/HelloWorld')
     print result
     
     #print "Testing network connectivity"
@@ -89,4 +95,4 @@ if __name__ == '__main__':
 # Tell mininet to print useful information
     #print "test"
     setLogLevel('info')
-    simpleTest()
+    run()
