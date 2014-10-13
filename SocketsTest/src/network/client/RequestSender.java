@@ -20,7 +20,7 @@ public class RequestSender {
 
 	public void sendRequest(String host, int port){
         System.out.println("Sending request to: " + host);
-        Socket clientSocket = null; // hi everyone 
+        Socket clientSocket = null;
 
         try {
             clientSocket = new Socket(host, port);
