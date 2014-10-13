@@ -13,10 +13,7 @@ from mininet.net import Mininet
 from mininet.topo import Topo
 from mininet.util import dumpNodeConnections
 from mininet.node import Node, Host
-
-#class CustomHost(Host):
-#	def __init__(self, name, inNamespace=True, **params):
-#		Host.__init__(self, name, inNamespace=inNamespace, **params)
+    
 
 class SingleSwitchNetwork():
     
@@ -58,15 +55,11 @@ class CsdTopology(Topo):
         s1 = 's1.1'
         s2 = 's2.1'
         s3 = 's3.1'
-        #s4 = self.addSwitch('s4.1') #for redundancy purposes
 
         self.addLink(s1, s2)
         self.addLink(s2, s3)
-        #self.addLink(s1, s4)
-        #self.addLink(s3, s4)
    
 
-#Test SimpleTopology
 def run():
     "Create and test a simple network"
     topo = CsdTopology()
@@ -79,20 +72,65 @@ def run():
     for i in range(len(hosts)):
         print "%s IP: %s" % (hosts[i], hosts[i].IP())
 
-    print "Executing Java program..."
-    net.get('c1.1').cmd('javac network/HelloWorld.java')
-    result = net.get('c1.1').cmd('java network/HelloWorld')
-    print result
-    
+    print "Compaling Java classes..."
+    compileJavaClasses(net)
+
+    print "Deploying servers and clients..."
+    runNetworkClasses(net)
+
     #print "Testing network connectivity"
     #net.pingAll()
 
     #CLI( net )
     
-    net.stop()
+    #net.stop()
+    
+def compileJavaClasses(net):
+    randomHost = net.get('c1.1')
+    resultClient = randomHost.cmd('javac network/client/ClientMain.java')
+    resultServer = randomHost.cmd('javac network/server/ServerMain.java')
+    print resultClient
+    print resultServer
+    
+def runNetworkClasses(net):
+    n1_1 = net.get('n1.1')
+    n2_2 = net.get('n2.2')
+    n3_3 = net.get('n3.3')
+    
+    c1_1 = net.get('c1.1')
+    c2_1 = net.get('c2.1')
+    c3_1 = net.get('c3.1')
+    
+    # Starting servers...
+    print 'Starting servers in switched network 1...'
+    for i in range(4):
+        node = net.get('n1.%s' % (i+1))
+        print 'Starting server %s...' % node.name
+        node.cmd('java network/server/ServerMain ' + ' > logs/' + node.name + '.txt &')
+
+    print 'Starting servers in switched network 2...'
+    for i in range(2):
+        node = net.get('n2.%s' % (i+1))
+        print 'Starting server %s...' % node.name
+        node.cmd('java network/server/ServerMain ' + ' > logs/' + node.name + '.txt &')
+
+    print 'Starting servers in switched network 3...'
+    for i in range(4):
+        node = net.get('n3.%s' % (i+1))
+        print 'Starting server %s...' % node.name
+        node.cmd('java network/server/ServerMain ' + ' > logs/' + node.name + '.txt &')
+        
+    # Starting clients...
+    print 'Starting client %s...' % c1_1.name
+    c1_1.cmd('java network/client/ClientMain ' + n1_1.IP() + ' > logs/' + c1_1.name + '.txt')
+    
+    print 'Starting client %s...' % c2_1.name
+    c2_1.cmd('java network/client/ClientMain ' + n2_2.IP() + ' > logs/' + c3_1.name + '.txt')
+
+    print 'Starting client %s...' % c3_1.name
+    c3_1.cmd('java network/client/ClientMain ' + n3_3.IP() + ' > logs/' + c3_1.name + '.txt')
 
 if __name__ == '__main__':
 # Tell mininet to print useful information
-    #print "test"
     setLogLevel('info')
     run()
