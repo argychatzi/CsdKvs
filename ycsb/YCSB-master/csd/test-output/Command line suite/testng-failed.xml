@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Command line suite]">
+  <test name="Command line test(failed)" preserve-order="false">
+    <classes>
+      <class name="com.yahoo.ycsb.db.ElasticSearchClientTest">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="testRead"/>
+          <include name="testInsert"/>
+          <include name="testUpdate"/>
+          <include name="testDelete"/>
+          <include name="testScan"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>
