@@ -128,7 +128,7 @@ public abstract class DB
 	 * @param values A HashMap of field/value pairs to insert in the record
 	 * @return Zero on success, a non-zero error code on error.  See this class's description for a discussion of error codes.
 	 */
-	public abstract int insert(String table, String key, HashMap<String,ByteIterator> values);
+	public abstract int insert(String table, String key, HashMap<String,ByteIterator> values) throws IOException;
 
 	/**
 	 * Delete a record from the database. 
