@@ -10,23 +10,16 @@ import com.sun.jmx.snmp.Timestamp;
 
 public class RequestSender {
 	
-	
-	public void sendRequest(){
-		sendRequest(Constants.DEFAULT_HOST, Constants.DEFAULT_PORT);
-	}
-
-	public void sendRequest(String host, int port){
-        System.out.println("Send Request " + new Timestamp().toString());
-        Socket clientSocket = null; // hi everyone 
+	public void sendRequest(String host, int port, String message){
+        Socket clientSocket = null;
 
         try {
             clientSocket = new Socket(host, port);
             
             OutputStreamWriter outputStream = new OutputStreamWriter(clientSocket.getOutputStream());
-            String messageOnWire =  "Hello there! " + new Timestamp().toString() ; 
-            outputStream.write(messageOnWire);
+            outputStream.write(message);
             
-            System.out.println("sent to server :"+ messageOnWire );
+//            System.out.println("sent to server :"+ message );
             outputStream.flush();
             outputStream.close();
             

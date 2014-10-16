@@ -1,4 +1,4 @@
-package com.kth.csd.tests;
+package com.yahoo.ycsb.db;
 
 import java.util.HashMap;
 import java.util.Set;
@@ -9,18 +9,17 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import com.yahoo.ycsb.ByteIterator;
-import com.yahoo.ycsb.db.CsdDataBaseClient;
 
 import junit.framework.TestCase;
 
 public class CsdDBTests extends TestCase{
 	
-	private CsdDataBaseClient mCsdDb;
+	private ElasticSearchClient mElasticSearchClient;
 	
 
 	@Override
 	protected void setUp() throws Exception {
-		mCsdDb = new CsdDataBaseClient();
+		mElasticSearchClient = new ElasticSearchClient();
 		super.setUp();
 	}
 	
@@ -28,7 +27,7 @@ public class CsdDBTests extends TestCase{
 	public void testDelete(){
 		String arg0 = "arg0";
 		String arg1 = "arg1";
-		mCsdDb.delete(arg0, arg1);
+		mElasticSearchClient.delete(arg0, arg1);
 	}
 
 	@Test
@@ -36,7 +35,7 @@ public class CsdDBTests extends TestCase{
 		String arg0 = "arg0";
 		String arg1 = "arg1";
 		HashMap<String, ByteIterator> arg3 = Mockito.mock(HashMap.class);
-		mCsdDb.insert(arg0, arg1, arg3);
+		mElasticSearchClient.insert(arg0, arg1, arg3);
 	}
 	
 	@Test
@@ -46,7 +45,7 @@ public class CsdDBTests extends TestCase{
 		
 		Set<String> arg2 = Mockito.mock(Set.class);
 		HashMap<String, ByteIterator> arg3 = Mockito.mock(HashMap.class);
-		mCsdDb.read(arg0, arg1, arg2, arg3);
+		mElasticSearchClient.read(arg0, arg1, arg2, arg3);
 	}
 	
 	@Test
@@ -56,7 +55,7 @@ public class CsdDBTests extends TestCase{
 		int arg2 = 2;
 		Set<String> arg3 = Mockito.mock(Set.class);
 		Vector<HashMap<String, ByteIterator>> arg4 = Mockito.mock(Vector.class);
-		mCsdDb.scan(arg0, arg1, arg2, arg3, arg4);
+		mElasticSearchClient.scan(arg0, arg1, arg2, arg3, arg4);
 	}
 	
 	@Test
@@ -65,7 +64,7 @@ public class CsdDBTests extends TestCase{
 		String arg1 = "arg1";
 		HashMap<String, ByteIterator> arg2 = Mockito.mock(HashMap.class);
 
-		mCsdDb.update(arg0, arg1, arg2);
+		mElasticSearchClient.update(arg0, arg1, arg2);
 	}
 	
 

@@ -25,6 +25,8 @@
             <groupId>com.yahoo.ycsb</groupId>
             <artifactId>core</artifactId>
             <version>${project.version}</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/../core/target/core-0.1.4.jar</systemPath>
         </dependency>
         <dependency>
       		<groupId>KTHDBClient</groupId>  

@@ -5,15 +5,28 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.kth.csd.node.KvsOperationMessageQueue;
+import com.kth.csd.node.operation.KvsOperation;
+import com.kth.csd.utils.Logger;
+import com.yahoo.ycsb.StringByteIterator;
+
 /**
  * @author georgios.savvidis
  *
  */
 public class SocketHandler extends Thread{
-	private Socket mSocket;
 	
-	public SocketHandler(Socket socket){
+	private static final String TAG = SocketHandler.class.getCanonicalName();
+	private Socket mSocket;
+	private Gson mGson;
+	private KvsOperationMessageQueue mBox;
+	
+	public SocketHandler(Socket socket, KvsOperationMessageQueue box) {
 		mSocket = socket;
+		mGson = new Gson();
+		mBox = box;
 	}
 	
 	@Override
@@ -36,12 +49,14 @@ public class SocketHandler extends Thread{
                 }
             }			
 			
-			System.out.println("Received message: " + sbuilder.toString());
-			
 			streamReader.close();
 			bufferReader.close();
 			mSocket.close();
-			
+			String message = sbuilder.toString();
+			KvsOperation operation = mGson.fromJson(message, KvsOperation.class);
+			Logger.d(TAG, "received msg of type " + operation.getYcsbOperationType());
+			mBox.enqueueRequestOperation(operation);
+
 		} catch (IOException e){
 			e.printStackTrace();
 			System.out.println("Failed to get InputStream");

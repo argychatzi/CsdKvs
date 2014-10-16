@@ -213,3 +213,8 @@
 9:10:10:63:::LoggerTests:::testDebugLoggingOnFileMoreThanOneLogs3
 9:10:10:63:::LoggerTests:::testDebugLoggingOnFileMoreThanOneLogs4
 9:10:10:63:::LoggerTests:::testDebugLoggingOnFile
+9:40:33:130:::LoggerTests:::testDebugLoggingOnFileMoreThanOneLogs
+9:40:33:130:::LoggerTests:::testDebugLoggingOnFileMoreThanOneLogs2
+9:40:33:130:::LoggerTests:::testDebugLoggingOnFileMoreThanOneLogs3
+9:40:33:130:::LoggerTests:::testDebugLoggingOnFileMoreThanOneLogs4
+9:40:33:130:::LoggerTests:::testDebugLoggingOnFile

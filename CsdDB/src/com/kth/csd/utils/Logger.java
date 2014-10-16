@@ -10,6 +10,8 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.Calendar;
 
+import com.sun.swing.internal.plaf.synth.resources.synth;
+
 public class Logger {
 
 	private static boolean DEBUG = true;
@@ -19,7 +21,7 @@ public class Logger {
 
 	private static Calendar mCalendar = Calendar.getInstance();
 
-	private static void debugLog(String tag, String message,
+	private synchronized static void debugLog(String tag, String message,
 			boolean dumpToFile) {
 		if (DEBUG) {
 			String logMessage = formatTagAndLogMessage(tag, message);
@@ -31,7 +33,7 @@ public class Logger {
 		}
 	}
 
-	private static void errorLog(String tag, String message,
+	private synchronized static void errorLog(String tag, String message,
 			boolean dumpToFile) {
 		if (DEBUG) {
 			String logMessage = formatTagAndLogMessage(tag, message);
@@ -43,7 +45,7 @@ public class Logger {
 		}
 	}
 
-	private static void writeToLogFile(String logMessage, boolean appendToFile) {
+	private synchronized static void writeToLogFile(String logMessage, boolean appendToFile) {
 		PrintWriter writer;
 		try {
 			writer = new PrintWriter(new BufferedWriter(new FileWriter(
@@ -59,19 +61,20 @@ public class Logger {
 		}
 	}
 
-	private static String formatTagAndLogMessage(String tag, String message) {
+	private synchronized static String formatTagAndLogMessage(String tag, String message) {
+		mCalendar = Calendar.getInstance();
 		String date = formatDate(mCalendar.get(Calendar.HOUR),
 				mCalendar.get(Calendar.MINUTE), mCalendar.get(Calendar.SECOND), mCalendar.get(Calendar.MILLISECOND));
 		return formatLogMessage(date, tag, message);
 	}
 
-	private static String formatDate(int hours, int min, int sec, int nano) {
+	private synchronized static String formatDate(int hours, int min, int sec, int nano) {
 		return String.format("%s:%s:%s:%s", hours, min, sec, nano);
 	}
 
-	private static String formatLogMessage(String date, String tag,
+	private synchronized static String formatLogMessage(String date, String tag,
 			String message) {
-		return String.format(date + ":::" + tag + ":::" + message);
+		return date + ":::" + tag + ":::" + message;
 	}
 
 	/**
@@ -82,13 +85,13 @@ public class Logger {
 	 * @param message
 	 *            the actual message
 	 */
-	public static void df(String tag, String message) {
+	public synchronized static void df(String tag, String message) {
 		if (DEBUG) {
 			debugLog(tag, message, true);
 		}
 	}
 
-	public static void cf(String tag, String message) {
+	public synchronized static void cf(String tag, String message) {
 		if (DEBUG) {
 			debugLog(tag, message, true);
 		}
@@ -102,7 +105,7 @@ public class Logger {
 	 * @param message
 	 *            the actual message
 	 */
-	public static void d(String tag, String message) {
+	public synchronized static void d(String tag, String message) {
 		if (DEBUG) {
 			debugLog(tag, message, false);
 		}
@@ -116,7 +119,7 @@ public class Logger {
 	 * @param message
 	 *            the actual message
 	 */
-	public static void e(String tag, String message) {
+	public synchronized static void e(String tag, String message) {
 		if (DEBUG) {
 			errorLog(tag, message, false);
 		}

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/CsdDB/libs/mockito-all-1.9.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/CsdDB/libs/gson-2.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/CsdDB/libs/core-0.1.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

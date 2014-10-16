@@ -5,7 +5,7 @@
     <target name="create_run_jar">
         <jar destfile="/Users/argychatzi/Desktop/CSD/ik2200/CsdDB/output/CsdDBServer.jar" filesetmanifest="mergewithoutmain">
             <manifest>
-                <attribute name="Main-Class" value="com.kth.csd.networking.CsdDatabaseServerMain"/>
+                <attribute name="Main-Class" value="com.kth.csd.node.KvsNode"/>
                 <attribute name="Class-Path" value="."/>
             </manifest>
             <fileset dir="/Users/argychatzi/Desktop/CSD/ik2200/CsdDB/bin"/>

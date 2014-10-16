@@ -4,14 +4,19 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+import com.kth.csd.node.KvsOperationMessageQueue;
+
 public class SocketMonitor {
 
 	private ServerSocket mServerSocket;
 	private boolean mStopListening;
+	private KvsOperationMessageQueue mInBox;
 	
-	public SocketMonitor() {
+	
+	public SocketMonitor(KvsOperationMessageQueue inBox, int port) {
 		try{
-			mServerSocket = new ServerSocket(Constants.DEFAULT_PORT);
+			mInBox = inBox;
+			mServerSocket = new ServerSocket(port);
 		} catch (IOException e){
 			e.printStackTrace();
 			System.out.println("Could not initiate ServerSocket");
@@ -36,8 +41,8 @@ public class SocketMonitor {
 				Socket socket = mServerSocket.accept();
                 //The code bellow is blocked until a connection is received by mServerSocket.accept().
 				//Handle the socket in a separate thread in order to be able to handle multiple sockets simultaneously.
-				System.out.println("Received socket! ");
-				SocketHandler socketHandler = new SocketHandler(socket);
+//				System.out.println("Received socket! ");
+				SocketHandler socketHandler = new SocketHandler(socket, mInBox);
 				socketHandler.start();
 
 			} catch(IOException e){
