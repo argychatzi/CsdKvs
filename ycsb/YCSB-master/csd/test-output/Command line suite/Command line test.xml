@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite hostname="n155-p20.kthopen.kth.se" name="com.yahoo.ycsb.db.ElasticSearchClientTest" tests="5" failures="0" timestamp="17 Oct 2014 12:55:31 GMT" time="0.053" errors="0">
+<testsuite hostname="n155-p20.kthopen.kth.se" name="com.yahoo.ycsb.db.ElasticSearchClientTest" tests="5" failures="0" timestamp="17 Oct 2014 14:10:11 GMT" time="0.058" errors="0">
   <testcase name="@BeforeClass setUpClass" time="0.0" classname="com.yahoo.ycsb.db.ElasticSearchClientTest">
     <failure type="java.lang.UnsupportedClassVersionError" message="com/kth/csd/utils/Logger">
       <![CDATA[java.lang.UnsupportedClassVersionError: com/kth/csd/utils/Logger
-	at com.yahoo.ycsb.db.ElasticSearchClient.init(ElasticSearchClient.java:28)
+	at com.yahoo.ycsb.db.ElasticSearchClient.init(ElasticSearchClient.java:31)
 	at com.yahoo.ycsb.db.ElasticSearchClientTest.setUpClass(ElasticSearchClientTest.java:42)
 	at org.infinitest.testrunner.JUnit4Runner.runTestNGTest(JUnit4Runner.java:77)
 	at org.infinitest.testrunner.JUnit4Runner.runTest(JUnit4Runner.java:57)
@@ -52,10 +52,10 @@
   <testcase name="testInsert" time="0.0" classname="com.yahoo.ycsb.db.ElasticSearchClientTest">
     <skipped/>
   </testcase>
-  <testcase name="testRead" time="0.0" classname="com.yahoo.ycsb.db.ElasticSearchClientTest">
+  <testcase name="testRead" time="0.0010" classname="com.yahoo.ycsb.db.ElasticSearchClientTest">
     <skipped/>
   </testcase>
-  <testcase name="testScan" time="0.0" classname="com.yahoo.ycsb.db.ElasticSearchClientTest">
+  <testcase name="testScan" time="0.0010" classname="com.yahoo.ycsb.db.ElasticSearchClientTest">
     <skipped/>
   </testcase>
   <testcase name="testUpdate" time="0.0" classname="com.yahoo.ycsb.db.ElasticSearchClientTest">

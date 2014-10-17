@@ -10,10 +10,11 @@ public class KvsExecutableOperation {
 	private KvsExecutable mExecutor;
 	
 	public KvsExecutableOperation(KvsOperation operation){
+		
 		if(operation.getYcsbOperationType() == YCSB_OPERATION.READ){
-			mExecutor = new KvsReader(operation.getKey(), operation.getValue());
+			mExecutor = new KvsReader(operation.getKeyValue());
 		} else {
-			mExecutor = new KvsWriter(operation.getKey(), operation.getValue());
+			mExecutor = new KvsWriter(operation.getKeyValue());
 		}
 	}
 	

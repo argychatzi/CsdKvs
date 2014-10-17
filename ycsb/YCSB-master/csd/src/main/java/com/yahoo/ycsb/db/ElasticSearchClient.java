@@ -5,9 +5,12 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.Vector;
 
+import javax.xml.crypto.dsig.keyinfo.KeyValue;
+
 import com.google.gson.Gson;
-import com.kth.csd.networking.Constants;
 import com.kth.csd.networking.RequestSender;
+import com.kth.csd.node.Constants;
+import com.kth.csd.node.operation.KeyValueEntry;
 import com.kth.csd.node.operation.KvsOperation;
 import com.kth.csd.node.operation.KvsOperation.YCSB_OPERATION;
 import com.kth.csd.utils.Logger;
@@ -66,8 +69,9 @@ public class ElasticSearchClient extends DB{
 //		Logger.d(TAG, "performing insert");
 		
 		HashMap<String, String> stringHashMap = StringByteIterator.getStringMap(values);
-		
-		KvsOperation operation = new KvsOperation(YCSB_OPERATION.WRITE, key, stringHashMap);
+		KeyValueEntry keyValueEntry = new KeyValueEntry( key, stringHashMap);
+		KvsOperation operation = new KvsOperation(YCSB_OPERATION.WRITE,keyValueEntry);
+
 		String operationAsJson = mGson.toJson(operation);
 		mRequestSender.sendRequest(Constants.DEFAULT_HOST, Constants.DEFAULT_PORT, operationAsJson);
 		return 0;
@@ -89,7 +93,9 @@ public class ElasticSearchClient extends DB{
 		
 		HashMap<String, String> stringHashMap = StringByteIterator.getStringMap(result);
 		
-		KvsOperation operation = new KvsOperation(YCSB_OPERATION.READ, key, stringHashMap);
+		KeyValueEntry keyValueEntry = new KeyValueEntry( key, stringHashMap);
+		KvsOperation operation = new KvsOperation(YCSB_OPERATION.WRITE,keyValueEntry);
+		
 		String operationAsJson = mGson.toJson(operation);
 		mRequestSender.sendRequest(Constants.DEFAULT_HOST, Constants.DEFAULT_PORT, operationAsJson);
 		return 0;
