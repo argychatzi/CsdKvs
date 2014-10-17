@@ -1,6 +1,5 @@
 package com.kth.csd.node;
 
-import com.kth.csd.networking.Constants;
 import com.kth.csd.networking.SocketMonitor;
 import com.kth.csd.node.executors.KvsOperationExecutorPool;
 import com.kth.csd.utils.Logger;

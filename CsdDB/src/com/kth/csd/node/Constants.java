@@ -1,4 +1,4 @@
-package com.kth.csd.networking;
+package com.kth.csd.node;
 
 public class Constants {
 	public static final int DEFAULT_PORT = 4447;

@@ -2,30 +2,18 @@
 <testng-results skipped="5" failed="0" total="5" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Command line suite" duration-ms="33" started-at="2014-10-13T21:10:09Z" finished-at="2014-10-13T21:10:09Z">
+  <suite name="Command line suite" duration-ms="53" started-at="2014-10-17T14:55:31Z" finished-at="2014-10-17T14:55:31Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="33" started-at="2014-10-13T21:10:09Z" finished-at="2014-10-13T21:10:09Z">
+    <test name="Command line test" duration-ms="53" started-at="2014-10-17T14:55:31Z" finished-at="2014-10-17T14:55:31Z">
       <class name="com.yahoo.ycsb.db.ElasticSearchClientTest">
-        <test-method status="FAIL" signature="setUpClass()" name="setUpClass" is-config="true" duration-ms="0" started-at="2014-10-13T21:10:09Z" finished-at="2014-10-13T21:10:09Z">
+        <test-method status="FAIL" signature="setUpClass()" name="setUpClass" is-config="true" duration-ms="0" started-at="2014-10-17T14:55:31Z" finished-at="2014-10-17T14:55:31Z">
           <exception class="java.lang.UnsupportedClassVersionError">
             <message>
-              <![CDATA[com/kth/csd/utils/Logger : Unsupported major.minor version 51.0]]>
+              <![CDATA[com/kth/csd/utils/Logger]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.UnsupportedClassVersionError: com/kth/csd/utils/Logger : Unsupported major.minor version 51.0
-	at java.lang.ClassLoader.defineClass1(Native Method)
-	at java.lang.ClassLoader.defineClassCond(ClassLoader.java:637)
-	at java.lang.ClassLoader.defineClass(ClassLoader.java:621)
-	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:141)
-	at java.net.URLClassLoader.defineClass(URLClassLoader.java:283)
-	at java.net.URLClassLoader.access$000(URLClassLoader.java:58)
-	at java.net.URLClassLoader$1.run(URLClassLoader.java:197)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+              <![CDATA[java.lang.UnsupportedClassVersionError: com/kth/csd/utils/Logger
 	at com.yahoo.ycsb.db.ElasticSearchClient.init(ElasticSearchClient.java:28)
 	at com.yahoo.ycsb.db.ElasticSearchClientTest.setUpClass(ElasticSearchClientTest.java:42)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -59,37 +47,37 @@
             </full-stacktrace>
           </exception>
         </test-method>
-        <test-method status="SKIP" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-10-13T21:10:09Z" finished-at="2014-10-13T21:10:09Z">
+        <test-method status="SKIP" signature="testDelete()" name="testDelete" duration-ms="1" started-at="2014-10-17T14:55:31Z" finished-at="2014-10-17T14:55:31Z">
         </test-method>
-        <test-method status="SKIP" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-10-13T21:10:09Z" finished-at="2014-10-13T21:10:09Z">
+        <test-method status="SKIP" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-10-17T14:55:31Z" finished-at="2014-10-17T14:55:31Z">
         </test-method>
-        <test-method status="SKIP" signature="testDelete()" name="testDelete" duration-ms="0" started-at="2014-10-13T21:10:09Z" finished-at="2014-10-13T21:10:09Z">
+        <test-method status="SKIP" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-10-17T14:55:31Z" finished-at="2014-10-17T14:55:31Z">
         </test-method>
-        <test-method status="SKIP" signature="testInsert()" name="testInsert" duration-ms="0" started-at="2014-10-13T21:10:09Z" finished-at="2014-10-13T21:10:09Z">
+        <test-method status="SKIP" signature="testInsert()" name="testInsert" duration-ms="0" started-at="2014-10-17T14:55:31Z" finished-at="2014-10-17T14:55:31Z">
         </test-method>
-        <test-method status="SKIP" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-10-13T21:10:09Z" finished-at="2014-10-13T21:10:09Z">
+        <test-method status="SKIP" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-10-17T14:55:31Z" finished-at="2014-10-17T14:55:31Z">
         </test-method>
-        <test-method status="SKIP" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-10-13T21:10:09Z" finished-at="2014-10-13T21:10:09Z">
+        <test-method status="SKIP" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-10-17T14:55:31Z" finished-at="2014-10-17T14:55:31Z">
         </test-method>
-        <test-method status="SKIP" signature="testRead()" name="testRead" duration-ms="1" started-at="2014-10-13T21:10:09Z" finished-at="2014-10-13T21:10:09Z">
+        <test-method status="SKIP" signature="testRead()" name="testRead" duration-ms="0" started-at="2014-10-17T14:55:31Z" finished-at="2014-10-17T14:55:31Z">
         </test-method>
-        <test-method status="SKIP" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-10-13T21:10:09Z" finished-at="2014-10-13T21:10:09Z">
+        <test-method status="SKIP" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-10-17T14:55:31Z" finished-at="2014-10-17T14:55:31Z">
         </test-method>
-        <test-method status="SKIP" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-10-13T21:10:09Z" finished-at="2014-10-13T21:10:09Z">
+        <test-method status="SKIP" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-10-17T14:55:31Z" finished-at="2014-10-17T14:55:31Z">
         </test-method>
-        <test-method status="SKIP" signature="testScan()" name="testScan" duration-ms="0" started-at="2014-10-13T21:10:09Z" finished-at="2014-10-13T21:10:09Z">
+        <test-method status="SKIP" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-10-17T14:55:31Z" finished-at="2014-10-17T14:55:31Z">
         </test-method>
-        <test-method status="SKIP" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-10-13T21:10:09Z" finished-at="2014-10-13T21:10:09Z">
+        <test-method status="SKIP" signature="testScan()" name="testScan" duration-ms="0" started-at="2014-10-17T14:55:31Z" finished-at="2014-10-17T14:55:31Z">
         </test-method>
-        <test-method status="SKIP" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-10-13T21:10:09Z" finished-at="2014-10-13T21:10:09Z">
+        <test-method status="SKIP" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-10-17T14:55:31Z" finished-at="2014-10-17T14:55:31Z">
         </test-method>
-        <test-method status="SKIP" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-10-13T21:10:09Z" finished-at="2014-10-13T21:10:09Z">
+        <test-method status="SKIP" signature="testUpdate()" name="testUpdate" duration-ms="0" started-at="2014-10-17T14:55:31Z" finished-at="2014-10-17T14:55:31Z">
         </test-method>
-        <test-method status="SKIP" signature="testUpdate()" name="testUpdate" duration-ms="1" started-at="2014-10-13T21:10:09Z" finished-at="2014-10-13T21:10:09Z">
+        <test-method status="SKIP" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-10-17T14:55:31Z" finished-at="2014-10-17T14:55:31Z">
         </test-method>
-        <test-method status="SKIP" signature="tearDownClass()" name="tearDownClass" is-config="true" duration-ms="0" started-at="2014-10-13T21:10:09Z" finished-at="2014-10-13T21:10:09Z">
+        <test-method status="SKIP" signature="tearDownClass()" name="tearDownClass" is-config="true" duration-ms="0" started-at="2014-10-17T14:55:31Z" finished-at="2014-10-17T14:55:31Z">
         </test-method>
-        <test-method status="SKIP" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-10-13T21:10:09Z" finished-at="2014-10-13T21:10:09Z">
+        <test-method status="SKIP" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-10-17T14:55:31Z" finished-at="2014-10-17T14:55:31Z">
         </test-method>
       </class>
     </test>
