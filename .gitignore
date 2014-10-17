@@ -1,6 +1,4 @@
-
-
-
+.DS_Store
 #Generic Java gitignore 
 
 *.class
