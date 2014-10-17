@@ -7,7 +7,7 @@ import com.kth.csd.utils.Logger;
 public class KvsExecutor extends Thread {
 
 	public interface KvsExecutable {
-		public void execute();
+		public int execute();
 	}
 
 	private static final long SLEEP_DURATION = 1000;

@@ -1,22 +1,56 @@
 package com.kth.csd.node.executors;
 
-import java.util.HashMap;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
+import com.google.gson.Gson;
+import com.kth.csd.node.Constants;
 import com.kth.csd.node.executors.KvsExecutor.KvsExecutable;
+import com.kth.csd.node.operation.KeyValueEntry;
 import com.kth.csd.node.operation.KvsOperation;
-import com.kth.csd.utils.Logger;
 
 public class KvsWriter extends KvsOperation implements KvsExecutable {
 
 	private static final String TAG = KvsWriter.class.getCanonicalName();
+	
+	protected File mDatabaseFile;
+	protected Gson mGson;
 
-	public KvsWriter(String key, HashMap<String, String> value) {
-		super(YCSB_OPERATION.WRITE, key, value);
+	public KvsWriter(KeyValueEntry keyValue) {
+		super(YCSB_OPERATION.WRITE, keyValue);
+		mGson = new Gson();
+		mDatabaseFile = new File(Constants.DATABASE_FILE);
 	}
 
 	@Override
-	public void execute() {
-		Logger.d(TAG, "performing write, on key:" + mKey );
+	public int execute() {
+		int resultCode = Constants.RESULT_CODE_FAILURE;
+		
+		if(mKeyValue.getKey()!=null && mKeyValue.getValues() != null){
+				
+			try{
+				System.out.println("INSERT key = " + mKeyValue.getKey());
+	
+				FileWriter fileWriter = new FileWriter(mDatabaseFile, true);
+	            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+	
+	            KeyValueEntry entry = new KeyValueEntry(mKeyValue.getKey(), mKeyValue.getValues());
+	
+	            bufferedWriter.write( mGson.toJson(entry) );
+	            bufferedWriter.newLine();
+	
+	            bufferedWriter.close();
+	            fileWriter.close();
+				
+				resultCode = Constants.RESULT_CODE_SUCCESS;
+			} catch(IOException e){
+				e.printStackTrace();
+			}
+		}
+		
+		return resultCode;
 	}
 
 }
