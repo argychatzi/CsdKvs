@@ -1,0 +1,51 @@
+package com.yahoo.ycsb;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+public class Test {
+
+	public static void main(String [ ] args) throws IOException{
+		
+		/*Record 0*/
+		String key0 = new String("user94847463556575");			
+		HashMap<String, String> values0 = new HashMap<String, String>();	
+		values0.put("field00", "value00");
+		values0.put("field01", "value01");
+		
+		/*Record 1*/
+		String key1 = new String("user11122349375943678");
+		HashMap<String, String> values1 = new HashMap<String, String>();
+		values1.put("field10", "value10");
+		values1.put("field11", "value11");
+		values1.put("field12", "value12");
+
+
+		CSDDB csddb = new CSDDB();	
+		
+		/*Test 0: insert record 0 and record 1*/
+		/*You will see the two records are saved in different files, 
+		 * because the fileName are calculated based on the key of the record*/
+		csddb.inserttest(CSDDB.findFileByKeyRange(key0), key0, values0);
+		csddb.inserttest(CSDDB.findFileByKeyRange(key1), key1, values1);
+
+		
+		/*Test 1: read a record with all fields*/
+		HashMap<String,String> result0 = new HashMap<String,String> () ;
+		csddb.readtest(CSDDB.findFileByKeyRange(key0), key0, null, result0);
+		System.out.println("read with all fields: result ="+result0);
+		
+		/*Test 2: read a record with fields specified*/
+		HashMap<String,String> result1 = new HashMap<String,String> () ;
+		Set<String> fields = new HashSet<String>();
+		fields.add("field10");fields.add("field12");
+		csddb.readtest(CSDDB.findFileByKeyRange(key1), key1, fields, result1);		
+		System.out.println("read with fields specified: result ="+result1);
+	}
+}
