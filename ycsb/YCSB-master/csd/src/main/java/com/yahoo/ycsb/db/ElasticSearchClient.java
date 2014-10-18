@@ -1,11 +1,12 @@
 package com.yahoo.ycsb.db;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Properties;
 import java.util.Set;
 import java.util.Vector;
-
-import javax.xml.crypto.dsig.keyinfo.KeyValue;
 
 import com.google.gson.Gson;
 import com.kth.csd.networking.RequestSender;
@@ -22,7 +23,8 @@ import com.yahoo.ycsb.StringByteIterator;
 
 public class ElasticSearchClient extends DB{
 
-	private static final String TAG = "CsdDBTAG";
+	private static final String TAG = ElasticSearchClient.class.getCanonicalName();
+	private static final String PROPERTY_KEY_SERVER_IP = "serverIp";
 
 	private RequestSender mRequestSender;
 	private Gson mGson;
@@ -32,8 +34,27 @@ public class ElasticSearchClient extends DB{
 		Properties properties = getProperties();
 		properties.list(System.out);
 		
-		mRequestSender = new RequestSender();
+		mRequestSender = new RequestSender(properties.getProperty(PROPERTY_KEY_SERVER_IP));
 		mGson = new Gson();
+	}
+	
+	@Override
+	public Properties getProperties() {
+		String serverIp = Constants.DEFAULT_HOST;
+		
+		try{
+			FileReader fileReader = new FileReader( System.getProperty("user.dir") + "/properties/server_ip.txt" );
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+			serverIp = bufferedReader.readLine();
+			bufferedReader.close();			
+		} catch(IOException e){
+			Logger.d(TAG, "Read from file" + e.toString());
+			e.printStackTrace();
+		}
+		Properties properties = new Properties();
+		properties.setProperty(PROPERTY_KEY_SERVER_IP, serverIp);
+		
+		return properties;
 	}
 	
 	 @Override
@@ -70,10 +91,10 @@ public class ElasticSearchClient extends DB{
 		
 		HashMap<String, String> stringHashMap = StringByteIterator.getStringMap(values);
 		KeyValueEntry keyValueEntry = new KeyValueEntry( key, stringHashMap);
-		KvsOperation operation = new KvsOperation(YCSB_OPERATION.WRITE,keyValueEntry);
+		KvsOperation operation = new KvsOperation(YCSB_OPERATION.READ,keyValueEntry);
 
 		String operationAsJson = mGson.toJson(operation);
-		mRequestSender.sendRequest(Constants.DEFAULT_HOST, Constants.DEFAULT_PORT, operationAsJson);
+		mRequestSender.sendRequest(operationAsJson);
 		return 0;
 	}
 
@@ -97,7 +118,7 @@ public class ElasticSearchClient extends DB{
 		KvsOperation operation = new KvsOperation(YCSB_OPERATION.WRITE,keyValueEntry);
 		
 		String operationAsJson = mGson.toJson(operation);
-		mRequestSender.sendRequest(Constants.DEFAULT_HOST, Constants.DEFAULT_PORT, operationAsJson);
+		mRequestSender.sendRequest(operationAsJson);
 		return 0;
 	}
 

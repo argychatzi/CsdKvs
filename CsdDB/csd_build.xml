@@ -3,18 +3,19 @@
     <!--this file was created by Eclipse Runnable JAR Export Wizard-->
     <!--ANT 1.7 is required                                        -->
     <target name="create_run_jar">
-        <jar destfile="/Users/argychatzi/Desktop/CSD/ik2200/CsdDB/output/CsdDBServer.jar" filesetmanifest="mergewithoutmain">
+        <jar destfile="/home/giorgos/Documents/workspace-csd/ik2200/CsdDB/output/CsdDBServer.jar" filesetmanifest="mergewithoutmain">
             <manifest>
                 <attribute name="Main-Class" value="com.kth.csd.node.KvsNode"/>
                 <attribute name="Class-Path" value="."/>
             </manifest>
-            <fileset dir="/Users/argychatzi/Desktop/CSD/ik2200/CsdDB/bin"/>
-            <zipfileset excludes="META-INF/*.SF" src="/Users/argychatzi/Desktop/eclipse/plugins/org.junit_4.11.0.v201303080030/junit.jar"/>
-            <zipfileset excludes="META-INF/*.SF" src="/Users/argychatzi/Desktop/eclipse/plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
-            <zipfileset excludes="META-INF/*.SF" src="/Users/argychatzi/Desktop/CSD/ik2200/CsdDB/libs/core-0.1.4.jar"/>
-            <zipfileset excludes="META-INF/*.SF" src="/Users/argychatzi/Desktop/CSD/ik2200/CsdDB/libs/gson-2.3.jar"/>
-            <zipfileset excludes="META-INF/*.SF" src="/Users/argychatzi/Desktop/CSD/ik2200/CsdDB/libs/mockito-all-1.9.5.jar"/>
+            <fileset dir="/home/giorgos/Documents/workspace-csd/ik2200/CsdDB/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/giorgos/Documents/eclipse/plugins/org.junit_4.11.0.v201303080030/junit.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/giorgos/Documents/eclipse/plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/giorgos/Documents/workspace-csd/ik2200/CsdDB/libs/core-0.1.4.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/giorgos/Documents/workspace-csd/ik2200/CsdDB/libs/gson-2.3.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/giorgos/Documents/workspace-csd/ik2200/CsdDB/libs/mockito-all-1.9.5.jar"/>
         </jar>
-   	  	<copy file="/Users/argychatzi/Desktop/CSD/ik2200/CsdDB/output/CsdDBServer.jar" todir="../ycsb/YCSB-master/csd/libs/"/>
+   	  	<copy file="/home/giorgos/Documents/workspace-csd/ik2200/CsdDB/output/CsdDBServer.jar" todir="../ycsb/YCSB-master/csd/libs/"/>
+   	  	<copy file="/home/giorgos/Documents/workspace-csd/ik2200/CsdDB/output/CsdDBServer.jar" todir="../MininetTopology/src/topology/network/server"/>
     </target>
 </project>

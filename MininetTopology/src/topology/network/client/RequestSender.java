@@ -1,39 +1,32 @@
-package com.kth.csd.networking;
+package network.client;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-import com.kth.csd.node.Constants;
-
 public class RequestSender {
 	
-	private String mHost;
-	private int mPort;
+	private static final String DEFAULT_HOST = "127.0.0.1";
+	private static final int DEFAULT_PORT = 4447;
 	
-	public RequestSender(){
-		this(Constants.DEFAULT_HOST, Constants.DEFAULT_PORT);
+	public void sendRequest(){
+		sendRequest(DEFAULT_HOST, DEFAULT_PORT);
 	}
-	
-	public RequestSender(String host){
-		this(host, Constants.DEFAULT_PORT);		
+
+	public void sendRequest(String host){
+		sendRequest(host, DEFAULT_PORT);
 	}
-	
-	public RequestSender(String host, int port){
-		mHost = host;
-		mPort = port;
-	}
-	
-	public void sendRequest(String message){
+
+	public void sendRequest(String host, int port){
+        System.out.println("Sending request to: " + host);
         Socket clientSocket = null;
 
         try {
-            clientSocket = new Socket(mHost, mPort);
+            clientSocket = new Socket(host, port);
             
             OutputStreamWriter outputStream = new OutputStreamWriter(clientSocket.getOutputStream());
-            outputStream.write(message);
-            
+            outputStream.write( "Hello there!" );
             outputStream.flush();
             outputStream.close();
             
