@@ -268,3 +268,13 @@
 4:10:12:385:::LoggerTests:::testDebugLoggingOnFileMoreThanOneLogs3
 4:10:12:385:::LoggerTests:::testDebugLoggingOnFileMoreThanOneLogs4
 4:10:12:390:::LoggerTests:::testDebugLoggingOnFile
+3:57:57:772:::LoggerTests:::testDebugLoggingOnFileMoreThanOneLogs
+3:57:57:775:::LoggerTests:::testDebugLoggingOnFileMoreThanOneLogs2
+3:57:57:776:::LoggerTests:::testDebugLoggingOnFileMoreThanOneLogs3
+3:57:57:776:::LoggerTests:::testDebugLoggingOnFileMoreThanOneLogs4
+3:57:57:784:::LoggerTests:::testDebugLoggingOnFile
+4:9:56:130:::LoggerTests:::testDebugLoggingOnFileMoreThanOneLogs
+4:9:56:134:::LoggerTests:::testDebugLoggingOnFileMoreThanOneLogs2
+4:9:56:137:::LoggerTests:::testDebugLoggingOnFileMoreThanOneLogs3
+4:9:56:137:::LoggerTests:::testDebugLoggingOnFileMoreThanOneLogs4
+4:9:56:150:::LoggerTests:::testDebugLoggingOnFile

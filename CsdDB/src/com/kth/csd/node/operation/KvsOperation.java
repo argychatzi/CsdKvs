@@ -1,12 +1,9 @@
 package com.kth.csd.node.operation;
 
-import java.io.File;
+import java.net.Socket;
 import java.util.HashMap;
 
-import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
-import com.kth.csd.node.Constants;
-import com.yahoo.ycsb.ByteIterator;
 
 public class KvsOperation {
 
@@ -20,12 +17,20 @@ public class KvsOperation {
 	@SerializedName("keyValue")	
 	protected KeyValueEntry mKeyValue;
 	
+	protected Socket mResponseSocket;
+	
 	public KvsOperation() {
 	}
 	
-	public KvsOperation(YCSB_OPERATION operation, KeyValueEntry keyValue) {
+	public KvsOperation(YCSB_OPERATION operation, KeyValueEntry keyValueEntry) {
+		mOperation = operation;
+		mKeyValue = keyValueEntry;
+	}
+	
+	public KvsOperation(YCSB_OPERATION operation, KeyValueEntry keyValue, Socket socket) {
 		mOperation = operation;
 		mKeyValue = keyValue;
+		mResponseSocket = socket;
 	}
 	
 	public KeyValueEntry getKeyValue() {
@@ -42,6 +47,10 @@ public class KvsOperation {
 
 	public HashMap<String, String> getValue() {
 		return mKeyValue.getValues();
+	}
+
+	public Socket getCommunicationSocket() {
+		return mResponseSocket;
 	}
 
 	@Override

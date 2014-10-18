@@ -34,7 +34,8 @@ public class ElasticSearchClient extends DB{
 		Properties properties = getProperties();
 		properties.list(System.out);
 		
-		mRequestSender = new RequestSender(properties.getProperty(PROPERTY_KEY_SERVER_IP));
+		String serverIp = properties.getProperty(PROPERTY_KEY_SERVER_IP);
+		mRequestSender = new RequestSender(serverIp);
 		mGson = new Gson();
 	}
 	
@@ -87,15 +88,13 @@ public class ElasticSearchClient extends DB{
 	 */
 	@Override
 	public int insert(String table, String key, HashMap<String, ByteIterator> values) {
-//		Logger.d(TAG, "performing insert");
 		
 		HashMap<String, String> stringHashMap = StringByteIterator.getStringMap(values);
 		KeyValueEntry keyValueEntry = new KeyValueEntry( key, stringHashMap);
 		KvsOperation operation = new KvsOperation(YCSB_OPERATION.WRITE,keyValueEntry);
 
 		String operationAsJson = mGson.toJson(operation);
-		mRequestSender.sendRequest(operationAsJson);
-		return 0;
+		return mRequestSender.sendRequest(operationAsJson);
 	}
 
 
@@ -110,16 +109,13 @@ public class ElasticSearchClient extends DB{
      */
 	@Override
 	public int read(String table, String key, Set<String> fields, HashMap<String, ByteIterator> result) {
-		Logger.d(TAG, "performing read");
 		
 		HashMap<String, String> stringHashMap = StringByteIterator.getStringMap(result);
-		
 		KeyValueEntry keyValueEntry = new KeyValueEntry( key, stringHashMap);
 		KvsOperation operation = new KvsOperation(YCSB_OPERATION.READ,keyValueEntry);
 		
 		String operationAsJson = mGson.toJson(operation);
-		mRequestSender.sendRequest(operationAsJson);
-		return 0;
+		return mRequestSender.sendRequest(operationAsJson);
 	}
 
 	 /**

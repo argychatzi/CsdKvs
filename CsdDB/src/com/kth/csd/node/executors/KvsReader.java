@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashMap;
+import java.net.Socket;
 
 import com.google.gson.Gson;
 import com.kth.csd.node.Constants;
@@ -20,8 +20,8 @@ public class KvsReader extends KvsOperation implements KvsExecutable {
 	protected Gson mGson;
 	
 
-	public KvsReader(KeyValueEntry keyValueEntry) {
-		super(YCSB_OPERATION.READ, keyValueEntry);
+	public KvsReader(KeyValueEntry keyValueEntry, Socket socket) {
+		super(YCSB_OPERATION.READ, keyValueEntry, socket);
 		mGson = new Gson();
 		mDatabaseFile = new File(Constants.DATABASE_FILE);
 	}
@@ -35,13 +35,13 @@ public class KvsReader extends KvsOperation implements KvsExecutable {
 				FileReader fileReader = new FileReader( mDatabaseFile );
 				BufferedReader bufferedReader = new BufferedReader(fileReader);
 				
-				System.out.println("READ: " + mKeyValue.getKey());
+//				System.out.println("READ: " + mKeyValue.getKey());
 				
 				for( String line = bufferedReader.readLine(); line != null; line = bufferedReader.readLine() ){
 					KeyValueEntry entry = mGson.fromJson(line, KeyValueEntry.class);
 	
 					if(entry.getKey().equals(mKeyValue.getKey())){
-						System.out.println("Found key:" + mKeyValue.getKey() + " value:" + entry.getValues());
+//						System.out.println("Found key:" + mKeyValue.getKey() + " value:" + entry.getValues());
 						resultCode = Constants.RESULT_CODE_SUCCESS;
 						break;
 					}

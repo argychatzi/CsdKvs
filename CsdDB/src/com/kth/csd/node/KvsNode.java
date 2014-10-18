@@ -10,7 +10,6 @@ import com.kth.csd.utils.Logger;
  * @author georgios.savvidis
  */
 public class KvsNode {
-
 	
 	protected static final String TAG = KvsNode.class.getCanonicalName();
 	private static KvsOperationMessageQueue mInBox;
@@ -19,8 +18,17 @@ public class KvsNode {
 	private static KvsOperationExecutorPool mWorkers;
 	
     public static void main(String[] args) {
+    	
+    	int numberOfExecutors; 
+    	
+    	if(args.length > 0){
+    		numberOfExecutors = Integer.parseInt(args[0]);
+    	} else{
+    		numberOfExecutors = Constants.NUMBER_OF_EXECUTORS;
+    	}
+    	
     	mInBox = new KvsOperationMessageQueue();
-    	mWorkers = new KvsOperationExecutorPool(mInBox, Constants.NUMBER_OF_EXECUTORS);
+    	mWorkers = new KvsOperationExecutorPool(mInBox, numberOfExecutors);
 
     	startMonitoringSocket(Constants.DEFAULT_PORT);
     	startWorkers();

@@ -1,39 +1,7 @@
-5:44:9:148:::com.kth.csd.node.executors.KvsOperationExecutorPool:::KvsOperationExecutorPool instatiated!
-5:44:9:212:::KvsExecutor:::thread with id 0 instantiated
-5:44:9:255:::com.kth.csd.node.executors.KvsOperationExecutorPool:::startWorking!
-5:44:9:255:::com.kth.csd.node.executors.KvsOperationExecutorPool:::size of pool =1
-5:44:9:256:::com.kth.csd.node.executors.KvsOperationExecutorPool:::thread #0 startWorking!
-5:44:9:265:::KvsExecutor:::thread # 0run
-5:44:9:265:::KvsExecutor:::thread # 0is awake
-5:44:9:265:::KvsExecutor:::thread # 0goes to sleep
-5:44:9:282:::com.kth.csd.networking.SocketMonitor:::Start listening...
-5:44:10:266:::KvsExecutor:::thread # 0is awake
-5:44:10:267:::KvsExecutor:::thread # 0goes to sleep
-5:44:11:268:::KvsExecutor:::thread # 0is awake
-5:44:11:268:::KvsExecutor:::thread # 0goes to sleep
-5:44:12:269:::KvsExecutor:::thread # 0is awake
-5:44:12:269:::KvsExecutor:::thread # 0goes to sleep
-5:44:13:273:::KvsExecutor:::thread # 0is awake
-5:44:13:274:::KvsExecutor:::thread # 0goes to sleep
-5:44:14:278:::KvsExecutor:::thread # 0is awake
-5:44:14:278:::KvsExecutor:::thread # 0goes to sleep
-5:44:15:279:::KvsExecutor:::thread # 0is awake
-5:44:15:280:::KvsExecutor:::thread # 0goes to sleep
-5:44:16:280:::KvsExecutor:::thread # 0is awake
-5:44:16:281:::KvsExecutor:::thread # 0goes to sleep
-5:44:17:281:::KvsExecutor:::thread # 0is awake
-5:44:17:282:::KvsExecutor:::thread # 0goes to sleep
-5:44:18:282:::KvsExecutor:::thread # 0is awake
-5:44:18:284:::KvsExecutor:::thread # 0goes to sleep
-5:44:19:286:::KvsExecutor:::thread # 0is awake
-5:44:19:287:::KvsExecutor:::thread # 0goes to sleep
-5:44:20:287:::KvsExecutor:::thread # 0is awake
-5:44:20:288:::KvsExecutor:::thread # 0goes to sleep
-5:44:21:288:::KvsExecutor:::thread # 0is awake
-5:44:21:289:::KvsExecutor:::thread # 0goes to sleep
-5:44:22:289:::KvsExecutor:::thread # 0is awake
-5:44:22:290:::KvsExecutor:::thread # 0goes to sleep
-5:44:23:291:::KvsExecutor:::thread # 0is awake
-5:44:23:291:::KvsExecutor:::thread # 0goes to sleep
-5:44:24:292:::KvsExecutor:::thread # 0is awake
-5:44:24:293:::KvsExecutor:::thread # 0goes to sleep
+7:20:7:976:::com.kth.csd.node.executors.KvsOperationExecutorPool:::KvsOperationExecutorPool instatiated!
+7:20:8:79:::KvsExecutor:::thread with id 0 instantiated
+7:20:8:133:::com.kth.csd.node.executors.KvsOperationExecutorPool:::startWorking!
+7:20:8:133:::com.kth.csd.node.executors.KvsOperationExecutorPool:::size of pool =1
+7:20:8:134:::com.kth.csd.node.executors.KvsOperationExecutorPool:::thread #0 startWorking!
+7:20:8:148:::KvsExecutor:::thread # 0run
+7:20:8:201:::com.kth.csd.networking.SocketMonitor:::Start listening...

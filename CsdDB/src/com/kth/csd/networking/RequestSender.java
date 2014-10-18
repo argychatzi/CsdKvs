@@ -12,10 +12,6 @@ public class RequestSender {
 	private String mHost;
 	private int mPort;
 	
-	public RequestSender(){
-		this(Constants.DEFAULT_HOST, Constants.DEFAULT_PORT);
-	}
-	
 	public RequestSender(String host){
 		this(host, Constants.DEFAULT_PORT);		
 	}
@@ -25,9 +21,10 @@ public class RequestSender {
 		mPort = port;
 	}
 	
-	public void sendRequest(String message){
+	public int sendRequest(String message){
         Socket clientSocket = null;
 
+        int operationResult  = 123; //assume error occured
         try {
             clientSocket = new Socket(mHost, mPort);
             
@@ -38,6 +35,7 @@ public class RequestSender {
             outputStream.close();
             
             clientSocket.close();
+            
         } catch (UnknownHostException e) {
             System.out.println("Unknown host!");
             e.printStackTrace();
@@ -45,5 +43,6 @@ public class RequestSender {
             System.out.println("IO error!");
             e.printStackTrace();
         }
+		return operationResult;
 	}
 }
