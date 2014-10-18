@@ -5,9 +5,12 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 import com.kth.csd.node.KvsOperationMessageQueue;
+import com.kth.csd.utils.Logger;
 
 public class SocketMonitor {
 
+	private static final String TAG = SocketMonitor.class.getCanonicalName();
+	
 	private ServerSocket mServerSocket;
 	private boolean mStopListening;
 	private KvsOperationMessageQueue mInBox;
@@ -24,7 +27,8 @@ public class SocketMonitor {
 	}
 	
 	public void startListening(){
-		System.out.println("Start listening...");
+		Logger.d(TAG, "Start listening...");
+
 		if( mServerSocket == null){
 			System.out.println("The ServerSocket has not been initiated");
 			return;
@@ -41,7 +45,8 @@ public class SocketMonitor {
 				Socket socket = mServerSocket.accept();
                 //The code bellow is blocked until a connection is received by mServerSocket.accept().
 				//Handle the socket in a separate thread in order to be able to handle multiple sockets simultaneously.
-//				System.out.println("Received socket! ");
+				Logger.d(TAG, "Received socket!");
+
 				SocketHandler socketHandler = new SocketHandler(socket, mInBox);
 				socketHandler.start();
 

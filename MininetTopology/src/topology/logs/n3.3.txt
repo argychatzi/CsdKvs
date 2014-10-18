@@ -1,0 +1,47 @@
+5:16:13:628:::com.kth.csd.node.executors.KvsOperationExecutorPool:::KvsOperationExecutorPool instatiated!
+5:16:13:689:::KvsExecutor:::thread with id 0 instantiated
+5:16:13:732:::com.kth.csd.node.executors.KvsOperationExecutorPool:::startWorking!
+5:16:13:733:::com.kth.csd.node.executors.KvsOperationExecutorPool:::size of pool =1
+5:16:13:733:::com.kth.csd.node.executors.KvsOperationExecutorPool:::thread #0 startWorking!
+5:16:13:747:::KvsExecutor:::thread # 0run
+5:16:13:747:::KvsExecutor:::thread # 0is awake
+5:16:13:747:::KvsExecutor:::thread # 0goes to sleep
+5:16:13:784:::com.kth.csd.networking.SocketMonitor:::Start listening...
+5:16:14:748:::KvsExecutor:::thread # 0is awake
+5:16:14:750:::KvsExecutor:::thread # 0goes to sleep
+5:16:15:750:::KvsExecutor:::thread # 0is awake
+5:16:15:751:::KvsExecutor:::thread # 0goes to sleep
+5:16:16:751:::KvsExecutor:::thread # 0is awake
+5:16:16:752:::KvsExecutor:::thread # 0goes to sleep
+5:16:17:752:::KvsExecutor:::thread # 0is awake
+5:16:17:753:::KvsExecutor:::thread # 0goes to sleep
+5:16:18:753:::KvsExecutor:::thread # 0is awake
+5:16:18:754:::KvsExecutor:::thread # 0goes to sleep
+5:16:19:756:::KvsExecutor:::thread # 0is awake
+5:16:19:756:::KvsExecutor:::thread # 0goes to sleep
+5:16:20:759:::KvsExecutor:::thread # 0is awake
+5:16:20:760:::KvsExecutor:::thread # 0goes to sleep
+5:16:21:760:::KvsExecutor:::thread # 0is awake
+5:16:21:761:::KvsExecutor:::thread # 0goes to sleep
+5:16:22:762:::KvsExecutor:::thread # 0is awake
+5:16:22:762:::KvsExecutor:::thread # 0goes to sleep
+5:16:23:763:::KvsExecutor:::thread # 0is awake
+5:16:23:763:::KvsExecutor:::thread # 0goes to sleep
+5:16:24:766:::KvsExecutor:::thread # 0is awake
+5:16:24:767:::KvsExecutor:::thread # 0goes to sleep
+5:16:25:768:::KvsExecutor:::thread # 0is awake
+5:16:25:768:::KvsExecutor:::thread # 0goes to sleep
+5:16:26:769:::KvsExecutor:::thread # 0is awake
+5:16:26:769:::KvsExecutor:::thread # 0goes to sleep
+5:16:27:769:::KvsExecutor:::thread # 0is awake
+5:16:27:770:::KvsExecutor:::thread # 0goes to sleep
+5:16:28:770:::KvsExecutor:::thread # 0is awake
+5:16:28:771:::KvsExecutor:::thread # 0goes to sleep
+5:16:29:771:::KvsExecutor:::thread # 0is awake
+5:16:29:772:::KvsExecutor:::thread # 0goes to sleep
+5:16:30:774:::KvsExecutor:::thread # 0is awake
+5:16:30:774:::KvsExecutor:::thread # 0goes to sleep
+5:16:31:777:::KvsExecutor:::thread # 0is awake
+5:16:31:777:::KvsExecutor:::thread # 0goes to sleep
+5:16:32:778:::KvsExecutor:::thread # 0is awake
+5:16:32:778:::KvsExecutor:::thread # 0goes to sleep
