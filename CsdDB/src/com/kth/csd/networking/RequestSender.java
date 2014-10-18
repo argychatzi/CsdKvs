@@ -5,14 +5,12 @@ import java.io.OutputStreamWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-import com.kth.csd.utils.Logger;
-import com.sun.jmx.snmp.Timestamp;
-
 public class RequestSender {
 	
-	public void sendRequest(String host, int port, String message){
+	public int sendRequest(String host, int port, String message){
         Socket clientSocket = null;
 
+        int operationResult  = 123; //assume error occured
         try {
             clientSocket = new Socket(host, port);
             
@@ -24,6 +22,7 @@ public class RequestSender {
             outputStream.close();
             
             clientSocket.close();
+            
         } catch (UnknownHostException e) {
             System.out.println("Unknown host!");
             e.printStackTrace();
@@ -31,5 +30,6 @@ public class RequestSender {
             System.out.println("IO error!");
             e.printStackTrace();
         }
+		return operationResult;
 	}
 }

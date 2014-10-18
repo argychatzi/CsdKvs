@@ -66,15 +66,13 @@ public class ElasticSearchClient extends DB{
 	 */
 	@Override
 	public int insert(String table, String key, HashMap<String, ByteIterator> values) {
-//		Logger.d(TAG, "performing insert");
 		
 		HashMap<String, String> stringHashMap = StringByteIterator.getStringMap(values);
 		KeyValueEntry keyValueEntry = new KeyValueEntry( key, stringHashMap);
 		KvsOperation operation = new KvsOperation(YCSB_OPERATION.WRITE,keyValueEntry);
 
 		String operationAsJson = mGson.toJson(operation);
-		mRequestSender.sendRequest(Constants.DEFAULT_HOST, Constants.DEFAULT_PORT, operationAsJson);
-		return 0;
+		return mRequestSender.sendRequest(Constants.DEFAULT_HOST, Constants.DEFAULT_PORT, operationAsJson);
 	}
 
 
@@ -89,16 +87,13 @@ public class ElasticSearchClient extends DB{
      */
 	@Override
 	public int read(String table, String key, Set<String> fields, HashMap<String, ByteIterator> result) {
-		Logger.d(TAG, "performing read");
 		
 		HashMap<String, String> stringHashMap = StringByteIterator.getStringMap(result);
-		
 		KeyValueEntry keyValueEntry = new KeyValueEntry( key, stringHashMap);
-		KvsOperation operation = new KvsOperation(YCSB_OPERATION.WRITE,keyValueEntry);
+		KvsOperation operation = new KvsOperation(YCSB_OPERATION.READ,keyValueEntry);
 		
 		String operationAsJson = mGson.toJson(operation);
-		mRequestSender.sendRequest(Constants.DEFAULT_HOST, Constants.DEFAULT_PORT, operationAsJson);
-		return 0;
+		return mRequestSender.sendRequest(Constants.DEFAULT_HOST, Constants.DEFAULT_PORT, operationAsJson);
 	}
 
 	 /**

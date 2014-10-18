@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite hostname="n155-p20.kthopen.kth.se" name="com.yahoo.ycsb.db.ElasticSearchClientTest" tests="5" failures="0" timestamp="17 Oct 2014 14:10:11 GMT" time="0.058" errors="0">
+<testsuite hostname="s83-191-240-81.cust.tele2.se" name="com.yahoo.ycsb.db.ElasticSearchClientTest" tests="5" failures="0" timestamp="18 Oct 2014 14:09:27 GMT" time="0.037" errors="0">
   <testcase name="@BeforeClass setUpClass" time="0.0" classname="com.yahoo.ycsb.db.ElasticSearchClientTest">
     <failure type="java.lang.UnsupportedClassVersionError" message="com/kth/csd/utils/Logger">
       <![CDATA[java.lang.UnsupportedClassVersionError: com/kth/csd/utils/Logger
@@ -46,16 +46,16 @@
   <testcase name="@AfterClass tearDownClass" time="0.0" classname="com.yahoo.ycsb.db.ElasticSearchClientTest">
     <skipped/>
   </testcase>
-  <testcase name="testDelete" time="0.0010" classname="com.yahoo.ycsb.db.ElasticSearchClientTest">
+  <testcase name="testDelete" time="0.0" classname="com.yahoo.ycsb.db.ElasticSearchClientTest">
     <skipped/>
   </testcase>
   <testcase name="testInsert" time="0.0" classname="com.yahoo.ycsb.db.ElasticSearchClientTest">
     <skipped/>
   </testcase>
-  <testcase name="testRead" time="0.0010" classname="com.yahoo.ycsb.db.ElasticSearchClientTest">
+  <testcase name="testRead" time="0.0" classname="com.yahoo.ycsb.db.ElasticSearchClientTest">
     <skipped/>
   </testcase>
-  <testcase name="testScan" time="0.0010" classname="com.yahoo.ycsb.db.ElasticSearchClientTest">
+  <testcase name="testScan" time="0.0" classname="com.yahoo.ycsb.db.ElasticSearchClientTest">
     <skipped/>
   </testcase>
   <testcase name="testUpdate" time="0.0" classname="com.yahoo.ycsb.db.ElasticSearchClientTest">

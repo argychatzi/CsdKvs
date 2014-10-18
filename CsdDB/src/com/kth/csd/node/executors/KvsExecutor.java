@@ -31,18 +31,13 @@ public class KvsExecutor extends Thread {
 		
 		while (true) {
 			
-			Logger.d(TAG, "thread # " + mId +  "is awake");
 			if (!mBox.isEmpty()){
-				
-				synchronized (mutex) {
+//				synchronized (mutex) {
 					KvsExecutableOperation operation = mBox.dequeueRequestOperation();
 					operation.execute();
-				}
+//				}
 			} else {
 				try {
-					
-					Logger.d(TAG, "thread # " + mId +  "goes to sleep");
-					
 					Thread.sleep(SLEEP_DURATION);
 				} catch (InterruptedException e) {
 					e.printStackTrace();

@@ -2,12 +2,12 @@
 <testng-results skipped="5" failed="0" total="5" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Command line suite" duration-ms="58" started-at="2014-10-17T16:10:11Z" finished-at="2014-10-17T16:10:11Z">
+  <suite name="Command line suite" duration-ms="37" started-at="2014-10-18T16:09:27Z" finished-at="2014-10-18T16:09:27Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="58" started-at="2014-10-17T16:10:11Z" finished-at="2014-10-17T16:10:11Z">
+    <test name="Command line test" duration-ms="37" started-at="2014-10-18T16:09:27Z" finished-at="2014-10-18T16:09:27Z">
       <class name="com.yahoo.ycsb.db.ElasticSearchClientTest">
-        <test-method status="FAIL" signature="setUpClass()" name="setUpClass" is-config="true" duration-ms="0" started-at="2014-10-17T16:10:11Z" finished-at="2014-10-17T16:10:11Z">
+        <test-method status="FAIL" signature="setUpClass()" name="setUpClass" is-config="true" duration-ms="0" started-at="2014-10-18T16:09:27Z" finished-at="2014-10-18T16:09:27Z">
           <exception class="java.lang.UnsupportedClassVersionError">
             <message>
               <![CDATA[com/kth/csd/utils/Logger]]>
@@ -47,37 +47,37 @@
             </full-stacktrace>
           </exception>
         </test-method>
-        <test-method status="SKIP" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-10-17T16:10:11Z" finished-at="2014-10-17T16:10:11Z">
+        <test-method status="SKIP" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-10-18T16:09:27Z" finished-at="2014-10-18T16:09:27Z">
         </test-method>
-        <test-method status="SKIP" signature="testDelete()" name="testDelete" duration-ms="1" started-at="2014-10-17T16:10:11Z" finished-at="2014-10-17T16:10:11Z">
+        <test-method status="SKIP" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-10-18T16:09:27Z" finished-at="2014-10-18T16:09:27Z">
         </test-method>
-        <test-method status="SKIP" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-10-17T16:10:11Z" finished-at="2014-10-17T16:10:11Z">
+        <test-method status="SKIP" signature="testDelete()" name="testDelete" duration-ms="0" started-at="2014-10-18T16:09:27Z" finished-at="2014-10-18T16:09:27Z">
         </test-method>
-        <test-method status="SKIP" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-10-17T16:10:11Z" finished-at="2014-10-17T16:10:11Z">
+        <test-method status="SKIP" signature="testInsert()" name="testInsert" duration-ms="0" started-at="2014-10-18T16:09:27Z" finished-at="2014-10-18T16:09:27Z">
         </test-method>
-        <test-method status="SKIP" signature="testInsert()" name="testInsert" duration-ms="0" started-at="2014-10-17T16:10:11Z" finished-at="2014-10-17T16:10:11Z">
+        <test-method status="SKIP" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-10-18T16:09:27Z" finished-at="2014-10-18T16:09:27Z">
         </test-method>
-        <test-method status="SKIP" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-10-17T16:10:11Z" finished-at="2014-10-17T16:10:11Z">
+        <test-method status="SKIP" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-10-18T16:09:27Z" finished-at="2014-10-18T16:09:27Z">
         </test-method>
-        <test-method status="SKIP" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-10-17T16:10:11Z" finished-at="2014-10-17T16:10:11Z">
+        <test-method status="SKIP" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-10-18T16:09:27Z" finished-at="2014-10-18T16:09:27Z">
         </test-method>
-        <test-method status="SKIP" signature="testRead()" name="testRead" duration-ms="1" started-at="2014-10-17T16:10:11Z" finished-at="2014-10-17T16:10:11Z">
+        <test-method status="SKIP" signature="testRead()" name="testRead" duration-ms="0" started-at="2014-10-18T16:09:27Z" finished-at="2014-10-18T16:09:27Z">
         </test-method>
-        <test-method status="SKIP" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-10-17T16:10:11Z" finished-at="2014-10-17T16:10:11Z">
+        <test-method status="SKIP" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-10-18T16:09:27Z" finished-at="2014-10-18T16:09:27Z">
         </test-method>
-        <test-method status="SKIP" signature="testScan()" name="testScan" duration-ms="1" started-at="2014-10-17T16:10:11Z" finished-at="2014-10-17T16:10:11Z">
+        <test-method status="SKIP" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-10-18T16:09:27Z" finished-at="2014-10-18T16:09:27Z">
         </test-method>
-        <test-method status="SKIP" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-10-17T16:10:11Z" finished-at="2014-10-17T16:10:11Z">
+        <test-method status="SKIP" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-10-18T16:09:27Z" finished-at="2014-10-18T16:09:27Z">
         </test-method>
-        <test-method status="SKIP" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-10-17T16:10:11Z" finished-at="2014-10-17T16:10:11Z">
+        <test-method status="SKIP" signature="testScan()" name="testScan" duration-ms="0" started-at="2014-10-18T16:09:27Z" finished-at="2014-10-18T16:09:27Z">
         </test-method>
-        <test-method status="SKIP" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-10-17T16:10:11Z" finished-at="2014-10-17T16:10:11Z">
+        <test-method status="SKIP" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-10-18T16:09:27Z" finished-at="2014-10-18T16:09:27Z">
         </test-method>
-        <test-method status="SKIP" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-10-17T16:10:11Z" finished-at="2014-10-17T16:10:11Z">
+        <test-method status="SKIP" signature="testUpdate()" name="testUpdate" duration-ms="0" started-at="2014-10-18T16:09:27Z" finished-at="2014-10-18T16:09:27Z">
         </test-method>
-        <test-method status="SKIP" signature="testUpdate()" name="testUpdate" duration-ms="0" started-at="2014-10-17T16:10:11Z" finished-at="2014-10-17T16:10:11Z">
+        <test-method status="SKIP" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-10-18T16:09:27Z" finished-at="2014-10-18T16:09:27Z">
         </test-method>
-        <test-method status="SKIP" signature="tearDownClass()" name="tearDownClass" is-config="true" duration-ms="0" started-at="2014-10-17T16:10:11Z" finished-at="2014-10-17T16:10:11Z">
+        <test-method status="SKIP" signature="tearDownClass()" name="tearDownClass" is-config="true" duration-ms="0" started-at="2014-10-18T16:09:27Z" finished-at="2014-10-18T16:09:27Z">
         </test-method>
       </class>
     </test>

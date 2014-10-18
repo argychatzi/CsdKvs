@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.Socket;
 
 import com.google.gson.Gson;
 import com.kth.csd.node.Constants;
@@ -18,8 +19,8 @@ public class KvsWriter extends KvsOperation implements KvsExecutable {
 	protected File mDatabaseFile;
 	protected Gson mGson;
 
-	public KvsWriter(KeyValueEntry keyValue) {
-		super(YCSB_OPERATION.WRITE, keyValue);
+	public KvsWriter(KeyValueEntry keyValue, Socket socket) {
+		super(YCSB_OPERATION.WRITE, keyValue, socket);
 		mGson = new Gson();
 		mDatabaseFile = new File(Constants.DATABASE_FILE);
 	}
