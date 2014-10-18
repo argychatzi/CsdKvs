@@ -91,7 +91,7 @@ public class ElasticSearchClient extends DB{
 		
 		HashMap<String, String> stringHashMap = StringByteIterator.getStringMap(values);
 		KeyValueEntry keyValueEntry = new KeyValueEntry( key, stringHashMap);
-		KvsOperation operation = new KvsOperation(YCSB_OPERATION.READ,keyValueEntry);
+		KvsOperation operation = new KvsOperation(YCSB_OPERATION.WRITE,keyValueEntry);
 
 		String operationAsJson = mGson.toJson(operation);
 		mRequestSender.sendRequest(operationAsJson);
@@ -115,7 +115,7 @@ public class ElasticSearchClient extends DB{
 		HashMap<String, String> stringHashMap = StringByteIterator.getStringMap(result);
 		
 		KeyValueEntry keyValueEntry = new KeyValueEntry( key, stringHashMap);
-		KvsOperation operation = new KvsOperation(YCSB_OPERATION.WRITE,keyValueEntry);
+		KvsOperation operation = new KvsOperation(YCSB_OPERATION.READ,keyValueEntry);
 		
 		String operationAsJson = mGson.toJson(operation);
 		mRequestSender.sendRequest(operationAsJson);

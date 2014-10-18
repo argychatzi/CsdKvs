@@ -1,18 +1,18 @@
-27441
+19513
 YCSB Client 0.1
 Command line: -db com.yahoo.ycsb.db.ElasticSearchClient -s -P /home/giorgos/Documents/workspace-csd/ik2200/ycsb/YCSB-master/workloads/workloadc -load
-5:16:14:877:::com.yahoo.ycsb.db.ElasticSearchClient:::init Called!
+5:44:9:940:::com.yahoo.ycsb.db.ElasticSearchClient:::init Called!
 -- listing properties --
 serverIp=192.168.0.8
-5:16:32:723:::com.yahoo.ycsb.db.ElasticSearchClient:::cleanup Called!
-[OVERALL], RunTime(ms), 17902.0
-[OVERALL], Throughput(ops/sec), 55.85968048262764
+5:44:24:746:::com.yahoo.ycsb.db.ElasticSearchClient:::cleanup Called!
+[OVERALL], RunTime(ms), 14828.0
+[OVERALL], Throughput(ops/sec), 67.43997841920691
 [INSERT], Operations, 1000
-[INSERT], AverageLatency(us), 17500.647
-[INSERT], MinLatency(us), 7585
-[INSERT], MaxLatency(us), 120550
-[INSERT], 95thPercentileLatency(ms), 23
-[INSERT], 99thPercentileLatency(ms), 28
+[INSERT], AverageLatency(us), 14532.037
+[INSERT], MinLatency(us), 6994
+[INSERT], MaxLatency(us), 89230
+[INSERT], 95thPercentileLatency(ms), 20
+[INSERT], 99thPercentileLatency(ms), 26
 [INSERT], Return=0, 1000
 [INSERT], 0, 0
 [INSERT], 1, 0
@@ -20,40 +20,40 @@ serverIp=192.168.0.8
 [INSERT], 3, 0
 [INSERT], 4, 0
 [INSERT], 5, 0
-[INSERT], 6, 0
-[INSERT], 7, 1
-[INSERT], 8, 5
-[INSERT], 9, 3
-[INSERT], 10, 4
-[INSERT], 11, 14
-[INSERT], 12, 31
-[INSERT], 13, 57
-[INSERT], 14, 92
-[INSERT], 15, 161
-[INSERT], 16, 181
-[INSERT], 17, 112
-[INSERT], 18, 82
-[INSERT], 19, 71
-[INSERT], 20, 52
-[INSERT], 21, 40
-[INSERT], 22, 30
-[INSERT], 23, 22
-[INSERT], 24, 9
-[INSERT], 25, 8
-[INSERT], 26, 9
+[INSERT], 6, 1
+[INSERT], 7, 9
+[INSERT], 8, 25
+[INSERT], 9, 25
+[INSERT], 10, 35
+[INSERT], 11, 85
+[INSERT], 12, 192
+[INSERT], 13, 151
+[INSERT], 14, 129
+[INSERT], 15, 105
+[INSERT], 16, 56
+[INSERT], 17, 54
+[INSERT], 18, 44
+[INSERT], 19, 23
+[INSERT], 20, 17
+[INSERT], 21, 13
+[INSERT], 22, 11
+[INSERT], 23, 7
+[INSERT], 24, 5
+[INSERT], 25, 1
+[INSERT], 26, 2
 [INSERT], 27, 4
 [INSERT], 28, 2
-[INSERT], 29, 1
-[INSERT], 30, 3
-[INSERT], 31, 0
-[INSERT], 32, 1
+[INSERT], 29, 0
+[INSERT], 30, 1
+[INSERT], 31, 2
+[INSERT], 32, 0
 [INSERT], 33, 0
-[INSERT], 34, 3
+[INSERT], 34, 0
 [INSERT], 35, 0
 [INSERT], 36, 0
 [INSERT], 37, 0
 [INSERT], 38, 0
-[INSERT], 39, 1
+[INSERT], 39, 0
 [INSERT], 40, 0
 [INSERT], 41, 0
 [INSERT], 42, 0
@@ -103,7 +103,7 @@ serverIp=192.168.0.8
 [INSERT], 86, 0
 [INSERT], 87, 0
 [INSERT], 88, 0
-[INSERT], 89, 0
+[INSERT], 89, 1
 [INSERT], 90, 0
 [INSERT], 91, 0
 [INSERT], 92, 0
@@ -134,7 +134,7 @@ serverIp=192.168.0.8
 [INSERT], 117, 0
 [INSERT], 118, 0
 [INSERT], 119, 0
-[INSERT], 120, 1
+[INSERT], 120, 0
 [INSERT], 121, 0
 [INSERT], 122, 0
 [INSERT], 123, 0

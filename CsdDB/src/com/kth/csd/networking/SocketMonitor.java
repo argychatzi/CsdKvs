@@ -45,7 +45,7 @@ public class SocketMonitor {
 				Socket socket = mServerSocket.accept();
                 //The code bellow is blocked until a connection is received by mServerSocket.accept().
 				//Handle the socket in a separate thread in order to be able to handle multiple sockets simultaneously.
-				Logger.d(TAG, "Received socket!");
+				//Logger.d(TAG, "Received socket!");
 
 				SocketHandler socketHandler = new SocketHandler(socket, mInBox);
 				socketHandler.start();
