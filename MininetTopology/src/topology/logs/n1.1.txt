@@ -1,7 +1,8 @@
-7:20:8:145:::com.kth.csd.node.executors.KvsOperationExecutorPool:::KvsOperationExecutorPool instatiated!
-7:20:8:212:::KvsExecutor:::thread with id 0 instantiated
-7:20:8:248:::com.kth.csd.node.executors.KvsOperationExecutorPool:::startWorking!
-7:20:8:248:::com.kth.csd.node.executors.KvsOperationExecutorPool:::size of pool =1
-7:20:8:249:::com.kth.csd.node.executors.KvsOperationExecutorPool:::thread #0 startWorking!
-7:20:8:279:::KvsExecutor:::thread # 0run
-7:20:8:296:::com.kth.csd.networking.SocketMonitor:::Start listening...
+8:35:37:270:::com.kth.csd.node.executors.KvsOperationExecutorPool:::KvsOperationExecutorPool instatiated!
+8:35:37:337:::KvsExecutor:::thread with id 0 instantiated
+8:35:37:356:::com.kth.csd.node.executors.KvsOperationExecutorPool:::startWorking!
+8:35:37:357:::com.kth.csd.node.executors.KvsOperationExecutorPool:::size of pool =1
+8:35:37:357:::com.kth.csd.node.executors.KvsOperationExecutorPool:::thread #0 startWorking!
+8:35:37:374:::KvsExecutor:::thread # 0run
+8:35:37:378:::com.kth.csd.networking.SocketMonitor:::Start listening...
+INSERT key = user6284781860667377211
