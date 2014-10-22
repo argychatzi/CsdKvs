@@ -52,7 +52,7 @@ public class SocketHandler extends Thread{
 			mSocket.close();
 			String message = sbuilder.toString();
 			KvsOperation operation = mGson.fromJson(message, KvsOperation.class);
-//			Logger.d(TAG, "received msg of type " + operation.getYcsbOperationType());
+			Logger.d(TAG, "received msg of type " + operation.getYcsbOperationType());
 			mBox.enqueueRequestOperation(operation);
 
 		} catch (IOException e){

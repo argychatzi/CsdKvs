@@ -24,7 +24,7 @@ public class RequestSender {
 	public int sendRequest(String message){
         Socket clientSocket = null;
 
-        int operationResult  = 123; //assume error occured
+        int operationResult  = 0; //assume error occured
         try {
             clientSocket = new Socket(mHost, mPort);
             

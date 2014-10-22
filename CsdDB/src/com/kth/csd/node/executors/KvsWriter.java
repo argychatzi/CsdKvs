@@ -32,7 +32,7 @@ public class KvsWriter extends KvsOperation implements KvsExecutable {
 		if(mKeyValue.getKey()!=null && mKeyValue.getValues() != null){
 				
 			try{
-				System.out.println("INSERT key = " + mKeyValue.getKey());
+				//Logger.d(TAG, "INSERT key = " + mKeyValue.getKey());
 	
 				FileWriter fileWriter = new FileWriter(mDatabaseFile, true);
 	            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
