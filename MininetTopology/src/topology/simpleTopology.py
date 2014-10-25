@@ -93,7 +93,7 @@ def run():
     #print resultServer
     
 def runNetworkClasses(net):
-    pathToYcsb = '/home/giorgos/Documents/workspace-csd/ik2200/ycsb/YCSB-master'
+    pathToYcsb = getYcsbPath()
 
     n1_1 = net.get('n1.1')
     n2_2 = net.get('n2.2')
@@ -145,6 +145,15 @@ def setServerIP(serverIP):
     with open(propertiesFile, 'w') as f:
         print(serverIP, file=f)
     f.close()
+    
+def getYcsbPath():
+    propertiesFile = 'properties/ycsb_path.txt'
+
+    with open(propertiesFile) as f:
+        ycsbPath = f.readline()
+    f.close()
+    
+    return ycsbPath
     
 
 if __name__ == '__main__':

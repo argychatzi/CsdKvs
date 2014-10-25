@@ -1,48 +1,48 @@
-32710
+30556
 YCSB Client 0.1
 Command line: -db com.yahoo.ycsb.db.ElasticSearchClient -s -P /home/giorgos/Documents/workspace-csd/ik2200/ycsb/YCSB-master/workloads/workloadc -load
-7:32:48:253:::com.yahoo.ycsb.db.ElasticSearchClient:::init Called!
+1:7:50:357:::com.yahoo.ycsb.db.ElasticSearchClient:::init Called!
 -- listing properties --
 serverIp=192.168.0.2
-7:32:58:232:::com.yahoo.ycsb.db.ElasticSearchClient:::cleanup Called!
-[OVERALL], RunTime(ms), 10043.0
-[OVERALL], Throughput(ops/sec), 99.57184108334162
+1:8:0:523:::com.yahoo.ycsb.db.ElasticSearchClient:::cleanup Called!
+[OVERALL], RunTime(ms), 10216.0
+[OVERALL], Throughput(ops/sec), 97.88566953797964
 [INSERT], Operations, 1000
-[INSERT], AverageLatency(us), 9619.345
-[INSERT], MinLatency(us), 3372
-[INSERT], MaxLatency(us), 1004176
-[INSERT], 95thPercentileLatency(ms), 12
-[INSERT], 99thPercentileLatency(ms), 18
+[INSERT], AverageLatency(us), 9925.289
+[INSERT], MinLatency(us), 2560
+[INSERT], MaxLatency(us), 999380
+[INSERT], 95thPercentileLatency(ms), 13
+[INSERT], 99thPercentileLatency(ms), 20
 [INSERT], Return=0, 1000
 [INSERT], 0, 0
 [INSERT], 1, 0
-[INSERT], 2, 0
-[INSERT], 3, 3
-[INSERT], 4, 36
-[INSERT], 5, 57
-[INSERT], 6, 127
-[INSERT], 7, 242
-[INSERT], 8, 218
-[INSERT], 9, 129
-[INSERT], 10, 63
-[INSERT], 11, 46
-[INSERT], 12, 30
-[INSERT], 13, 18
-[INSERT], 14, 8
+[INSERT], 2, 2
+[INSERT], 3, 7
+[INSERT], 4, 25
+[INSERT], 5, 51
+[INSERT], 6, 97
+[INSERT], 7, 227
+[INSERT], 8, 230
+[INSERT], 9, 132
+[INSERT], 10, 83
+[INSERT], 11, 65
+[INSERT], 12, 26
+[INSERT], 13, 16
+[INSERT], 14, 10
 [INSERT], 15, 6
-[INSERT], 16, 5
-[INSERT], 17, 1
+[INSERT], 16, 8
+[INSERT], 17, 0
 [INSERT], 18, 3
-[INSERT], 19, 2
-[INSERT], 20, 0
-[INSERT], 21, 1
-[INSERT], 22, 1
+[INSERT], 19, 1
+[INSERT], 20, 1
+[INSERT], 21, 2
+[INSERT], 22, 2
 [INSERT], 23, 1
-[INSERT], 24, 1
-[INSERT], 25, 0
+[INSERT], 24, 0
+[INSERT], 25, 1
 [INSERT], 26, 0
 [INSERT], 27, 0
-[INSERT], 28, 0
+[INSERT], 28, 1
 [INSERT], 29, 0
 [INSERT], 30, 0
 [INSERT], 31, 0
@@ -70,7 +70,7 @@ serverIp=192.168.0.2
 [INSERT], 53, 0
 [INSERT], 54, 0
 [INSERT], 55, 0
-[INSERT], 56, 0
+[INSERT], 56, 1
 [INSERT], 57, 0
 [INSERT], 58, 0
 [INSERT], 59, 0
@@ -110,7 +110,7 @@ serverIp=192.168.0.2
 [INSERT], 93, 0
 [INSERT], 94, 0
 [INSERT], 95, 0
-[INSERT], 96, 0
+[INSERT], 96, 1
 [INSERT], 97, 0
 [INSERT], 98, 0
 [INSERT], 99, 0
@@ -134,7 +134,7 @@ serverIp=192.168.0.2
 [INSERT], 117, 0
 [INSERT], 118, 0
 [INSERT], 119, 0
-[INSERT], 120, 1
+[INSERT], 120, 0
 [INSERT], 121, 0
 [INSERT], 122, 0
 [INSERT], 123, 0
@@ -1013,6 +1013,6 @@ serverIp=192.168.0.2
 [INSERT], 996, 0
 [INSERT], 997, 0
 [INSERT], 998, 0
-[INSERT], 999, 0
-[INSERT], >1000, 1
+[INSERT], 999, 1
+[INSERT], >1000, 0
 java -cp /home/giorgos/Documents/workspace-csd/ik2200/ycsb/YCSB-master/voldemort/src/main/conf:/home/giorgos/Documents/workspace-csd/ik2200/ycsb/YCSB-master/csd/target/elasticsearch-binding-0.1.4.jar:/home/giorgos/Documents/workspace-csd/ik2200/ycsb/YCSB-master/csd/target/archive-tmp/elasticsearch-binding-0.1.4.jar:/home/giorgos/Documents/workspace-csd/ik2200/ycsb/YCSB-master/csd/libs/CsdDBServer.jar:/home/giorgos/Documents/workspace-csd/ik2200/ycsb/YCSB-master/jdbc/src/main/conf:/home/giorgos/Documents/workspace-csd/ik2200/ycsb/YCSB-master/core/target/core-0.1.4.jar com.yahoo.ycsb.Client -db com.yahoo.ycsb.db.ElasticSearchClient -s -P /home/giorgos/Documents/workspace-csd/ik2200/ycsb/YCSB-master/workloads/workloadc -load
