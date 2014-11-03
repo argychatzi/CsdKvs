@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="CsdDBDeamon">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/CsdDB/CsdDBDeamon.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

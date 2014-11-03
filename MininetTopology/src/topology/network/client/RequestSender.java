@@ -8,7 +8,7 @@ import java.net.UnknownHostException;
 public class RequestSender {
 	
 	private static final String DEFAULT_HOST = "127.0.0.1";
-	private static final int DEFAULT_PORT = 4444;
+	private static final int DEFAULT_PORT = 4447;
 	
 	public void sendRequest(){
 		sendRequest(DEFAULT_HOST, DEFAULT_PORT);

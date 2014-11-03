@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/java" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="elasticsearch-binding-0.1.4" level="project" />
+    <orderEntry type="library" name="KTHDBDeamon" level="project" />
+    <orderEntry type="library" name="output" level="project" />
+    <orderEntry type="library" name="CsdDBServer" level="project" />
+    <orderEntry type="library" name="jdbc-binding-0.1.4" level="project" />
+    <orderEntry type="library" name="build" level="project" />
+    <orderEntry type="library" name="hypertable-binding-0.1.41" level="project" />
+    <orderEntry type="library" name="libs" level="project" />
+    <orderEntry type="library" name="core-0.1.4" level="project" />
+    <orderEntry type="library" name="cassandra-binding-0.1.4" level="project" />
+    <orderEntry type="module" module-name="main" />
+    <orderEntry type="module" module-name="CsdDB" />
+    <orderEntry type="module" module-name="test" />
+  </component>
+</module>
+

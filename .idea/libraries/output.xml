@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="output">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/CsdDB/output/CsdDBServer.jar!/" />
+      <root url="jar://$PROJECT_DIR$/CsdDB/output/KTHDBDeamon.jar!/" />
+      <root url="jar://$PROJECT_DIR$/CsdDB/output/KTHDBClient.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
