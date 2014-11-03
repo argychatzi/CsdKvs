@@ -39,6 +39,9 @@ public class Snifferclient {
 		     * and the following loops can been seen clearly that i want to grab
 		     * 3 packets from the broadcast server, when i connect.  
 		    */
+		String hello= new String();
+		hello = "before the loop";
+		System.out.println(hello);
 		 byte[] buf = new byte[1024]; // buffer 
 		 datapacket = new DatagramPacket(buf, buf.length);
 		    

@@ -154,7 +154,33 @@ def getYcsbPath():
     f.close()
     
     return ycsbPath
+
+#def CompileUpdateClasses(net):
     
+#    print 'Compiling update Server, and client sniffer classes'
+#    node= net.get('n1.1')
+#    resultServer= node.cmd('javac /home/jawad/ik2200/multicastServer/src/multicastServer/MulticastServer.java')
+#    print resultServer
+#    resultclient= node.cmd ('javac /home/jawad/ik2200/multicastServer/src/clientbroadcastsniffer/Snifferclient.java')
+#    print resultclient
+
+def runupdateinterface(net):
+    
+    print ('Client Sniffer running on n3.1, n3.2, n3.3, n3.4')
+
+    for i in range(4):
+       nodeClient =net.get('n3.%s' % (i+1))
+       print ('Running Snifferclient %s ' % nodeClient.name)
+       nodeClient.cmd ('java /home/jawad/ik2200/multicastServer/src/clientbroadcastsniffer/Snifferclient' + ' > logs/' + nodeClient.name + '.txt')
+
+    
+
+    nodeserver= net.get('n1.1')
+
+    print ('running master broadcast node on %s..' % nodeserver.name)
+    nodeserver.cmd ('java /home/jawad/ik2200/multicastServer/src/multicastServer/MulticastServer')
+
+ 
 
 if __name__ == '__main__':
 # Tell mininet to print useful information

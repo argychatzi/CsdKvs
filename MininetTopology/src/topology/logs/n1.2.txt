@@ -1,7 +1,7 @@
-1:7:49:996:::com.kth.csd.node.executors.KvsOperationExecutorPool:::KvsOperationExecutorPool instatiated!
-1:7:50:71:::KvsExecutor:::thread with id 0 instantiated
-1:7:50:113:::com.kth.csd.node.executors.KvsOperationExecutorPool:::startWorking!
-1:7:50:114:::com.kth.csd.node.executors.KvsOperationExecutorPool:::size of pool =1
-1:7:50:133:::com.kth.csd.node.executors.KvsOperationExecutorPool:::thread #0 startWorking!
-1:7:50:145:::KvsExecutor:::thread # 0run
-1:7:50:173:::com.kth.csd.networking.SocketMonitor:::Start listening...
+4:18:4:28:::com.kth.csd.node.executors.KvsOperationExecutorPool:::KvsOperationExecutorPool instatiated!
+4:18:4:195:::KvsExecutor:::thread with id 0 instantiated
+4:18:4:254:::com.kth.csd.node.executors.KvsOperationExecutorPool:::startWorking!
+4:18:4:255:::com.kth.csd.node.executors.KvsOperationExecutorPool:::size of pool =1
+4:18:4:256:::com.kth.csd.node.executors.KvsOperationExecutorPool:::thread #0 startWorking!
+4:18:4:283:::KvsExecutor:::thread # 0run
+4:18:4:476:::com.kth.csd.networking.SocketMonitor:::Start listening...

@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="com.yahoo.ycsb.TestByteIterator" duration-ms="22" started-at="2014-10-16T23:51:34Z" finished-at="2014-10-16T23:51:34Z">
+  <suite name="com.yahoo.ycsb.TestByteIterator" duration-ms="38" started-at="2014-11-03T15:23:52Z" finished-at="2014-11-03T15:23:52Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="22" started-at="2014-10-16T23:51:34Z" finished-at="2014-10-16T23:51:34Z">
+    <test name="Command line test" duration-ms="38" started-at="2014-11-03T15:23:52Z" finished-at="2014-11-03T15:23:52Z">
       <class name="com.yahoo.ycsb.TestByteIterator">
-        <test-method status="PASS" signature="testRandomByteIterator()" name="testRandomByteIterator" duration-ms="12" started-at="2014-10-16T23:51:34Z" finished-at="2014-10-16T23:51:34Z">
+        <test-method status="PASS" signature="testRandomByteIterator()" name="testRandomByteIterator" duration-ms="21" started-at="2014-11-03T15:23:52Z" finished-at="2014-11-03T15:23:52Z">
         </test-method>
       </class>
     </test>
