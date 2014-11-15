@@ -1,16 +1,17 @@
 package com.kth.csd.node.operation;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-import com.yahoo.ycsb.ByteIterator;
+import com.kth.csd.networking.ConnectionMetaData;
 
-public class KeyValueEntry {
+public class KeyValueEntry implements Serializable {
 	
+	private static final long serialVersionUID = 2480599699103140331L;
 	private String key;
 	private HashMap<String,String> values;
 	
 	public KeyValueEntry() {
-		
 	}
 	
 	public KeyValueEntry(String key, HashMap<String,String> values) {
@@ -28,6 +29,13 @@ public class KeyValueEntry {
 		return values;
 	}
 	public void setValue(HashMap<String,String> values) {
-		this.values = values;
+		getValues().clear();
+		getValues().putAll(values);
 	}
+
+	@Override
+	public String toString() {
+		return "KeyValueEntry [key=" + key + ", values=" + values + "]";
+	}
+
 }

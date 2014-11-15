@@ -1,23 +1,21 @@
 package com.kth.csd.node.operation;
 
-import java.net.Socket;
+import java.io.Serializable;
 import java.util.HashMap;
 
-import com.google.gson.annotations.SerializedName;
+public class KvsOperation implements Serializable {
 
-public class KvsOperation {
+	private static final long serialVersionUID = -5066643976863368509L;
 
 	public enum YCSB_OPERATION {
 		READ, WRITE;
 	}
 	
-	@SerializedName("operation")
 	protected YCSB_OPERATION mOperation;
 
-	@SerializedName("keyValue")	
 	protected KeyValueEntry mKeyValue;
 	
-	protected Socket mResponseSocket;
+	protected int result;
 	
 	public KvsOperation() {
 	}
@@ -25,12 +23,6 @@ public class KvsOperation {
 	public KvsOperation(YCSB_OPERATION operation, KeyValueEntry keyValueEntry) {
 		mOperation = operation;
 		mKeyValue = keyValueEntry;
-	}
-	
-	public KvsOperation(YCSB_OPERATION operation, KeyValueEntry keyValue, Socket socket) {
-		mOperation = operation;
-		mKeyValue = keyValue;
-		mResponseSocket = socket;
 	}
 	
 	public KeyValueEntry getKeyValue() {
@@ -48,15 +40,11 @@ public class KvsOperation {
 	public HashMap<String, String> getValue() {
 		return mKeyValue.getValues();
 	}
-
-	public Socket getCommunicationSocket() {
-		return mResponseSocket;
-	}
-
+	
 	@Override
 	public String toString() {
 		return "RequestOperation [operation=" + mOperation + ", key=" + mKeyValue.getKey()
 				+ ", value=" + mKeyValue.getValues() + "]";
 	}
-	
+
 }
