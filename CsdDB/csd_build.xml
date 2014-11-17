@@ -16,8 +16,8 @@
             <zipfileset excludes="META-INF/*.SF" src="./libs/slf4j-api-1.7.7.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="./libs/gson-2.3.jar"/>
         </jar>
-   	  	<copy file="./output/CsdDBServer.jar" todir="../ycsb/YCSB-master/csd/libs/"/>
-<!--    	<copy file="./output/CsdDBServer.jar" todir="../MininetTopology/src/topology/network/server"/> -->
+   	<copy file="./output/CsdDBServer.jar" todir="../ycsb/YCSB-master/csd/libs/"/>
+	<copy file="./output/CsdDBServer.jar" todir="../MininetTopology/src/topology/network/server"/>
     </target>
 </project>
 
