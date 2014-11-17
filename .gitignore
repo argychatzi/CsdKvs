@@ -51,3 +51,6 @@ local.properties
 /ycsb/YCSB-master/csd/libs/
 
 /CsdDB/csd_build.xml
+
+/MininetTopology/src/topology/network/server/CsdDBServer.jar
+/CsdDB/output/CsdDBServer.jar

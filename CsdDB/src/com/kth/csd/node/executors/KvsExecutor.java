@@ -1,13 +1,13 @@
 package com.kth.csd.node.executors;
 
-import com.kth.csd.node.KvsOperationMessageQueue;
+import com.kth.csd.node.core.KvsOperationMessageQueue;
 import com.kth.csd.node.operation.KvsExecutableOperation;
 import com.kth.csd.utils.Logger;
 
 public class KvsExecutor extends Thread {
 
 	public interface KvsExecutable {
-		public int execute();
+		public void execute();
 	}
 
 	private static final long SLEEP_DURATION = 1000;
@@ -32,10 +32,10 @@ public class KvsExecutor extends Thread {
 		while (true) {
 			
 			if (!mBox.isEmpty()){
-//				synchronized (mutex) {
+				synchronized (mutex) {
 					KvsExecutableOperation operation = mBox.dequeueRequestOperation();
 					operation.execute();
-//				}
+				}
 			} else {
 				try {
 					Thread.sleep(SLEEP_DURATION);
@@ -45,5 +45,4 @@ public class KvsExecutor extends Thread {
 			}
 		}
 	}
-
 }
