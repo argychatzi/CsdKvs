@@ -9,10 +9,8 @@ import java.util.Set;
 import java.util.Vector;
 
 import com.kth.csd.networking.ConnectionMetaData;
-import com.kth.csd.networking.KvsClient;
-import com.kth.csd.networking.KvsClient.YcsbTrafficInputInteraceHolder;
-import com.kth.csd.networking.interfaces.external.ClientExternalInputInterface;
 import com.kth.csd.node.Constants;
+import com.kth.csd.node.core.KvsClient;
 import com.kth.csd.node.operation.KeyValueEntry;
 import com.kth.csd.utils.Logger;
 import com.yahoo.ycsb.ByteIterator;
@@ -20,7 +18,7 @@ import com.yahoo.ycsb.DB;
 import com.yahoo.ycsb.DBException;
 import com.yahoo.ycsb.StringByteIterator;
 
-public class ElasticSearchClient extends DB implements YcsbTrafficInputInteraceHolder{
+public class ElasticSearchClient extends DB {
 
 	private static final String TAG = ElasticSearchClient.class.getCanonicalName();
 	private static final String PROPERTY_KEY_SERVER_IP = "serverIp";
@@ -28,16 +26,16 @@ public class ElasticSearchClient extends DB implements YcsbTrafficInputInteraceH
 	private KvsClient mKvsClient;
 
 	public void init() throws DBException {
-		Logger.d(TAG, "init Called!");
+		Logger.d(TAG, "init Called 2132123!");
 		Properties properties = getProperties();
 		properties.list(System.out);
 
-		String serverIp = "localhost."; //Constants.DEFAULT_HOST; //properties.getProperty(PROPERTY_KEY_SERVER_IP);
+		String serverIp = Constants.DEFAULT_HOST; //properties.getProperty(PROPERTY_KEY_SERVER_IP);
 		createRequestSenderFromConnectionMetadata(new ConnectionMetaData(serverIp, Constants.DEFAULT_PORT));
 	}
 
 	private void createRequestSenderFromConnectionMetadata(ConnectionMetaData connectionMetaData) {
-		mKvsClient = new KvsClient(new ClientExternalInputInterface(this), connectionMetaData);
+		mKvsClient = new KvsClient(connectionMetaData);
 	}
 
 	@Override
@@ -159,11 +157,6 @@ public class ElasticSearchClient extends DB implements YcsbTrafficInputInteraceH
 	@Override
 	public int update(String table, String key, HashMap<String, ByteIterator> values) {
 		return 0;
-	}
-
-	@Override
-	public void onMasterNodeMoved(ConnectionMetaData master) {
-		createRequestSenderFromConnectionMetadata(master);
 	}
 
 }
