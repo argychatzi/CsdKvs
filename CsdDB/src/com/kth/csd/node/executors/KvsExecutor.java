@@ -1,5 +1,6 @@
 package com.kth.csd.node.executors;
 
+import com.kth.csd.networking.messages.AbstractNetworkMessage;
 import com.kth.csd.node.core.KvsOperationMessageQueue;
 import com.kth.csd.node.operation.KvsExecutableOperation;
 import com.kth.csd.utils.Logger;
@@ -7,7 +8,7 @@ import com.kth.csd.utils.Logger;
 public class KvsExecutor extends Thread {
 
 	public interface KvsExecutable {
-		public void execute();
+		public AbstractNetworkMessage execute();
 	}
 
 	private static final long SLEEP_DURATION = 1000;

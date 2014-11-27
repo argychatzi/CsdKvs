@@ -17,18 +17,24 @@ import com.kth.csd.utils.Logger;
 
 
 public class KeyValueStore extends java.util.HashMap<String, HashMap<String, String>> {
-
+	
+	private static final long serialVersionUID = 1L;
 	private static final String TAG = KeyValueStore.class.getCanonicalName();
 	private Timer mFlushToDiskTimer = new Timer();
+	private Timer mStatisticsTimer = new Timer(); 
 	protected File mDatabaseFile;
+	private int mWriteOperationsPerformedSoFar;
+	private int mWriteOperationsPerSecond;
 	private Gson mGson;
 	
 	private static KeyValueStore sKeyValueStore;
 	
 	private KeyValueStore(){
 		mFlushToDiskTimer.scheduleAtFixedRate(new FlushToDisk(), 0, Constants.FLUSH_TO_DISK_PERIOD);
+		mStatisticsTimer.schedule(new OperationsPerSecond(),0, OperationsPerSecond.TIME_WINDOW);
 		mGson = new Gson();
 		mDatabaseFile = new File(Constants.DATABASE_FILE);
+		mWriteOperationsPerformedSoFar = 0;
 	}
 	
 	public static KeyValueStore getInstance(){
@@ -51,6 +57,8 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 
 	@Override
 	public HashMap<String, String> put(String key, HashMap<String, String> value) {
+		//TODO propagate the changes to other nodes
+		mWriteOperationsPerformedSoFar ++ ;
 		return super.put(key, value);
 	}
 	
@@ -77,6 +85,28 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 			e.printStackTrace();
 		}
 		return value;
+	}
+	
+	public int getOperationsPerformedPerSecond(){
+		return mWriteOperationsPerSecond;
+	}
+	
+	
+	public class OperationsPerSecond extends TimerTask{
+
+		public static final int TIME_WINDOW = 1000;
+		
+		@Override
+		public void run() {
+			int tmpOperations = mWriteOperationsPerformedSoFar;
+			try {
+				Thread.sleep(TIME_WINDOW -1);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			mWriteOperationsPerSecond = mWriteOperationsPerformedSoFar - tmpOperations;
+		}
+		
 	}
 	
 	private class FlushToDisk extends TimerTask{

@@ -2,6 +2,11 @@ package com.kth.csd.node.executors;
 
 import java.util.HashMap;
 
+import com.kth.csd.networking.ConnectionMetaData;
+import com.kth.csd.networking.messages.MasterMovedMessage;
+import com.kth.csd.networking.messages.AbstractNetworkMessage;
+import com.kth.csd.networking.messages.OperationWriteMessage;
+import com.kth.csd.node.Constants;
 import com.kth.csd.node.core.ApplicationContext;
 import com.kth.csd.node.executors.KvsExecutor.KvsExecutable;
 import com.kth.csd.node.operation.KeyValueEntry;
@@ -19,18 +24,15 @@ public class KvsWriter extends KvsOperation implements KvsExecutable {
 	}
 	
 	@Override
-	public void execute() {
+	public AbstractNetworkMessage execute() {
 		Logger.d(TAG, "executing ...");
+		AbstractNetworkMessage result = null;
 		if (ApplicationContext.isMaster()){
 			ApplicationContext.getKeyValueStore().put(mKeyValue.getKey(), mKeyValue.getValues());
+			result = new OperationWriteMessage(mKeyValue);
 		} else {
-			generateMessageForMasterMoved();
+			result = new MasterMovedMessage(ApplicationContext.getMasterNode());
 		}
-	}
-
-	private void generateMessageForMasterMoved(){
-		HashMap messageMoved = OperationAnalyzer.generateMessageMoved(ApplicationContext.getMasterNodeConnectionMetaData());
-		mKeyValue.setValue(messageMoved);
-		Logger.d(TAG, mKeyValue.toString());
+		return result; 
 	}
 }

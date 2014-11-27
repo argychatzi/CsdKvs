@@ -3,6 +3,7 @@ package com.kth.csd.node;
 public class Constants {
 	
 	public static final int DEFAULT_PORT = 4448;
+	public static final int INTERNAL_PORT = 5000;
 	public static final String DEFAULT_HOST = "localhost"; //"127.0.0.1";
 
 	public static final int NUMBER_OF_EXECUTORS = 1;
@@ -12,10 +13,10 @@ public class Constants {
 	public static final int RESULT_CODE_MASTER_MOVED = 2;
 	
 	
-	public static final String MASTER_MOVED_NEW_IP_KEY = "NEW_IP_KEY";
-	public static final String MASTER_MOVED_NEW_PORT_KEY = "NEW_PORT_KEY";
-	
+	public static final String MASTER_MOVED_HOST_IP_KEY = "MASTER_MOVED_HOST_IP_KEY";
+	public static final String MASTER_MOVED_HOST_PORT_KEY = "MASTER_MOVED_HOST_PORT_KEY";
+	public static final String MASTER_MOVED_KEY = "MASTER_MOVED_KEY";
+
 	public static final String DATABASE_FILE = "db.txt";
 	public static final long FLUSH_TO_DISK_PERIOD = 10000;
-	
 }
