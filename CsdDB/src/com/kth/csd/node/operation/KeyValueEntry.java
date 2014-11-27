@@ -22,12 +22,15 @@ public class KeyValueEntry implements Serializable {
 	public String getKey() {
 		return key;
 	}
+	
 	public void setKey(String key) {
 		this.key = key;
 	}
+	
 	public HashMap<String,String> getValues() {
 		return values;
 	}
+	
 	public void setValue(HashMap<String,String> values) {
 		getValues().clear();
 		getValues().putAll(values);

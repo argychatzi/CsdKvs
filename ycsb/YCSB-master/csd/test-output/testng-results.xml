@@ -2,44 +2,44 @@
 <testng-results skipped="0" failed="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Command line suite" duration-ms="33" started-at="2014-11-15T19:26:15Z" finished-at="2014-11-15T19:26:15Z">
+  <suite name="Command line suite" duration-ms="29" started-at="2014-11-27T21:43:23Z" finished-at="2014-11-27T21:43:23Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="33" started-at="2014-11-15T19:26:15Z" finished-at="2014-11-15T19:26:15Z">
+    <test name="Command line test" duration-ms="29" started-at="2014-11-27T21:43:23Z" finished-at="2014-11-27T21:43:23Z">
       <class name="com.yahoo.ycsb.db.ElasticSearchClientTest">
-        <test-method status="PASS" signature="setUpClass()" name="setUpClass" is-config="true" duration-ms="12" started-at="2014-11-15T19:26:15Z" finished-at="2014-11-15T19:26:15Z">
+        <test-method status="PASS" signature="setUpClass()" name="setUpClass" is-config="true" duration-ms="11" started-at="2014-11-27T21:43:23Z" finished-at="2014-11-27T21:43:23Z">
         </test-method>
-        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-11-15T19:26:15Z" finished-at="2014-11-15T19:26:15Z">
+        <test-method status="PASS" signature="testDelete()" name="testDelete" duration-ms="1" started-at="2014-11-27T21:43:23Z" finished-at="2014-11-27T21:43:23Z">
         </test-method>
-        <test-method status="PASS" signature="testDelete()" name="testDelete" duration-ms="1" started-at="2014-11-15T19:26:15Z" finished-at="2014-11-15T19:26:15Z">
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-11-27T21:43:23Z" finished-at="2014-11-27T21:43:23Z">
         </test-method>
-        <test-method status="PASS" signature="tearDown()" name="tearDown" is-config="true" duration-ms="1" started-at="2014-11-15T19:26:15Z" finished-at="2014-11-15T19:26:15Z">
+        <test-method status="PASS" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-11-27T21:43:23Z" finished-at="2014-11-27T21:43:23Z">
         </test-method>
-        <test-method status="PASS" signature="testInsert()" name="testInsert" duration-ms="1" started-at="2014-11-15T19:26:15Z" finished-at="2014-11-15T19:26:15Z">
+        <test-method status="PASS" signature="testInsert()" name="testInsert" duration-ms="0" started-at="2014-11-27T21:43:23Z" finished-at="2014-11-27T21:43:23Z">
         </test-method>
-        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-11-15T19:26:15Z" finished-at="2014-11-15T19:26:15Z">
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-11-27T21:43:23Z" finished-at="2014-11-27T21:43:23Z">
         </test-method>
-        <test-method status="PASS" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-11-15T19:26:15Z" finished-at="2014-11-15T19:26:15Z">
+        <test-method status="PASS" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-11-27T21:43:23Z" finished-at="2014-11-27T21:43:23Z">
         </test-method>
-        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-11-15T19:26:15Z" finished-at="2014-11-15T19:26:15Z">
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="1" started-at="2014-11-27T21:43:23Z" finished-at="2014-11-27T21:43:23Z">
         </test-method>
-        <test-method status="PASS" signature="testRead()" name="testRead" duration-ms="0" started-at="2014-11-15T19:26:15Z" finished-at="2014-11-15T19:26:15Z">
+        <test-method status="PASS" signature="testRead()" name="testRead" duration-ms="0" started-at="2014-11-27T21:43:23Z" finished-at="2014-11-27T21:43:23Z">
         </test-method>
-        <test-method status="PASS" signature="tearDown()" name="tearDown" is-config="true" duration-ms="1" started-at="2014-11-15T19:26:15Z" finished-at="2014-11-15T19:26:15Z">
+        <test-method status="PASS" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-11-27T21:43:23Z" finished-at="2014-11-27T21:43:23Z">
         </test-method>
-        <test-method status="PASS" signature="testScan()" name="testScan" duration-ms="0" started-at="2014-11-15T19:26:15Z" finished-at="2014-11-15T19:26:15Z">
+        <test-method status="PASS" signature="tearDown()" name="tearDown" is-config="true" duration-ms="1" started-at="2014-11-27T21:43:23Z" finished-at="2014-11-27T21:43:23Z">
         </test-method>
-        <test-method status="PASS" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-11-15T19:26:15Z" finished-at="2014-11-15T19:26:15Z">
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-11-27T21:43:23Z" finished-at="2014-11-27T21:43:23Z">
         </test-method>
-        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-11-15T19:26:15Z" finished-at="2014-11-15T19:26:15Z">
+        <test-method status="PASS" signature="testScan()" name="testScan" duration-ms="0" started-at="2014-11-27T21:43:23Z" finished-at="2014-11-27T21:43:23Z">
         </test-method>
-        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2014-11-15T19:26:15Z" finished-at="2014-11-15T19:26:15Z">
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="1" started-at="2014-11-27T21:43:23Z" finished-at="2014-11-27T21:43:23Z">
         </test-method>
-        <test-method status="PASS" signature="testUpdate()" name="testUpdate" duration-ms="1" started-at="2014-11-15T19:26:15Z" finished-at="2014-11-15T19:26:15Z">
+        <test-method status="PASS" signature="testUpdate()" name="testUpdate" duration-ms="0" started-at="2014-11-27T21:43:23Z" finished-at="2014-11-27T21:43:23Z">
         </test-method>
-        <test-method status="PASS" signature="tearDownClass()" name="tearDownClass" is-config="true" duration-ms="0" started-at="2014-11-15T19:26:15Z" finished-at="2014-11-15T19:26:15Z">
+        <test-method status="PASS" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-11-27T21:43:23Z" finished-at="2014-11-27T21:43:23Z">
         </test-method>
-        <test-method status="PASS" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2014-11-15T19:26:15Z" finished-at="2014-11-15T19:26:15Z">
+        <test-method status="PASS" signature="tearDownClass()" name="tearDownClass" is-config="true" duration-ms="0" started-at="2014-11-27T21:43:23Z" finished-at="2014-11-27T21:43:23Z">
         </test-method>
       </class>
     </test>
