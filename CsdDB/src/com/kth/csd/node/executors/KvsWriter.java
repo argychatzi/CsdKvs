@@ -1,12 +1,11 @@
 package com.kth.csd.node.executors;
 
-import java.util.HashMap;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
 
-import com.kth.csd.networking.ConnectionMetaData;
-import com.kth.csd.networking.messages.MasterMovedMessage;
 import com.kth.csd.networking.messages.AbstractNetworkMessage;
+import com.kth.csd.networking.messages.MasterMovedMessage;
 import com.kth.csd.networking.messages.OperationWriteMessage;
-import com.kth.csd.node.Constants;
 import com.kth.csd.node.core.ApplicationContext;
 import com.kth.csd.node.executors.KvsExecutor.KvsExecutable;
 import com.kth.csd.node.operation.KeyValueEntry;
@@ -19,8 +18,15 @@ public class KvsWriter extends KvsOperation implements KvsExecutable {
 
 	private static final String TAG = KvsWriter.class.getCanonicalName();
 	
+	public static String mYcsbclient;
+	
 	public KvsWriter(KeyValueEntry keyValue) {
 		mKeyValue = keyValue;
+	}
+	
+	public KvsWriter(KeyValueEntry keyValue, String ycsbClientIp){
+		mKeyValue = keyValue;
+		this.mYcsbclient = ycsbClientIp;
 	}
 	
 	@Override
@@ -28,6 +34,9 @@ public class KvsWriter extends KvsOperation implements KvsExecutable {
 		Logger.d(TAG, "executing ...");
 		AbstractNetworkMessage result = null;
 		if (ApplicationContext.isMaster()){
+			
+			ApplicationContext.getKeyValueStore().updateWritingClientIP(mYcsbclient);
+			
 			ApplicationContext.getKeyValueStore().put(mKeyValue.getKey(), mKeyValue.getValues());
 			result = new OperationWriteMessage(mKeyValue);
 		} else {

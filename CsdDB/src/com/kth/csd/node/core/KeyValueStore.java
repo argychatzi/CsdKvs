@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -28,6 +29,10 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 	private Gson mGson;
 	
 	private static KeyValueStore sKeyValueStore;
+	
+	private static String writingClientIP; 
+	private static HashMap <String, Integer> ycsbClientsStatisticsMapSoFar = new HashMap <String, Integer> ();
+	private static HashMap <String, Integer> ycsbClientsStatisticsMapPerSecond = new HashMap <String, Integer>();
 	
 	private KeyValueStore(){
 		mFlushToDiskTimer.scheduleAtFixedRate(new FlushToDisk(), 0, Constants.FLUSH_TO_DISK_PERIOD);
@@ -58,7 +63,8 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 	@Override
 	public HashMap<String, String> put(String key, HashMap<String, String> value) {
 		//TODO propagate the changes to other nodes
-		mWriteOperationsPerformedSoFar ++ ;
+		incrementWriteForEveryClient(getWritingClientIP());
+		//mWriteOperationsPerformedSoFar ++ ;
 		return super.put(key, value);
 	}
 	
@@ -90,9 +96,33 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 	public int getOperationsPerformedPerSecond(){
 		return mWriteOperationsPerSecond;
 	}
+public void updateWritingClientIP(String currentlyWritingClientIP){
+	this.writingClientIP = currentlyWritingClientIP;
+}
+
+public  void incrementWriteForEveryClient(String clientIPForIncrement){
+	if(ycsbClientsStatisticsMapSoFar.containsKey(clientIPForIncrement)){
+		ycsbClientsStatisticsMapSoFar.put(clientIPForIncrement, ycsbClientsStatisticsMapSoFar.get(clientIPForIncrement)+1);
+	}
+	else{
+		ycsbClientsStatisticsMapSoFar.put(clientIPForIncrement, 1);
+	}
+}
+public HashMap <String, Integer> getYcsbClientsStatisticsMapSoFar(){
+	return ycsbClientsStatisticsMapSoFar;
+}
+public String getWritingClientIP(){
+	return writingClientIP;
+}
+
+// getter for delay cost calculation for a node
+public HashMap<String, Integer> getycsbClientWritePerSecStatistics(){
+	return ycsbClientsStatisticsMapPerSecond;
+}
+
 	
-	
-	public class OperationsPerSecond extends TimerTask{
+	// old timer task
+	/*public class OperationsPerSecond extends TimerTask{
 
 		public static final int TIME_WINDOW = 1000;
 		
@@ -107,9 +137,38 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 			mWriteOperationsPerSecond = mWriteOperationsPerformedSoFar - tmpOperations;
 		}
 		
+	}*/
+
+public class OperationsPerSecond extends TimerTask{
+
+public static final int TIME_WINDOW = 1000;
+
+@Override
+public void run() {
+	ArrayList<Integer> tempOperations = new ArrayList<Integer>();
+	int j=0;
+	//System.out.println(ycsbClientsStatisticsMapSoFar);
+	for(String key:ycsbClientsStatisticsMapSoFar.keySet()){
+		tempOperations.add(getYcsbClientsStatisticsMapSoFar().get(key));
+		}
+	try {
+		Thread.sleep(TIME_WINDOW -1);
+	} catch (InterruptedException e) {
+		e.printStackTrace();
 	}
 	
-	private class FlushToDisk extends TimerTask{
+	for(String key:ycsbClientsStatisticsMapSoFar.keySet()){
+	
+		ycsbClientsStatisticsMapPerSecond.put(key, getYcsbClientsStatisticsMapSoFar().get(key)-tempOperations.get(j));	
+		j++;
+	}
+}
+}
+
+
+
+	
+private class FlushToDisk extends TimerTask{
 		private static final String TAG = "FlushToDisk";
 
 		@Override
@@ -147,3 +206,5 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 		}
 	}
 }
+
+
