@@ -57,12 +57,9 @@ public class ServerExternalInputInterface extends IoHandlerAdapter implements Io
 			case OPERATION_WRITE:{
 				keyValueEntry = ((OperationWriteMessage)response).getKeyValueEntry();
 				// here we need the client IP, to calculate writepersecond
-				InetSocketAddress socketAddress = (InetSocketAddress) session.getRemoteAddress();
-				InetAddress inetAddress = socketAddress.getAddress();
-				String ycsbClientIp = inetAddress.getHostAddress(); 
+				String ycsbClientIp = getSessionIp(session);
 				
 				keyValueEntry = ((OperationWriteMessage)response).getKeyValueEntry();
-				//executableOperation = new KvsWriter(keyValueEntry);
 				// in kvs writer constructor we have the ycsbClientIp 
 				executableOperation = new KvsWriter(keyValueEntry, ycsbClientIp);
 				//executableOperation = new KvsWriter(keyValueEntry);
@@ -76,15 +73,19 @@ public class ServerExternalInputInterface extends IoHandlerAdapter implements Io
 	}
 	// method for having the ycsb clients list. 
 		public void updatelistOfYcsbClients(IoSession session){
-			InetSocketAddress socketAddress = (InetSocketAddress) session.getRemoteAddress();
-			InetAddress inetAddress = socketAddress.getAddress();
-			updatedYCSBClientList.add(inetAddress.getHostAddress());
+			updatedYCSBClientList.add(getSessionIp(session));
 			ArrayList <String> ycsbClientsListtemp = new ArrayList<String>(updatedYCSBClientList);
 			ycsbClientsList = ycsbClientsListtemp;
 		}
 		// getter for ycsb client list
-		public static List<String> getlistOfYcsbClients(){
+		public static ArrayList<String> getlistOfYcsbClients(){
 			return ycsbClientsList;
+		}
+		public static String getSessionIp (IoSession session){
+			InetSocketAddress socketAddress = (InetSocketAddress) session.getRemoteAddress();
+			InetAddress inetAddress = socketAddress.getAddress();
+			String sessionIp = inetAddress.getHostAddress();
+				return sessionIp;
 		}
 
 	@Override

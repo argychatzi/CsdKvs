@@ -30,9 +30,10 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 	
 	private static KeyValueStore sKeyValueStore;
 	
-	private static String writingClientIP; 
+	private String writingClientIP; 
 	private static HashMap <String, Integer> ycsbClientsStatisticsMapSoFar = new HashMap <String, Integer> ();
-	private static HashMap <String, Integer> ycsbClientsStatisticsMapPerSecond = new HashMap <String, Integer>();
+	public static HashMap <String, Integer> ycsbClientsStatisticsMapPerSecond = new HashMap <String, Integer>();
+	public static HashMap <String, Double> ycsbClientsStatisticsMapPerSecondWithEma = new HashMap <String, Double>();
 	
 	private KeyValueStore(){
 		mFlushToDiskTimer.scheduleAtFixedRate(new FlushToDisk(), 0, Constants.FLUSH_TO_DISK_PERIOD);
@@ -93,9 +94,10 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 		return value;
 	}
 	
-	public int getOperationsPerformedPerSecond(){
+	
+/*public int getOperationsPerformedPerSecond(){
 		return mWriteOperationsPerSecond;
-	}
+	}*/
 public void updateWritingClientIP(String currentlyWritingClientIP){
 	this.writingClientIP = currentlyWritingClientIP;
 }
@@ -116,9 +118,21 @@ public String getWritingClientIP(){
 }
 
 // getter for delay cost calculation for a node
-public HashMap<String, Integer> getycsbClientWritePerSecStatistics(){
+public static HashMap<String, Integer> getycsbClientWritePerSecStatistics(){
 	return ycsbClientsStatisticsMapPerSecond;
 }
+
+public static HashMap<String, Double> getycsbClientWritePerSecStatisticsMapWithEma(){
+    HashMap<String, Integer> tempHashMap = new HashMap<String, Integer>();
+    tempHashMap = getycsbClientWritePerSecStatistics();
+    for (String key: tempHashMap.keySet()){
+
+    	double movingAverageValue = ExponentialMovingAverage.exponentialMovingAverage(tempHashMap.get(key));
+    	ycsbClientsStatisticsMapPerSecondWithEma.put(key, movingAverageValue);
+    }
+	return ycsbClientsStatisticsMapPerSecondWithEma;
+}
+
 
 	
 	// old timer task

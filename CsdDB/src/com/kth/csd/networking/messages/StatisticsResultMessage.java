@@ -11,7 +11,7 @@ public class StatisticsResultMessage extends AbstractNetworkMessage{
 		mData = new HashMap<String, Integer>(results);
 	}
 	
-	public  HashMap<String, Integer> getListOfYcsbClients(){
-		return (HashMap<String, Integer>) mData;
+	public  HashMap<String, Double> getRttStatistics(){
+		return (HashMap<String, Double>) mData;
 	}
 }

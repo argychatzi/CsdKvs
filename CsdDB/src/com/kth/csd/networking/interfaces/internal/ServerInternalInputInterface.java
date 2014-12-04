@@ -35,9 +35,12 @@ private static final String TAG = "ServerConnectionHandler";
 		switch(response.getType()){
 		
 			case STATISTICS_REQ:{
+				
+				
 				break;
 			}
 			case STATISTICS_RES:{
+				
 				
 				break;
 			}
