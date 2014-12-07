@@ -1,7 +1,7 @@
-4:18:3:344:::com.kth.csd.node.executors.KvsOperationExecutorPool:::KvsOperationExecutorPool instatiated!
-4:18:3:500:::KvsExecutor:::thread with id 0 instantiated
-4:18:3:558:::com.kth.csd.node.executors.KvsOperationExecutorPool:::startWorking!
-4:18:3:559:::com.kth.csd.node.executors.KvsOperationExecutorPool:::size of pool =1
-4:18:3:559:::com.kth.csd.node.executors.KvsOperationExecutorPool:::thread #0 startWorking!
-4:18:3:578:::KvsExecutor:::thread # 0run
-4:18:3:634:::com.kth.csd.networking.SocketMonitor:::Start listening...
+4:26:53:364:::ServerConnectionHandler:::ExternalTrafficInputInterface ... 
+4:26:53:576:::ServerConnectionHandler:::created !
+4:26:53:576:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
+4:26:55:530:::com.kth.csd.node.core.KvsNode:::Opened port 4448
+4:26:55:534:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
+4:26:55:569:::com.kth.csd.node.core.KvsNode:::Opened port 5000
+4:26:55:571:::com.kth.csd.node.core.KvsNode:::Genrating farm of nodes

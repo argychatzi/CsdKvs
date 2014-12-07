@@ -33,14 +33,25 @@ public class KvsWriter extends KvsOperation implements KvsExecutable {
 	public AbstractNetworkMessage execute() {
 		Logger.d(TAG, "executing ...");
 		AbstractNetworkMessage result = null;
+		// suspected error as it is never true isMaster(); 
 		if (ApplicationContext.isMaster()){
 			
 			ApplicationContext.getKeyValueStore().updateWritingClientIP(mYcsbclient);
 			
 			ApplicationContext.getKeyValueStore().put(mKeyValue.getKey(), mKeyValue.getValues());
+			
 			result = new OperationWriteMessage(mKeyValue);
-		} else {
+		}
+		// for the slave data replication
+		else if (ApplicationContext.isUpdate()){
+			
+			ApplicationContext.getKeyValueStore().put(mKeyValue.getKey(), mKeyValue.getValues());
+			result = new OperationWriteMessage(mKeyValue);
+		}
+		
+		else  {
 			result = new MasterMovedMessage(ApplicationContext.getMasterNode());
+			
 		}
 		return result; 
 	}

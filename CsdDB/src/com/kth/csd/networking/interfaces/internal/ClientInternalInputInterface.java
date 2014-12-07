@@ -16,6 +16,7 @@ import com.kth.csd.networking.messages.StatisticsResultMessage;
 import com.kth.csd.node.core.ApplicationContext;
 import com.kth.csd.node.operation.KeyValueEntry;
 import com.kth.csd.node.operation.KvsOperation;
+import com.kth.csd.utils.Logger;
 
 public class ClientInternalInputInterface extends IoHandlerAdapter implements IoHandler, ExecutionResultCommunicator{
 	
@@ -46,9 +47,12 @@ public class ClientInternalInputInterface extends IoHandlerAdapter implements Io
 				ycsbclientsRttMapFromSlave = ((StatisticsResultMessage)response).getRttStatistics();
 				nodeWithDelayCostMap.put(getSessionIp(session),delayCostCalculatorOfNode(ycsbclientsRttMapFromSlave));
 				nodeAndPortMap.put(getSessionIp(session), getPort(session));
+				//Logger.d(getNewMasterIp(), "new master");
 				break;
 			}
 		}
+
+		//Logger.d(, "new master IP address");
 	}
 	public int getPort(IoSession session){
 		SocketAddress socket = session.getLocalAddress();

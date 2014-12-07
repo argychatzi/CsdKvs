@@ -7,16 +7,31 @@ import com.kth.csd.networking.ConnectionMetaData;
 public class ApplicationContext {
 
 	private static boolean isMaster = false;
+	private static boolean isUpdate = false;
+	
 
 	private static NodeFarm mNodeFarm;
 	private static ConnectionMetaData mMasterNode;
 	private static KeyValueStore mKeyValueStore;
+	
+	// update for slave case
+	public static boolean isUpdate(){
+		return isUpdate;
+	}
+	// update for isMaster
+	public static void setIsMasterTrue(){
+		isMaster = true;
+	}
+	
+	public static void setUpdateTrue(){
+		isUpdate = true;
+	}
 
 	public static boolean isMaster() {
 		return isMaster;
 	}
 
-	public NodeFarm getNodes() {
+	public static NodeFarm getNodes() {
 		return mNodeFarm;
 	}
 	
@@ -25,7 +40,8 @@ public class ApplicationContext {
 	}
 
 	public static ConnectionMetaData getMasterNode() {
-		return new ConnectionMetaData("127.1.2.3", 11222);
+		// for now it is hard coded
+		return new ConnectionMetaData("10.0.8.4", 47448);
 	}
 
 	public static KeyValueStore getKeyValueStore() {

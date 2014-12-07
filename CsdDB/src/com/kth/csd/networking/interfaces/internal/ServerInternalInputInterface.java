@@ -55,11 +55,26 @@ private static final String TAG = "ServerConnectionHandler";
 				break;
 			}
 			case OPERATION_WRITE:{
+				String currentSessionIp = ClientInternalInputInterface.getSessionIp(session);
+				int currentSessionPort = ClientInternalInputInterface.getPort(session);
+				
+				ConnectionMetaData currentSessionMetaData = new ConnectionMetaData(currentSessionIp, currentSessionPort);
+				
+				if (ApplicationContext.getMasterNode() == currentSessionMetaData ){
+					
 				KeyValueEntry keyValueEntry = ((OperationReadMessage)message).getKeyValueEntry();
+				ApplicationContext.setUpdateTrue();
 				new KvsWriter(keyValueEntry).execute();
+				 break;
+				
+			}
+				else {
+	
 				break;
 			}
 		}
 	}
-
+	}
 }
+
+

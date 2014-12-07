@@ -15,10 +15,10 @@ import org.apache.mina.filter.codec.serialization.ObjectSerializationCodecFactor
 import org.apache.mina.filter.logging.LoggingFilter;
 import org.apache.mina.transport.socket.nio.NioSocketConnector;
 
-import com.kth.csd.node.operation.KeyValueEntry;
 import com.kth.csd.networking.messages.AbstractNetworkMessage;
 import com.kth.csd.networking.messages.OperationReadMessage;
 import com.kth.csd.networking.messages.OperationWriteMessage;
+import com.kth.csd.node.operation.KeyValueEntry;
 import com.kth.csd.utils.Logger;
 
 public class KvsClient implements IoFutureListener<IoFuture>{

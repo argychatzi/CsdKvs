@@ -15,6 +15,7 @@ import com.kth.csd.networking.ExecutionResultCommunicator;
 import com.kth.csd.networking.messages.AbstractNetworkMessage;
 import com.kth.csd.networking.messages.OperationReadMessage;
 import com.kth.csd.networking.messages.OperationWriteMessage;
+import com.kth.csd.node.core.ApplicationContext;
 import com.kth.csd.node.executors.KvsExecutor.KvsExecutable;
 import com.kth.csd.node.executors.KvsReader;
 import com.kth.csd.node.executors.KvsWriter;
@@ -62,11 +63,13 @@ public class ServerExternalInputInterface extends IoHandlerAdapter implements Io
 				keyValueEntry = ((OperationWriteMessage)response).getKeyValueEntry();
 				// in kvs writer constructor we have the ycsbClientIp 
 				executableOperation = new KvsWriter(keyValueEntry, ycsbClientIp);
+				ApplicationContext.setIsMasterTrue();
 				//executableOperation = new KvsWriter(keyValueEntry);
 				break;
 			}
 		}
 		updatelistOfYcsbClients(session); // calling the update client list method
+		Logger.d("", "calling update client list");
 		
 		AbstractNetworkMessage executionResult = executableOperation.execute();
 		session.write(executionResult);

@@ -26,7 +26,12 @@ import com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface;
 public class KvsNode {
 	
 	protected static final String TAG = KvsNode.class.getCanonicalName();
-	
+	private static ArrayList<ConnectionMetaData> allNodeProperties = new ArrayList<ConnectionMetaData>();
+	public static String[] allNodeIp = { "192.168.0.2", "192.168.0.3", "192.168.0.4", "192.168.0.5", "192.168.0.7","192.168.0.8",
+		"192.168.0.10","192.168.0.11","192.168.0.12","192.168.0.13" };
+	// master IP will be taken first time as 192.168.0.12 
+	//public static String[] allNodeIp = { "10.0.0.1", "10.0.0.3" };// for testing
+		
     public static void main(String[] args) throws IOException {
     	
     	startMonitoringKvsSocket(new ServerExternalInputInterface(), Constants.DEFAULT_PORT);
@@ -34,14 +39,34 @@ public class KvsNode {
 
     	parseConfigurationFile();
     }
+    
+   // generating the connection metadata for all internal nodes, return an array list  
+   private static ArrayList<ConnectionMetaData> generateInternalConnectionMetaData(ArrayList<String> listNodesIp){
+	   for (String key: listNodesIp){
+		   ConnectionMetaData singleNodeProperty = new ConnectionMetaData(key, Constants.INTERNAL_PORT);
+		   allNodeProperties.add(singleNodeProperty); 
+	   }
+	   return allNodeProperties;
+	   
+   }
+   // making a arraylist from String[]
+   private static ArrayList<String> getAllNodeIp(String[] allNodeIp){
+	   ArrayList<String> listNodesIp = new ArrayList<String>();
+	   for (String key: allNodeIp){
+		   listNodesIp.add(key);
+	   }
+	   return listNodesIp;
+   }
+   
+   
 
 	private static void parseConfigurationFile() {
     	//TODO parse configuration file and assign a master node
 //		ConnectionMetaData masterNode;
 //		ApplicationContext.setMasterNode(masterNode);
-//		//TODO parse configuration file and generate farm	
-//		ArrayList<ConnectionMetaData> nodeFarm;
-//		ApplicationContext.generatNodeFarm(nodeFarm);
+		
+		ApplicationContext.generatNodeFarm(allNodeProperties);
+		Logger.d(TAG, "Genrating farm of nodes");
 	}
 	
 

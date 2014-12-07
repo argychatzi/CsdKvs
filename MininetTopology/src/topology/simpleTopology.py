@@ -81,7 +81,7 @@ def run():
     #print "Testing network connectivity"
     #net.pingAll()
 
-    #CLI( net )
+    CLI( net )
     
     #net.stop()
     

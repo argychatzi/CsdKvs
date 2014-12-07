@@ -12,6 +12,10 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import com.google.gson.Gson;
+import com.kth.csd.networking.ConnectionMetaData;
+import com.kth.csd.networking.messages.AbstractNetworkMessage;
+import com.kth.csd.networking.messages.OperationReadMessage;
+import com.kth.csd.networking.messages.OperationWriteMessage;
 import com.kth.csd.node.Constants;
 import com.kth.csd.node.operation.KeyValueEntry;
 import com.kth.csd.utils.Logger;
@@ -27,6 +31,11 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 	private int mWriteOperationsPerformedSoFar;
 	private int mWriteOperationsPerSecond;
 	private Gson mGson;
+	private static ConnectionMetaData connectionMetaData;
+	private static AbstractNetworkMessage abstractNetworkMessage;
+	private static OperationReadMessage operationReadMessage;
+	
+	private static NodeFarm nodeFarm;
 	
 	private static KeyValueStore sKeyValueStore;
 	
@@ -40,7 +49,7 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 		mStatisticsTimer.schedule(new OperationsPerSecond(),0, OperationsPerSecond.TIME_WINDOW);
 		mGson = new Gson();
 		mDatabaseFile = new File(Constants.DATABASE_FILE);
-		mWriteOperationsPerformedSoFar = 0;
+		//mWriteOperationsPerformedSoFar = 0;
 	}
 	
 	public static KeyValueStore getInstance(){
@@ -63,9 +72,11 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 
 	@Override
 	public HashMap<String, String> put(String key, HashMap<String, String> value) {
-		//TODO propagate the changes to other nodes
-		incrementWriteForEveryClient(getWritingClientIP());
-		//mWriteOperationsPerformedSoFar ++ ;
+	// data broadcast to all other slave nodes
+		nodeFarm.broadCast(updateSlaveNodes(key, value));
+		Logger.d(TAG, "data replication to slave nodes");
+		
+	    incrementWriteForEveryClient(getWritingClientIP());
 		return super.put(key, value);
 	}
 	
@@ -95,14 +106,18 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 	}
 	
 	
-/*public int getOperationsPerformedPerSecond(){
-		return mWriteOperationsPerSecond;
-	}*/
-public void updateWritingClientIP(String currentlyWritingClientIP){
+	//casting keyvalueEntry to AbstractNetworkMessage
+	public AbstractNetworkMessage updateSlaveNodes(String key, HashMap<String, String> value){
+	KeyValueEntry keyValueEntry = new KeyValueEntry(key, value);
+	OperationWriteMessage operationWriteMessage = new OperationWriteMessage(keyValueEntry);
+		return operationWriteMessage;
+	}
+	
+	public void updateWritingClientIP(String currentlyWritingClientIP){
 	this.writingClientIP = currentlyWritingClientIP;
 }
 
-public  void incrementWriteForEveryClient(String clientIPForIncrement){
+	public  void incrementWriteForEveryClient(String clientIPForIncrement){
 	if(ycsbClientsStatisticsMapSoFar.containsKey(clientIPForIncrement)){
 		ycsbClientsStatisticsMapSoFar.put(clientIPForIncrement, ycsbClientsStatisticsMapSoFar.get(clientIPForIncrement)+1);
 	}
@@ -110,19 +125,19 @@ public  void incrementWriteForEveryClient(String clientIPForIncrement){
 		ycsbClientsStatisticsMapSoFar.put(clientIPForIncrement, 1);
 	}
 }
-public HashMap <String, Integer> getYcsbClientsStatisticsMapSoFar(){
+	public HashMap <String, Integer> getYcsbClientsStatisticsMapSoFar(){
 	return ycsbClientsStatisticsMapSoFar;
 }
-public String getWritingClientIP(){
+	public String getWritingClientIP(){
 	return writingClientIP;
 }
 
 // getter for delay cost calculation for a node
-public static HashMap<String, Integer> getycsbClientWritePerSecStatistics(){
+	public static HashMap<String, Integer> getycsbClientWritePerSecStatistics(){
 	return ycsbClientsStatisticsMapPerSecond;
 }
 
-public static HashMap<String, Double> getycsbClientWritePerSecStatisticsMapWithEma(){
+	public static HashMap<String, Double> getycsbClientWritePerSecStatisticsMapWithEma(){
     HashMap<String, Integer> tempHashMap = new HashMap<String, Integer>();
     tempHashMap = getycsbClientWritePerSecStatistics();
     for (String key: tempHashMap.keySet()){
@@ -134,61 +149,39 @@ public static HashMap<String, Double> getycsbClientWritePerSecStatisticsMapWithE
 }
 
 
-	
-	// old timer task
-	/*public class OperationsPerSecond extends TimerTask{
+	public class OperationsPerSecond extends TimerTask{
 
 		public static final int TIME_WINDOW = 1000;
-		
+
 		@Override
 		public void run() {
-			int tmpOperations = mWriteOperationsPerformedSoFar;
+			
+			ArrayList<Integer> tempOperations = new ArrayList<Integer>();
+			int j=0;
+			//System.out.println(ycsbClientsStatisticsMapSoFar);
+			for(String key:ycsbClientsStatisticsMapSoFar.keySet()){
+				tempOperations.add(getYcsbClientsStatisticsMapSoFar().get(key));
+			}
 			try {
 				Thread.sleep(TIME_WINDOW -1);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			mWriteOperationsPerSecond = mWriteOperationsPerformedSoFar - tmpOperations;
+	
+			for(String key:ycsbClientsStatisticsMapSoFar.keySet()){
+	
+				ycsbClientsStatisticsMapPerSecond.put(key, getYcsbClientsStatisticsMapSoFar().get(key)-tempOperations.get(j));	
+				j++;
+			}
 		}
-		
-	}*/
-
-public class OperationsPerSecond extends TimerTask{
-
-public static final int TIME_WINDOW = 1000;
-
-@Override
-public void run() {
-	ArrayList<Integer> tempOperations = new ArrayList<Integer>();
-	int j=0;
-	//System.out.println(ycsbClientsStatisticsMapSoFar);
-	for(String key:ycsbClientsStatisticsMapSoFar.keySet()){
-		tempOperations.add(getYcsbClientsStatisticsMapSoFar().get(key));
-		}
-	try {
-		Thread.sleep(TIME_WINDOW -1);
-	} catch (InterruptedException e) {
-		e.printStackTrace();
 	}
 	
-	for(String key:ycsbClientsStatisticsMapSoFar.keySet()){
-	
-		ycsbClientsStatisticsMapPerSecond.put(key, getYcsbClientsStatisticsMapSoFar().get(key)-tempOperations.get(j));	
-		j++;
-	}
-}
-}
-
-
-
-	
-private class FlushToDisk extends TimerTask{
+	private class FlushToDisk extends TimerTask{
 		private static final String TAG = "FlushToDisk";
 
 		@Override
 		public void run() {
 			Logger.d(TAG,  "will flush to disk");
-			//
 		}
 		
 		private int writeToKvs(KeyValueEntry keyValueEntry){
