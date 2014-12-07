@@ -14,7 +14,7 @@ public class ApplicationContext {
 	private static ConnectionMetaData mMasterNode;
 	private static KeyValueStore mKeyValueStore;
 	
-	// update for slave case
+	// update for if write is from master
 	public static boolean isUpdate(){
 		return isUpdate;
 	}

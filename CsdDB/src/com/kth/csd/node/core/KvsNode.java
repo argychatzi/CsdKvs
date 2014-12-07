@@ -29,7 +29,6 @@ public class KvsNode {
 	private static ArrayList<ConnectionMetaData> allNodeProperties = new ArrayList<ConnectionMetaData>();
 	public static String[] allNodeIp = { "192.168.0.2", "192.168.0.3", "192.168.0.4", "192.168.0.5", "192.168.0.7","192.168.0.8",
 		"192.168.0.10","192.168.0.11","192.168.0.12","192.168.0.13" };
-	// master IP will be taken first time as 192.168.0.12 
 	//public static String[] allNodeIp = { "10.0.0.1", "10.0.0.3" };// for testing
 		
     public static void main(String[] args) throws IOException {
@@ -49,7 +48,7 @@ public class KvsNode {
 	   return allNodeProperties;
 	   
    }
-   // making a arraylist from String[]
+   // making a arraylist
    private static ArrayList<String> getAllNodeIp(String[] allNodeIp){
 	   ArrayList<String> listNodesIp = new ArrayList<String>();
 	   for (String key: allNodeIp){

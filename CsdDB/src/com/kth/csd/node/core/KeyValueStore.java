@@ -157,8 +157,7 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 		public void run() {
 			
 			ArrayList<Integer> tempOperations = new ArrayList<Integer>();
-			int j=0;
-			//System.out.println(ycsbClientsStatisticsMapSoFar);
+			int counter=0;
 			for(String key:ycsbClientsStatisticsMapSoFar.keySet()){
 				tempOperations.add(getYcsbClientsStatisticsMapSoFar().get(key));
 			}
@@ -170,7 +169,7 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 	
 			for(String key:ycsbClientsStatisticsMapSoFar.keySet()){
 	
-				ycsbClientsStatisticsMapPerSecond.put(key, getYcsbClientsStatisticsMapSoFar().get(key)-tempOperations.get(j));	
+				ycsbClientsStatisticsMapPerSecond.put(key, getYcsbClientsStatisticsMapSoFar().get(key)-tempOperations.get(counter));	
 				j++;
 			}
 		}

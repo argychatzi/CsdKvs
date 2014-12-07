@@ -55,6 +55,7 @@ private static final String TAG = "ServerConnectionHandler";
 				break;
 			}
 			case OPERATION_WRITE:{
+				// check if write is coming from Master Node 
 				String currentSessionIp = ClientInternalInputInterface.getSessionIp(session);
 				int currentSessionPort = ClientInternalInputInterface.getPort(session);
 				

@@ -63,6 +63,7 @@ public class ServerExternalInputInterface extends IoHandlerAdapter implements Io
 				keyValueEntry = ((OperationWriteMessage)response).getKeyValueEntry();
 				// in kvs writer constructor we have the ycsbClientIp 
 				executableOperation = new KvsWriter(keyValueEntry, ycsbClientIp);
+				// setting isMaster() true;
 				ApplicationContext.setIsMasterTrue();
 				//executableOperation = new KvsWriter(keyValueEntry);
 				break;
