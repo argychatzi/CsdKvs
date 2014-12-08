@@ -170,7 +170,7 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 			for(String key:ycsbClientsStatisticsMapSoFar.keySet()){
 	
 				ycsbClientsStatisticsMapPerSecond.put(key, getYcsbClientsStatisticsMapSoFar().get(key)-tempOperations.get(counter));	
-				j++;
+				counter++;
 			}
 		}
 	}

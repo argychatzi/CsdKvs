@@ -49,6 +49,7 @@ public class KvsNode {
 	   
    }
    // making a arraylist
+   
    private static ArrayList<String> getAllNodeIp(String[] allNodeIp){
 	   ArrayList<String> listNodesIp = new ArrayList<String>();
 	   for (String key: allNodeIp){
@@ -63,6 +64,7 @@ public class KvsNode {
     	//TODO parse configuration file and assign a master node
 //		ConnectionMetaData masterNode;
 //		ApplicationContext.setMasterNode(masterNode);
+		
 		
 		ApplicationContext.generatNodeFarm(allNodeProperties);
 		Logger.d(TAG, "Genrating farm of nodes");

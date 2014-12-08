@@ -51,10 +51,8 @@ public class ClientInternalInputInterface extends IoHandlerAdapter implements Io
 				break;
 			}
 		}
-
-		//Logger.d(, "new master IP address");
 	}
-	public int getPort(IoSession session){
+	public static int getPort(IoSession session){
 		SocketAddress socket = session.getLocalAddress();
 	int port = 0;
 		try {
@@ -65,7 +63,7 @@ public class ClientInternalInputInterface extends IoHandlerAdapter implements Io
 		}
 	return port;	
 	}
-	// getter for Node ip and port number map
+	// getter for Nodes Ip and port number map
 	public static HashMap<String, Integer> getNodeAndPortMap(){	
 		return nodeAndPortMap;
 	}
@@ -96,7 +94,7 @@ public class ClientInternalInputInterface extends IoHandlerAdapter implements Io
 		return nodeWithDelayCostMap;
 	}
 	
-	// get node ip, for new master 
+	// get node Ip, for new master 
 public static String getNewMasterIp(){
 	
 	HashMap<String, Double> nodeWithDelayCostMap = getNodeWithDelayCostMap();	

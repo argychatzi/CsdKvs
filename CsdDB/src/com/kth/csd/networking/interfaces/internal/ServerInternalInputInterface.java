@@ -59,9 +59,10 @@ private static final String TAG = "ServerConnectionHandler";
 				String currentSessionIp = ClientInternalInputInterface.getSessionIp(session);
 				int currentSessionPort = ClientInternalInputInterface.getPort(session);
 				
-				ConnectionMetaData currentSessionMetaData = new ConnectionMetaData(currentSessionIp, currentSessionPort);
+				//ConnectionMetaData currentSessionMetaData = new ConnectionMetaData(currentSessionIp, currentSessionPort);
 				
-				if (ApplicationContext.getMasterNode() == currentSessionMetaData ){
+				if (ApplicationContext.getMasterNode().getHost() == currentSessionIp && 
+						ApplicationContext.getMasterNode().getPort() == currentSessionPort){
 					
 				KeyValueEntry keyValueEntry = ((OperationReadMessage)message).getKeyValueEntry();
 				ApplicationContext.setUpdateTrue();
