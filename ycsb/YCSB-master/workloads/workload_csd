@@ -16,14 +16,17 @@
 
 # Yahoo! Cloud System Benchmark
 # Workload A: Update heavy workload
-#   Application example: Session store recording recent actions
-#                        
-#   Read/write ratio: 80/20
-#   Default data size: 1 KB records (10 fields, 100 bytes each, plus key)
-#   Request distribution: zipfian
+# Application example: Session store recording recent actions
 
-recordcount=10
-operationcount=1000
+#To change the size of a record, you only have to change how many fields you want in a record and the length of each field
+#This configuration file will generate a record like this:
+#user6284781860667377211 [ field1=, field0=6 ]
+#the key is 23bytes, and there are 2 fields, each field 1 byte. In total 25 bytes
+
+fieldcount=2
+fieldlength=1
+recordcount=100
+operationcount=100
 
 workload=com.yahoo.ycsb.workloads.CoreWorkload
 
