@@ -32,8 +32,8 @@ public class ElasticSearchClient extends DB implements YcsbTrafficInputInteraceH
 		Properties properties = getProperties();
 		properties.list(System.out);
 
-		//String serverIp = "localhost."; //Constants.DEFAULT_HOST; //properties.getProperty(PROPERTY_KEY_SERVER_IP);
-		String serverIp = "10.0.0.2";
+		String serverIp = properties.getProperty(PROPERTY_KEY_SERVER_IP);
+//		String serverIp = "10.0.0.2";
 		createRequestSenderFromConnectionMetadata(new ConnectionMetaData(serverIp, Constants.DEFAULT_PORT));
 	}
 
@@ -43,8 +43,8 @@ public class ElasticSearchClient extends DB implements YcsbTrafficInputInteraceH
 
 	@Override
 	public Properties getProperties() {
-		//String serverIp = Constants.DEFAULT_HOST;
-		String serverIp = "10.0.0.2";
+		String serverIp = Constants.DEFAULT_HOST;
+//		String serverIp = "10.0.0.2";
 		try {
 			FileReader fileReader = new FileReader(System.getProperty("user.dir") + "/properties/server_ip.txt");
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
