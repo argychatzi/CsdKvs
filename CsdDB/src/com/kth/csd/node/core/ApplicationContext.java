@@ -35,6 +35,10 @@ public class ApplicationContext {
 		return mNodeFarm;
 	}
 	
+	public static ConnectionMetaData getMaster(){
+		return mMasterNode;
+	}
+	
 	public static void setMasterNode(ConnectionMetaData connectionMetaData){
 		mMasterNode = connectionMetaData;
 	}
