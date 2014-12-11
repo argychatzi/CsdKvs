@@ -26,7 +26,7 @@ public class KvsWriter extends KvsOperation implements KvsExecutable {
 	
 	public KvsWriter(KeyValueEntry keyValue, String ycsbClientIp){
 		mKeyValue = keyValue;
-		this.mYcsbclient = ycsbClientIp;
+		mYcsbclient = ycsbClientIp;
 	}
 	
 	@Override

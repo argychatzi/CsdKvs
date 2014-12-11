@@ -16,13 +16,12 @@ public class ConfigurationReader {
 	private static final Gson gson = new Gson();
 	private static final String TAG = ConfigurationReader.class.getCanonicalName();
 
-	public static Configuration loadConfigurationFile() throws IOException{
+	public static Configuration loadConfigurationFile(String fileNo) throws IOException{
         JsonObject jsonObject = new JsonObject();
         
         try {
-        	File f = new File(".");
             JsonParser parser = new JsonParser();
-            JsonElement jsonElement = parser.parse(new FileReader("../configuration.json"));
+            JsonElement jsonElement = parser.parse(new FileReader("../configurations/configuration_" + fileNo + ".json"));
             jsonObject = jsonElement.getAsJsonObject();
         } catch (FileNotFoundException e) {
         	e.printStackTrace();

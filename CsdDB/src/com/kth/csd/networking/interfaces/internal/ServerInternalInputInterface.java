@@ -45,8 +45,11 @@ private static final String TAG = "ServerConnectionHandler";
 				break;
 			}
 			case MASTER_MOVED:{
-//				ConnectionMetaData newMasterConnectionMetadata = ((MasterMovedMessage)response).getNewMaster();
-//				ApplicationContext.updateMaster(newMasterConnectionMetadata);
+				ConnectionMetaData newMasterInternal = ((MasterMovedMessage)message).getNewMasterInternal();
+				ConnectionMetaData newMasterExternal = ((MasterMovedMessage)message).getNewMasterExternal();
+				
+				ApplicationContext.setMasterExternalConnection(newMasterExternal);
+				ApplicationContext.setMasterInternalConnection(newMasterInternal);
 				break;
 			}
 			case OPERATION_READ:{

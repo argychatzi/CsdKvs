@@ -33,18 +33,16 @@ public class ElasticSearchClient extends DB implements YcsbTrafficInputInteraceH
 		properties.list(System.out);
 
 		String serverIp = properties.getProperty(PROPERTY_KEY_SERVER_IP);
-//		String serverIp = "10.0.0.2";
-		createRequestSenderFromConnectionMetadata(new ConnectionMetaData(serverIp, Constants.DEFAULT_PORT));
+		createKvsClientFromConnectionMetadata(new ConnectionMetaData(serverIp, Constants.DEFAULT_EXTERNAL_PORT));
 	}
 
-	private void createRequestSenderFromConnectionMetadata(ConnectionMetaData connectionMetaData) {
+	private void createKvsClientFromConnectionMetadata(ConnectionMetaData connectionMetaData) {
 		mKvsClient = new KvsClient(new ClientExternalInputInterface(this), connectionMetaData);
 	}
 
 	@Override
 	public Properties getProperties() {
 		String serverIp = Constants.DEFAULT_HOST;
-//		String serverIp = "10.0.0.2";
 		try {
 			FileReader fileReader = new FileReader(System.getProperty("user.dir") + "/properties/server_ip.txt");
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -61,36 +59,14 @@ public class ElasticSearchClient extends DB implements YcsbTrafficInputInteraceH
 	}
 
 	@Override
-	public void cleanup() throws DBException {
+	public int scan(String arg0, String arg1, int arg2, Set<String> arg3, Vector<HashMap<String, ByteIterator>> arg4) {
+		throw new RuntimeException("scan operation is not supported");
 	}
 
-	/**
-	 * Delete a record from the database.
-	 *
-	 * @param table
-	 *            The name of the table
-	 * @param key
-	 *            The record key of the record to delete.
-	 * @return Zero on success, a non-zero error code on error
-	 */
-	@Override
 	public int delete(String arg0, String arg1) {
-		return 0;
+		throw new RuntimeException("delete operation is not supported");
 	}
 
-	/**
-	 * Insert a record in the database. Any field/value pairs in the specified
-	 * values HashMap will be written into the record with the specified record
-	 * key.
-	 *
-	 * @param table
-	 *            The name of the table
-	 * @param key
-	 *            The record key of the record to insert.
-	 * @param values
-	 *            A HashMap of field/value pairs to insert in the record
-	 * @return Zero on success, a non-zero error code on error
-	 */
 	@Override
 	public int insert(String table, String key, HashMap<String, ByteIterator> values) {
 		HashMap<String, String> stringHashMap = StringByteIterator.getStringMap(values);
@@ -98,20 +74,6 @@ public class ElasticSearchClient extends DB implements YcsbTrafficInputInteraceH
 		return mKvsClient.write(keyValueEntry);
 	}
 
-	/**
-	 * Read a record from the database. Each field/value pair from the result
-	 * will be stored in a HashMap.
-	 *
-	 * @param table
-	 *            The name of the table
-	 * @param key
-	 *            The record key of the record to read.
-	 * @param fields
-	 *            The list of fields to read, or null for all of them
-	 * @param result
-	 *            A HashMap of field/value pairs for the result
-	 * @return Zero on success, a non-zero error code on error or "not found".
-	 */
 	@Override
 	public int read(String table, String key, Set<String> fields, HashMap<String, ByteIterator> result) {
 		HashMap<String, String> stringHashMap = StringByteIterator.getStringMap(result);
@@ -119,52 +81,16 @@ public class ElasticSearchClient extends DB implements YcsbTrafficInputInteraceH
 		return mKvsClient.read(keyValueEntry);
 	}
 
-	/**
-	 * Perform a range scan for a set of records in the database. Each
-	 * field/value pair from the result will be stored in a HashMap.
-	 *
-	 * @param table
-	 *            The name of the table
-	 * @param startkey
-	 *            The record key of the first record to read.
-	 * @param recordcount
-	 *            The number of records to read
-	 * @param fields
-	 *            The list of fields to read, or null for all of them
-	 * @param result
-	 *            A Vector of HashMaps, where each HashMap is a set field/value
-	 *            pairs for one record
-	 * @return Zero on success, a non-zero error code on error. See this class's
-	 *         description for a discussion of error codes.
-	 */
-	@Override
-	public int scan(String table, String startkey, int recordcount, Set<String> fields, Vector<HashMap<String, ByteIterator>> result) {
-		Logger.d(TAG, "performing scan");
-		return 0;
-	}
-
-	/**
-	 * Update a record in the database. Any field/value pairs in the specified
-	 * values HashMap will be written into the record with the specified record
-	 * key, overwriting any existing values with the same field name.
-	 *
-	 * @param table
-	 *            The name of the table
-	 * @param key
-	 *            The record key of the record to write.
-	 * @param values
-	 *            A HashMap of field/value pairs to update in the record
-	 * @return Zero on success, a non-zero error code on error. See this class's
-	 *         description for a discussion of error codes.
-	 */
 	@Override
 	public int update(String table, String key, HashMap<String, ByteIterator> values) {
-		return 0;
+		HashMap<String, String> stringHashMap = StringByteIterator.getStringMap(values);
+		KeyValueEntry keyValueEntry = new KeyValueEntry(key, stringHashMap);
+		return mKvsClient.write(keyValueEntry);
 	}
 
 	@Override
 	public void onMasterNodeMoved(ConnectionMetaData master) {
-		createRequestSenderFromConnectionMetadata(master);
+		createKvsClientFromConnectionMetadata(master);
 	}
 
 }

@@ -40,11 +40,6 @@ public class ApplicationContext {
 		return mNodeFarm;
 	}
 	
-//	public static ConnectionMetaData getMasterNodes() {
-//		// for now it is hard coded
-//		return new ConnectionMetaData("10.0.8.4", 47448);
-//	}
-
 	public static KeyValueStore getKeyValueStore() {
 		return KeyValueStore.getInstance();
 	}

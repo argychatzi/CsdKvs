@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite hostname="apegroup-argy.local" name="com.yahoo.ycsb.db.ElasticSearchClientTest" tests="5" failures="0" timestamp="10 Dec 2014 20:22:46 GMT" time="0.018" errors="0">
+<testsuite hostname="apegroup-argy" name="com.yahoo.ycsb.db.ElasticSearchClientTest" tests="5" failures="0" timestamp="11 Dec 2014 19:33:03 GMT" time="0.018" errors="0">
   <testcase name="testDelete" time="0.001" classname="com.yahoo.ycsb.db.ElasticSearchClientTest"/>
-  <testcase name="testInsert" time="0.001" classname="com.yahoo.ycsb.db.ElasticSearchClientTest"/>
+  <testcase name="testInsert" time="0.0" classname="com.yahoo.ycsb.db.ElasticSearchClientTest"/>
   <testcase name="testRead" time="0.0" classname="com.yahoo.ycsb.db.ElasticSearchClientTest"/>
   <testcase name="testScan" time="0.0" classname="com.yahoo.ycsb.db.ElasticSearchClientTest"/>
   <testcase name="testUpdate" time="0.001" classname="com.yahoo.ycsb.db.ElasticSearchClientTest"/>

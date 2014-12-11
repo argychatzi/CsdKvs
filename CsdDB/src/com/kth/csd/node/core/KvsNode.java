@@ -36,21 +36,23 @@ public class KvsNode {
 	
 	protected static final String TAG = KvsNode.class.getCanonicalName();
 	private static ArrayList<ConnectionMetaData> allNodeProperties = new ArrayList<ConnectionMetaData>();
-	public static String[] allNodeIp = { "192.168.0.2", "192.168.0.3", "192.168.0.4", "192.168.0.5", "192.168.0.7","192.168.0.8",
-		"192.168.0.10","192.168.0.11","192.168.0.12","192.168.0.13" };
+//	public static String[] allNodeIp = { "192.168.0.2", "192.168.0.3", "192.168.0.4", "192.168.0.5", "192.168.0.7","192.168.0.8",
+//		"192.168.0.10","192.168.0.11","192.168.0.12","192.168.0.13" };
 	//public static String[] allNodeIp = { "10.0.0.1", "10.0.0.3" };// for testing
 		
+	
     public static void main(String[] args) throws IOException {
-    	
-    	parseConfigurationFile();
-
-    	startMonitoringKvsSocket(new ServerExternalInputInterface(), ApplicationContext.getExternalConnection().getPort());
-		startMonitoringKvsSocket(new ServerInternalInputInterface(), ApplicationContext.getInternalConnection().getPort());
+    	if(args.length >0 ){
+    		parseConfigurationFile(args[0]);
+    		
+        	startMonitoringKvsSocket(new ServerInternalInputInterface(), ApplicationContext.getInternalConnection().getPort());
+        	startMonitoringKvsSocket(new ServerExternalInputInterface(), ApplicationContext.getExternalConnection().getPort());
+    	}
     }
     
-    private static void parseConfigurationFile() throws IOException {
+    private static void parseConfigurationFile(String fileNo) throws IOException {
     	
-    	Configuration configuration = ConfigurationReader.loadConfigurationFile();
+    	Configuration configuration = ConfigurationReader.loadConfigurationFile(fileNo);
     	
     	Logger.d(TAG, "configuration :: " + configuration);
     	
