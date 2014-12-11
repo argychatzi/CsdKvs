@@ -81,3 +81,35 @@
 2014-12-07 16:05:50,764 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/jawad/newik2200/ik2200/ycsb/YCSB-master/csd/src/main/resources
 2014-12-07 16:05:50,767 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2014-12-07 16:05:50,768 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/jawad/newik2200/ik2200/ycsb/YCSB-master/csd/src/test/resources
+2014-12-10 20:34:16,145 [Worker-3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://nexus.ape:8081/nexus/content/repositories/public/org/apache/maven/plugins/maven-assembly-plugin/2.2.1/maven-assembly-plugin-2.2.1.jar
+2014-12-10 20:34:16,432 [Worker-3] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.yahoo.ycsb:elasticsearch-binding:0.1.4 @ /Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/ycsb/YCSB-master/csd/pom.xml.
+2014-12-10 20:34:20,032 [Worker-3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://oss.sonatype.org/content/repositories/releases/org/testng/testng/6.1.1/testng-6.1.1.pom
+2014-12-10 20:34:21,252 [Worker-3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://oss.sonatype.org/content/repositories/releases/org/testng/testng/6.1.1/testng-6.1.1.pom
+2014-12-10 20:34:24,528 [Worker-3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://oss.sonatype.org/content/repositories/releases/org/sonatype/oss/oss-parent/3/oss-parent-3.pom
+2014-12-10 20:34:24,534 [Worker-3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://nexus.ape:8081/nexus/content/repositories/public/org/sonatype/oss/oss-parent/3/oss-parent-3.pom
+2014-12-10 20:34:26,356 [Worker-3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://oss.sonatype.org/content/repositories/releases/org/slf4j/slf4j-nop/1.6.4/slf4j-nop-1.6.4.pom
+2014-12-10 20:34:27,806 [Worker-3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://oss.sonatype.org/content/repositories/releases/org/slf4j/slf4j-nop/1.6.4/slf4j-nop-1.6.4.pom
+2014-12-10 20:34:30,671 [Worker-3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://oss.sonatype.org/content/repositories/releases/checkstyle/checkstyle/5.0/checkstyle-5.0.pom
+2014-12-10 20:34:30,675 [Worker-3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://nexus.ape:8081/nexus/content/repositories/public/checkstyle/checkstyle/5.0/checkstyle-5.0.pom
+2014-12-10 20:34:32,466 [Worker-3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://oss.sonatype.org/content/repositories/releases/org/jdom/jdom/1.1/jdom-1.1.pom
+2014-12-10 20:34:32,470 [Worker-3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://nexus.ape:8081/nexus/content/repositories/public/org/jdom/jdom/1.1/jdom-1.1.pom
+2014-12-10 20:34:32,727 [Worker-3] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /elasticsearch-binding/src/main/java
+2014-12-10 20:34:32,729 [Worker-3] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /elasticsearch-binding/src/test/java
+2014-12-10 20:34:32,790 [Worker-3] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 17 sec
+2014-12-10 20:34:33,017 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.yahoo.ycsb:elasticsearch-binding:0.1.4 @ /Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/ycsb/YCSB-master/csd/pom.xml.
+2014-12-10 20:36:10,676 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-10 20:36:10,677 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/ycsb/YCSB-master/csd/src/main/resources
+2014-12-10 20:36:10,679 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-10 20:36:10,679 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/ycsb/YCSB-master/csd/src/test/resources
+2014-12-10 20:37:14,560 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-10 20:37:14,560 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/ycsb/YCSB-master/csd/src/main/resources
+2014-12-10 20:37:14,562 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-10 20:37:14,562 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/ycsb/YCSB-master/csd/src/test/resources
+2014-12-10 21:12:05,040 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-10 21:12:05,043 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/ycsb/YCSB-master/csd/src/main/resources
+2014-12-10 21:12:05,045 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-10 21:12:05,045 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/ycsb/YCSB-master/csd/src/test/resources
+2014-12-10 21:23:59,345 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-10 21:23:59,347 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/ycsb/YCSB-master/csd/src/main/resources
+2014-12-10 21:23:59,349 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-10 21:23:59,349 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/ycsb/YCSB-master/csd/src/test/resources

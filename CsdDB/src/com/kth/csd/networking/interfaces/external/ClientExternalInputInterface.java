@@ -29,7 +29,8 @@ public class ClientExternalInputInterface extends IoHandlerAdapter {
 		if (response.getType() == type.MASTER_MOVED){
 			
 			Logger.d(TAG, "MASTER_MOVED ... " + message);
-				ConnectionMetaData newMasterConnectionMetadata = ((MasterMovedMessage)response).getNewMaster(); 
+				ConnectionMetaData newMasterConnectionMetadata = ((MasterMovedMessage)response).getNewMasterExternal();
+				//TODO change
 				Logger.d(TAG, "master moved to:" + newMasterConnectionMetadata);
 				session.close(true);
 				mHolder.onMasterNodeMoved(newMasterConnectionMetadata);

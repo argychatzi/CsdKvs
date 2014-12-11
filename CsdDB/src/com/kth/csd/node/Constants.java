@@ -2,8 +2,12 @@ package com.kth.csd.node;
 
 public class Constants {
 	
-	public static final int DEFAULT_PORT = 4448;
-	public static final int INTERNAL_PORT = 5000;
+	public static final int DEFAULT_EXTERNAL_PORT = 4448;
+	public static final int DEFAULT_INTERNAL_PORT = 5000;
+	
+	public static final int SECONDARY_EXTERNAL_PORT = 5448;
+	public static final int SECONDARY_INTERNAL_PORT = 6000;
+	
 	public static final String DEFAULT_HOST = "localhost"; //"127.0.0.1";
 
 	public static final int NUMBER_OF_EXECUTORS = 1;

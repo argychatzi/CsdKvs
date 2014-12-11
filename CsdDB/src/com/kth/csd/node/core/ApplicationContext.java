@@ -11,8 +11,13 @@ public class ApplicationContext {
 	
 
 	private static NodeFarm mNodeFarm;
-	private static ConnectionMetaData mMasterNode;
 	private static KeyValueStore mKeyValueStore;
+	
+	private static ConnectionMetaData mInternalConnection;
+	private static ConnectionMetaData mExternalConnection;
+	
+	private static ConnectionMetaData mMasterExternalConnection;
+	private static ConnectionMetaData mMasterInternalConnection;
 	
 	// update for if write is from master
 	public static boolean isUpdate(){
@@ -28,35 +33,56 @@ public class ApplicationContext {
 	}
 
 	public static boolean isMaster() {
-		return isMaster;
+		return mMasterExternalConnection.equals(mExternalConnection) && mMasterInternalConnection.equals(mInternalConnection);
 	}
 
 	public static NodeFarm getNodes() {
 		return mNodeFarm;
 	}
 	
-	public static ConnectionMetaData getMaster(){
-		return mMasterNode;
-	}
-	
-	public static void setMasterNode(ConnectionMetaData connectionMetaData){
-		mMasterNode = connectionMetaData;
-	}
-
-	public static ConnectionMetaData getMasterNode() {
-		// for now it is hard coded
-		return new ConnectionMetaData("10.0.8.4", 47448);
-	}
+//	public static ConnectionMetaData getMasterNodes() {
+//		// for now it is hard coded
+//		return new ConnectionMetaData("10.0.8.4", 47448);
+//	}
 
 	public static KeyValueStore getKeyValueStore() {
 		return KeyValueStore.getInstance();
 	}
 
-	public static void generatNodeFarm(ArrayList<ConnectionMetaData> nodeIps) {
+	public static void generateNodeFarm(ArrayList<ConnectionMetaData> nodeIps) {
 		mNodeFarm = new NodeFarm(nodeIps);
 	}
 	
-	public static void updateMaster(ConnectionMetaData masterConnectionMetadata) {
-		mMasterNode = masterConnectionMetadata;
+	public static ConnectionMetaData getInternalConnection() {
+		return mInternalConnection;
 	}
+	
+	public static ConnectionMetaData getExternalConnection() {
+		return mExternalConnection;
+	}
+	
+	public static ConnectionMetaData getMasterExternalConnection() {
+		return mMasterExternalConnection;
+	}
+	
+	public static ConnectionMetaData getMasterInternalConnection() {
+		return mMasterInternalConnection;
+	}
+	
+	public static void setOwnInternalConnection(ConnectionMetaData internalConnection) {
+		mInternalConnection = internalConnection;
+	}
+	
+	public static void setOwnExternalConnection(ConnectionMetaData externalConnection) {
+		mExternalConnection = externalConnection;
+	}
+	
+	public static void setMasterInternalConnection(ConnectionMetaData internalConnection) {
+		mMasterInternalConnection = internalConnection;
+	}
+	
+	public static void setMasterExternalConnection(ConnectionMetaData externalConnection) {
+		mMasterExternalConnection = externalConnection;
+	}
+	
 }

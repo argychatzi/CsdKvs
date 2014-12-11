@@ -50,8 +50,8 @@ public class KvsWriter extends KvsOperation implements KvsExecutable {
 		}
 		
 		else  {
-			result = new MasterMovedMessage(ApplicationContext.getMasterNode());
-			
+			result = new MasterMovedMessage(ApplicationContext.getMasterInternalConnection(), ApplicationContext.getMasterExternalConnection());
+
 		}
 		return result; 
 	}

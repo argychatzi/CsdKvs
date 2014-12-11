@@ -45,8 +45,8 @@ private static final String TAG = "ServerConnectionHandler";
 				break;
 			}
 			case MASTER_MOVED:{
-				ConnectionMetaData newMasterConnectionMetadata = ((MasterMovedMessage)response).getNewMaster();
-				ApplicationContext.updateMaster(newMasterConnectionMetadata);
+//				ConnectionMetaData newMasterConnectionMetadata = ((MasterMovedMessage)response).getNewMaster();
+//				ApplicationContext.updateMaster(newMasterConnectionMetadata);
 				break;
 			}
 			case OPERATION_READ:{
@@ -55,27 +55,31 @@ private static final String TAG = "ServerConnectionHandler";
 				break;
 			}
 			case OPERATION_WRITE:{
-				// check if write is coming from Master Node 
-				String currentSessionIp = ClientInternalInputInterface.getSessionIp(session);
-				int currentSessionPort = ClientInternalInputInterface.getPort(session);
+				//TODO #Jawad, Mihret you should get the ip of the current communication from the Session object
+				//that you get from the arguments locally, and not by relying on some remote static function
 				
-				//ConnectionMetaData currentSessionMetaData = new ConnectionMetaData(currentSessionIp, currentSessionPort);
-				
-				if (ApplicationContext.getMaster().getHost() == currentSessionIp && 
-						ApplicationContext.getMaster().getPort() == currentSessionPort){
-					
-				KeyValueEntry keyValueEntry = ((OperationReadMessage)message).getKeyValueEntry();
-				ApplicationContext.setUpdateTrue();
-				new KvsWriter(keyValueEntry).execute();
-				 break;
-				
-			}
-				else {
-	
+				// check if write is coming from Master Node
+//				String currentSessionIp = ClientInternalInputInterface.getSessionIp(session);
+//				int currentSessionPort = ClientInternalInputInterface.getPort(session);
+//				
+//				//ConnectionMetaData currentSessionMetaData = new ConnectionMetaData(currentSessionIp, currentSessionPort);
+//				
+//				//TODO #Jawad, Mihret you should not break twice. The keyword "break" is supposed to close a
+//				// block that falls under the same "case" category.  
+//				if (ApplicationContext.getMaster().getHost() == currentSessionIp && 
+//						ApplicationContext.getMaster().getPort() == currentSessionPort){
+//					
+//				KeyValueEntry keyValueEntry = ((OperationReadMessage)message).getKeyValueEntry();
+//				ApplicationContext.setUpdateTrue();
+//				new KvsWriter(keyValueEntry).execute();
+//				 break;
+//				
+//			}
+//				else {
+//	
 				break;
 			}
 		}
-	}
 	}
 }
 

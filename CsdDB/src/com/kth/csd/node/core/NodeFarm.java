@@ -13,7 +13,9 @@ public class NodeFarm {
 
 	public NodeFarm(ArrayList<ConnectionMetaData> nodeIps) {
 		for(ConnectionMetaData connectionMetaData: nodeIps){
-			mNodeFarm.add(new KvsClient(new ClientInternalInputInterface(), connectionMetaData));
+			if(!nodeIps.equals(ApplicationContext.getMasterInternalConnection())){
+				mNodeFarm.add(new KvsClient(new ClientInternalInputInterface(), connectionMetaData));
+			}
 		}
 	}
 
@@ -22,5 +24,4 @@ public class NodeFarm {
 			node.send(message);
 		}
 	}
-	
 }

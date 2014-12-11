@@ -30,8 +30,6 @@ public class ServerExternalInputInterface extends IoHandlerAdapter implements Io
 	public static ArrayList <String> ycsbClientsList = new ArrayList<String>();	
 	private HashMap<KvsOperation, IoSession> mSessionVault;
 	
-	
-	
 	public ServerExternalInputInterface() {
 		Logger.d(TAG, "ExternalTrafficInputInterface ... ");
 		mSessionVault = new HashMap<KvsOperation, IoSession>();
@@ -45,9 +43,11 @@ public class ServerExternalInputInterface extends IoHandlerAdapter implements Io
 
 	@Override
 	public void messageReceived(IoSession session, Object message) throws Exception {
+		
 		AbstractNetworkMessage response = (AbstractNetworkMessage) message;
 		KvsExecutable executableOperation = null;
 		KeyValueEntry keyValueEntry = null;
+
 		switch(response.getType()){
 		
 			case OPERATION_READ:{
@@ -55,6 +55,7 @@ public class ServerExternalInputInterface extends IoHandlerAdapter implements Io
 				executableOperation = new KvsReader(keyValueEntry);
 				break;
 			}
+		
 			case OPERATION_WRITE:{
 				keyValueEntry = ((OperationWriteMessage)response).getKeyValueEntry();
 				// here we need the client IP, to calculate writepersecond
@@ -70,27 +71,30 @@ public class ServerExternalInputInterface extends IoHandlerAdapter implements Io
 			}
 		}
 		updatelistOfYcsbClients(session); // calling the update client list method
-		Logger.d("", "calling update client list");
+		Logger.d(TAG, "calling update client list");
 		
 		AbstractNetworkMessage executionResult = executableOperation.execute();
 		session.write(executionResult);
 	}
+	
 	// method for having the ycsb clients list. 
-		public void updatelistOfYcsbClients(IoSession session){
-			updatedYCSBClientList.add(getSessionIp(session));
-			ArrayList <String> ycsbClientsListtemp = new ArrayList<String>(updatedYCSBClientList);
-			ycsbClientsList = ycsbClientsListtemp;
-		}
-		// getter for ycsb client list
-		public static ArrayList<String> getlistOfYcsbClients(){
-			return ycsbClientsList;
-		}
-		public static String getSessionIp (IoSession session){
-			InetSocketAddress socketAddress = (InetSocketAddress) session.getRemoteAddress();
-			InetAddress inetAddress = socketAddress.getAddress();
-			String sessionIp = inetAddress.getHostAddress();
-				return sessionIp;
-		}
+	public void updatelistOfYcsbClients(IoSession session){
+		updatedYCSBClientList.add(getSessionIp(session));
+		ArrayList <String> ycsbClientsListtemp = new ArrayList<String>(updatedYCSBClientList);
+		ycsbClientsList = ycsbClientsListtemp;
+	}
+
+	// getter for ycsb client list
+	public static ArrayList<String> getlistOfYcsbClients(){
+		return ycsbClientsList;
+	}
+	
+	public static String getSessionIp (IoSession session){
+		InetSocketAddress socketAddress = (InetSocketAddress) session.getRemoteAddress();
+		InetAddress inetAddress = socketAddress.getAddress();
+		String sessionIp = inetAddress.getHostAddress();
+			return sessionIp;
+	}
 
 	@Override
 	public void excutionFinished(KeyValueEntry entry) {
