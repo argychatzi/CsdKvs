@@ -52,6 +52,8 @@ public class KvsNode {
     	
     	Configuration configuration = ConfigurationReader.loadConfigurationFile();
     	
+    	Logger.d(TAG, "configuration :: " + configuration);
+    	
     	ApplicationContext.setMasterExternalConnection(configuration.getMasterExternalConnectionMetaData());
     	ApplicationContext.setMasterInternalConnection(configuration.getMasterInternalConnectionMetaData());
     	

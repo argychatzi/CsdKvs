@@ -117,3 +117,11 @@
 2014-12-11 02:20:49,191 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/ycsb/YCSB-master/csd/src/main/resources
 2014-12-11 02:20:49,192 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2014-12-11 02:20:49,192 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/ycsb/YCSB-master/csd/src/test/resources
+2014-12-11 02:35:03,397 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-11 02:35:03,398 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/ycsb/YCSB-master/csd/src/main/resources
+2014-12-11 02:35:03,399 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-11 02:35:03,399 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/ycsb/YCSB-master/csd/src/test/resources
+2014-12-11 02:47:14,012 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-11 02:47:14,013 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/ycsb/YCSB-master/csd/src/main/resources
+2014-12-11 02:47:14,014 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-11 02:47:14,014 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/ycsb/YCSB-master/csd/src/test/resources
