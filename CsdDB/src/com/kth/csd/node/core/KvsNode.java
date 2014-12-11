@@ -1,5 +1,8 @@
 package com.kth.csd.node.core;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.util.ArrayList;
@@ -13,11 +16,17 @@ import org.apache.mina.filter.codec.serialization.ObjectSerializationCodecFactor
 import org.apache.mina.filter.logging.LoggingFilter;
 import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.kth.csd.networking.ConnectionMetaData;
 import com.kth.csd.networking.interfaces.external.ServerExternalInputInterface;
 import com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface;
 import com.kth.csd.networking.messages.MasterMovedMessage;
 import com.kth.csd.node.Constants;
+import com.kth.csd.utils.Configuration;
+import com.kth.csd.utils.FileToJsonConverter;
 import com.kth.csd.utils.Logger;
 
 /**
@@ -30,68 +39,27 @@ public class KvsNode {
 	public static String[] allNodeIp = { "192.168.0.2", "192.168.0.3", "192.168.0.4", "192.168.0.5", "192.168.0.7","192.168.0.8",
 		"192.168.0.10","192.168.0.11","192.168.0.12","192.168.0.13" };
 	//public static String[] allNodeIp = { "10.0.0.1", "10.0.0.3" };// for testing
-	private static boolean mIsMaster;
 		
     public static void main(String[] args) throws IOException {
     	
-    	int externalPort = Constants.SECONDARY_EXTERNAL_PORT;
-		int internalPort = Constants.SECONDARY_INTERNAL_PORT;
-		
-		
-		
-    	if(args.length > 0 ){
-	    	if(args[0].equals("master")){
-	    		mIsMaster = true;
-	    		
-	    		externalPort = Constants.DEFAULT_EXTERNAL_PORT; 
-	    		internalPort = Constants.DEFAULT_INTERNAL_PORT;
-	    		ApplicationContext.setMasterInternalConnection(new ConnectionMetaData("localhost", internalPort));
-	    		ApplicationContext.setMasterExternalConnection(new ConnectionMetaData("localhost", externalPort));
-	    	}
-		}
-    	
-    	startMonitoringKvsSocket(new ServerExternalInputInterface(), externalPort);
-		startMonitoringKvsSocket(new ServerInternalInputInterface(), internalPort);
-		
-		ConnectionMetaData internalConnection = new ConnectionMetaData("localhost",internalPort);
-		ConnectionMetaData externalConnection = new ConnectionMetaData("localhost",externalPort);
-		
-		ApplicationContext.setOwnInternalConnection(internalConnection);
-		ApplicationContext.setOwnExternalConnection(externalConnection);
+    	parseConfigurationFile();
 
-
-		parseConfigurationFile();
-		
-		startMockNodeFarm();
-		
-    	startMasterSelector();
+    	startMonitoringKvsSocket(new ServerExternalInputInterface(), ApplicationContext.getExternalConnection().getPort());
+		startMonitoringKvsSocket(new ServerInternalInputInterface(), ApplicationContext.getInternalConnection().getPort());
     }
     
-    private static void parseConfigurationFile() {
-    	//open file for read
-    	//extract master node - one IP and two ports
-    	//extract own connectionMetaData - one IP and two ports for each node
-    	//extract metaData for the farm
-	}
-
-	private static void startMockNodeFarm(){
-    	ArrayList<ConnectionMetaData> nodes = new ArrayList<ConnectionMetaData>();
-
-    	ConnectionMetaData dummyLocalInternalConnection = new ConnectionMetaData("localhost", Constants.SECONDARY_INTERNAL_PORT);
-		ConnectionMetaData dummyLocalInternalConnection2 = new ConnectionMetaData("localhost", Constants.DEFAULT_INTERNAL_PORT);
-		
-		nodes.add(dummyLocalInternalConnection);
-    	nodes.add(dummyLocalInternalConnection2);
+    private static void parseConfigurationFile() throws IOException {
     	
-    	ApplicationContext.generateNodeFarm(nodes);
-    }
-
-
-    private static void startMasterSelector() {
-    	Timer timer = new Timer();
-		timer.schedule(new MasterMovingMockTimer(), 0, 5000);
+    	Configuration configuration = FileToJsonConverter.loadConfigurationFile();
+    	
+    	ApplicationContext.setMasterExternalConnection(configuration.getMasterExternalConnectionMetaData());
+    	ApplicationContext.setMasterInternalConnection(configuration.getMasterInternalConnectionMetaData());
+    	
+    	ApplicationContext.setOwnExternalConnection(configuration.getOwnExternalConnectionMetaData());
+    	ApplicationContext.setOwnInternalConnection(configuration.getOwnInternalConnectionMetaData());
+    	
+    	ApplicationContext.generateNodeFarm(configuration.getNodesInFarm());
 	}
-
 
     //TODO Jawad, Mihret this code is never used. If this is the case, and there are no plans to 
     //be used in the future either, you should remove it
@@ -133,27 +101,4 @@ public class KvsNode {
         
         Logger.d(TAG, "Opened port " + portNumber);
 	}
-	
-	
-	private static class MasterMovingMockTimer extends TimerTask{
-		public void run() {
-			if(mIsMaster){
-				MasterMovedMessage connectionMetaData = generateMasterMovedMessage();
-				MasterSelector.notifyMasterChanged(connectionMetaData);
-			}
-		}
-
-		private MasterMovedMessage generateMasterMovedMessage() {
-			ConnectionMetaData internal = new ConnectionMetaData("localhost", Constants.SECONDARY_INTERNAL_PORT);
-			ConnectionMetaData external = new ConnectionMetaData("localhost", Constants.SECONDARY_EXTERNAL_PORT);
-			
-			if(ApplicationContext.isMaster()){
-				internal = new ConnectionMetaData("localhost", Constants.DEFAULT_INTERNAL_PORT);
-				external = new ConnectionMetaData("localhost", Constants.DEFAULT_EXTERNAL_PORT);
-			}
-			
-			return new MasterMovedMessage(internal, external);
-		}
-	}
-	
 }
