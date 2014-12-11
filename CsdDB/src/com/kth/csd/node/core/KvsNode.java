@@ -26,7 +26,7 @@ import com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface;
 import com.kth.csd.networking.messages.MasterMovedMessage;
 import com.kth.csd.node.Constants;
 import com.kth.csd.utils.Configuration;
-import com.kth.csd.utils.FileToJsonConverter;
+import com.kth.csd.utils.ConfigurationReader;
 import com.kth.csd.utils.Logger;
 
 /**
@@ -50,7 +50,7 @@ public class KvsNode {
     
     private static void parseConfigurationFile() throws IOException {
     	
-    	Configuration configuration = FileToJsonConverter.loadConfigurationFile();
+    	Configuration configuration = ConfigurationReader.loadConfigurationFile();
     	
     	ApplicationContext.setMasterExternalConnection(configuration.getMasterExternalConnectionMetaData());
     	ApplicationContext.setMasterInternalConnection(configuration.getMasterInternalConnectionMetaData());
