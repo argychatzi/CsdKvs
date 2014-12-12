@@ -2,7 +2,11 @@
 Test set: com.yahoo.ycsb.db.ElasticSearchClientTest
 -------------------------------------------------------------------------------
 <<<<<<< HEAD
+<<<<<<< HEAD
 Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.416 sec
 =======
 Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.253 sec
 >>>>>>> 38c58b713b7be582d3be284c367c4e6041bb57f3
+=======
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.101 sec
+>>>>>>> 2bb4eedfeed5a334ee421927f78472dc8aa5d504

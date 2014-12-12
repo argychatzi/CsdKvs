@@ -752,4 +752,40 @@ java.lang.NullPointerException: null
 2014-12-11 20:37:52,126 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/ycsb/YCSB-master/csd/src/main/resources
 2014-12-11 20:37:52,127 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2014-12-11 20:37:52,127 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/ycsb/YCSB-master/csd/src/test/resources
+<<<<<<< HEAD
 >>>>>>> 38c58b713b7be582d3be284c367c4e6041bb57f3
+=======
+2014-12-12 03:39:47,085 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 03:39:47,111 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/jawad/ik2200/ycsb/YCSB-master/core/src/main/resources
+2014-12-12 03:39:47,117 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 03:39:47,117 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/jawad/ik2200/ycsb/YCSB-master/core/src/test/resources
+2014-12-12 03:39:49,235 [Worker-11] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.yahoo.ycsb:elasticsearch-binding:0.1.4 @ /home/jawad/ik2200/ycsb/YCSB-master/csd/pom.xml.
+2014-12-12 03:39:50,392 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 03:39:50,393 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/jawad/ik2200/ycsb/YCSB-master/csd/src/main/resources
+2014-12-12 03:39:50,398 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 03:39:50,399 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/jawad/ik2200/ycsb/YCSB-master/csd/src/test/resources
+2014-12-12 04:15:57,425 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 04:15:57,428 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/jawad/ik2200/ycsb/YCSB-master/core/src/main/resources
+2014-12-12 04:15:57,433 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 04:15:57,433 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/jawad/ik2200/ycsb/YCSB-master/core/src/test/resources
+2014-12-12 04:15:57,966 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 04:15:57,966 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/jawad/ik2200/ycsb/YCSB-master/csd/src/main/resources
+2014-12-12 04:15:57,969 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 04:15:57,969 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/jawad/ik2200/ycsb/YCSB-master/csd/src/test/resources
+2014-12-12 13:18:45,773 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 13:18:45,827 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/jawad/ik2200/ycsb/YCSB-master/core/src/main/resources
+2014-12-12 13:18:45,834 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 13:18:45,834 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/jawad/ik2200/ycsb/YCSB-master/core/src/test/resources
+2014-12-12 13:18:46,680 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 13:18:46,681 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/jawad/ik2200/ycsb/YCSB-master/csd/src/main/resources
+2014-12-12 13:18:46,684 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 13:18:46,685 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/jawad/ik2200/ycsb/YCSB-master/csd/src/test/resources
+2014-12-12 13:31:52,022 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 13:31:52,027 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/jawad/ik2200/ycsb/YCSB-master/csd/src/main/resources
+2014-12-12 13:31:52,035 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 13:31:52,036 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/jawad/ik2200/ycsb/YCSB-master/csd/src/test/resources
+2014-12-12 13:36:19,389 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 13:36:19,389 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/jawad/ik2200/ycsb/YCSB-master/csd/src/main/resources
+2014-12-12 13:36:19,391 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 13:36:19,391 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/jawad/ik2200/ycsb/YCSB-master/csd/src/test/resources
+>>>>>>> 2bb4eedfeed5a334ee421927f78472dc8aa5d504

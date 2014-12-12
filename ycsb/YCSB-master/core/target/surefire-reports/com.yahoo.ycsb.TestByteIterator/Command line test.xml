@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <testsuite hostname="ahmed-Inspiron-N5010" name="com.yahoo.ycsb.TestByteIterator" tests="1" failures="0" timestamp="10 Dec 2014 16:09:55 GMT" time="0.044" errors="0">
   <testcase name="testRandomByteIterator" time="0.024" classname="com.yahoo.ycsb.TestByteIterator"/>
 =======
 <testsuite hostname="apegroup-argy.local" name="com.yahoo.ycsb.TestByteIterator" tests="1" failures="0" timestamp="10 Dec 2014 20:22:43 GMT" time="0.015" errors="0">
   <testcase name="testRandomByteIterator" time="0.007" classname="com.yahoo.ycsb.TestByteIterator"/>
 >>>>>>> 38c58b713b7be582d3be284c367c4e6041bb57f3
+=======
+<testsuite hostname="jawad-VirtualBox" name="com.yahoo.ycsb.TestByteIterator" tests="1" failures="0" timestamp="12 Dec 2014 03:16:28 GMT" time="0.048" errors="0">
+  <testcase name="testRandomByteIterator" time="0.025" classname="com.yahoo.ycsb.TestByteIterator"/>
+>>>>>>> 2bb4eedfeed5a334ee421927f78472dc8aa5d504
 </testsuite>
