@@ -1,7 +1,8 @@
-5:33:6:444:::ServerConnectionHandler:::ExternalTrafficInputInterface ... 
-5:33:6:603:::ServerConnectionHandler:::created !
-5:33:6:603:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
-5:33:9:514:::com.kth.csd.node.core.KvsNode:::Opened port 4448
-5:33:9:516:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
-5:33:9:550:::com.kth.csd.node.core.KvsNode:::Opened port 5000
-5:33:9:556:::com.kth.csd.node.core.KvsNode:::Genrating farm of nodes
+3:34:50:845:::com.kth.csd.node.core.KvsNode:::2
+3:34:51:79:::com.kth.csd.node.core.KvsNode:::2
+3:34:53:83:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile2
+3:34:53:243:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_2.json
+3:34:53:487:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_2.json
+3:34:53:576:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile jsonObject{"masterInternal":{"host":"192.168.0.2","port":5000},"masterExternal":{"host":"192.168.0.2","port":6000},"ownInternal":{"host":"192.168.0.3","port":5000},"ownExternal":{"host":"192.168.0.3","port":6000},"nodes":[{"host":"192.168.0.4","port":5000},{"host":"192.168.0.5","port":5000},{"host":"192.168.0.7","port":5000},{"host":"192.168.0.8","port":5000},{"host":"192.168.0.10","port":5000},{"host":"192.168.0.11","port":5000},{"host":"192.168.0.12","port":5000},{"host":"192.168.0.13","port":5000}]}
+3:34:54:421:::com.kth.csd.node.core.KvsNode:::configuration :: Configuration [masterInternalConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=5000], masterExternalConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=6000], ownInternalConnectionMetaData=ConnectionMetaData [host=192.168.0.3, port=5000], ownExternalConnectionMetaData=ConnectionMetaData [host=192.168.0.3, port=6000], nodesInFarm=[ConnectionMetaData [host=192.168.0.4, port=5000], ConnectionMetaData [host=192.168.0.5, port=5000], ConnectionMetaData [host=192.168.0.7, port=5000], ConnectionMetaData [host=192.168.0.8, port=5000], ConnectionMetaData [host=192.168.0.10, port=5000], ConnectionMetaData [host=192.168.0.11, port=5000], ConnectionMetaData [host=192.168.0.12, port=5000], ConnectionMetaData [host=192.168.0.13, port=5000]]]
+3:35:1:517:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.4 port No. 5000

@@ -42,13 +42,15 @@ public class KvsClient implements IoFutureListener<IoFuture>{
 	    connector.getFilterChain().addLast("logger", new LoggingFilter());
 	    connector.setHandler(handler);
 	    
-		IoSession result = null;
+		IoSession result = null;	
 		try {
             ConnectFuture future = connector.connect(new InetSocketAddress(connectionMetaData.getHost(), connectionMetaData.getPort()));
             future.awaitUninterruptibly();
             result = future.getSession();
+            
             SocketAddress remoteAddress = result.getRemoteAddress();
             Logger.d(TAG, "connecting to " + remoteAddress);
+            
             
         } catch (RuntimeIoException e) {
             System.err.println("Failed to connect.");
@@ -63,6 +65,7 @@ public class KvsClient implements IoFutureListener<IoFuture>{
 		Logger.d(TAG, "new connection to " + connectionMetaData.getHost() +" port No. "+ connectionMetaData.getPort());
 		return result;
 	}
+
 	
 	public int send(AbstractNetworkMessage message){
 		WriteFuture write  = session.write(message);

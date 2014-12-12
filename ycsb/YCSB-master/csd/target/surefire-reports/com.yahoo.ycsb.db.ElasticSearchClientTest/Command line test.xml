@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite hostname="apegroup-argy" name="com.yahoo.ycsb.db.ElasticSearchClientTest" tests="5" failures="0" timestamp="11 Dec 2014 19:33:03 GMT" time="0.018" errors="0">
-  <testcase name="testDelete" time="0.001" classname="com.yahoo.ycsb.db.ElasticSearchClientTest"/>
+<testsuite hostname="jawad-VirtualBox" name="com.yahoo.ycsb.db.ElasticSearchClientTest" tests="5" failures="0" timestamp="12 Dec 2014 03:16:34 GMT" time="0.072" errors="0">
+  <testcase name="testDelete" time="0.002" classname="com.yahoo.ycsb.db.ElasticSearchClientTest"/>
   <testcase name="testInsert" time="0.0" classname="com.yahoo.ycsb.db.ElasticSearchClientTest"/>
-  <testcase name="testRead" time="0.0" classname="com.yahoo.ycsb.db.ElasticSearchClientTest"/>
-  <testcase name="testScan" time="0.0" classname="com.yahoo.ycsb.db.ElasticSearchClientTest"/>
+  <testcase name="testRead" time="0.004" classname="com.yahoo.ycsb.db.ElasticSearchClientTest"/>
+  <testcase name="testScan" time="0.001" classname="com.yahoo.ycsb.db.ElasticSearchClientTest"/>
   <testcase name="testUpdate" time="0.001" classname="com.yahoo.ycsb.db.ElasticSearchClientTest"/>
 </testsuite>

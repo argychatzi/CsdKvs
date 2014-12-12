@@ -17,14 +17,23 @@ public class ConfigurationReader {
 	private static final String TAG = ConfigurationReader.class.getCanonicalName();
 
 	public static Configuration loadConfigurationFile(String fileNo) throws IOException{
+		Logger.d(TAG, "loadConfigurationFile" +fileNo );
         JsonObject jsonObject = new JsonObject();
-        
+        //String path = "../configurations/configuration_" + fileNo + ".json" ;
+        String path = "properties/configurations/configuration_" + fileNo + ".json";
+        Logger.d(TAG, "loadConfiguration loading file from" + path);
         try {
             JsonParser parser = new JsonParser();
-            JsonElement jsonElement = parser.parse(new FileReader("../configurations/configuration_" + fileNo + ".json"));
+            //String path = "../configurations/configuration_" + fileNo + ".json" ;
+            FileReader fileReader = new FileReader(path);
+            JsonElement jsonElement = parser.parse(fileReader);
+            Logger.d(TAG, "loadConfiguration loading file from" + path);
             jsonObject = jsonElement.getAsJsonObject();
+            Logger.d(TAG, "loadConfigurationFile jsonObject" + jsonObject.toString());
+         
         } catch (FileNotFoundException e) {
         	e.printStackTrace();
+        	Logger.d(TAG,"exception reading file" + e);
         }
         
         return gson.fromJson(jsonObject, Configuration.class);

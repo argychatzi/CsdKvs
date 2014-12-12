@@ -2,7 +2,7 @@ package com.kth.csd.node;
 
 public class Constants {
 	
-	public static final int DEFAULT_EXTERNAL_PORT = 4448;
+	public static final int DEFAULT_EXTERNAL_PORT = 6000;
 	public static final int DEFAULT_INTERNAL_PORT = 5000;
 	
 	public static final int SECONDARY_EXTERNAL_PORT = 5448;
