@@ -11,6 +11,6 @@
 	<classpathentry kind="lib" path="libs/metrics-core-4.0.0-SNAPSHOT.jar" sourcepath="/home/ahmed/ik2200/CsdDB/libs/metrics-core-4.0.0-SNAPSHOT-javadoc.jar"/>
 	<classpathentry kind="lib" path="libs/mina-core-2.0.9.jar"/>
 	<classpathentry kind="lib" path="libs/slf4j-api-1.7.7.jar"/>
-	<classpathentry kind="lib" path="/home/ahmed/ik2200/CsdDB/libs/apache-mina.jar"/>
+	<classpathentry kind="lib" path="libs/apache-mina.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
