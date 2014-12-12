@@ -5,8 +5,12 @@ import java.util.ArrayList;
 import com.kth.csd.networking.ConnectionMetaData;
 import com.kth.csd.networking.messages.AbstractNetworkMessage;
 import com.kth.csd.node.Constants;
+import com.kth.csd.utils.Logger;
 
 public class ApplicationContext {
+	
+	protected static final String TAG = KvsNode.class.getCanonicalName();
+	
 	//private static boolean isMaster = true;
 	private static boolean isMaster = false;
 	private static boolean isUpdate = false;
@@ -58,6 +62,7 @@ public class ApplicationContext {
 	}
 
 	public static boolean isMaster() {
+		
 		return mMasterExternalConnection.equals(mExternalConnection) && mMasterInternalConnection.equals(mInternalConnection);
 	}
 

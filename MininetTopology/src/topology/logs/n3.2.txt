@@ -1,51 +1,222 @@
-5:56:32:123:::com.kth.csd.node.core.KvsNode:::main started 
-5:56:32:159:::com.kth.csd.node.core.KvsNode:::Main method here 8
-5:56:32:159:::com.kth.csd.node.core.KvsNode:::8
-5:56:32:583:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile8
-5:56:32:627:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_8.json
-5:56:32:694:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_8.json
-5:56:32:728:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile jsonObject{"masterInternal":{"host":"192.168.0.2","port":5000},"masterExternal":{"host":"192.168.0.2","port":6000},"ownInternal":{"host":"192.168.0.11","port":5000},"ownExternal":{"host":"192.168.0.11","port":6000},"nodes":[{"host":"192.168.0.3","port":5000},{"host":"192.168.0.4","port":5000},{"host":"192.168.0.5","port":5000},{"host":"192.168.0.7","port":5000},{"host":"192.168.0.8","port":5000},{"host":"192.168.0.10","port":5000},{"host":"192.168.0.12","port":5000},{"host":"192.168.0.13","port":5000}]}
-5:56:32:900:::com.kth.csd.node.core.KvsNode:::configuration :: Configuration [masterInternalConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=5000], masterExternalConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=6000], ownInternalConnectionMetaData=ConnectionMetaData [host=192.168.0.11, port=5000], ownExternalConnectionMetaData=ConnectionMetaData [host=192.168.0.11, port=6000], nodesInFarm=[ConnectionMetaData [host=192.168.0.3, port=5000], ConnectionMetaData [host=192.168.0.4, port=5000], ConnectionMetaData [host=192.168.0.5, port=5000], ConnectionMetaData [host=192.168.0.7, port=5000], ConnectionMetaData [host=192.168.0.8, port=5000], ConnectionMetaData [host=192.168.0.10, port=5000], ConnectionMetaData [host=192.168.0.12, port=5000], ConnectionMetaData [host=192.168.0.13, port=5000]]]
+6:19:7:606:::com.kth.csd.node.core.KvsNode:::main started 
+6:19:7:612:::com.kth.csd.node.core.KvsNode:::Main method here 8
+6:19:7:613:::com.kth.csd.node.core.KvsNode:::8
+6:19:8:75:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile8
+6:19:8:91:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_8.json
+6:19:8:159:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_8.json
+6:19:8:184:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile jsonObject{"masterInternal":{"host":"192.168.0.2","port":5000},"masterExternal":{"host":"192.168.0.2","port":6000},"ownInternal":{"host":"192.168.0.11","port":5000},"ownExternal":{"host":"192.168.0.11","port":6000},"nodes":[{"host":"192.168.0.3","port":5000},{"host":"192.168.0.4","port":5000},{"host":"192.168.0.5","port":5000},{"host":"192.168.0.7","port":5000},{"host":"192.168.0.8","port":5000},{"host":"192.168.0.10","port":5000},{"host":"192.168.0.12","port":5000},{"host":"192.168.0.13","port":5000}]}
+6:19:8:329:::com.kth.csd.node.core.KvsNode:::configuration :: Configuration [masterInternalConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=5000], masterExternalConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=6000], ownInternalConnectionMetaData=ConnectionMetaData [host=192.168.0.11, port=5000], ownExternalConnectionMetaData=ConnectionMetaData [host=192.168.0.11, port=6000], nodesInFarm=[ConnectionMetaData [host=192.168.0.3, port=5000], ConnectionMetaData [host=192.168.0.4, port=5000], ConnectionMetaData [host=192.168.0.5, port=5000], ConnectionMetaData [host=192.168.0.7, port=5000], ConnectionMetaData [host=192.168.0.8, port=5000], ConnectionMetaData [host=192.168.0.10, port=5000], ConnectionMetaData [host=192.168.0.12, port=5000], ConnectionMetaData [host=192.168.0.13, port=5000]]]
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@72beaa01
 KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.3, port=5000]
 KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@46288ed
-5:56:38:110:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.3 port No. 5000
+Failed to connect.
+org.apache.mina.core.RuntimeIoException: Failed to get the session.
+	at org.apache.mina.core.future.DefaultConnectFuture.getSession(DefaultConnectFuture.java:58)
+	at com.kth.csd.networking.KvsClient.initSession(KvsClient.java:53)
+	at com.kth.csd.networking.KvsClient.<init>(KvsClient.java:38)
+	at com.kth.csd.node.core.NodeFarm.<init>(NodeFarm.java:20)
+	at com.kth.csd.node.core.ApplicationContext.generateNodeFarm(ApplicationContext.java:78)
+	at com.kth.csd.node.core.KvsNode.parseConfigurationFile(KvsNode.java:130)
+	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:53)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:221)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:47)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.processConnections(AbstractPollingIoConnector.java:459)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.access$700(AbstractPollingIoConnector.java:65)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector$Connector.run(AbstractPollingIoConnector.java:527)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+6:19:13:615:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.3 port No. 5000
 KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@66cd1779
 KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.4, port=5000]
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@5043ffed
-5:56:43:125:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.4 port No. 5000
-KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@4af59205
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@64ca8735
+Failed to connect.
+org.apache.mina.core.RuntimeIoException: Failed to get the session.
+	at org.apache.mina.core.future.DefaultConnectFuture.getSession(DefaultConnectFuture.java:58)
+	at com.kth.csd.networking.KvsClient.initSession(KvsClient.java:53)
+	at com.kth.csd.networking.KvsClient.<init>(KvsClient.java:38)
+	at com.kth.csd.node.core.NodeFarm.<init>(NodeFarm.java:20)
+	at com.kth.csd.node.core.ApplicationContext.generateNodeFarm(ApplicationContext.java:78)
+	at com.kth.csd.node.core.KvsNode.parseConfigurationFile(KvsNode.java:130)
+	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:53)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:221)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:47)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.processConnections(AbstractPollingIoConnector.java:459)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.access$700(AbstractPollingIoConnector.java:65)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector$Connector.run(AbstractPollingIoConnector.java:527)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+6:19:18:630:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.4 port No. 5000
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@4045acb5
 KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.5, port=5000]
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@27ae011
-5:56:48:139:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.5 port No. 5000
-KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@1eab12f1
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@510c7d5c
+Failed to connect.
+org.apache.mina.core.RuntimeIoException: Failed to get the session.
+	at org.apache.mina.core.future.DefaultConnectFuture.getSession(DefaultConnectFuture.java:58)
+	at com.kth.csd.networking.KvsClient.initSession(KvsClient.java:53)
+	at com.kth.csd.networking.KvsClient.<init>(KvsClient.java:38)
+	at com.kth.csd.node.core.NodeFarm.<init>(NodeFarm.java:20)
+	at com.kth.csd.node.core.ApplicationContext.generateNodeFarm(ApplicationContext.java:78)
+	at com.kth.csd.node.core.KvsNode.parseConfigurationFile(KvsNode.java:130)
+	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:53)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:221)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:47)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.processConnections(AbstractPollingIoConnector.java:459)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.access$700(AbstractPollingIoConnector.java:65)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector$Connector.run(AbstractPollingIoConnector.java:527)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+6:19:23:648:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.5 port No. 5000
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@71689bf1
 KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.7, port=5000]
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@29345550
-5:56:53:156:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.7 port No. 5000
-KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@33d65cd0
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@2acd0c52
+Failed to connect.
+org.apache.mina.core.RuntimeIoException: Failed to get the session.
+	at org.apache.mina.core.future.DefaultConnectFuture.getSession(DefaultConnectFuture.java:58)
+	at com.kth.csd.networking.KvsClient.initSession(KvsClient.java:53)
+	at com.kth.csd.networking.KvsClient.<init>(KvsClient.java:38)
+	at com.kth.csd.node.core.NodeFarm.<init>(NodeFarm.java:20)
+	at com.kth.csd.node.core.ApplicationContext.generateNodeFarm(ApplicationContext.java:78)
+	at com.kth.csd.node.core.KvsNode.parseConfigurationFile(KvsNode.java:130)
+	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:53)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:221)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:47)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.processConnections(AbstractPollingIoConnector.java:459)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.access$700(AbstractPollingIoConnector.java:65)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector$Connector.run(AbstractPollingIoConnector.java:527)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+6:19:28:667:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.7 port No. 5000
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@3e677646
 KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.8, port=5000]
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@76eb9464
-5:56:58:168:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.8 port No. 5000
-KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@6e6497de
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@645b6e3a
+Failed to connect.
+org.apache.mina.core.RuntimeIoException: Failed to get the session.
+	at org.apache.mina.core.future.DefaultConnectFuture.getSession(DefaultConnectFuture.java:58)
+	at com.kth.csd.networking.KvsClient.initSession(KvsClient.java:53)
+	at com.kth.csd.networking.KvsClient.<init>(KvsClient.java:38)
+	at com.kth.csd.node.core.NodeFarm.<init>(NodeFarm.java:20)
+	at com.kth.csd.node.core.ApplicationContext.generateNodeFarm(ApplicationContext.java:78)
+	at com.kth.csd.node.core.KvsNode.parseConfigurationFile(KvsNode.java:130)
+	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:53)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:221)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:47)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.processConnections(AbstractPollingIoConnector.java:459)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.access$700(AbstractPollingIoConnector.java:65)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector$Connector.run(AbstractPollingIoConnector.java:527)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+6:19:33:677:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.8 port No. 5000
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@e2ea871
 KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.10, port=5000]
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@4c69bdf8
-5:57:3:176:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.10 port No. 5000
-KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@65123c41
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@32370bf9
+Failed to connect.
+org.apache.mina.core.RuntimeIoException: Failed to get the session.
+	at org.apache.mina.core.future.DefaultConnectFuture.getSession(DefaultConnectFuture.java:58)
+	at com.kth.csd.networking.KvsClient.initSession(KvsClient.java:53)
+	at com.kth.csd.networking.KvsClient.<init>(KvsClient.java:38)
+	at com.kth.csd.node.core.NodeFarm.<init>(NodeFarm.java:20)
+	at com.kth.csd.node.core.ApplicationContext.generateNodeFarm(ApplicationContext.java:78)
+	at com.kth.csd.node.core.KvsNode.parseConfigurationFile(KvsNode.java:130)
+	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:53)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:221)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:47)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.processConnections(AbstractPollingIoConnector.java:459)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.access$700(AbstractPollingIoConnector.java:65)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector$Connector.run(AbstractPollingIoConnector.java:527)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+6:19:38:684:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.10 port No. 5000
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@1032033e
 KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.12, port=5000]
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@2bc674d8
-5:57:8:183:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.12 port No. 5000
-KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@2fcf1d57
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@7221275b
+Failed to connect.
+org.apache.mina.core.RuntimeIoException: Failed to get the session.
+	at org.apache.mina.core.future.DefaultConnectFuture.getSession(DefaultConnectFuture.java:58)
+	at com.kth.csd.networking.KvsClient.initSession(KvsClient.java:53)
+	at com.kth.csd.networking.KvsClient.<init>(KvsClient.java:38)
+	at com.kth.csd.node.core.NodeFarm.<init>(NodeFarm.java:20)
+	at com.kth.csd.node.core.ApplicationContext.generateNodeFarm(ApplicationContext.java:78)
+	at com.kth.csd.node.core.KvsNode.parseConfigurationFile(KvsNode.java:130)
+	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:53)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:221)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:47)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.processConnections(AbstractPollingIoConnector.java:459)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.access$700(AbstractPollingIoConnector.java:65)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector$Connector.run(AbstractPollingIoConnector.java:527)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+6:19:43:692:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.12 port No. 5000
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@468f5346
 KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.13, port=5000]
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@6b97436b
-5:57:13:192:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.13 port No. 5000
-5:57:13:195:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
-handler=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@3092b39f
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@17cb5cfc
+Failed to connect.
+org.apache.mina.core.RuntimeIoException: Failed to get the session.
+	at org.apache.mina.core.future.DefaultConnectFuture.getSession(DefaultConnectFuture.java:58)
+	at com.kth.csd.networking.KvsClient.initSession(KvsClient.java:53)
+	at com.kth.csd.networking.KvsClient.<init>(KvsClient.java:38)
+	at com.kth.csd.node.core.NodeFarm.<init>(NodeFarm.java:20)
+	at com.kth.csd.node.core.ApplicationContext.generateNodeFarm(ApplicationContext.java:78)
+	at com.kth.csd.node.core.KvsNode.parseConfigurationFile(KvsNode.java:130)
+	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:53)
+Caused by: java.net.NoRouteToHostException: No route to host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:221)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:47)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.processConnections(AbstractPollingIoConnector.java:459)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.access$700(AbstractPollingIoConnector.java:65)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector$Connector.run(AbstractPollingIoConnector.java:527)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+6:19:51:697:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.13 port No. 5000
+6:19:51:700:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
+handler=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@6865cfd2
 acceptor after bind=(nio socket acceptor: localAddress(es): [/0:0:0:0:0:0:0:0:5000], managedSessionCount: 0)
-5:57:13:220:::com.kth.csd.node.core.KvsNode:::Opened port 5000
-5:57:13:223:::ServerConnectionHandler:::ExternalTrafficInputInterface ... 
-5:57:13:224:::ServerConnectionHandler:::created !
-5:57:13:224:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
-handler=com.kth.csd.networking.interfaces.external.ServerExternalInputInterface@447a7f6b
+6:19:51:726:::com.kth.csd.node.core.KvsNode:::Opened port 5000
+6:19:51:728:::ServerConnectionHandler:::ExternalTrafficInputInterface ... 
+6:19:51:729:::ServerConnectionHandler:::created !
+6:19:51:729:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
+handler=com.kth.csd.networking.interfaces.external.ServerExternalInputInterface@42ad08de
 acceptor after bind=(nio socket acceptor: localAddress(es): [/0:0:0:0:0:0:0:0:6000], managedSessionCount: 0)
-5:57:13:239:::com.kth.csd.node.core.KvsNode:::Opened port 6000
-5:57:13:239:::com.kth.csd.node.core.KvsNode:::I am a slave
+6:19:51:742:::com.kth.csd.node.core.KvsNode:::Opened port 6000
+6:19:51:743:::com.kth.csd.node.core.KvsNode:::I am a slave

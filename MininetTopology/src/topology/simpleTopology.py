@@ -81,7 +81,7 @@ def run():
     #print "Testing network connectivity"
     #net.pingAll()
 
-    CLI( net )
+    #CLI( net )
     
     #net.stop()
     
@@ -108,19 +108,19 @@ def runNetworkClasses(net):
     for i in range(4):
         node = net.get('n1.%s' % (i+1))
         print( 'Starting server %s...' % node.name )
-        node.cmd('java -jar network/server/CsdDBServer.jar ' + str(i+1) + ' > logs/' + node.name + '.txt &')
+        node.cmd('java -jar network/server/CsdDBServer.jar ' + str(i+1) + ' &> logs/' + node.name + '.txt &')
 
     print( 'Starting servers in switched network 2...' )
     for i in range(2):
         node = net.get('n2.%s' % (i+1))
         print( 'Starting server %s...' % node.name )
-        node.cmd('java -jar network/server/CsdDBServer.jar ' + str(i+5) + ' > logs/' + node.name + '.txt &')
+        node.cmd('java -jar network/server/CsdDBServer.jar ' + str(i+5) + ' &> logs/' + node.name + '.txt &')
 
     print( 'Starting servers in switched network 3...' )
     for i in range(4):
         node = net.get('n3.%s' % (i+1))
         print( 'Starting server %s...' % node.name )
-        node.cmd('java -jar network/server/CsdDBServer.jar ' + str(i+7) + ' > logs/' + node.name + '.txt &')
+        node.cmd('java -jar network/server/CsdDBServer.jar ' + str(i+7) + ' &> logs/' + node.name + '.txt &')
         
     # Starting clients...
 

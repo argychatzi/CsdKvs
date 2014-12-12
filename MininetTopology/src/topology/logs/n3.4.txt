@@ -1,5 +1,22 @@
-5:56:32:340:::com.kth.csd.node.core.KvsNode:::main started 
-5:56:32:382:::com.kth.csd.node.core.KvsNode:::Main method here 10
-5:56:32:383:::com.kth.csd.node.core.KvsNode:::10
-5:56:32:831:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile10
-5:56:32:835:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_10.json
+6:19:7:524:::com.kth.csd.node.core.KvsNode:::main started 
+6:19:7:539:::com.kth.csd.node.core.KvsNode:::Main method here 10
+6:19:7:540:::com.kth.csd.node.core.KvsNode:::10
+6:19:7:929:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile10
+6:19:7:933:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_10.json
+Exception in thread "main" com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Unterminated object at line 49 column 15 path $.nodes[0].host
+	at com.google.gson.internal.Streams.parse(Streams.java:56)
+	at com.google.gson.JsonParser.parse(JsonParser.java:84)
+	at com.google.gson.JsonParser.parse(JsonParser.java:59)
+	at com.kth.csd.utils.ConfigurationReader.loadConfigurationFile(ConfigurationReader.java:29)
+	at com.kth.csd.node.core.KvsNode.parseConfigurationFile(KvsNode.java:120)
+	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:53)
+Caused by: com.google.gson.stream.MalformedJsonException: Unterminated object at line 49 column 15 path $.nodes[0].host
+	at com.google.gson.stream.JsonReader.syntaxError(JsonReader.java:1572)
+	at com.google.gson.stream.JsonReader.doPeek(JsonReader.java:493)
+	at com.google.gson.stream.JsonReader.hasNext(JsonReader.java:416)
+	at com.google.gson.internal.bind.TypeAdapters$25.read(TypeAdapters.java:666)
+	at com.google.gson.internal.bind.TypeAdapters$25.read(TypeAdapters.java:659)
+	at com.google.gson.internal.bind.TypeAdapters$25.read(TypeAdapters.java:667)
+	at com.google.gson.internal.bind.TypeAdapters$25.read(TypeAdapters.java:642)
+	at com.google.gson.internal.Streams.parse(Streams.java:44)
+	... 5 more

@@ -1,51 +1,589 @@
-5:56:32:230:::com.kth.csd.node.core.KvsNode:::main started 
-5:56:32:246:::com.kth.csd.node.core.KvsNode:::Main method here 2
-5:56:32:248:::com.kth.csd.node.core.KvsNode:::2
-5:56:32:524:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile2
-5:56:32:547:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_2.json
-5:56:32:607:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_2.json
-5:56:32:668:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile jsonObject{"masterInternal":{"host":"192.168.0.2","port":5000},"masterExternal":{"host":"192.168.0.2","port":6000},"ownInternal":{"host":"192.168.0.3","port":5000},"ownExternal":{"host":"192.168.0.3","port":6000},"nodes":[{"host":"192.168.0.4","port":5000},{"host":"192.168.0.5","port":5000},{"host":"192.168.0.7","port":5000},{"host":"192.168.0.8","port":5000},{"host":"192.168.0.10","port":5000},{"host":"192.168.0.11","port":5000},{"host":"192.168.0.12","port":5000},{"host":"192.168.0.13","port":5000}]}
-5:56:32:829:::com.kth.csd.node.core.KvsNode:::configuration :: Configuration [masterInternalConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=5000], masterExternalConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=6000], ownInternalConnectionMetaData=ConnectionMetaData [host=192.168.0.3, port=5000], ownExternalConnectionMetaData=ConnectionMetaData [host=192.168.0.3, port=6000], nodesInFarm=[ConnectionMetaData [host=192.168.0.4, port=5000], ConnectionMetaData [host=192.168.0.5, port=5000], ConnectionMetaData [host=192.168.0.7, port=5000], ConnectionMetaData [host=192.168.0.8, port=5000], ConnectionMetaData [host=192.168.0.10, port=5000], ConnectionMetaData [host=192.168.0.11, port=5000], ConnectionMetaData [host=192.168.0.12, port=5000], ConnectionMetaData [host=192.168.0.13, port=5000]]]
-KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@32725f0e
+6:19:7:840:::com.kth.csd.node.core.KvsNode:::main started 
+6:19:7:880:::com.kth.csd.node.core.KvsNode:::Main method here 2
+6:19:7:881:::com.kth.csd.node.core.KvsNode:::2
+6:19:8:234:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile2
+6:19:8:240:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_2.json
+6:19:8:268:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_2.json
+6:19:8:278:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile jsonObject{"masterInternal":{"host":"192.168.0.2","port":5000},"masterExternal":{"host":"192.168.0.2","port":6000},"ownInternal":{"host":"192.168.0.3","port":5000},"ownExternal":{"host":"192.168.0.3","port":6000},"nodes":[{"host":"192.168.0.4","port":5000},{"host":"192.168.0.5","port":5000},{"host":"192.168.0.7","port":5000},{"host":"192.168.0.8","port":5000},{"host":"192.168.0.10","port":5000},{"host":"192.168.0.11","port":5000},{"host":"192.168.0.12","port":5000},{"host":"192.168.0.13","port":5000}]}
+6:19:8:341:::com.kth.csd.node.core.KvsNode:::configuration :: Configuration [masterInternalConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=5000], masterExternalConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=6000], ownInternalConnectionMetaData=ConnectionMetaData [host=192.168.0.3, port=5000], ownExternalConnectionMetaData=ConnectionMetaData [host=192.168.0.3, port=6000], nodesInFarm=[ConnectionMetaData [host=192.168.0.4, port=5000], ConnectionMetaData [host=192.168.0.5, port=5000], ConnectionMetaData [host=192.168.0.7, port=5000], ConnectionMetaData [host=192.168.0.8, port=5000], ConnectionMetaData [host=192.168.0.10, port=5000], ConnectionMetaData [host=192.168.0.11, port=5000], ConnectionMetaData [host=192.168.0.12, port=5000], ConnectionMetaData [host=192.168.0.13, port=5000]]]
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@72beaa01
 KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.4, port=5000]
 KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@46288ed
-5:56:38:259:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.4 port No. 5000
+Failed to connect.
+org.apache.mina.core.RuntimeIoException: Failed to get the session.
+	at org.apache.mina.core.future.DefaultConnectFuture.getSession(DefaultConnectFuture.java:58)
+	at com.kth.csd.networking.KvsClient.initSession(KvsClient.java:53)
+	at com.kth.csd.networking.KvsClient.<init>(KvsClient.java:38)
+	at com.kth.csd.node.core.NodeFarm.<init>(NodeFarm.java:20)
+	at com.kth.csd.node.core.ApplicationContext.generateNodeFarm(ApplicationContext.java:78)
+	at com.kth.csd.node.core.KvsNode.parseConfigurationFile(KvsNode.java:130)
+	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:53)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:221)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:47)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.processConnections(AbstractPollingIoConnector.java:459)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.access$700(AbstractPollingIoConnector.java:65)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector$Connector.run(AbstractPollingIoConnector.java:527)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+6:19:13:591:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.4 port No. 5000
 KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@66cd1779
 KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.5, port=5000]
 KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@64ca8735
-5:56:43:269:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.5 port No. 5000
+Failed to connect.
+org.apache.mina.core.RuntimeIoException: Failed to get the session.
+	at org.apache.mina.core.future.DefaultConnectFuture.getSession(DefaultConnectFuture.java:58)
+	at com.kth.csd.networking.KvsClient.initSession(KvsClient.java:53)
+	at com.kth.csd.networking.KvsClient.<init>(KvsClient.java:38)
+	at com.kth.csd.node.core.NodeFarm.<init>(NodeFarm.java:20)
+	at com.kth.csd.node.core.ApplicationContext.generateNodeFarm(ApplicationContext.java:78)
+	at com.kth.csd.node.core.KvsNode.parseConfigurationFile(KvsNode.java:130)
+	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:53)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:221)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:47)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.processConnections(AbstractPollingIoConnector.java:459)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.access$700(AbstractPollingIoConnector.java:65)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector$Connector.run(AbstractPollingIoConnector.java:527)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+6:19:18:599:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.5 port No. 5000
 KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@2bd1232
 KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.7, port=5000]
 KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@1e4dc00a
-5:56:48:284:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.7 port No. 5000
+Failed to connect.
+org.apache.mina.core.RuntimeIoException: Failed to get the session.
+	at org.apache.mina.core.future.DefaultConnectFuture.getSession(DefaultConnectFuture.java:58)
+	at com.kth.csd.networking.KvsClient.initSession(KvsClient.java:53)
+	at com.kth.csd.networking.KvsClient.<init>(KvsClient.java:38)
+	at com.kth.csd.node.core.NodeFarm.<init>(NodeFarm.java:20)
+	at com.kth.csd.node.core.ApplicationContext.generateNodeFarm(ApplicationContext.java:78)
+	at com.kth.csd.node.core.KvsNode.parseConfigurationFile(KvsNode.java:130)
+	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:53)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:221)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:47)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.processConnections(AbstractPollingIoConnector.java:459)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.access$700(AbstractPollingIoConnector.java:65)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector$Connector.run(AbstractPollingIoConnector.java:527)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+6:19:23:608:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.7 port No. 5000
 KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@1d1e082e
 KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.8, port=5000]
 KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@6ae80f0d
-5:56:53:302:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.8 port No. 5000
+Failed to connect.
+org.apache.mina.core.RuntimeIoException: Failed to get the session.
+	at org.apache.mina.core.future.DefaultConnectFuture.getSession(DefaultConnectFuture.java:58)
+	at com.kth.csd.networking.KvsClient.initSession(KvsClient.java:53)
+	at com.kth.csd.networking.KvsClient.<init>(KvsClient.java:38)
+	at com.kth.csd.node.core.NodeFarm.<init>(NodeFarm.java:20)
+	at com.kth.csd.node.core.ApplicationContext.generateNodeFarm(ApplicationContext.java:78)
+	at com.kth.csd.node.core.KvsNode.parseConfigurationFile(KvsNode.java:130)
+	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:53)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:221)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:47)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.processConnections(AbstractPollingIoConnector.java:459)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.access$700(AbstractPollingIoConnector.java:65)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector$Connector.run(AbstractPollingIoConnector.java:527)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+6:19:28:620:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.8 port No. 5000
 KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@5b4975d2
 KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.10, port=5000]
 KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@7a860dab
-5:56:58:315:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.10 port No. 5000
+Failed to connect.
+org.apache.mina.core.RuntimeIoException: Failed to get the session.
+	at org.apache.mina.core.future.DefaultConnectFuture.getSession(DefaultConnectFuture.java:58)
+	at com.kth.csd.networking.KvsClient.initSession(KvsClient.java:53)
+	at com.kth.csd.networking.KvsClient.<init>(KvsClient.java:38)
+	at com.kth.csd.node.core.NodeFarm.<init>(NodeFarm.java:20)
+	at com.kth.csd.node.core.ApplicationContext.generateNodeFarm(ApplicationContext.java:78)
+	at com.kth.csd.node.core.KvsNode.parseConfigurationFile(KvsNode.java:130)
+	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:53)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:221)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:47)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.processConnections(AbstractPollingIoConnector.java:459)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.access$700(AbstractPollingIoConnector.java:65)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector$Connector.run(AbstractPollingIoConnector.java:527)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+6:19:33:630:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.10 port No. 5000
 KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@239a6904
 KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.11, port=5000]
 KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@193499fd
-5:57:3:326:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.11 port No. 5000
+Failed to connect.
+org.apache.mina.core.RuntimeIoException: Failed to get the session.
+	at org.apache.mina.core.future.DefaultConnectFuture.getSession(DefaultConnectFuture.java:58)
+	at com.kth.csd.networking.KvsClient.initSession(KvsClient.java:53)
+	at com.kth.csd.networking.KvsClient.<init>(KvsClient.java:38)
+	at com.kth.csd.node.core.NodeFarm.<init>(NodeFarm.java:20)
+	at com.kth.csd.node.core.ApplicationContext.generateNodeFarm(ApplicationContext.java:78)
+	at com.kth.csd.node.core.KvsNode.parseConfigurationFile(KvsNode.java:130)
+	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:53)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:221)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:47)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.processConnections(AbstractPollingIoConnector.java:459)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.access$700(AbstractPollingIoConnector.java:65)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector$Connector.run(AbstractPollingIoConnector.java:527)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+6:19:38:640:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.11 port No. 5000
 KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@3fdd7880
 KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.12, port=5000]
 KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@4372e3c0
-5:57:8:339:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.12 port No. 5000
+Failed to connect.
+org.apache.mina.core.RuntimeIoException: Failed to get the session.
+	at org.apache.mina.core.future.DefaultConnectFuture.getSession(DefaultConnectFuture.java:58)
+	at com.kth.csd.networking.KvsClient.initSession(KvsClient.java:53)
+	at com.kth.csd.networking.KvsClient.<init>(KvsClient.java:38)
+	at com.kth.csd.node.core.NodeFarm.<init>(NodeFarm.java:20)
+	at com.kth.csd.node.core.ApplicationContext.generateNodeFarm(ApplicationContext.java:78)
+	at com.kth.csd.node.core.KvsNode.parseConfigurationFile(KvsNode.java:130)
+	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:53)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:221)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:47)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.processConnections(AbstractPollingIoConnector.java:459)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.access$700(AbstractPollingIoConnector.java:65)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector$Connector.run(AbstractPollingIoConnector.java:527)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+6:19:43:649:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.12 port No. 5000
 KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@7b28bdf4
 KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.13, port=5000]
 KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@6ba43cda
-5:57:13:349:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.13 port No. 5000
-5:57:13:352:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
-handler=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@3e8f474f
+Failed to connect.
+org.apache.mina.core.RuntimeIoException: Failed to get the session.
+	at org.apache.mina.core.future.DefaultConnectFuture.getSession(DefaultConnectFuture.java:58)
+	at com.kth.csd.networking.KvsClient.initSession(KvsClient.java:53)
+	at com.kth.csd.networking.KvsClient.<init>(KvsClient.java:38)
+	at com.kth.csd.node.core.NodeFarm.<init>(NodeFarm.java:20)
+	at com.kth.csd.node.core.ApplicationContext.generateNodeFarm(ApplicationContext.java:78)
+	at com.kth.csd.node.core.KvsNode.parseConfigurationFile(KvsNode.java:130)
+	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:53)
+Caused by: java.net.NoRouteToHostException: No route to host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:221)
+	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:47)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.processConnections(AbstractPollingIoConnector.java:459)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector.access$700(AbstractPollingIoConnector.java:65)
+	at org.apache.mina.core.polling.AbstractPollingIoConnector$Connector.run(AbstractPollingIoConnector.java:527)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+6:19:51:652:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.13 port No. 5000
+6:19:51:655:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
+handler=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@6f4ea4a2
 acceptor after bind=(nio socket acceptor: localAddress(es): [/0:0:0:0:0:0:0:0:5000], managedSessionCount: 0)
-5:57:13:380:::com.kth.csd.node.core.KvsNode:::Opened port 5000
-5:57:13:382:::ServerConnectionHandler:::ExternalTrafficInputInterface ... 
-5:57:13:382:::ServerConnectionHandler:::created !
-5:57:13:382:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
-handler=com.kth.csd.networking.interfaces.external.ServerExternalInputInterface@26a1bced
+6:19:51:680:::com.kth.csd.node.core.KvsNode:::Opened port 5000
+6:19:51:682:::ServerConnectionHandler:::ExternalTrafficInputInterface ... 
+6:19:51:682:::ServerConnectionHandler:::created !
+6:19:51:683:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
+handler=com.kth.csd.networking.interfaces.external.ServerExternalInputInterface@46436cec
 acceptor after bind=(nio socket acceptor: localAddress(es): [/0:0:0:0:0:0:0:0:6000], managedSessionCount: 0)
-5:57:13:396:::com.kth.csd.node.core.KvsNode:::Opened port 6000
-5:57:13:396:::com.kth.csd.node.core.KvsNode:::I am a slave
+6:19:51:696:::com.kth.csd.node.core.KvsNode:::Opened port 6000
+6:19:51:697:::com.kth.csd.node.core.KvsNode:::I am a slave
+ServerInternal msg received!!!
+STATISTICS_REQ: ServerInternal msg received!!!
+6:19:56:746:::ServerConnectionHandler:::incomingListOfYcsbClients =[192.168.0.1, 192.168.0.6, 192.168.0.9]
+6:19:56:746:::ServerConnectionHandler:::first time receiving STATISTICS_REQ
+6:19:56:752:::ExponentialMovingAverageExpanded:::inside ExponentialMovingAverageExpanded constructor
+6:19:56:753:::ExponentialMovingAverageExpanded:::i=0
+6:19:56:753:::ExponentialMovingAverageExpanded:::filling the EMA objectalpha=0.9interval1intervalUnit=SECONDS
+6:19:56:753:::ExponentialMovingAverageExpanded:::Here
+6:19:56:753:::ExponentialMovingAverageExpanded:::EWMAObj created
+java.lang.NoClassDefFoundError: com/codahale/metrics/EWMA
+	at com.kth.csd.node.core.ExponentialMovingAverageExpanded.<init>(ExponentialMovingAverageExpanded.java:39)
+	at com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface.messageReceived(ServerInternalInputInterface.java:63)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassNotFoundException: com.codahale.metrics.EWMA
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	... 27 more
+java.lang.NoClassDefFoundError: com/codahale/metrics/EWMA
+	at com.kth.csd.node.core.ExponentialMovingAverageExpanded.<init>(ExponentialMovingAverageExpanded.java:39)
+	at com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface.messageReceived(ServerInternalInputInterface.java:63)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassNotFoundException: com.codahale.metrics.EWMA
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	... 27 more
+java.lang.NoClassDefFoundError: com/codahale/metrics/EWMA
+	at com.kth.csd.node.core.ExponentialMovingAverageExpanded.<init>(ExponentialMovingAverageExpanded.java:39)
+	at com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface.messageReceived(ServerInternalInputInterface.java:63)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassNotFoundException: com.codahale.metrics.EWMA
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	... 27 more
+java.lang.NoClassDefFoundError: com/codahale/metrics/EWMA
+	at com.kth.csd.node.core.ExponentialMovingAverageExpanded.<init>(ExponentialMovingAverageExpanded.java:39)
+	at com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface.messageReceived(ServerInternalInputInterface.java:63)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassNotFoundException: com.codahale.metrics.EWMA
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	... 27 more
+Exception in thread "pool-17-thread-1" java.lang.NoClassDefFoundError: com/codahale/metrics/EWMA
+	at com.kth.csd.node.core.ExponentialMovingAverageExpanded.<init>(ExponentialMovingAverageExpanded.java:39)
+	at com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface.messageReceived(ServerInternalInputInterface.java:63)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassNotFoundException: com.codahale.metrics.EWMA
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	... 27 more
+ServerInternal msg received!!!
+STATISTICS_REQ: ServerInternal msg received!!!
+6:20:6:690:::ServerConnectionHandler:::incomingListOfYcsbClients =[192.168.0.1, 192.168.0.6, 192.168.0.9]
+6:20:6:690:::ServerConnectionHandler:::Starting delay measurement calculations
+6:20:6:692:::DelayMeasurement:::Configuration done.
+6:20:9:693:::DelayMeasurement:::inputLine=PING 192.168.0.1 (192.168.0.1) 56(84) bytes of data.
+6:20:9:694:::DelayMeasurement:::inputLine=From 192.168.0.3 icmp_seq=1 Destination Host Unreachable
+6:20:9:694:::DelayMeasurement:::inputLine=
+6:20:9:694:::DelayMeasurement:::inputLine=--- 192.168.0.1 ping statistics ---
+6:20:9:695:::DelayMeasurement:::inputLine=1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+6:20:9:695:::DelayMeasurement:::inputLine=
+6:20:9:695:::DelayMeasurement:::final lines=PING 192.168.0.1 (192.168.0.1) 56(84) bytes of data.From 192.168.0.3 icmp_seq=1 Destination Host Unreachable--- 192.168.0.1 ping statistics ---1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+java.lang.NullPointerException
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@355f860b
+KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=5000]
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@6393e80
+6:20:9:700:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.2:5000
+6:20:9:700:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.2 port No. 5000
+falsemessage=STATISTICS_RES{}node=com.kth.csd.networking.KvsClient@7f7f70bf6:20:9:701:::com.kth.csd.networking.KvsClient:::send() called
+6:20:9:701:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000003: nio socket, client, /192.168.0.3:42628 => /192.168.0.2:5000)
+6:20:9:710:::com.kth.csd.networking.KvsClient:::send(),write done....
+ServerInternal msg received!!!
+STATISTICS_REQ: ServerInternal msg received!!!
+6:20:16:690:::ServerConnectionHandler:::incomingListOfYcsbClients =[192.168.0.1, 192.168.0.6, 192.168.0.9]
+6:20:16:691:::ServerConnectionHandler:::Starting delay measurement calculations
+6:20:16:691:::DelayMeasurement:::Configuration done.
+6:20:19:693:::DelayMeasurement:::inputLine=PING 192.168.0.1 (192.168.0.1) 56(84) bytes of data.
+6:20:19:694:::DelayMeasurement:::inputLine=From 192.168.0.3 icmp_seq=1 Destination Host Unreachable
+6:20:19:695:::DelayMeasurement:::inputLine=
+6:20:19:695:::DelayMeasurement:::inputLine=--- 192.168.0.1 ping statistics ---
+6:20:19:695:::DelayMeasurement:::inputLine=1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+6:20:19:696:::DelayMeasurement:::inputLine=
+6:20:19:696:::DelayMeasurement:::final lines=PING 192.168.0.1 (192.168.0.1) 56(84) bytes of data.From 192.168.0.3 icmp_seq=1 Destination Host Unreachable--- 192.168.0.1 ping statistics ---1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+java.lang.NullPointerException
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@4947c4ee
+KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=5000]
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@13a6d101
+6:20:19:703:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.2:5000
+6:20:19:703:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.2 port No. 5000
+falsemessage=STATISTICS_RES{}node=com.kth.csd.networking.KvsClient@2810b7f76:20:19:703:::com.kth.csd.networking.KvsClient:::send() called
+6:20:19:704:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000005: nio socket, client, /192.168.0.3:42630 => /192.168.0.2:5000)
+6:20:19:705:::com.kth.csd.networking.KvsClient:::send(),write done....
+ServerInternal msg received!!!
+STATISTICS_REQ: ServerInternal msg received!!!
+6:20:36:700:::ServerConnectionHandler:::incomingListOfYcsbClients =[192.168.0.1, 192.168.0.6, 192.168.0.9]
+6:20:36:700:::ServerConnectionHandler:::Starting delay measurement calculations
+6:20:36:700:::DelayMeasurement:::Configuration done.
+6:20:39:701:::DelayMeasurement:::inputLine=PING 192.168.0.1 (192.168.0.1) 56(84) bytes of data.
+6:20:39:702:::DelayMeasurement:::inputLine=From 192.168.0.3 icmp_seq=1 Destination Host Unreachable
+6:20:39:703:::DelayMeasurement:::inputLine=
+6:20:39:703:::DelayMeasurement:::inputLine=--- 192.168.0.1 ping statistics ---
+6:20:39:704:::DelayMeasurement:::inputLine=1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+6:20:39:704:::DelayMeasurement:::inputLine=
+6:20:39:704:::DelayMeasurement:::final lines=PING 192.168.0.1 (192.168.0.1) 56(84) bytes of data.From 192.168.0.3 icmp_seq=1 Destination Host Unreachable--- 192.168.0.1 ping statistics ---1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+java.lang.NullPointerException
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@171e7af3
+KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=5000]
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@289e84fd
+6:20:39:710:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.2:5000
+6:20:39:711:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.2 port No. 5000
+falsemessage=STATISTICS_RES{}node=com.kth.csd.networking.KvsClient@5d729d496:20:39:711:::com.kth.csd.networking.KvsClient:::send() called
+6:20:39:712:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000008: nio socket, client, /192.168.0.3:42633 => /192.168.0.2:5000)
+6:20:39:713:::com.kth.csd.networking.KvsClient:::send(),write done....
+ServerInternal msg received!!!
+STATISTICS_REQ: ServerInternal msg received!!!
+6:20:46:690:::ServerConnectionHandler:::incomingListOfYcsbClients =[192.168.0.1, 192.168.0.6, 192.168.0.9]
+6:20:46:691:::ServerConnectionHandler:::Starting delay measurement calculations
+6:20:46:691:::DelayMeasurement:::Configuration done.
+6:20:49:693:::DelayMeasurement:::inputLine=PING 192.168.0.1 (192.168.0.1) 56(84) bytes of data.
+6:20:49:694:::DelayMeasurement:::inputLine=From 192.168.0.3 icmp_seq=1 Destination Host Unreachable
+6:20:49:695:::DelayMeasurement:::inputLine=
+6:20:49:695:::DelayMeasurement:::inputLine=--- 192.168.0.1 ping statistics ---
+6:20:49:695:::DelayMeasurement:::inputLine=1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+6:20:49:696:::DelayMeasurement:::inputLine=
+6:20:49:696:::DelayMeasurement:::final lines=PING 192.168.0.1 (192.168.0.1) 56(84) bytes of data.From 192.168.0.3 icmp_seq=1 Destination Host Unreachable--- 192.168.0.1 ping statistics ---1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+java.lang.NullPointerException
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@2a8d1aa8
+KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=5000]
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@dc35b98
+6:20:49:704:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.2:5000
+6:20:49:704:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.2 port No. 5000
+falsemessage=STATISTICS_RES{}node=com.kth.csd.networking.KvsClient@701b206f6:20:49:705:::com.kth.csd.networking.KvsClient:::send() called
+6:20:49:705:::com.kth.csd.networking.KvsClient:::send(), session is=(0x0000000A: nio socket, client, /192.168.0.3:42635 => /192.168.0.2:5000)
+6:20:49:706:::com.kth.csd.networking.KvsClient:::send(),write done....
+ServerInternal msg received!!!
+STATISTICS_REQ: ServerInternal msg received!!!
+6:21:6:690:::ServerConnectionHandler:::incomingListOfYcsbClients =[192.168.0.1, 192.168.0.6, 192.168.0.9]
+6:21:6:691:::ServerConnectionHandler:::Starting delay measurement calculations
+6:21:6:691:::DelayMeasurement:::Configuration done.
+6:21:9:693:::DelayMeasurement:::inputLine=PING 192.168.0.1 (192.168.0.1) 56(84) bytes of data.
+6:21:9:694:::DelayMeasurement:::inputLine=From 192.168.0.3 icmp_seq=1 Destination Host Unreachable
+6:21:9:695:::DelayMeasurement:::inputLine=
+6:21:9:695:::DelayMeasurement:::inputLine=--- 192.168.0.1 ping statistics ---
+6:21:9:696:::DelayMeasurement:::inputLine=1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+6:21:9:696:::DelayMeasurement:::inputLine=
+6:21:9:697:::DelayMeasurement:::final lines=PING 192.168.0.1 (192.168.0.1) 56(84) bytes of data.From 192.168.0.3 icmp_seq=1 Destination Host Unreachable--- 192.168.0.1 ping statistics ---1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+java.lang.NullPointerException
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@4873e835
+KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=5000]
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@5ee556a1
+6:21:9:714:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.2:5000
+6:21:9:714:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.2 port No. 5000
+falsemessage=STATISTICS_RES{}node=com.kth.csd.networking.KvsClient@30d60f6e6:21:9:715:::com.kth.csd.networking.KvsClient:::send() called
+6:21:9:715:::com.kth.csd.networking.KvsClient:::send(), session is=(0x0000000D: nio socket, client, /192.168.0.3:42638 => /192.168.0.2:5000)
+6:21:9:716:::com.kth.csd.networking.KvsClient:::send(),write done....
+ServerInternal msg received!!!
+STATISTICS_REQ: ServerInternal msg received!!!
+6:21:16:689:::ServerConnectionHandler:::incomingListOfYcsbClients =[192.168.0.1, 192.168.0.6, 192.168.0.9]
+6:21:16:690:::ServerConnectionHandler:::Starting delay measurement calculations
+6:21:16:690:::DelayMeasurement:::Configuration done.
+6:21:19:689:::DelayMeasurement:::inputLine=PING 192.168.0.1 (192.168.0.1) 56(84) bytes of data.
+6:21:19:690:::DelayMeasurement:::inputLine=From 192.168.0.3 icmp_seq=1 Destination Host Unreachable
+6:21:19:691:::DelayMeasurement:::inputLine=
+6:21:19:691:::DelayMeasurement:::inputLine=--- 192.168.0.1 ping statistics ---
+6:21:19:691:::DelayMeasurement:::inputLine=1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+6:21:19:692:::DelayMeasurement:::inputLine=
+6:21:19:692:::DelayMeasurement:::final lines=PING 192.168.0.1 (192.168.0.1) 56(84) bytes of data.From 192.168.0.3 icmp_seq=1 Destination Host Unreachable--- 192.168.0.1 ping statistics ---1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+java.lang.NullPointerException
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@3abdf256
+KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=5000]
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@11b0f38a
+6:21:19:699:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.2:5000
+6:21:19:700:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.2 port No. 5000
+falsemessage=STATISTICS_RES{}node=com.kth.csd.networking.KvsClient@6562a1216:21:19:700:::com.kth.csd.networking.KvsClient:::send() called
+6:21:19:701:::com.kth.csd.networking.KvsClient:::send(), session is=(0x0000000F: nio socket, client, /192.168.0.3:42640 => /192.168.0.2:5000)
+6:21:19:702:::com.kth.csd.networking.KvsClient:::send(),write done....
+ServerInternal msg received!!!
+STATISTICS_REQ: ServerInternal msg received!!!
+6:21:36:690:::ServerConnectionHandler:::incomingListOfYcsbClients =[192.168.0.1, 192.168.0.6, 192.168.0.9]
+6:21:36:690:::ServerConnectionHandler:::Starting delay measurement calculations
+6:21:36:691:::DelayMeasurement:::Configuration done.
+6:21:39:693:::DelayMeasurement:::inputLine=PING 192.168.0.1 (192.168.0.1) 56(84) bytes of data.
+6:21:39:694:::DelayMeasurement:::inputLine=From 192.168.0.3 icmp_seq=1 Destination Host Unreachable
+6:21:39:695:::DelayMeasurement:::inputLine=
+6:21:39:695:::DelayMeasurement:::inputLine=--- 192.168.0.1 ping statistics ---
+6:21:39:695:::DelayMeasurement:::inputLine=1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+6:21:39:696:::DelayMeasurement:::inputLine=
+6:21:39:696:::DelayMeasurement:::final lines=PING 192.168.0.1 (192.168.0.1) 56(84) bytes of data.From 192.168.0.3 icmp_seq=1 Destination Host Unreachable--- 192.168.0.1 ping statistics ---1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+java.lang.NullPointerException
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@78169680
+KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=5000]
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@6880d5d5
+6:21:39:704:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.2:5000
+6:21:39:704:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.2 port No. 5000
+falsemessage=STATISTICS_RES{}node=com.kth.csd.networking.KvsClient@6cb598506:21:39:705:::com.kth.csd.networking.KvsClient:::send() called
+6:21:39:705:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000012: nio socket, client, /192.168.0.3:42643 => /192.168.0.2:5000)
+6:21:39:706:::com.kth.csd.networking.KvsClient:::send(),write done....
+ServerInternal msg received!!!
+STATISTICS_REQ: ServerInternal msg received!!!
+6:21:46:691:::ServerConnectionHandler:::incomingListOfYcsbClients =[192.168.0.1, 192.168.0.6, 192.168.0.9]
+6:21:46:692:::ServerConnectionHandler:::Starting delay measurement calculations
+6:21:46:692:::DelayMeasurement:::Configuration done.
+6:21:49:693:::DelayMeasurement:::inputLine=PING 192.168.0.1 (192.168.0.1) 56(84) bytes of data.
+6:21:49:694:::DelayMeasurement:::inputLine=From 192.168.0.3 icmp_seq=1 Destination Host Unreachable
+6:21:49:695:::DelayMeasurement:::inputLine=
+6:21:49:695:::DelayMeasurement:::inputLine=--- 192.168.0.1 ping statistics ---
+6:21:49:696:::DelayMeasurement:::inputLine=1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+6:21:49:696:::DelayMeasurement:::inputLine=
+6:21:49:696:::DelayMeasurement:::final lines=PING 192.168.0.1 (192.168.0.1) 56(84) bytes of data.From 192.168.0.3 icmp_seq=1 Destination Host Unreachable--- 192.168.0.1 ping statistics ---1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+java.lang.NullPointerException
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@31dc2ffd
+KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=5000]
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@76a5994
+6:21:49:703:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.2:5000
+6:21:49:703:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.2 port No. 5000
+falsemessage=STATISTICS_RES{}node=com.kth.csd.networking.KvsClient@72d876d96:21:49:704:::com.kth.csd.networking.KvsClient:::send() called
+6:21:49:704:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000014: nio socket, client, /192.168.0.3:42645 => /192.168.0.2:5000)
+6:21:49:706:::com.kth.csd.networking.KvsClient:::send(),write done....
+ServerInternal msg received!!!
+STATISTICS_REQ: ServerInternal msg received!!!
+6:22:7:309:::ServerConnectionHandler:::incomingListOfYcsbClients =[192.168.0.1, 192.168.0.6, 192.168.0.9]
+6:22:7:309:::ServerConnectionHandler:::Starting delay measurement calculations
+6:22:7:309:::DelayMeasurement:::Configuration done.

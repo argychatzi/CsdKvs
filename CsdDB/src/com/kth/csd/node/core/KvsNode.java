@@ -36,7 +36,7 @@ public class KvsNode {
 //	private static AbstractNetworkMessage requestMsg;
 //	private static AbstractNetworkMessage resultsMsg;
 	private static ArrayList<ConnectionMetaData> myArray;
-	private static final int sendRequestInterval = 100000;//1 second
+	private static final int sendRequestInterval = 10000;//1 second
 //
 //	public KvsNode(ArrayList<ConnectionMetaData> myArray) {
 //
