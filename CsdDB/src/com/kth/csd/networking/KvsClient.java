@@ -32,12 +32,14 @@ public class KvsClient implements IoFutureListener<IoFuture>{
 		public void onMasterNodeMoved(ConnectionMetaData master);
 	}
 
+
 	public KvsClient(IoHandler handler, ConnectionMetaData connectionMetaData){
 		System.out.println("KVSCLIENT CONSTRUCTOR HANDLER="+handler);
 		System.out.println("KVSCLIENT CONSTRUCTOR ConnectionMetaData="+connectionMetaData);
 	    session = initSession(handler, connectionMetaData);
+
 	}
-	
+		
 	private IoSession initSession(IoHandler handler, ConnectionMetaData connectionMetaData){
 		NioSocketConnector connector = new NioSocketConnector();
 

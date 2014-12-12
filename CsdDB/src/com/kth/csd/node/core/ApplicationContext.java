@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import com.kth.csd.networking.ConnectionMetaData;
 import com.kth.csd.networking.messages.AbstractNetworkMessage;
-import com.kth.csd.node.Constants;
 import com.kth.csd.utils.Logger;
 
 public class ApplicationContext {
@@ -27,7 +26,7 @@ public class ApplicationContext {
 	
 	private static ConnectionMetaData mMasterExternalConnection;
 	private static ConnectionMetaData mMasterInternalConnection;
-	
+
 	public static ArrayList<String> getYcsbIPs() {
 		return ycsbIPs;
 	}
@@ -47,7 +46,6 @@ public class ApplicationContext {
 	public static AbstractNetworkMessage  statisticsResultstoMaster(AbstractNetworkMessage statisticsResults) {
 		return slaveNodeStatistics = statisticsResults;
 	}
-
 	// update for if write is from master
 	public static boolean isUpdate(){
 		return isUpdate;
@@ -75,6 +73,7 @@ public class ApplicationContext {
 	}
 
 	public static void generateNodeFarm(ArrayList<ConnectionMetaData> nodeIps) {
+		Logger.d(TAG, "generateNodeFarm " + nodeIps.toString());
 		mNodeFarm = new NodeFarm(nodeIps);
 	}
 	

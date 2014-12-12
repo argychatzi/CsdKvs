@@ -2,6 +2,7 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
   <suite name="com.yahoo.ycsb.TestByteIterator" duration-ms="44" started-at="2014-12-10T17:09:55Z" finished-at="2014-12-10T17:09:55Z">
@@ -15,16 +16,23 @@
 =======
   <suite name="com.yahoo.ycsb.TestByteIterator" duration-ms="48" started-at="2014-12-12T04:16:28Z" finished-at="2014-12-12T04:16:28Z">
 >>>>>>> 2bb4eedfeed5a334ee421927f78472dc8aa5d504
+=======
+  <suite name="com.yahoo.ycsb.TestByteIterator" duration-ms="101" started-at="2014-12-12T17:24:40Z" finished-at="2014-12-12T17:24:40Z">
+>>>>>>> Stashed changes
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="48" started-at="2014-12-12T04:16:28Z" finished-at="2014-12-12T04:16:28Z">
+    <test name="Command line test" duration-ms="101" started-at="2014-12-12T17:24:40Z" finished-at="2014-12-12T17:24:40Z">
       <class name="com.yahoo.ycsb.TestByteIterator">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         <test-method status="PASS" signature="testRandomByteIterator()" name="testRandomByteIterator" duration-ms="7" started-at="2014-12-10T21:22:43Z" finished-at="2014-12-10T21:22:43Z">
 >>>>>>> 38c58b713b7be582d3be284c367c4e6041bb57f3
 =======
         <test-method status="PASS" signature="testRandomByteIterator()" name="testRandomByteIterator" duration-ms="25" started-at="2014-12-12T04:16:28Z" finished-at="2014-12-12T04:16:28Z">
 >>>>>>> 2bb4eedfeed5a334ee421927f78472dc8aa5d504
+=======
+        <test-method status="PASS" signature="testRandomByteIterator()" name="testRandomByteIterator" duration-ms="30" started-at="2014-12-12T17:24:40Z" finished-at="2014-12-12T17:24:40Z">
+>>>>>>> Stashed changes
         </test-method>
       </class>
     </test>

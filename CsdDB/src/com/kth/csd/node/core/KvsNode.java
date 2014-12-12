@@ -50,11 +50,18 @@ public class KvsNode {
     		
     		Logger.d(TAG,"Main method here " +  args[0]);
     		
-    		parseConfigurationFile(args[0]);
+    		Configuration configuration = parseConfigurationFile(args[0]);
+    		
+    		ApplicationContext.setMasterExternalConnection(configuration.getMasterExternalConnectionMetaData());
+        	ApplicationContext.setMasterInternalConnection(configuration.getMasterInternalConnectionMetaData());
+        	
+        	ApplicationContext.setOwnExternalConnection(configuration.getOwnExternalConnectionMetaData());
+        	ApplicationContext.setOwnInternalConnection(configuration.getOwnInternalConnectionMetaData());
     		
         	startMonitoringKvsSocket(new ServerInternalInputInterface(), ApplicationContext.getInternalConnection().getPort());
         	startMonitoringKvsSocket(new ServerExternalInputInterface(), ApplicationContext.getExternalConnection().getPort());
-
+        	
+        	ApplicationContext.generateNodeFarm(configuration.getNodesInFarm());
     	}
 
 		if (ApplicationContext.isMaster()){	
@@ -114,20 +121,14 @@ public class KvsNode {
 	//public static String[] allNodeIp = { "10.0.0.1", "10.0.0.3" };// for testing
 		
     
-    private static void parseConfigurationFile(String fileNo) throws IOException {
+    private static Configuration parseConfigurationFile(String fileNo) throws IOException {
     	
     	Logger.d(TAG, fileNo);
     	Configuration configuration = ConfigurationReader.loadConfigurationFile(fileNo);
     	
     	Logger.d(TAG, "configuration :: " + configuration);
+    	return configuration; 
     	
-    	ApplicationContext.setMasterExternalConnection(configuration.getMasterExternalConnectionMetaData());
-    	ApplicationContext.setMasterInternalConnection(configuration.getMasterInternalConnectionMetaData());
-    	
-    	ApplicationContext.setOwnExternalConnection(configuration.getOwnExternalConnectionMetaData());
-    	ApplicationContext.setOwnInternalConnection(configuration.getOwnInternalConnectionMetaData());
-    	
-    	ApplicationContext.generateNodeFarm(configuration.getNodesInFarm());
 	}
 
     private static void startMonitoringKvsSocket(IoHandler handler, final int portNumber) throws IOException {
