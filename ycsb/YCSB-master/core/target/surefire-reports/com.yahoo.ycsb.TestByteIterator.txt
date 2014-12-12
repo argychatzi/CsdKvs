@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.yahoo.ycsb.TestByteIterator
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.435 sec
+=======
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.207 sec
+>>>>>>> 38c58b713b7be582d3be284c367c4e6041bb57f3

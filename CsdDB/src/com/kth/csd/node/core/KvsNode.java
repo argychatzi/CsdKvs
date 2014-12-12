@@ -2,33 +2,26 @@ package com.kth.csd.node.core;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
-import java.net.SocketAddress;
-import java.nio.channels.ServerSocketChannel;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import org.apache.mina.core.polling.AbstractPollingIoAcceptor;
 import org.apache.mina.core.service.IoAcceptor;
 import org.apache.mina.core.service.IoHandler;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.codec.serialization.ObjectSerializationCodecFactory;
 import org.apache.mina.filter.logging.LoggingFilter;
-import org.apache.mina.transport.socket.nio.NioSession;
 import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
-import org.apache.mina.transport.socket.SocketAcceptor;
 
 import com.kth.csd.networking.ConnectionMetaData;
 import com.kth.csd.networking.interfaces.external.ServerExternalInputInterface;
-import com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface;
 import com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface;
-import com.kth.csd.node.Constants;
-import com.kth.csd.utils.Logger;
-import com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface;
 import com.kth.csd.networking.messages.AbstractNetworkMessage;
 import com.kth.csd.networking.messages.StatisticsRequestMessage;
-import com.kth.csd.networking.messages.StatisticsResultMessage;
+import com.kth.csd.node.Constants;
+import com.kth.csd.utils.Configuration;
+import com.kth.csd.utils.ConfigurationReader;
+import com.kth.csd.utils.Logger;
 
 
 public class KvsNode {
@@ -48,8 +41,13 @@ public class KvsNode {
 	}
 
 	public static void main(String[] args) throws IOException {
-		
-		startMonitoringKvsSocket(new ServerInternalInputInterface(), Constants.INTERNAL_PORT);
+    	if(args.length >0 ){
+    		parseConfigurationFile(args[0]);
+    		
+        	startMonitoringKvsSocket(new ServerInternalInputInterface(), ApplicationContext.getInternalConnection().getPort());
+        	startMonitoringKvsSocket(new ServerExternalInputInterface(), ApplicationContext.getExternalConnection().getPort());
+    	}
+
 		String nodeType = args[0];
 		System.out.println("nodeType = "+ nodeType);
 		if (nodeType.equals("master")){
@@ -72,8 +70,8 @@ public class KvsNode {
 					//You put the IP and the port of slaves you want to connect into myArray
 					//Then generate a NodeFarm
 					myArray = new ArrayList<ConnectionMetaData>();
-					myArray.add(new ConnectionMetaData(allNodeIp[1],Constants.INTERNAL_PORT));
-					ApplicationContext.generatNodeFarm(myArray);
+					myArray.add(new ConnectionMetaData(allNodeIp[1],ApplicationContext.getInternalConnection().getPort()));
+					ApplicationContext.generateNodeFarm(myArray);
 					//The message will tell the slaves, please ping the clients
 					//So, the listOfYcsbClient should be a part of the message		
 					ArrayList<String> listOfYcsbClients = new ArrayList<String>();
@@ -104,37 +102,48 @@ public class KvsNode {
 
 	}
 
-	// generating the connection metadata for all internal nodes, return an array list  
-	private static ArrayList<ConnectionMetaData> generateInternalConnectionMetaData(ArrayList<String> listNodesIp){
-		for (String key: listNodesIp){
-			ConnectionMetaData singleNodeProperty = new ConnectionMetaData(key, Constants.INTERNAL_PORT);
-			allNodeProperties.add(singleNodeProperty); 
-		}
-		return allNodeProperties;
-
-	}
-	// making a arraylist
-
-	private static ArrayList<String> getAllNodeIp(String[] allNodeIp){
-		ArrayList<String> listNodesIp = new ArrayList<String>();
-		for (String key: allNodeIp){
-			listNodesIp.add(key);
-		}
-		return listNodesIp;
-	}
-
-
-
-	private static void parseConfigurationFile() {
-		//TODO parse configuration file and assign a master node
-		//		ConnectionMetaData masterNode;
-		//		ApplicationContext.setMasterNode(masterNode);
-
-
-		ApplicationContext.generatNodeFarm(allNodeProperties);
-		Logger.d(TAG, "Generating farm of nodes");
+//	public static String[] allNodeIp = { "192.168.0.2", "192.168.0.3", "192.168.0.4", "192.168.0.5", "192.168.0.7","192.168.0.8",
+//		"192.168.0.10","192.168.0.11","192.168.0.12","192.168.0.13" };
+	//public static String[] allNodeIp = { "10.0.0.1", "10.0.0.3" };// for testing
+		
+    
+    private static void parseConfigurationFile(String fileNo) throws IOException {
+    	
+    	Configuration configuration = ConfigurationReader.loadConfigurationFile(fileNo);
+    	
+    	Logger.d(TAG, "configuration :: " + configuration);
+    	
+    	ApplicationContext.setMasterExternalConnection(configuration.getMasterExternalConnectionMetaData());
+    	ApplicationContext.setMasterInternalConnection(configuration.getMasterInternalConnectionMetaData());
+    	
+    	ApplicationContext.setOwnExternalConnection(configuration.getOwnExternalConnectionMetaData());
+    	ApplicationContext.setOwnInternalConnection(configuration.getOwnInternalConnectionMetaData());
+    	
+    	ApplicationContext.generateNodeFarm(configuration.getNodesInFarm());
 	}
 
+    //TODO Jawad, Mihret this code is never used. If this is the case, and there are no plans to 
+    //be used in the future either, you should remove it
+   // generating the connection metadata for all internal nodes, return an array list  
+   private static ArrayList<ConnectionMetaData> generateInternalConnectionMetaData(ArrayList<String> listNodesIp){
+	   for (String key: listNodesIp){
+		   ConnectionMetaData singleNodeProperty = new ConnectionMetaData(key, Constants.DEFAULT_INTERNAL_PORT);
+		   allNodeProperties.add(singleNodeProperty); 
+	   }
+	   return allNodeProperties;
+	   
+   }
+
+   //TODO Jawad, Mihret this code is never used. If this is the case, and there are no plans to 
+   //be used in the future either, you should remove it
+   // making a arraylist
+   private static ArrayList<String> getAllNodeIp(String[] allNodeIp){
+	   ArrayList<String> listNodesIp = new ArrayList<String>();
+	   for (String key: allNodeIp){
+		   listNodesIp.add(key);
+	   }
+	   return listNodesIp;
+   }
 
 
 	private static void startMonitoringKvsSocket(IoHandler handler, final int portNumber) throws IOException {
@@ -154,5 +163,4 @@ public class KvsNode {
 
 		Logger.d(TAG, "Opened port " + portNumber);
 	}
-
 }

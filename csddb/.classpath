@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry excluding="src/" kind="src" path=""/>
+	<classpathentry excluding="src/|configurations/" kind="src" path=""/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="libs/core-0.1.4.jar" sourcepath="/root/core"/>
 	<classpathentry kind="lib" path="libs/gson-2.3.jar"/>
 	<classpathentry kind="lib" path="libs/mockito-all-1.9.5.jar"/>
-	<classpathentry kind="lib" path="/Users/argychatzi/Desktop/CSD/ik2200/CsdDB/libs/mina-core-2.0.9.jar"/>
-	<classpathentry kind="lib" path="/Users/argychatzi/Desktop/CSD/ik2200/CsdDB/libs/slf4j-api-1.7.7.jar"/>
+	<classpathentry kind="lib" path="/Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/csddb/libs/metrics-core-4.0.0-SNAPSHOT-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/csddb/libs/slf4j-api-1.7.7.jar"/>
+	<classpathentry kind="lib" path="/Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/csddb/libs/metrics-core-4.0.0-SNAPSHOT-sources.jar"/>
+	<classpathentry kind="lib" path="/Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/csddb/libs/metrics-core-4.0.0-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="/Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/csddb/libs/mina-core-2.0.9.jar"/>
+	<classpathentry kind="lib" path="/Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/csddb/libs/mina-example-2.0.9.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 3:16:5:256:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
 handler=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@1a83cf00
 acceptor after bind=(nio socket acceptor: localAddress(es): [/0:0:0:0:0:0:0:0:4001], managedSessionCount: 0)
@@ -85,3 +86,12 @@ KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConne
 client=com.kth.csd.networking.KvsClient@49c6c5b7
 3:23:11:210:::com.kth.csd.node.core.KvsNode:::requestMsg = STATISTICS_REQ[192.168.0.1, 192.168.0.6, 192.168.0.9]
 falsemessage=STATISTICS_REQ[192.168.0.1, 192.168.0.6, 192.168.0.9]node=com.kth.csd.networking.KvsClient@49c6c5b73:23:11:211:::com.kth.csd.networking.KvsClient:::send() called
+=======
+5:33:6:144:::ServerConnectionHandler:::ExternalTrafficInputInterface ... 
+5:33:6:369:::ServerConnectionHandler:::created !
+5:33:6:369:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
+5:33:8:919:::com.kth.csd.node.core.KvsNode:::Opened port 4448
+5:33:8:923:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
+5:33:8:984:::com.kth.csd.node.core.KvsNode:::Opened port 5000
+5:33:9:3:::com.kth.csd.node.core.KvsNode:::Genrating farm of nodes
+>>>>>>> 38c58b713b7be582d3be284c367c4e6041bb57f3

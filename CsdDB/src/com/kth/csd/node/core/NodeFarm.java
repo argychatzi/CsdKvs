@@ -16,23 +16,18 @@ public class NodeFarm {
 	public NodeFarm(ArrayList<ConnectionMetaData> nodeIps) {
 		mNodeFarm = new ArrayList<KvsClient>();
 		for(ConnectionMetaData connectionMetaData: nodeIps){
-			System.out.println(connectionMetaData);
-//			mNodeFarm.add(new KvsClient(new ClientInternalInputInterface(), connectionMetaData));
-			ServerInternalInputInterface mInterface = new ServerInternalInputInterface();
-			System.out.println("interface="+mInterface);
-			KvsClient client =new KvsClient(mInterface, connectionMetaData);
-			System.out.println("client="+client);
-			mNodeFarm.add(client);
+			if(!nodeIps.equals(ApplicationContext.getMasterInternalConnection())){
+				mNodeFarm.add(new KvsClient(new ClientInternalInputInterface(), connectionMetaData));
+			}
 		}
 	}
 
-	public void broadCast(AbstractNetworkMessage message)
-	{	System.out.print("mNodeFarm="+mNodeFarm==null);
+	public void broadCast(AbstractNetworkMessage message){
+		System.out.print("mNodeFarm="+mNodeFarm==null);
 		for(KvsClient node: mNodeFarm){
 			System.out.print("message="+message);
 			System.out.print("node="+node);
 			node.send(message);
 		}
 	}
-	
 }

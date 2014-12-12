@@ -1,4 +1,14 @@
+<<<<<<< HEAD
 3:16:5:247:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
 handler=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@1a1a1c6
 acceptor after bind=(nio socket acceptor: localAddress(es): [/0:0:0:0:0:0:0:0:4001], managedSessionCount: 0)
 3:16:8:29:::com.kth.csd.node.core.KvsNode:::Opened port 4001
+=======
+5:33:6:524:::ServerConnectionHandler:::ExternalTrafficInputInterface ... 
+5:33:6:688:::ServerConnectionHandler:::created !
+5:33:6:729:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
+5:33:9:205:::com.kth.csd.node.core.KvsNode:::Opened port 4448
+5:33:9:208:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
+5:33:9:242:::com.kth.csd.node.core.KvsNode:::Opened port 5000
+5:33:9:244:::com.kth.csd.node.core.KvsNode:::Genrating farm of nodes
+>>>>>>> 38c58b713b7be582d3be284c367c4e6041bb57f3

@@ -73,7 +73,7 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 //				ApplicationContext.statisticsResultstoMaster(statisticsResults);
 				
 				ArrayList<ConnectionMetaData> nodeIps =new ArrayList<ConnectionMetaData>();
-				nodeIps.add(ApplicationContext.getMasterNode());
+				nodeIps.add(ApplicationContext.getMasterInternalConnection());
 				NodeFarm nodeFarmToMaster = new NodeFarm(nodeIps);
 				nodeFarmToMaster.broadCast(statisticsResults);
 				break;
@@ -97,9 +97,11 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 				break;
 			}
 			case MASTER_MOVED:{
-				System.out.println("MASTER_MOVED: ServerInternal msg received!!!");
-				ConnectionMetaData newMasterConnectionMetadata = ((MasterMovedMessage)response).getNewMaster();
-				ApplicationContext.updateMaster(newMasterConnectionMetadata);
+				ConnectionMetaData newMasterInternal = ((MasterMovedMessage)message).getNewMasterInternal();
+				ConnectionMetaData newMasterExternal = ((MasterMovedMessage)message).getNewMasterExternal();
+				
+				ApplicationContext.setMasterExternalConnection(newMasterExternal);
+				ApplicationContext.setMasterInternalConnection(newMasterInternal);
 				break;
 			}
 			case OPERATION_READ:{
@@ -109,28 +111,31 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 				break;
 			}
 			case OPERATION_WRITE:{
-				System.out.println("OPERATION_WRITE: ServerInternal msg received!!!");
-				// check if write is coming from Master Node 
-				String currentSessionIp = ClientInternalInputInterface.getSessionIp(session);
-				int currentSessionPort = ClientInternalInputInterface.getPort(session);
+				//TODO #Jawad, Mihret you should get the ip of the current communication from the Session object
+				//that you get from the arguments locally, and not by relying on some remote static function
 				
-				//ConnectionMetaData currentSessionMetaData = new ConnectionMetaData(currentSessionIp, currentSessionPort);
-				
-				if (ApplicationContext.getMasterNode().getHost() == currentSessionIp && 
-						ApplicationContext.getMasterNode().getPort() == currentSessionPort){
-					
-				KeyValueEntry keyValueEntry = ((OperationReadMessage)message).getKeyValueEntry();
-				ApplicationContext.setUpdateTrue();
-				new KvsWriter(keyValueEntry).execute();
-				 break;
-				
-			}
-				else {
-	
+				// check if write is coming from Master Node
+//				String currentSessionIp = ClientInternalInputInterface.getSessionIp(session);
+//				int currentSessionPort = ClientInternalInputInterface.getPort(session);
+//				
+//				//ConnectionMetaData currentSessionMetaData = new ConnectionMetaData(currentSessionIp, currentSessionPort);
+//				
+//				//TODO #Jawad, Mihret you should not break twice. The keyword "break" is supposed to close a
+//				// block that falls under the same "case" category.  
+//				if (ApplicationContext.getMaster().getHost() == currentSessionIp && 
+//						ApplicationContext.getMaster().getPort() == currentSessionPort){
+//					
+//				KeyValueEntry keyValueEntry = ((OperationReadMessage)message).getKeyValueEntry();
+//				ApplicationContext.setUpdateTrue();
+//				new KvsWriter(keyValueEntry).execute();
+//				 break;
+//				
+//			}
+//				else {
+//	
 				break;
 			}
 		}
-	}
 	}
 }
 

@@ -65,7 +65,6 @@ public class KvsClient implements IoFutureListener<IoFuture>{
 			}
         }
 		Logger.d(TAG, "new connection to " + connectionMetaData.getHost() +" port No. "+ connectionMetaData.getPort());
-		
 		return result;
 	}
 	

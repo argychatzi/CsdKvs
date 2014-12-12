@@ -1,6 +1,10 @@
 package com.kth.csd.networking;
 
 import java.io.Serializable;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+
+import org.apache.mina.core.session.IoSession;
 
 public class ConnectionMetaData implements Serializable{
 
@@ -23,6 +27,11 @@ public class ConnectionMetaData implements Serializable{
 	@Override
 	public String toString() {
 		return "ConnectionMetaData [host=" + host + ", port=" + port + "]";
+	}
+
+	public ConnectionMetaData(IoSession session){
+		this.host = ((InetSocketAddress)session.getRemoteAddress()).getHostName();
+		this.port =((InetSocketAddress)session.getRemoteAddress()).getPort();
 	}
 	
 }
