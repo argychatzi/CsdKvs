@@ -23,6 +23,7 @@ import com.kth.csd.utils.Logger;
 
 public class KvsClient implements IoFutureListener<IoFuture>{
 
+	//KVSClient seems to be used for connection
 	private static final String TAG = KvsClient.class.getCanonicalName();
 	public static final String ATTRIBUTE_ID = "ATTRIBUTE_ID";
 	private IoSession session = null;
@@ -32,6 +33,8 @@ public class KvsClient implements IoFutureListener<IoFuture>{
 	}
 
 	public KvsClient(IoHandler handler, ConnectionMetaData connectionMetaData){
+		System.out.println("KVSCLIENT CONSTRUCTOR HANDLER="+handler);
+		System.out.println("KVSCLIENT CONSTRUCTOR ConnectionMetaData="+connectionMetaData);
 	    session = initSession(handler, connectionMetaData);
 	}
 	
@@ -45,6 +48,7 @@ public class KvsClient implements IoFutureListener<IoFuture>{
 		IoSession result = null;
 		try {
             ConnectFuture future = connector.connect(new InetSocketAddress(connectionMetaData.getHost(), connectionMetaData.getPort()));
+            System.out.println("KVSCLIENT initSession FUTURE="+future);
             future.awaitUninterruptibly();
             result = future.getSession();
             SocketAddress remoteAddress = result.getRemoteAddress();
@@ -66,9 +70,12 @@ public class KvsClient implements IoFutureListener<IoFuture>{
 	}
 	
 	public int send(AbstractNetworkMessage message){
+		Logger.d(TAG,"send() called");
+		Logger.d(TAG,"send(), session is="+session.toString());
 		WriteFuture write  = session.write(message);
+		Logger.d(TAG,"send(),write done....");
 		try {
-			write.await(2000);
+			write.await(5000);
 		} catch (InterruptedException e) {
 			return 10; 
 		}

@@ -37,14 +37,14 @@ public class ClientInternalInputInterface extends IoHandlerAdapter implements Io
 
 	@Override
 	public void messageReceived(IoSession session, Object message) throws Exception {
-		
+		System.out.println("ClientInternal msg received!!!");
 		AbstractNetworkMessage response = (AbstractNetworkMessage) message;
 		
 		switch(response.getType()){
 		
 			case STATISTICS_RES:{
-				
-				ycsbclientsRttMapFromSlave = ((StatisticsResultMessage)response).getRttStatistics();
+				System.out.println("STATISTICS_RES:ClientInternal msg received!!!");
+				ycsbclientsRttMapFromSlave = ((StatisticsResultMessage)response).getResultsOfDelayMeasurement();
 				nodeWithDelayCostMap.put(getSessionIp(session),delayCostCalculatorOfNode(ycsbclientsRttMapFromSlave));
 				nodeAndPortMap.put(getSessionIp(session), getPort(session));
 				//Logger.d(getNewMasterIp(), "new master");

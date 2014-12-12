@@ -34,7 +34,7 @@ public class ElasticSearchClient extends DB implements YcsbTrafficInputInteraceH
 
 		String serverIp = properties.getProperty(PROPERTY_KEY_SERVER_IP);
 //		String serverIp = "10.0.0.2";
-		createRequestSenderFromConnectionMetadata(new ConnectionMetaData(serverIp, Constants.DEFAULT_PORT));
+		createRequestSenderFromConnectionMetadata(new ConnectionMetaData(serverIp, Constants.EXTERNAL_PORT));
 	}
 
 	private void createRequestSenderFromConnectionMetadata(ConnectionMetaData connectionMetaData) {
@@ -43,17 +43,17 @@ public class ElasticSearchClient extends DB implements YcsbTrafficInputInteraceH
 
 	@Override
 	public Properties getProperties() {
-		String serverIp = Constants.DEFAULT_HOST;
+		String serverIp = Constants.MASTER_IP;
 //		String serverIp = "10.0.0.2";
-		try {
-			FileReader fileReader = new FileReader(System.getProperty("user.dir") + "/properties/server_ip.txt");
-			BufferedReader bufferedReader = new BufferedReader(fileReader);
-			serverIp = bufferedReader.readLine();
-			bufferedReader.close();
-		} catch (IOException e) {
-			Logger.d(TAG, "Read from file" + e.toString());
-			e.printStackTrace();
-		}
+//		try {
+//			FileReader fileReader = new FileReader(System.getProperty("user.dir") + "/properties/server_ip.txt");
+//			BufferedReader bufferedReader = new BufferedReader(fileReader);
+//			serverIp = bufferedReader.readLine();
+//			bufferedReader.close();
+//		} catch (IOException e) {
+//			Logger.d(TAG, "Read from file" + e.toString());
+//			e.printStackTrace();
+//		}
 		Properties properties = new Properties();
 		properties.setProperty(PROPERTY_KEY_SERVER_IP, serverIp);
 

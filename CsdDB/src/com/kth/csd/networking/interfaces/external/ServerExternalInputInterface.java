@@ -48,9 +48,10 @@ public class ServerExternalInputInterface extends IoHandlerAdapter implements Io
 		AbstractNetworkMessage response = (AbstractNetworkMessage) message;
 		KvsExecutable executableOperation = null;
 		KeyValueEntry keyValueEntry = null;
-		switch(response.getType()){
 		
+		switch(response.getType()){
 			case OPERATION_READ:{
+				System.out.println("recieving messages");
 				keyValueEntry = ((OperationReadMessage)response).getKeyValueEntry();
 				executableOperation = new KvsReader(keyValueEntry);
 				break;

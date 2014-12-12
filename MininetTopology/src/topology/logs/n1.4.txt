@@ -1,7 +1,87 @@
-5:40:23:813:::ServerConnectionHandler:::ExternalTrafficInputInterface ... 
-5:40:23:908:::ServerConnectionHandler:::created !
-5:40:23:908:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
-5:40:25:278:::com.kth.csd.node.core.KvsNode:::Opened port 4448
-5:40:25:280:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
-5:40:25:300:::com.kth.csd.node.core.KvsNode:::Opened port 5000
-5:40:25:302:::com.kth.csd.node.core.KvsNode:::Genrating farm of nodes
+3:16:5:256:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
+handler=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@1a83cf00
+acceptor after bind=(nio socket acceptor: localAddress(es): [/0:0:0:0:0:0:0:0:4001], managedSessionCount: 0)
+3:16:8:29:::com.kth.csd.node.core.KvsNode:::Opened port 4001
+nodeType = master
+3:16:8:132:::com.kth.csd.node.core.KvsNode:::I am a master
+I am the master
+Sending req for stats
+ConnectionMetaData [host=192.168.0.3, port=4001]
+interface=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@7b40ac2c
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@7b40ac2c
+KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.3, port=4001]
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@3309f28b
+3:16:8:281:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.3:4001
+3:16:8:281:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.3 port No. 4001
+client=com.kth.csd.networking.KvsClient@13e6f1f4
+3:16:8:283:::com.kth.csd.node.core.KvsNode:::requestMsg = STATISTICS_REQ[192.168.0.1, 192.168.0.6, 192.168.0.9]
+falsemessage=STATISTICS_REQ[192.168.0.1, 192.168.0.6, 192.168.0.9]node=com.kth.csd.networking.KvsClient@13e6f1f43:16:8:284:::com.kth.csd.networking.KvsClient:::send() called
+3:16:8:284:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000001: nio socket, client, /192.168.0.5:57687 => /192.168.0.3:4001)
+3:16:8:674:::com.kth.csd.networking.KvsClient:::send(),write done....
+3:16:8:676:::com.kth.csd.node.core.KvsNode:::Broadcast finished
+ConnectionMetaData [host=192.168.0.3, port=4001]
+interface=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@82a5e75
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@82a5e75
+KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.3, port=4001]
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@4f2f2b9e
+3:17:48:180:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.3:4001
+3:17:48:181:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.3 port No. 4001
+client=com.kth.csd.networking.KvsClient@5e8bb0f8
+3:17:48:181:::com.kth.csd.node.core.KvsNode:::requestMsg = STATISTICS_REQ[192.168.0.1, 192.168.0.6, 192.168.0.9]
+falsemessage=STATISTICS_REQ[192.168.0.1, 192.168.0.6, 192.168.0.9]node=com.kth.csd.networking.KvsClient@5e8bb0f83:17:48:182:::com.kth.csd.networking.KvsClient:::send() called
+3:17:48:183:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000002: nio socket, client, /192.168.0.5:57691 => /192.168.0.3:4001)
+3:17:48:184:::com.kth.csd.networking.KvsClient:::send(),write done....
+3:17:48:188:::com.kth.csd.node.core.KvsNode:::Broadcast finished
+ServerInternal msg received!!!
+STATISTICS_RES: ServerInternal msg received!!!
+3:17:48:551:::ServerConnectionHandler:::is statisticsResults empty ? false
+3:17:48:552:::ServerConnectionHandler:::is results empty ?  false
+3:17:48:552:::ServerConnectionHandler:::results{192.168.0.6=4.92, 192.168.0.1=2.83, 192.168.0.9=7.73}
+3:17:48:552:::ServerConnectionHandler:::ycsbIPs[192.168.0.1, 192.168.0.6, 192.168.0.9]
+3:17:48:552:::ServerConnectionHandler:::2.83
+3:17:48:553:::ServerConnectionHandler:::4.92
+3:17:48:553:::ServerConnectionHandler:::7.73
+ConnectionMetaData [host=192.168.0.3, port=4001]
+interface=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@7056c23d
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@7056c23d
+KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.3, port=4001]
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@2e6ef76f
+3:19:28:180:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.3:4001
+3:19:28:181:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.3 port No. 4001
+client=com.kth.csd.networking.KvsClient@31fdc6f6
+3:19:28:181:::com.kth.csd.node.core.KvsNode:::requestMsg = STATISTICS_REQ[192.168.0.1, 192.168.0.6, 192.168.0.9]
+falsemessage=STATISTICS_REQ[192.168.0.1, 192.168.0.6, 192.168.0.9]node=com.kth.csd.networking.KvsClient@31fdc6f63:19:28:182:::com.kth.csd.networking.KvsClient:::send() called
+3:19:28:183:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000004: nio socket, client, /192.168.0.5:57716 => /192.168.0.3:4001)
+3:19:28:184:::com.kth.csd.networking.KvsClient:::send(),write done....
+3:19:28:185:::com.kth.csd.node.core.KvsNode:::Broadcast finished
+ServerInternal msg received!!!
+STATISTICS_RES: ServerInternal msg received!!!
+3:19:28:245:::ServerConnectionHandler:::is statisticsResults empty ? false
+3:19:28:245:::ServerConnectionHandler:::is results empty ?  false
+3:19:28:246:::ServerConnectionHandler:::results{192.168.0.6=2.51, 192.168.0.1=1.29, 192.168.0.9=4.04}
+3:19:28:246:::ServerConnectionHandler:::ycsbIPs[192.168.0.1, 192.168.0.6, 192.168.0.9]
+3:19:28:247:::ServerConnectionHandler:::1.29
+3:19:28:247:::ServerConnectionHandler:::2.51
+3:19:28:248:::ServerConnectionHandler:::4.04
+ConnectionMetaData [host=192.168.0.3, port=4001]
+interface=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@7bae9cec
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@7bae9cec
+KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.3, port=4001]
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@329a0466
+3:21:8:178:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.3:4001
+3:21:8:178:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.3 port No. 4001
+client=com.kth.csd.networking.KvsClient@6ddbe530
+3:21:8:179:::com.kth.csd.node.core.KvsNode:::requestMsg = STATISTICS_REQ[192.168.0.1, 192.168.0.6, 192.168.0.9]
+falsemessage=STATISTICS_REQ[192.168.0.1, 192.168.0.6, 192.168.0.9]node=com.kth.csd.networking.KvsClient@6ddbe5303:21:8:179:::com.kth.csd.networking.KvsClient:::send() called
+3:21:8:180:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000006: nio socket, client, /192.168.0.5:57727 => /192.168.0.3:4001)
+3:21:8:181:::com.kth.csd.networking.KvsClient:::send(),write done....
+3:21:8:183:::com.kth.csd.node.core.KvsNode:::Broadcast finished
+ConnectionMetaData [host=192.168.0.3, port=4001]
+interface=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@49c5146e
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@49c5146e
+KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.3, port=4001]
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@427e3f2
+3:23:11:209:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.3 port No. 4001
+client=com.kth.csd.networking.KvsClient@49c6c5b7
+3:23:11:210:::com.kth.csd.node.core.KvsNode:::requestMsg = STATISTICS_REQ[192.168.0.1, 192.168.0.6, 192.168.0.9]
+falsemessage=STATISTICS_REQ[192.168.0.1, 192.168.0.6, 192.168.0.9]node=com.kth.csd.networking.KvsClient@49c6c5b73:23:11:211:::com.kth.csd.networking.KvsClient:::send() called

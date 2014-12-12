@@ -140,9 +140,10 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 	public static HashMap<String, Double> getycsbClientWritePerSecStatisticsMapWithEma(){
     HashMap<String, Integer> tempHashMap = new HashMap<String, Integer>();
     tempHashMap = getycsbClientWritePerSecStatistics();
+    ExponentialMovingAverage exponentialMovingAverage = new ExponentialMovingAverage();
+    
     for (String key: tempHashMap.keySet()){
-
-    	double movingAverageValue = ExponentialMovingAverage.exponentialMovingAverage(tempHashMap.get(key));
+    	double movingAverageValue = exponentialMovingAverage.exponentialMovingAverage(tempHashMap.get(key));
     	ycsbClientsStatisticsMapPerSecondWithEma.put(key, movingAverageValue);
     }
 	return ycsbClientsStatisticsMapPerSecondWithEma;

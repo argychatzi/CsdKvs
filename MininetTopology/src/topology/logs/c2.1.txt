@@ -1,7 +1,18 @@
 YCSB Client 0.1
-Command line: -db com.yahoo.ycsb.db.ElasticSearchClient -s -P /home/giorgos/Documents/workspace-csd/ik2200/ycsb/YCSB-master/workloads/workloadc -load
-5:40:24:416:::com.yahoo.ycsb.db.ElasticSearchClient:::init Called!
+Command line: -db com.yahoo.ycsb.db.ElasticSearchClient -s -P /home/ahmed/ik2200/ycsb/YCSB-master/workloads/workloadc -load
+3:16:5:250:::com.yahoo.ycsb.db.ElasticSearchClient:::init Called!
 -- listing properties --
-serverIp=192.168.0.2
-5:40:25:955:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.2:4448
-5:40:25:956:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.2 port No. 4448
+serverIp=192.168.0.4
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.external.ClientExternalInputInterface@39be9f72
+KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.4, port=5000]
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@87a1904
+3:16:12:970:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.4 port No. 5000
+3:16:13:11:::com.kth.csd.networking.KvsClient:::send() called
+java.lang.NullPointerException
+	at com.kth.csd.networking.KvsClient.send(KvsClient.java:74)
+	at com.kth.csd.networking.KvsClient.write(KvsClient.java:91)
+	at com.yahoo.ycsb.db.ElasticSearchClient.insert(ElasticSearchClient.java:98)
+	at com.yahoo.ycsb.DBWrapper.insert(DBWrapper.java:145)
+	at com.yahoo.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:461)
+	at com.yahoo.ycsb.ClientThread.run(Client.java:269)
+java -cp /home/ahmed/ik2200/ycsb/YCSB-master/csd/target/elasticsearch-binding-0.1.4.jar:/home/ahmed/ik2200/ycsb/YCSB-master/csd/target/archive-tmp/elasticsearch-binding-0.1.4.jar:/home/ahmed/ik2200/ycsb/YCSB-master/csd/libs/CsdDBServer.jar:/home/ahmed/ik2200/ycsb/YCSB-master/jdbc/src/main/conf:/home/ahmed/ik2200/ycsb/YCSB-master/core/target/core-0.1.4.jar:/home/ahmed/ik2200/ycsb/YCSB-master/voldemort/src/main/conf com.yahoo.ycsb.Client -db com.yahoo.ycsb.db.ElasticSearchClient -s -P /home/ahmed/ik2200/ycsb/YCSB-master/workloads/workloadc -load

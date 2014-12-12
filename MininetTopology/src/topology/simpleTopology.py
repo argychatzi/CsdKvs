@@ -105,10 +105,16 @@ def runNetworkClasses(net):
     
     # Starting servers...
     print( 'Starting servers in switched network 1...' )
-    for i in range(4):
+    for i in range(3):
         node = net.get('n1.%s' % (i+1))
         print( 'Starting server %s...' % node.name )
         node.cmd('java -jar network/server/CsdDBServer.jar ' + ' > logs/' + node.name + '.txt &')
+    #Node1.4 is master
+    print( 'Starting servers as master n1.4 in switched network 1...' )
+    node = net.get('n1.4')
+    print( 'Starting server %s...' % node.name )
+    node.cmd('java -jar network/server/CsdDBServer.jar  master' + ' > logs/' + node.name + '.txt &')
+
 
     print( 'Starting servers in switched network 2...' )
     for i in range(2):
