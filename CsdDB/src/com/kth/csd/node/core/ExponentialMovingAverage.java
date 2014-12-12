@@ -7,13 +7,16 @@ import com.codahale.metrics.ExponentiallyDecayingReservoir;
 
 public class ExponentialMovingAverage {
 	
-	static TimeUnit intervalUnit=TimeUnit.SECONDS;
-	static final double alpha = 0.15;
-	static final long interval = 1; // for our case, fixed one.  
+	private TimeUnit intervalUnit=TimeUnit.SECONDS;
+	private static final double alpha = 0.15;
+	private static final long interval = 1; // for our case, fixed one.  
+	private EWMA ewma;
 	
-	public static EWMA ewma = new EWMA(alpha, interval, intervalUnit); 
+	public ExponentialMovingAverage(){
+		ewma = new EWMA(alpha, interval, intervalUnit); 
+	}
 	
-	public static double exponentialMovingAverage(long writeperSecond){
+	public double exponentialMovingAverage(long writeperSecond){
 		ewma.update(writeperSecond);
 		ewma.tick();
 		double value = ewma.getRate(intervalUnit);
