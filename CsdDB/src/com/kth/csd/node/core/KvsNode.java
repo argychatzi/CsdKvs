@@ -37,8 +37,8 @@ public class KvsNode {
 	protected static final String TAG = KvsNode.class.getCanonicalName();
 	private static ArrayList<ConnectionMetaData> allNodeProperties = new ArrayList<ConnectionMetaData>();
 //	public static String[] allNodeIp = { "192.168.0.2", "192.168.0.3", "192.168.0.4", "192.168.0.5", "192.168.0.7","192.168.0.8",
-//		"192.168.0.10","192.168.0.11","192.168.0.12","192.168.0.13" };
-	//public static String[] allNodeIp = { "10.0.0.1", "10.0.0.3" };// for testing
+//		"192.168.0.10","192.168.0.11","192.168.0.12","192.168.0.13" }; // Mininet topology database Servers Ip  
+	
 		
 	
     public static void main(String[] args) throws IOException {
@@ -65,31 +65,7 @@ public class KvsNode {
     	ApplicationContext.generateNodeFarm(configuration.getNodesInFarm());
 	}
 
-    //TODO Jawad, Mihret this code is never used. If this is the case, and there are no plans to 
-    //be used in the future either, you should remove it
-   // generating the connection metadata for all internal nodes, return an array list  
-   private static ArrayList<ConnectionMetaData> generateInternalConnectionMetaData(ArrayList<String> listNodesIp){
-	   for (String key: listNodesIp){
-		   ConnectionMetaData singleNodeProperty = new ConnectionMetaData(key, Constants.DEFAULT_INTERNAL_PORT);
-		   allNodeProperties.add(singleNodeProperty); 
-	   }
-	   return allNodeProperties;
-	   
-   }
-
-   //TODO Jawad, Mihret this code is never used. If this is the case, and there are no plans to 
-   //be used in the future either, you should remove it
-   // making a arraylist
-   private static ArrayList<String> getAllNodeIp(String[] allNodeIp){
-	   ArrayList<String> listNodesIp = new ArrayList<String>();
-	   for (String key: allNodeIp){
-		   listNodesIp.add(key);
-	   }
-	   return listNodesIp;
-   }
-
-
-	private static void startMonitoringKvsSocket(IoHandler handler, final int portNumber) throws IOException {
+    private static void startMonitoringKvsSocket(IoHandler handler, final int portNumber) throws IOException {
 		
 		Logger.d(TAG, "starting Monitoring socket ...");
 		
