@@ -43,9 +43,12 @@ public class KvsNode {
 //	}
 
     public static void main(String[] args) throws IOException {
+    	
+    	Logger.d(TAG,"main started ");
+    	
     	if(args.length >0 ){
     		
-    		Logger.d(TAG, args[0]);
+    		Logger.d(TAG,"Main method here " +  args[0]);
     		
     		parseConfigurationFile(args[0]);
     		
@@ -54,10 +57,7 @@ public class KvsNode {
 
     	}
 
-		String nodeType = args[0];
-		System.out.println("nodeType = "+ nodeType);
-		if (nodeType.equals("master")){
-			ApplicationContext.setIsMasterTrue();	
+		if (ApplicationContext.isMaster()){	
 			Logger.d(TAG, "I am a master");
 		}
 		else
@@ -77,6 +77,7 @@ public class KvsNode {
 					//Then generate a NodeFarm
 					myArray = new ArrayList<ConnectionMetaData>();
 					myArray.add(new ConnectionMetaData(allNodeIp[1],ApplicationContext.getInternalConnection().getPort()));
+					
 					ApplicationContext.generateNodeFarm(myArray);
 					//The message will tell the slaves, please ping the clients
 					//So, the listOfYcsbClient should be a part of the message		

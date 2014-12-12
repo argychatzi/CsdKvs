@@ -10,19 +10,6 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
-<<<<<<< HEAD
-=======
-		<buildCommand>
-			<name>org.eclipse.ui.externaltools.ExternalToolBuilder</name>
-			<triggers>full,incremental,</triggers>
-			<arguments>
-				<dictionary>
-					<key>LaunchConfigHandle</key>
-					<value>&lt;project&gt;/.externalToolBuilders/csd_ant_builder.launch</value>
-				</dictionary>
-			</arguments>
-		</buildCommand>
->>>>>>> 2bb4eedfeed5a334ee421927f78472dc8aa5d504
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>

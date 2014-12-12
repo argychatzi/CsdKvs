@@ -789,3 +789,63 @@ java.lang.NullPointerException: null
 2014-12-12 13:36:19,391 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2014-12-12 13:36:19,391 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/jawad/ik2200/ycsb/YCSB-master/csd/src/test/resources
 >>>>>>> 2bb4eedfeed5a334ee421927f78472dc8aa5d504
+2014-12-12 17:03:03,716 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:03:03,744 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/csd/src/main/resources
+2014-12-12 17:03:03,747 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:03:03,748 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/csd/src/test/resources
+2014-12-12 17:03:08,014 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:03:08,015 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/csd/src/main/resources
+2014-12-12 17:03:08,019 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:03:08,019 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/csd/src/test/resources
+2014-12-12 17:06:46,740 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:06:46,757 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/core/src/main/resources
+2014-12-12 17:06:46,762 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:06:46,763 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/core/src/test/resources
+2014-12-12 17:06:46,954 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:06:46,955 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/csd/src/main/resources
+2014-12-12 17:06:46,957 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:06:46,957 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/csd/src/test/resources
+2014-12-12 17:35:58,370 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:35:58,394 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/core/src/main/resources
+2014-12-12 17:35:58,396 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:35:58,397 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/core/src/test/resources
+2014-12-12 17:35:58,500 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:35:58,500 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/csd/src/main/resources
+2014-12-12 17:35:58,503 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:35:58,503 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/csd/src/test/resources
+2014-12-12 17:36:26,171 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:36:26,172 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/csd/src/main/resources
+2014-12-12 17:36:26,174 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:36:26,175 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/csd/src/test/resources
+2014-12-12 17:44:56,989 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:44:57,074 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/core/src/main/resources
+2014-12-12 17:44:57,077 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:44:57,077 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/core/src/test/resources
+2014-12-12 17:44:58,995 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:44:58,995 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/csd/src/main/resources
+2014-12-12 17:44:58,998 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:44:58,999 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/csd/src/test/resources
+2014-12-12 17:47:49,331 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:47:49,332 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/core/src/main/resources
+2014-12-12 17:47:49,334 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:47:49,335 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/core/src/test/resources
+2014-12-12 17:47:49,379 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:47:49,379 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/csd/src/main/resources
+2014-12-12 17:47:49,381 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:47:49,382 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/csd/src/test/resources
+2014-12-12 17:48:12,056 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:48:12,057 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/csd/src/main/resources
+2014-12-12 17:48:12,059 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:48:12,060 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/csd/src/test/resources
+2014-12-12 17:56:04,239 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:56:04,239 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/core/src/main/resources
+2014-12-12 17:56:04,242 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:56:04,242 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/core/src/test/resources
+2014-12-12 17:56:04,452 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:56:04,452 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/csd/src/main/resources
+2014-12-12 17:56:04,455 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:56:04,455 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/csd/src/test/resources
+2014-12-12 17:56:24,168 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:56:24,168 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/csd/src/main/resources
+2014-12-12 17:56:24,171 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-12 17:56:24,171 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ik2200/ycsb/YCSB-master/csd/src/test/resources

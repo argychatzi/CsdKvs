@@ -1,0 +1,5 @@
+5:56:32:340:::com.kth.csd.node.core.KvsNode:::main started 
+5:56:32:382:::com.kth.csd.node.core.KvsNode:::Main method here 10
+5:56:32:383:::com.kth.csd.node.core.KvsNode:::10
+5:56:32:831:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile10
+5:56:32:835:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_10.json

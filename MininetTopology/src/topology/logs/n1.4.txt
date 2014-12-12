@@ -1,0 +1,51 @@
+5:56:32:80:::com.kth.csd.node.core.KvsNode:::main started 
+5:56:32:99:::com.kth.csd.node.core.KvsNode:::Main method here 4
+5:56:32:99:::com.kth.csd.node.core.KvsNode:::4
+5:56:32:333:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile4
+5:56:32:344:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_4.json
+5:56:32:394:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_4.json
+5:56:32:413:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile jsonObject{"masterInternal":{"host":"192.168.0.2","port":5000},"masterExternal":{"host":"192.168.0.2","port":6000},"ownInternal":{"host":"192.168.0.5","port":5000},"ownExternal":{"host":"192.168.0.5","port":6000},"nodes":[{"host":"192.168.0.3","port":5000},{"host":"192.168.0.4","port":5000},{"host":"192.168.0.7","port":5000},{"host":"192.168.0.8","port":5000},{"host":"192.168.0.10","port":5000},{"host":"192.168.0.11","port":5000},{"host":"192.168.0.12","port":5000},{"host":"192.168.0.13","port":5000}]}
+5:56:32:579:::com.kth.csd.node.core.KvsNode:::configuration :: Configuration [masterInternalConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=5000], masterExternalConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=6000], ownInternalConnectionMetaData=ConnectionMetaData [host=192.168.0.5, port=5000], ownExternalConnectionMetaData=ConnectionMetaData [host=192.168.0.5, port=6000], nodesInFarm=[ConnectionMetaData [host=192.168.0.3, port=5000], ConnectionMetaData [host=192.168.0.4, port=5000], ConnectionMetaData [host=192.168.0.7, port=5000], ConnectionMetaData [host=192.168.0.8, port=5000], ConnectionMetaData [host=192.168.0.10, port=5000], ConnectionMetaData [host=192.168.0.11, port=5000], ConnectionMetaData [host=192.168.0.12, port=5000], ConnectionMetaData [host=192.168.0.13, port=5000]]]
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@32725f0e
+KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.3, port=5000]
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@46adf2f
+5:56:38:129:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.3 port No. 5000
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@6ab45b29
+KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.4, port=5000]
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@7b103411
+5:56:43:138:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.4 port No. 5000
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@2bd1232
+KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.7, port=5000]
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@1e4dc00a
+5:56:48:149:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.7 port No. 5000
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@1d1e082e
+KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.8, port=5000]
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@6ae80f0d
+5:56:53:162:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.8 port No. 5000
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@5b4975d2
+KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.10, port=5000]
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@7a860dab
+5:56:58:172:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.10 port No. 5000
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@239a6904
+KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.11, port=5000]
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@193499fd
+5:57:3:181:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.11 port No. 5000
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@3fdd7880
+KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.12, port=5000]
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@4372e3c0
+5:57:8:191:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.12 port No. 5000
+KVSCLIENT CONSTRUCTOR HANDLER=com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface@7b28bdf4
+KVSCLIENT CONSTRUCTOR ConnectionMetaData=ConnectionMetaData [host=192.168.0.13, port=5000]
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@6ba43cda
+5:57:13:203:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.13 port No. 5000
+5:57:13:205:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
+handler=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@3e8f474f
+acceptor after bind=(nio socket acceptor: localAddress(es): [/0:0:0:0:0:0:0:0:5000], managedSessionCount: 0)
+5:57:13:235:::com.kth.csd.node.core.KvsNode:::Opened port 5000
+5:57:13:236:::ServerConnectionHandler:::ExternalTrafficInputInterface ... 
+5:57:13:236:::ServerConnectionHandler:::created !
+5:57:13:236:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
+handler=com.kth.csd.networking.interfaces.external.ServerExternalInputInterface@26a1bced
+acceptor after bind=(nio socket acceptor: localAddress(es): [/0:0:0:0:0:0:0:0:6000], managedSessionCount: 0)
+5:57:13:249:::com.kth.csd.node.core.KvsNode:::Opened port 6000
+5:57:13:250:::com.kth.csd.node.core.KvsNode:::I am a slave
