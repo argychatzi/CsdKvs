@@ -33,12 +33,8 @@ public class ElasticSearchClient extends DB implements YcsbTrafficInputInteraceH
 		properties.list(System.out);
 
 		String serverIp = properties.getProperty(PROPERTY_KEY_SERVER_IP);
-<<<<<<< HEAD
-//		String serverIp = "10.0.0.2";
-		createRequestSenderFromConnectionMetadata(new ConnectionMetaData(serverIp, Constants.EXTERNAL_PORT));
-=======
+
 		createKvsClientFromConnectionMetadata(new ConnectionMetaData(serverIp, Constants.DEFAULT_EXTERNAL_PORT));
->>>>>>> 38c58b713b7be582d3be284c367c4e6041bb57f3
 	}
 
 	private void createKvsClientFromConnectionMetadata(ConnectionMetaData connectionMetaData) {
@@ -47,8 +43,7 @@ public class ElasticSearchClient extends DB implements YcsbTrafficInputInteraceH
 
 	@Override
 	public Properties getProperties() {
-<<<<<<< HEAD
-		String serverIp = Constants.MASTER_IP;
+//		String serverIp = Constants.MASTER_IP;
 //		String serverIp = "10.0.0.2";
 //		try {
 //			FileReader fileReader = new FileReader(System.getProperty("user.dir") + "/properties/server_ip.txt");
@@ -59,7 +54,7 @@ public class ElasticSearchClient extends DB implements YcsbTrafficInputInteraceH
 //			Logger.d(TAG, "Read from file" + e.toString());
 //			e.printStackTrace();
 //		}
-=======
+
 		String serverIp = Constants.DEFAULT_HOST;
 		try {
 			FileReader fileReader = new FileReader(System.getProperty("user.dir") + "/properties/server_ip.txt");
@@ -70,7 +65,7 @@ public class ElasticSearchClient extends DB implements YcsbTrafficInputInteraceH
 			Logger.d(TAG, "Read from file" + e.toString());
 			e.printStackTrace();
 		}
->>>>>>> 38c58b713b7be582d3be284c367c4e6041bb57f3
+
 		Properties properties = new Properties();
 		properties.setProperty(PROPERTY_KEY_SERVER_IP, serverIp);
 
