@@ -1,6 +1,7 @@
 package com.kth.csd.node.core;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.kth.csd.networking.ConnectionMetaData;
 import com.kth.csd.networking.messages.AbstractNetworkMessage;
@@ -18,6 +19,7 @@ public class ApplicationContext {
 	private static NodeFarm mNodeFarm;
 	private static KeyValueStore mKeyValueStore;
 	private static AbstractNetworkMessage slaveNodeStatistics;
+	private static HashMap<String, Double>mNodeWithDelayCostMap;
 	private static boolean isFirstTimeMeasuringRTT=true;
 	private static ArrayList<String> ycsbIPs;
 
@@ -40,6 +42,12 @@ public class ApplicationContext {
 			ApplicationContext.ycsbIPs.add(oneYcsbIP);	
 		}
 		
+	}
+	public static void updateNodeWithDelayCostMap(String nodeIp, double nodeDelayCost){
+		mNodeWithDelayCostMap.put(nodeIp, nodeDelayCost);
+	}
+	public static HashMap<String, Double> getNodeWithDelayCostMap(){
+		return mNodeWithDelayCostMap;
 	}
 
 	public static boolean getIsFirstTimeMeasuringRTT() {

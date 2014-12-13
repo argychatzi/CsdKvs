@@ -36,7 +36,7 @@ public class ClientInternalInputInterface extends IoHandlerAdapter implements Io
 		
 			case STATISTICS_RES:{			
 				ycsbclientsRttMapFromSlave = ((StatisticsResultMessage)response).getResultsOfDelayMeasurement();		
-				AssignNewMaster.assignNewMaster(ycsbclientsRttMapFromSlave, session);
+				AssignNewMaster.putNodeWithCorrespondingDelay(ycsbclientsRttMapFromSlave, session);
 				break;
 			}
 		}

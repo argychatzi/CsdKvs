@@ -8,17 +8,24 @@ import org.apache.mina.core.session.IoSession;
 
 import com.kth.csd.networking.ConnectionMetaData;
 import com.kth.csd.node.Constants;
+import com.kth.csd.utils.Logger;
 
 public class AssignNewMaster {
 
+	private static final String TAG = AssignNewMaster.class.getCanonicalName();
 	private static HashMap<String, Double> delayCostMap; 
 	private static double nodeDelayCost;
 	private static String masterWithMinimumDelay = null;
 	private static double minValue = Integer.MAX_VALUE;
 	
-	public static void assignNewMaster(HashMap<String, Double> ycsbclientsRttMapFromSlave, IoSession session){		
+	public static void putNodeWithCorrespondingDelay(HashMap<String, Double> ycsbclientsRttMapFromSlave, IoSession session){		
 		nodeDelayCost = delayCostCalculatorOfNode(ycsbclientsRttMapFromSlave);
-		delayCostMap.put(getSessionIp(session), nodeDelayCost);
+		ApplicationContext.updateNodeWithDelayCostMap(getSessionIp(session), nodeDelayCost);
+		Logger.d(TAG, "putNodeWithCorrespondingDelay: Slave "+ getSessionIp(session) + "has delay cost "+ nodeDelayCost);
+	}
+	//This method should be called passing the delayCostMap argument with
+	//ApplicationContext.getNodeWithDelayCostMap()	
+	public static void assignNewMasterConnection(HashMap<String, Double> delayCostMap){
 		ApplicationContext.setMasterInternalConnection(new ConnectionMetaData(newMasterIP(delayCostMap), Constants.DEFAULT_INTERNAL_PORT));
 		ApplicationContext.setMasterExternalConnection(new ConnectionMetaData(newMasterIP(delayCostMap), Constants.DEFAULT_EXTERNAL_PORT));
 	}
