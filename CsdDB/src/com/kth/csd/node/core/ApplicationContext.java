@@ -31,9 +31,8 @@ public class ApplicationContext {
 		return ycsbIPs;
 	}
 
-	//TODO #Mihret make sure it gets called from the ServerExternal  
-	public static void setYcsbIPs(ArrayList<String> ycsbIPs) {
-		ApplicationContext.ycsbIPs = ycsbIPs;
+	public static void addIpToYcsbIPs(String ycsbIPs) {
+		ApplicationContext.ycsbIPs.add(ycsbIPs);
 	}
 
 	public static boolean getIsFirstTimeMeasuringRTT() {
@@ -47,6 +46,7 @@ public class ApplicationContext {
 	public static AbstractNetworkMessage  statisticsResultstoMaster(AbstractNetworkMessage statisticsResults) {
 		return slaveNodeStatistics = statisticsResults;
 	}
+	
 	// update for if write is from master
 	public static boolean isUpdate(){
 		return isUpdate;
@@ -72,6 +72,14 @@ public class ApplicationContext {
 		return KeyValueStore.getInstance();
 	}
 
+	public static boolean connectionMetadatBelongsToMasterExternal(ConnectionMetaData connectionMetaData){
+		return connectionMetaData.equals(mExternalConnection);
+	}
+	
+	public static boolean connectionMetadatBelongsToMasterInternal(ConnectionMetaData connectionMetaData){
+		return connectionMetaData.equals(mInternalConnection);
+	}
+	
 	public static void generateNodeFarm(ArrayList<ConnectionMetaData> nodeIps) {
 		Logger.d(TAG, "generateNodeFarm " + nodeIps.toString());
 		mNodeFarm = new NodeFarm(nodeIps);

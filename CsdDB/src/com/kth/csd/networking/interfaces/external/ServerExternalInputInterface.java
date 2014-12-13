@@ -13,6 +13,7 @@ import org.apache.mina.core.session.IoSession;
 
 import com.kth.csd.networking.ExecutionResultCommunicator;
 import com.kth.csd.networking.messages.AbstractNetworkMessage;
+import com.kth.csd.networking.messages.MasterMovedMessage;
 import com.kth.csd.networking.messages.OperationReadMessage;
 import com.kth.csd.networking.messages.OperationWriteMessage;
 import com.kth.csd.node.core.ApplicationContext;
@@ -26,7 +27,7 @@ import com.kth.csd.utils.Logger;
 public class ServerExternalInputInterface extends IoHandlerAdapter implements IoHandler, ExecutionResultCommunicator{
 	private static final String TAG = "ServerConnectionHandler";
 
-	public static HashSet <String> updatedYCSBClientList = new HashSet <String>();
+	public HashSet <String> updatedYCSBClientList = new HashSet <String>();
 	public static ArrayList <String> ycsbClientsList = new ArrayList<String>();	
 	private HashMap<KvsOperation, IoSession> mSessionVault;
 	
@@ -47,52 +48,36 @@ public class ServerExternalInputInterface extends IoHandlerAdapter implements Io
 		AbstractNetworkMessage response = (AbstractNetworkMessage) message;
 		KvsExecutable executableOperation = null;
 		KeyValueEntry keyValueEntry = null;
+		
+		AbstractNetworkMessage executionResult = null;
 
 		switch(response.getType()){
 			case OPERATION_READ:{
 				keyValueEntry = ((OperationReadMessage)response).getKeyValueEntry();
-				executableOperation = new KvsReader(keyValueEntry);
+				executionResult = new KvsReader(keyValueEntry).execute();
 				break;
 			}
 		
 			case OPERATION_WRITE:{
-				keyValueEntry = ((OperationWriteMessage)response).getKeyValueEntry();
-				// here we need the client IP, to calculate writepersecond
-				String ycsbClientIp = getSessionIp(session);
-				
-				keyValueEntry = ((OperationWriteMessage)response).getKeyValueEntry();
-				// in kvs writer constructor we have the ycsbClientIp 
-				executableOperation = new KvsWriter(keyValueEntry, ycsbClientIp);
-				// setting isMaster() true;
-				ApplicationContext.setIsMasterTrue();
-				//executableOperation = new KvsWriter(keyValueEntry);
+				if(ApplicationContext.isMaster()) {
+					keyValueEntry = ((OperationWriteMessage)response).getKeyValueEntry();
+					// here we need the client IP, to calculate writepersecond
+					String ycsbClientIp = getSessionIp(session);
+					ApplicationContext.addIpToYcsbIPs(ycsbClientIp); 
+					executionResult = new KvsWriter(keyValueEntry, ycsbClientIp).execute();
+				} else {
+					executionResult = new MasterMovedMessage(ApplicationContext.getMasterInternalConnection(), ApplicationContext.getMasterExternalConnection());
+				}
 				break;
 			}
 		}
-		updatelistOfYcsbClients(session); // calling the update client list method
-		Logger.d(TAG, "calling update client list");
-		
-		AbstractNetworkMessage executionResult = executableOperation.execute();
 		session.write(executionResult);
 	}
 	
-	// method for having the ycsb clients list. 
-	public void updatelistOfYcsbClients(IoSession session){
-		updatedYCSBClientList.add(getSessionIp(session));
-		ArrayList <String> ycsbClientsListtemp = new ArrayList<String>(updatedYCSBClientList);
-		ycsbClientsList = ycsbClientsListtemp;
-	}
-
-	// getter for ycsb client list
-	public static ArrayList<String> getlistOfYcsbClients(){
-		return ycsbClientsList;
-	}
-	
-	public static String getSessionIp (IoSession session){
+	public String getSessionIp (IoSession session){
 		InetSocketAddress socketAddress = (InetSocketAddress) session.getRemoteAddress();
 		InetAddress inetAddress = socketAddress.getAddress();
-		String sessionIp = inetAddress.getHostAddress();
-			return sessionIp;
+		return inetAddress.getHostAddress();
 	}
 
 	@Override

@@ -73,10 +73,10 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 	@Override
 	public HashMap<String, String> put(String key, HashMap<String, String> value) {
 	// data broadcast to all other slave nodes
-		ApplicationContext.getNodeFarm().broadCast(updateSlaveNodes(key, value));
-		Logger.d(TAG, "data replication to slave nodes");
-		
-	    incrementWriteForEveryClient(getWritingClientIP());
+//		ApplicationContext.getNodeFarm().broadCast(updateSlaveNodes(key, value));
+//		Logger.d(TAG, "data replication to slave nodes");
+//		
+//	    incrementWriteForEveryClient(getWritingClientIP());
 		return super.put(key, value);
 	}
 	

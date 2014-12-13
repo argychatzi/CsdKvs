@@ -55,7 +55,6 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 			case STATISTICS_REQ:{
 				System.out.println("STATISTICS_REQ: ServerInternal msg received!!!");
 				ArrayList<String> incomingListOfYcsbClients = ((StatisticsRequestMessage)response).getListOfYcsbClients();
-				ApplicationContext.setYcsbIPs(incomingListOfYcsbClients);
 				Logger.d(TAG, "incomingListOfYcsbClients =" + Arrays.toString(incomingListOfYcsbClients.toArray()));
 				if (ApplicationContext.getIsFirstTimeMeasuringRTT()){
 					Logger.d(TAG, "first time receiving STATISTICS_REQ");
@@ -111,28 +110,12 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 				break;
 			}
 			case OPERATION_WRITE:{
-				//TODO #Jawad, Mihret you should get the ip of the current communication from the Session object
-				//that you get from the arguments locally, and not by relying on some remote static function
-				
-				// check if write is coming from Master Node
-//				String currentSessionIp = ClientInternalInputInterface.getSessionIp(session);
-//				int currentSessionPort = ClientInternalInputInterface.getPort(session);
-//				
-//				//ConnectionMetaData currentSessionMetaData = new ConnectionMetaData(currentSessionIp, currentSessionPort);
-//				
-//				//TODO #Jawad, Mihret you should not break twice. The keyword "break" is supposed to close a
-//				// block that falls under the same "case" category.  
-//				if (ApplicationContext.getMaster().getHost() == currentSessionIp && 
-//						ApplicationContext.getMaster().getPort() == currentSessionPort){
-//					
-//				KeyValueEntry keyValueEntry = ((OperationReadMessage)message).getKeyValueEntry();
-//				ApplicationContext.setUpdateTrue();
-//				new KvsWriter(keyValueEntry).execute();
-//				 break;
-//				
-//			}
-//				else {
-//	
+				ConnectionMetaData connectionMetaData = new ConnectionMetaData(session);
+				if(ApplicationContext.connectionMetadatBelongsToMasterInternal(connectionMetaData)){
+					KeyValueEntry keyValueEntry = ((OperationReadMessage)message).getKeyValueEntry();
+					ApplicationContext.setUpdateTrue();
+					new KvsWriter(keyValueEntry).execute();
+				}
 				break;
 			}
 		}

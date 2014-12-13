@@ -2,6 +2,7 @@ package com.kth.csd.node.executors;
 
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
+import java.util.HashMap;
 
 import com.kth.csd.networking.messages.AbstractNetworkMessage;
 import com.kth.csd.networking.messages.MasterMovedMessage;
@@ -32,27 +33,11 @@ public class KvsWriter extends KvsOperation implements KvsExecutable {
 	@Override
 	public AbstractNetworkMessage execute() {
 		Logger.d(TAG, "executing ...");
-		AbstractNetworkMessage result = null;
-		// check for Current Master
+		ApplicationContext.getKeyValueStore().put(mKeyValue.getKey(), mKeyValue.getValues());
 		if (ApplicationContext.isMaster()){
-			
-			ApplicationContext.getKeyValueStore().updateWritingClientIP(mYcsbclient);
-			
-			ApplicationContext.getKeyValueStore().put(mKeyValue.getKey(), mKeyValue.getValues());
-			
-			result = new OperationWriteMessage(mKeyValue);
-		}
-		// for the slave data replication
-		else if (ApplicationContext.isUpdate()){
-			
-			ApplicationContext.getKeyValueStore().put(mKeyValue.getKey(), mKeyValue.getValues());
-			result = new OperationWriteMessage(mKeyValue);
+			ApplicationContext.getNodeFarm().broadCast(new OperationWriteMessage(mKeyValue));
 		}
 		
-		else  {
-			result = new MasterMovedMessage(ApplicationContext.getMasterInternalConnection(), ApplicationContext.getMasterExternalConnection());
-
-		}
-		return result; 
+		return new OperationWriteMessage(mKeyValue); 
 	}
 }
