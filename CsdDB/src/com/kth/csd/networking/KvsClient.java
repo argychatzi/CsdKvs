@@ -50,7 +50,7 @@ public class KvsClient implements IoFutureListener<IoFuture>{
 		IoSession result = null;	
 		try {
             ConnectFuture future = connector.connect(new InetSocketAddress(connectionMetaData.getHost(), connectionMetaData.getPort()));
-            System.out.println("KVSCLIENT initSession FUTURE="+future);
+            Logger.d(TAG, "initSession FUTURE="+future);
             future.awaitUninterruptibly();
             result = future.getSession();
             

@@ -31,8 +31,7 @@ public class KvsNode {
     public static void main(String[] args) throws IOException {
     	
     	if(args.length >0 ){
-    		Configuration configuration = parseConfigurationFile(args[0]);
-    		
+    		final Configuration configuration = parseConfigurationFile(args[0]);
     		ApplicationContext.setMasterExternalConnection(configuration.getMasterExternalConnectionMetaData());
         	ApplicationContext.setMasterInternalConnection(configuration.getMasterInternalConnectionMetaData());
         	
@@ -42,15 +41,25 @@ public class KvsNode {
         	startMonitoringKvsSocket(new ServerInternalInputInterface(), ApplicationContext.getOwnInternalConnection().getPort());
         	startMonitoringKvsSocket(new ServerExternalInputInterface(), ApplicationContext.getOwnExternalConnection().getPort());
         	
-        	ApplicationContext.generateNodeFarm(configuration.getNodesInFarm());
-        	
+        	Thread thread = new Thread(){
+        		public void run() {
+        			try {
+						Thread.sleep(10000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} finally{
+						ApplicationContext.generateNodeFarm(configuration.getNodesInFarm());
+					}
+        		}
+        	};
+        	thread.start();
         	startPollingFarmForStatistics();
     	}
     }
     
     private static void startPollingFarmForStatistics(){
     	Logger.d(TAG,"startPollingFarmForStatistics");
-    	//TODO this function makes sense to be run only and when there is a ycsb interaction in place
     	if(ApplicationContext.isMaster()) {
     		Logger.d(TAG,"isMaster");
 			Timer timer = new Timer();
