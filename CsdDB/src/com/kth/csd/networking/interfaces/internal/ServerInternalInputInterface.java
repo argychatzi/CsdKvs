@@ -29,7 +29,7 @@ import com.kth.csd.utils.Logger;
 public class ServerInternalInputInterface extends IoHandlerAdapter{
 	
 	private static final String TAG = "ServerConnectionHandler";
-	private final static double alpha = 0.9;
+	//public double alpha = Constants.ALPHA;
 	private  ExponentialMovingAverageExpanded emaStateObj;
 	private boolean isFirstTime  = true;
 	private static HashMap<String, Double> EMAResults;
@@ -59,16 +59,17 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 				if (ApplicationContext.getIsFirstTimeMeasuringRTT()){
 					Logger.d(TAG, "first time receiving STATISTICS_REQ");
 					ApplicationContext.setFirstTimeMeasuringRTT(false);
-					emaStateObj = new ExponentialMovingAverageExpanded(alpha, incomingListOfYcsbClients);
+					emaStateObj = new ExponentialMovingAverageExpanded(Constants.ALPHA, incomingListOfYcsbClients);
 					//Logger.d(TAG, "emaStateObj" + emaStateObj.toString());
 					Logger.d(TAG, "getIsFirstTimeMeasuringRTT" + ApplicationContext.getIsFirstTimeMeasuringRTT());
 				}
 				Logger.d(TAG, "Starting delay measurement calculations");
 				DelayMeasurement.CalculateDelayFromSlaveToClientNode(incomingListOfYcsbClients);
-			    //EMAResults = emaStateObj.calculatExponentialMovingAverage(DelayMeasurement.getDelayResultsHashmap());
+			    EMAResults = emaStateObj.calculatExponentialMovingAverage(DelayMeasurement.getDelayResultsHashmap());
 				HashMap<String, Double> delayResultsHashmap = DelayMeasurement.getDelayResultsHashmap();
-				
+				Logger.d(TAG, "delayResultsHashmap to be sent to Master " + delayResultsHashmap);
 				AbstractNetworkMessage statisticsResults = new StatisticsResultMessage (delayResultsHashmap);
+				
 //				ApplicationContext.statisticsResultstoMaster(statisticsResults);
 				
 				ArrayList<ConnectionMetaData> nodeIps =new ArrayList<ConnectionMetaData>();
@@ -78,20 +79,11 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 				break;
 			}
 			case STATISTICS_RES:{
-				Logger.d(TAG,"STATISTICS_RES"+response.toString());
+				Logger.d(TAG,"STATISTICS_RES " +response.toString());
 				StatisticsResultMessage statisticsResults = (StatisticsResultMessage)response;
-				Logger.d(TAG, "is statisticsResults empty ? "+String.valueOf(statisticsResults==null));
 				HashMap<String, Double> results = statisticsResults.getResultsOfDelayMeasurement();
-				Logger.d(TAG, "is results empty ?  "+String.valueOf(results==null));
-				Logger.d(TAG, "results"+ results);
-				ArrayList<String> ycsbIPs = ApplicationContext.getYcsbIPs();
-				Logger.d(TAG, "ycsbIPs"+ ycsbIPs);
-				for(String Key : ycsbIPs)
-					Logger.d(TAG, String.valueOf(results.get(Key)));
-//				Logger.d(TAG, String.valueOf(results.get("192.168.0.1")));
-//				Logger.d(TAG, String.valueOf(results.get("192.168.0.6")));
-//				Logger.d(TAG, String.valueOf(results.get("192.168.0.9")));
-				//AbstractNetworkMessage statisticsResults = new StatisticsResultMessage (EMAResults);
+				Logger.d(TAG, "results of ping recieved from : "+ session + "Results = " + results);
+	
 				ApplicationContext.statisticsResultstoMaster(statisticsResults);
 				break;
 			}

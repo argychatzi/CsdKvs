@@ -41,6 +41,7 @@ public class KvsNode {
         	startMonitoringKvsSocket(new ServerInternalInputInterface(), ApplicationContext.getOwnInternalConnection().getPort());
         	startMonitoringKvsSocket(new ServerExternalInputInterface(), ApplicationContext.getOwnExternalConnection().getPort());
         	
+
         	Thread thread = new Thread(){
         		public void run() {
         			try {
@@ -54,6 +55,10 @@ public class KvsNode {
         		}
         	};
         	thread.start();
+
+        	Logger.d(TAG,"MY IP is " + configuration.getOwnInternalConnectionMetaData());
+        	
+
         	startPollingFarmForStatistics();
     	}
     }
@@ -61,15 +66,13 @@ public class KvsNode {
     private static void startPollingFarmForStatistics(){
     	Logger.d(TAG,"startPollingFarmForStatistics");
     	if(ApplicationContext.isMaster()) {
-    		Logger.d(TAG,"isMaster");
+    		Logger.d(TAG,"I am Master");
 			Timer timer = new Timer();
 			TimerTask task = new TimerTask(){
 				//For every second, broadcast a request
 				@Override
 				public void run() {
-					//Broadcast to a nodeFarm. 
-					//You put the IP and the port of slaves you want to connect into myArray
-					//Then generate a NodeFarm
+					// Master send a message to slaves asking them to provide delay statistics by pinging a list of YCSBClients
 					if(ApplicationContext.getYcsbIPs()!=null){
 						ArrayList<String> listOfYcsbClients = ApplicationContext.getYcsbIPs();
 						AbstractNetworkMessage requestMsg = new StatisticsRequestMessage(listOfYcsbClients);		
@@ -108,4 +111,5 @@ public class KvsNode {
 
 		Logger.d(TAG, "Opened port " + portNumber);
 	}
+ 
 }
