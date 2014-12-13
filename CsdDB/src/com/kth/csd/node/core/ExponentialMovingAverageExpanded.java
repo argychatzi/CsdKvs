@@ -37,18 +37,13 @@ public class ExponentialMovingAverageExpanded {
 				Logger.d(TAG, "EWMAObj created");
 				//ExponentialMovingAverage exponentialMovingAverage = new ExponentialMovingAverage();
 				EWMA mEWMAObj = new EWMA(alpha, interval, intervalUnit);
-				Logger.d(TAG, "Here 1");
 				EMAHashmapKeeper.put(clientYCSPListIP.get(i), mEWMAObj );
 				Logger.d(TAG, "EMAHashmapKeeper put");
 			}
 			catch (Exception e) {
 				Logger.d(TAG, e.toString());
 			}
-			
-			Logger.d(TAG, "Here 2");
-
 		}
-		Logger.d(TAG, "Here 3");
 	}
 
 	public HashMap<String, Double> calculatExponentialMovingAverage(HashMap<String, Double> ResultsHashmapOfLatencyInMS) {

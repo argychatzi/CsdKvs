@@ -63,6 +63,7 @@ public class ServerExternalInputInterface extends IoHandlerAdapter implements Io
 					keyValueEntry = ((OperationWriteMessage)response).getKeyValueEntry();
 					// here we need the client IP, to calculate writepersecond
 					String ycsbClientIp = getSessionIp(session);
+					Logger.d(TAG, "OPERATION_WRITE"+ycsbClientIp);
 					ApplicationContext.addIpToYcsbIPs(ycsbClientIp); 
 					executionResult = new KvsWriter(keyValueEntry, ycsbClientIp).execute();
 				} else {

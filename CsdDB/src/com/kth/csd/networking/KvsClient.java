@@ -34,8 +34,8 @@ public class KvsClient implements IoFutureListener<IoFuture>{
 
 
 	public KvsClient(IoHandler handler, ConnectionMetaData connectionMetaData){
-		System.out.println("KVSCLIENT CONSTRUCTOR HANDLER="+handler);
-		System.out.println("KVSCLIENT CONSTRUCTOR ConnectionMetaData="+connectionMetaData);
+//		System.out.println("KVSCLIENT CONSTRUCTOR HANDLER="+handler);
+//		System.out.println("KVSCLIENT CONSTRUCTOR ConnectionMetaData="+connectionMetaData);
 	    session = initSession(handler, connectionMetaData);
 
 	}

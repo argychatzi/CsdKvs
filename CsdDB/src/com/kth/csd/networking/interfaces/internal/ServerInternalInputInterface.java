@@ -42,9 +42,8 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 
 	@Override
 	public void messageReceived(IoSession session, Object message) throws Exception {
-		System.out.println("ServerInternal msg received!!!");
 		AbstractNetworkMessage response = (AbstractNetworkMessage) message;
-		
+		Logger.d(TAG,"messageReceived"+response.toString());
 		switch(response.getType()){
 		/*
 		+ * In case of statistics req the list of client IPs is captured and then only one time we create EMA object to keep the state
@@ -53,7 +52,8 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 		+ * In case of statistics res, we pass the results to the application context.
 		+ */
 			case STATISTICS_REQ:{
-				System.out.println("STATISTICS_REQ: ServerInternal msg received!!!");
+				Logger.d(TAG,"STATISTICS_REQ"+response.toString());
+				
 				ArrayList<String> incomingListOfYcsbClients = ((StatisticsRequestMessage)response).getListOfYcsbClients();
 				Logger.d(TAG, "incomingListOfYcsbClients =" + Arrays.toString(incomingListOfYcsbClients.toArray()));
 				if (ApplicationContext.getIsFirstTimeMeasuringRTT()){
@@ -78,7 +78,7 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 				break;
 			}
 			case STATISTICS_RES:{
-				System.out.println("STATISTICS_RES: ServerInternal msg received!!!");	
+				Logger.d(TAG,"STATISTICS_RES"+response.toString());
 				StatisticsResultMessage statisticsResults = (StatisticsResultMessage)response;
 				Logger.d(TAG, "is statisticsResults empty ? "+String.valueOf(statisticsResults==null));
 				HashMap<String, Double> results = statisticsResults.getResultsOfDelayMeasurement();
@@ -96,6 +96,7 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 				break;
 			}
 			case MASTER_MOVED:{
+				Logger.d(TAG,"MASTER_MOVED"+response.toString());
 				ConnectionMetaData newMasterInternal = ((MasterMovedMessage)message).getNewMasterInternal();
 				ConnectionMetaData newMasterExternal = ((MasterMovedMessage)message).getNewMasterExternal();
 				
@@ -104,12 +105,13 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 				break;
 			}
 			case OPERATION_READ:{
-				System.out.println("OPERATION_READ: ServerInternal msg received!!!");
+				Logger.d(TAG,"OPERATION_READ"+response.toString());
 				KeyValueEntry keyValueEntry = ((OperationWriteMessage)message).getKeyValueEntry();
 				new KvsReader(keyValueEntry).execute();
 				break;
 			}
 			case OPERATION_WRITE:{
+				Logger.d(TAG,"OPERATION_WRITE Receive update from Master"+response.toString());
 				ConnectionMetaData connectionMetaData = new ConnectionMetaData(session);
 				if(ApplicationContext.connectionMetadatBelongsToMasterInternal(connectionMetaData)){
 					KeyValueEntry keyValueEntry = ((OperationReadMessage)message).getKeyValueEntry();

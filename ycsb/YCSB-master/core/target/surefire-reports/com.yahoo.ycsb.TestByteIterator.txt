@@ -1,16 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.yahoo.ycsb.TestByteIterator
 -------------------------------------------------------------------------------
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<<<<<<< HEAD
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.435 sec
-=======
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.207 sec
->>>>>>> 38c58b713b7be582d3be284c367c4e6041bb57f3
-=======
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.92 sec
->>>>>>> 2bb4eedfeed5a334ee421927f78472dc8aa5d504
-=======
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.94 sec
->>>>>>> Stashed changes
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.336 sec

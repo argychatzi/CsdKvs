@@ -64,8 +64,10 @@ public class KvsNode {
     }
     
     private static void startPollingFarmForStatistics(){
+    	Logger.d(TAG,"startPollingFarmForStatistics");
     	//TODO this function makes sense to be run only and when there is a ycsb interaction in place
     	if(ApplicationContext.isMaster()) {
+    		Logger.d(TAG,"isMaster");
 			Timer timer = new Timer();
 			TimerTask task = new TimerTask(){
 				//For every second, broadcast a request
@@ -74,13 +76,15 @@ public class KvsNode {
 					//Broadcast to a nodeFarm. 
 					//You put the IP and the port of slaves you want to connect into myArray
 					//Then generate a NodeFarm
+					if(ApplicationContext.getYcsbIPs()!=null){
+						ArrayList<String> listOfYcsbClients = ApplicationContext.getYcsbIPs();
+						AbstractNetworkMessage requestMsg = new StatisticsRequestMessage(listOfYcsbClients);		
+						Logger.d(TAG, "requestMsg = " +  requestMsg.toString() );
+						//Broadcast
+						ApplicationContext.getNodeFarm().broadCast(requestMsg);
+						Logger.d(TAG, "Broadcast finished" );
+					}
 
-					ArrayList<String> listOfYcsbClients = ApplicationContext.getYcsbIPs();
-					AbstractNetworkMessage requestMsg = new StatisticsRequestMessage(listOfYcsbClients);		
-					Logger.d(TAG, "requestMsg = " +  requestMsg.toString() );
-					//Broadcast
-					ApplicationContext.getNodeFarm().broadCast(requestMsg);
-					Logger.d(TAG, "Broadcast finished" );
 				}
 			};
 			timer.scheduleAtFixedRate(task, 0, sendRequestInterval);	

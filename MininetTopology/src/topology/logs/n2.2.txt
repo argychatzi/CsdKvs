@@ -1,34 +1,33 @@
-7:1:41:430:::com.kth.csd.node.core.KvsNode:::6
-7:1:41:617:::com.kth.csd.node.core.KvsNode:::6
-7:1:42:736:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile6
-7:1:42:786:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_6.json
-7:1:42:910:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_6.json
-7:1:42:956:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile jsonObject{"masterInternal":{"host":"192.168.0.2","port":5000},"masterExternal":{"host":"192.168.0.2","port":6000},"ownInternal":{"host":"192.168.0.8","port":5000},"ownExternal":{"host":"192.168.0.8","port":6000},"nodes":[{"host":"192.168.0.3","port":5000},{"host":"192.168.0.4","port":5000},{"host":"192.168.0.5","port":5000},{"host":"192.168.0.7","port":5000},{"host":"192.168.0.10","port":5000},{"host":"192.168.0.11","port":5000},{"host":"192.168.0.12","port":5000},{"host":"192.168.0.13","port":5000}]}
-7:1:43:700:::com.kth.csd.node.core.KvsNode:::configuration :: Configuration [masterInternalConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=5000], masterExternalConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=6000], ownInternalConnectionMetaData=ConnectionMetaData [host=192.168.0.8, port=5000], ownExternalConnectionMetaData=ConnectionMetaData [host=192.168.0.8, port=6000], nodesInFarm=[ConnectionMetaData [host=192.168.0.3, port=5000], ConnectionMetaData [host=192.168.0.4, port=5000], ConnectionMetaData [host=192.168.0.5, port=5000], ConnectionMetaData [host=192.168.0.7, port=5000], ConnectionMetaData [host=192.168.0.10, port=5000], ConnectionMetaData [host=192.168.0.11, port=5000], ConnectionMetaData [host=192.168.0.12, port=5000], ConnectionMetaData [host=192.168.0.13, port=5000]]]
+4:55:30:37:::com.kth.csd.node.core.KvsNode:::main started 
+4:55:30:86:::com.kth.csd.node.core.KvsNode:::Main method here 6
+4:55:30:328:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile6
+4:55:30:344:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_6.json
+4:55:30:377:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_6.json
+4:55:30:403:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile jsonObject{"masterInternal":{"host":"192.168.0.2","port":5000},"masterExternal":{"host":"192.168.0.2","port":6000},"ownInternal":{"host":"192.168.0.8","port":5000},"ownExternal":{"host":"192.168.0.8","port":6000},"nodes":[{"host":"192.168.0.3","port":5000},{"host":"192.168.0.4","port":5000},{"host":"192.168.0.5","port":5000},{"host":"192.168.0.7","port":5000},{"host":"192.168.0.10","port":5000},{"host":"192.168.0.11","port":5000},{"host":"192.168.0.12","port":5000},{"host":"192.168.0.13","port":5000}]}
+4:55:30:506:::com.kth.csd.node.core.KvsNode:::configuration :: Configuration [masterInternalConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=5000], masterExternalConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=6000], ownInternalConnectionMetaData=ConnectionMetaData [host=192.168.0.8, port=5000], ownExternalConnectionMetaData=ConnectionMetaData [host=192.168.0.8, port=6000], nodesInFarm=[ConnectionMetaData [host=192.168.0.3, port=5000], ConnectionMetaData [host=192.168.0.4, port=5000], ConnectionMetaData [host=192.168.0.5, port=5000], ConnectionMetaData [host=192.168.0.7, port=5000], ConnectionMetaData [host=192.168.0.10, port=5000], ConnectionMetaData [host=192.168.0.11, port=5000], ConnectionMetaData [host=192.168.0.12, port=5000], ConnectionMetaData [host=192.168.0.13, port=5000]]]
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-7:1:43:886:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
-7:1:45:640:::com.kth.csd.node.core.KvsNode:::Opened port 5000
-7:1:45:653:::ServerConnectionHandler:::ExternalTrafficInputInterface ... 
-7:1:45:653:::ServerConnectionHandler:::created !
-7:1:45:673:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
-7:1:45:714:::com.kth.csd.node.core.KvsNode:::Opened port 6000
-7:1:45:715:::com.kth.csd.node.core.ApplicationContext:::generateNodeFarm [ConnectionMetaData [host=192.168.0.3, port=5000], ConnectionMetaData [host=192.168.0.4, port=5000], ConnectionMetaData [host=192.168.0.5, port=5000], ConnectionMetaData [host=192.168.0.7, port=5000], ConnectionMetaData [host=192.168.0.10, port=5000], ConnectionMetaData [host=192.168.0.11, port=5000], ConnectionMetaData [host=192.168.0.12, port=5000], ConnectionMetaData [host=192.168.0.13, port=5000]]
-7:1:45:727:::com.kth.csd.node.core.NodeFarm:::size 8
-7:1:45:727:::com.kth.csd.node.core.NodeFarm::: connectionMetaData ConnectionMetaData [host=192.168.0.3, port=5000]
-7:1:45:728:::com.kth.csd.node.core.NodeFarm::: ApplicationContext.getMasterInternalConnection()ConnectionMetaData [host=192.168.0.2, port=5000]
-7:1:45:729:::com.kth.csd.node.core.NodeFarm:::connectionMetaData ConnectionMetaData [host=192.168.0.3, port=5000]
+4:55:30:539:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
+handler=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@e07fc8
+acceptor after bind=(nio socket acceptor: localAddress(es): [/0:0:0:0:0:0:0:0:5000], managedSessionCount: 0)
+4:55:30:828:::com.kth.csd.node.core.KvsNode:::Opened port 5000
+4:55:30:829:::ServerConnectionHandler:::ExternalTrafficInputInterface ... 
+4:55:30:830:::ServerConnectionHandler:::created !
+4:55:30:831:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
+handler=com.kth.csd.networking.interfaces.external.ServerExternalInputInterface@1e7a6ae
+acceptor after bind=(nio socket acceptor: localAddress(es): [/0:0:0:0:0:0:0:0:6000], managedSessionCount: 0)
+4:55:30:842:::com.kth.csd.node.core.KvsNode:::Opened port 6000
+4:55:30:843:::com.kth.csd.node.core.KvsNode:::generateNodeFarm [ConnectionMetaData [host=192.168.0.3, port=5000], ConnectionMetaData [host=192.168.0.4, port=5000], ConnectionMetaData [host=192.168.0.5, port=5000], ConnectionMetaData [host=192.168.0.7, port=5000], ConnectionMetaData [host=192.168.0.10, port=5000], ConnectionMetaData [host=192.168.0.11, port=5000], ConnectionMetaData [host=192.168.0.12, port=5000], ConnectionMetaData [host=192.168.0.13, port=5000]]
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@1e219e7
 Failed to connect.
 org.apache.mina.core.RuntimeIoException: Failed to get the session.
 	at org.apache.mina.core.future.DefaultConnectFuture.getSession(DefaultConnectFuture.java:58)
-	at com.kth.csd.networking.KvsClient.initSession(KvsClient.java:56)
-	at com.kth.csd.networking.KvsClient.access$0(KvsClient.java:45)
-	at com.kth.csd.networking.KvsClient$1.run(KvsClient.java:38)
-	at com.kth.csd.networking.KvsClient.<init>(KvsClient.java:42)
-	at com.kth.csd.node.core.NodeFarm.<init>(NodeFarm.java:24)
-	at com.kth.csd.node.core.ApplicationContext.generateNodeFarm(ApplicationContext.java:52)
-	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:59)
+	at com.kth.csd.networking.KvsClient.initSession(KvsClient.java:55)
+	at com.kth.csd.networking.KvsClient.<init>(KvsClient.java:39)
+	at com.kth.csd.node.core.NodeFarm.<init>(NodeFarm.java:19)
+	at com.kth.csd.node.core.ApplicationContext.generateNodeFarm(ApplicationContext.java:92)
+	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:60)
 Caused by: java.net.ConnectException: Connection refused
 	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
 	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
@@ -41,57 +40,34 @@ Caused by: java.net.ConnectException: Connection refused
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:745)
-7:1:51:135:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.3 port No. 5000
-7:1:51:137:::com.kth.csd.node.core.NodeFarm:::Return 
-7:1:51:138:::com.kth.csd.node.core.NodeFarm::: connectionMetaData ConnectionMetaData [host=192.168.0.4, port=5000]
-7:1:51:156:::com.kth.csd.node.core.NodeFarm::: ApplicationContext.getMasterInternalConnection()ConnectionMetaData [host=192.168.0.2, port=5000]
-7:1:51:157:::com.kth.csd.node.core.NodeFarm:::connectionMetaData ConnectionMetaData [host=192.168.0.4, port=5000]
-7:1:51:291:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.4:5000
-7:1:51:292:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.4 port No. 5000
-7:1:51:294:::com.kth.csd.node.core.NodeFarm:::Return 
-7:1:51:294:::com.kth.csd.node.core.NodeFarm::: connectionMetaData ConnectionMetaData [host=192.168.0.5, port=5000]
-7:1:51:295:::com.kth.csd.node.core.NodeFarm::: ApplicationContext.getMasterInternalConnection()ConnectionMetaData [host=192.168.0.2, port=5000]
-7:1:51:297:::com.kth.csd.node.core.NodeFarm:::connectionMetaData ConnectionMetaData [host=192.168.0.5, port=5000]
-7:1:51:397:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.5:5000
-7:1:51:398:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.5 port No. 5000
-7:1:51:398:::com.kth.csd.node.core.NodeFarm:::Return 
-7:1:51:398:::com.kth.csd.node.core.NodeFarm::: connectionMetaData ConnectionMetaData [host=192.168.0.7, port=5000]
-7:1:51:399:::com.kth.csd.node.core.NodeFarm::: ApplicationContext.getMasterInternalConnection()ConnectionMetaData [host=192.168.0.2, port=5000]
-7:1:51:399:::com.kth.csd.node.core.NodeFarm:::connectionMetaData ConnectionMetaData [host=192.168.0.7, port=5000]
-7:1:51:524:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.7:5000
-7:1:51:524:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.7 port No. 5000
-7:1:51:525:::com.kth.csd.node.core.NodeFarm:::Return 
-7:1:51:525:::com.kth.csd.node.core.NodeFarm::: connectionMetaData ConnectionMetaData [host=192.168.0.10, port=5000]
-7:1:51:525:::com.kth.csd.node.core.NodeFarm::: ApplicationContext.getMasterInternalConnection()ConnectionMetaData [host=192.168.0.2, port=5000]
-7:1:51:526:::com.kth.csd.node.core.NodeFarm:::connectionMetaData ConnectionMetaData [host=192.168.0.10, port=5000]
-7:1:51:637:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.10:5000
-7:1:51:638:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.10 port No. 5000
-7:1:51:638:::com.kth.csd.node.core.NodeFarm:::Return 
-7:1:51:639:::com.kth.csd.node.core.NodeFarm::: connectionMetaData ConnectionMetaData [host=192.168.0.11, port=5000]
-7:1:51:639:::com.kth.csd.node.core.NodeFarm::: ApplicationContext.getMasterInternalConnection()ConnectionMetaData [host=192.168.0.2, port=5000]
-7:1:51:639:::com.kth.csd.node.core.NodeFarm:::connectionMetaData ConnectionMetaData [host=192.168.0.11, port=5000]
-7:1:51:696:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.11:5000
-7:1:51:696:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.11 port No. 5000
-7:1:51:697:::com.kth.csd.node.core.NodeFarm:::Return 
-7:1:51:697:::com.kth.csd.node.core.NodeFarm::: connectionMetaData ConnectionMetaData [host=192.168.0.12, port=5000]
-7:1:51:697:::com.kth.csd.node.core.NodeFarm::: ApplicationContext.getMasterInternalConnection()ConnectionMetaData [host=192.168.0.2, port=5000]
-7:1:51:698:::com.kth.csd.node.core.NodeFarm:::connectionMetaData ConnectionMetaData [host=192.168.0.12, port=5000]
-7:1:51:744:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.12:5000
-7:1:51:745:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.12 port No. 5000
-7:1:51:745:::com.kth.csd.node.core.NodeFarm:::Return 
-7:1:51:745:::com.kth.csd.node.core.NodeFarm::: connectionMetaData ConnectionMetaData [host=192.168.0.13, port=5000]
-7:1:51:746:::com.kth.csd.node.core.NodeFarm::: ApplicationContext.getMasterInternalConnection()ConnectionMetaData [host=192.168.0.2, port=5000]
-7:1:51:747:::com.kth.csd.node.core.NodeFarm:::connectionMetaData ConnectionMetaData [host=192.168.0.13, port=5000]
+4:55:35:869:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.3 port No. 5000
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@e04204
+4:55:35:880:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.4:5000
+4:55:35:880:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.4 port No. 5000
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@1533ae9
+4:55:35:890:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.5:5000
+4:55:35:890:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.5 port No. 5000
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@1a8fb80
+4:55:35:894:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.7:5000
+4:55:35:894:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.7 port No. 5000
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@1077c64
+4:55:35:908:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.10:5000
+4:55:35:908:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.10 port No. 5000
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@ddc72c
+4:55:35:915:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.11:5000
+4:55:35:915:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.11 port No. 5000
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@1e8de2f
+4:55:35:927:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.12:5000
+4:55:35:927:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.12 port No. 5000
+KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@16a8198
 Failed to connect.
 org.apache.mina.core.RuntimeIoException: Failed to get the session.
 	at org.apache.mina.core.future.DefaultConnectFuture.getSession(DefaultConnectFuture.java:58)
-	at com.kth.csd.networking.KvsClient.initSession(KvsClient.java:56)
-	at com.kth.csd.networking.KvsClient.access$0(KvsClient.java:45)
-	at com.kth.csd.networking.KvsClient$1.run(KvsClient.java:38)
-	at com.kth.csd.networking.KvsClient.<init>(KvsClient.java:42)
-	at com.kth.csd.node.core.NodeFarm.<init>(NodeFarm.java:24)
-	at com.kth.csd.node.core.ApplicationContext.generateNodeFarm(ApplicationContext.java:52)
-	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:59)
+	at com.kth.csd.networking.KvsClient.initSession(KvsClient.java:55)
+	at com.kth.csd.networking.KvsClient.<init>(KvsClient.java:39)
+	at com.kth.csd.node.core.NodeFarm.<init>(NodeFarm.java:19)
+	at com.kth.csd.node.core.ApplicationContext.generateNodeFarm(ApplicationContext.java:92)
+	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:60)
 Caused by: java.net.ConnectException: Connection refused
 	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
 	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
@@ -104,5 +80,5 @@ Caused by: java.net.ConnectException: Connection refused
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:745)
-7:1:56:792:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.13 port No. 5000
-7:1:56:792:::com.kth.csd.node.core.NodeFarm:::Return 
+4:55:40:938:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.13 port No. 5000
+4:55:40:938:::com.kth.csd.node.core.KvsNode:::startPollingFarmForStatistics
