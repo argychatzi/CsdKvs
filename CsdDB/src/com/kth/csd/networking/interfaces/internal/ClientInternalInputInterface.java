@@ -11,7 +11,7 @@ import com.kth.csd.networking.messages.AbstractNetworkMessage;
 import com.kth.csd.networking.messages.StatisticsResultMessage;
 import com.kth.csd.node.operation.KeyValueEntry;
 import com.kth.csd.node.operation.KvsOperation;
-import com.kth.csd.node.core.AssignNewMaster;
+import com.kth.csd.node.core.NewMasterSelector;
 
 public class ClientInternalInputInterface extends IoHandlerAdapter implements IoHandler, ExecutionResultCommunicator{
 	
@@ -36,7 +36,7 @@ public class ClientInternalInputInterface extends IoHandlerAdapter implements Io
 		
 			case STATISTICS_RES:{			
 				ycsbclientsRttMapFromSlave = ((StatisticsResultMessage)response).getResultsOfDelayMeasurement();		
-				AssignNewMaster.putNodeWithCorrespondingDelay(ycsbclientsRttMapFromSlave, session);
+				NewMasterSelector.putNodeWithCorrespondingDelay(ycsbclientsRttMapFromSlave, session);
 				break;
 			}
 		}

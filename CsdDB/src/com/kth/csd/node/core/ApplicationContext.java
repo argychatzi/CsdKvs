@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import com.kth.csd.networking.ConnectionMetaData;
 import com.kth.csd.networking.messages.AbstractNetworkMessage;
+import com.kth.csd.networking.messages.MasterMovedMessage;
 import com.kth.csd.utils.Logger;
 
 public class ApplicationContext {
@@ -99,6 +100,15 @@ public class ApplicationContext {
 		Logger.d(TAG, "generateNodeFarm " + nodeIps.toString());
 		mNodeFarm = new NodeFarm(nodeIps);
 	}
+	
+	public static void assignNewMaster(ConnectionMetaData internal, ConnectionMetaData external){
+		setMasterInternalConnection(internal);
+		setMasterExternalConnection(external);
+		
+		MasterMovedMessage masterMovedMessage = new MasterMovedMessage(internal, external);
+		ApplicationContext.getNodeFarm().broadCast(masterMovedMessage);
+	}
+	
 
 	public static ConnectionMetaData getOwnInternalConnection() {
 		return mInternalConnection;
