@@ -50,14 +50,22 @@ public class NewMasterSelector {
 		return nodeDelayCost;
 	}
 	
-	public static String selectNewMaster(HashMap<String, Double> mapOfNodeandDelay){	
+	public static String selectNewMaster(HashMap<String, Double> mapOfNodeandDelay){
+		double masterDelayCost = calculateCostForNode(MasterOwnDelaytoClients.calculatDelayToYCSB());
 		for (String key: mapOfNodeandDelay.keySet() ) {
 			double value = mapOfNodeandDelay.get(key);
 			if (value < minValue){
 				minValue = value;
 				masterWithMinimumDelay = key;
 			}
+			
 		}
-		return masterWithMinimumDelay;	
+		if (minValue< masterDelayCost){
+		
+		return masterWithMinimumDelay;
+		}
+		else{
+			return ApplicationContext.getMasterExternalConnection().getHost();
+		}
 	}
 }

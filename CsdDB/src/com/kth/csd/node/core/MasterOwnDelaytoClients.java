@@ -7,10 +7,10 @@ import com.kth.csd.utils.Logger;
 
 public class MasterOwnDelaytoClients {
 private static final String TAG = MasterOwnDelaytoClients.class.getCanonicalName();
-private  ExponentialMovingAverageExpanded MasteremaStateObj;
+private  static ExponentialMovingAverageExpanded MasteremaStateObj;
 private static HashMap<String, Double> masteremaResults;
 	
-public HashMap<String, Double> calculatDelayToYCSB() {
+public static HashMap<String, Double> calculatDelayToYCSB() {
 	
 	HashMap<String, Double> delayResultsHashmap = new HashMap<String, Double>();
 	
