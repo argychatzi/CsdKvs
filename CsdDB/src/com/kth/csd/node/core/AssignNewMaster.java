@@ -20,8 +20,10 @@ public class AssignNewMaster {
 	
 	public static void putNodeWithCorrespondingDelay(HashMap<String, Double> ycsbclientsRttMapFromSlave, IoSession session){		
 		nodeDelayCost = delayCostCalculatorOfNode(ycsbclientsRttMapFromSlave);
-		ApplicationContext.updateNodeWithDelayCostMap(getSessionIp(session), nodeDelayCost);
-		Logger.d(TAG, "putNodeWithCorrespondingDelay: Slave "+ getSessionIp(session) + "has delay cost "+ nodeDelayCost);
+		
+		ConnectionMetaData connectionMetaData = new ConnectionMetaData(session);
+		ApplicationContext.updateNodeWithDelayCostMap(connectionMetaData.getHost(), nodeDelayCost);
+		Logger.d(TAG, "putNodeWithCorrespondingDelay: Slave "+ connectionMetaData.getHost() + "has delay cost "+ nodeDelayCost);
 	}
 	//This method should be called passing the delayCostMap argument with
 	//ApplicationContext.getNodeWithDelayCostMap()	
@@ -52,11 +54,5 @@ public class AssignNewMaster {
 			}
 		}
 		return masterWithMinimumDelay;	
-	}
-	public static String getSessionIp (IoSession session){
-		InetSocketAddress socketAddress = (InetSocketAddress) session.getRemoteAddress();
-		InetAddress inetAddress = socketAddress.getAddress();
-		String sessionIp = inetAddress.getHostAddress();
-			return sessionIp;
 	}
 }
