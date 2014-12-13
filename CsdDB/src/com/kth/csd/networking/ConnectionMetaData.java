@@ -29,9 +29,16 @@ public class ConnectionMetaData implements Serializable{
 		return "ConnectionMetaData [host=" + host + ", port=" + port + "]";
 	}
 
-	public ConnectionMetaData(IoSession session){
-		this.host = ((InetSocketAddress)session.getRemoteAddress()).getHostName();
-		this.port =((InetSocketAddress)session.getRemoteAddress()).getPort();
+	public static ConnectionMetaData generateConnectionMetadaForRemoteEntityInSession(IoSession session){
+		String host = ((InetSocketAddress)session.getRemoteAddress()).getHostName();
+		int port =((InetSocketAddress)session.getRemoteAddress()).getPort();
+		return new ConnectionMetaData(host, port);
+	}
+	
+	public static ConnectionMetaData generateConnectionMetadaForLocalEntityInSession(IoSession session){
+		String host = ((InetSocketAddress)session.getLocalAddress()).getHostName();
+		int port = ((InetSocketAddress)session.getLocalAddress()).getPort();
+		return new ConnectionMetaData(host, port);
 	}
 
 	@Override

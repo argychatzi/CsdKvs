@@ -18,7 +18,6 @@ import com.kth.csd.networking.interfaces.external.ServerExternalInputInterface;
 import com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface;
 import com.kth.csd.networking.messages.AbstractNetworkMessage;
 import com.kth.csd.networking.messages.StatisticsRequestMessage;
-import com.kth.csd.node.Constants;
 import com.kth.csd.utils.Configuration;
 import com.kth.csd.utils.ConfigurationReader;
 import com.kth.csd.utils.Logger;
@@ -27,25 +26,11 @@ import com.kth.csd.utils.Logger;
 public class KvsNode {
 
 	protected static final String TAG = KvsNode.class.getCanonicalName();
-//	private static ArrayList<ConnectionMetaData> allNodeProperties = new ArrayList<ConnectionMetaData>();
-	public static String[] allYCSBIp = { "192.168.0.1", "192.168.0.6","192.168.0.9" };// for testing
-//	private static AbstractNetworkMessage requestMsg;
-//	private static AbstractNetworkMessage resultsMsg;
-	private static ArrayList<ConnectionMetaData> myArray;
 	private static final int sendRequestInterval = 10000;//1 second
-//
-//	public KvsNode(ArrayList<ConnectionMetaData> myArray) {
-//
-//	}
 
     public static void main(String[] args) throws IOException {
     	
-    	Logger.d(TAG,"main started ");
-    	
     	if(args.length >0 ){
-    		
-    		Logger.d(TAG,"Main method here " +  args[0]);
-    		
     		Configuration configuration = parseConfigurationFile(args[0]);
     		
     		ApplicationContext.setMasterExternalConnection(configuration.getMasterExternalConnectionMetaData());

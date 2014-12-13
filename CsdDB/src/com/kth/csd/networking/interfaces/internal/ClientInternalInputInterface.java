@@ -6,6 +6,7 @@ import org.apache.mina.core.service.IoHandler;
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;
 
+import com.kth.csd.networking.ConnectionMetaData;
 import com.kth.csd.networking.ExecutionResultCommunicator;
 import com.kth.csd.networking.messages.AbstractNetworkMessage;
 import com.kth.csd.networking.messages.StatisticsResultMessage;
@@ -35,8 +36,9 @@ public class ClientInternalInputInterface extends IoHandlerAdapter implements Io
 		switch(response.getType()){
 		
 			case STATISTICS_RES:{			
-				ycsbclientsRttMapFromSlave = ((StatisticsResultMessage)response).getResultsOfDelayMeasurement();		
-				NewMasterSelector.putNodeWithCorrespondingDelay(ycsbclientsRttMapFromSlave, session);
+				ycsbclientsRttMapFromSlave = ((StatisticsResultMessage)response).getResultsOfDelayMeasurement();	
+				String remoteIp = ConnectionMetaData.generateConnectionMetadaForRemoteEntityInSession(session).getHost();
+				NewMasterSelector.putNodeWithCorrespondingDelay(ycsbclientsRttMapFromSlave, remoteIp);
 				break;
 			}
 		}

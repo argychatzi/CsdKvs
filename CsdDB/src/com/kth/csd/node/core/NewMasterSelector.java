@@ -17,12 +17,11 @@ public class NewMasterSelector {
 	private static String masterWithMinimumDelay = null;
 	private static double minValue = Integer.MAX_VALUE;
 	
-	public static void putNodeWithCorrespondingDelay(HashMap<String, Double> ycsbclientsRttMapFromSlave, IoSession session){		
+	public static void putNodeWithCorrespondingDelay(HashMap<String, Double> ycsbclientsRttMapFromSlave, String slaveIp){		
 		nodeDelayCost = calculateCostForNode(ycsbclientsRttMapFromSlave);
 		
-		ConnectionMetaData connectionMetaData = new ConnectionMetaData(session);
-		ApplicationContext.updateNodeWithDelayCostMap(connectionMetaData.getHost(), nodeDelayCost);
-		Logger.d(TAG, "putNodeWithCorrespondingDelay: Slave "+ connectionMetaData.getHost() + "has delay cost "+ nodeDelayCost);
+		ApplicationContext.updateNodeWithDelayCostMap(slaveIp, nodeDelayCost);
+		Logger.d(TAG, "putNodeWithCorrespondingDelay: Slave "+ slaveIp + "has delay cost "+ nodeDelayCost);
 	}
 	
 	//This method should be called passing the delayCostMap argument with

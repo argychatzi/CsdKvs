@@ -112,7 +112,7 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 			}
 			case OPERATION_WRITE:{
 				Logger.d(TAG,"OPERATION_WRITE Receive update from Master"+response.toString());
-				ConnectionMetaData connectionMetaData = new ConnectionMetaData(session);
+				ConnectionMetaData connectionMetaData = ConnectionMetaData.generateConnectionMetadaForRemoteEntityInSession(session);
 				if(ApplicationContext.connectionMetadatBelongsToMasterInternal(connectionMetaData)){
 					KeyValueEntry keyValueEntry = ((OperationReadMessage)message).getKeyValueEntry();
 					ApplicationContext.setUpdateTrue();
