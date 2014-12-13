@@ -31,6 +31,7 @@ public class ApplicationContext {
 		return ycsbIPs;
 	}
 
+	//TODO #Mihret make sure it gets called from the ServerExternal  
 	public static void setYcsbIPs(ArrayList<String> ycsbIPs) {
 		ApplicationContext.ycsbIPs = ycsbIPs;
 	}
@@ -60,11 +61,10 @@ public class ApplicationContext {
 	}
 
 	public static boolean isMaster() {
-		
 		return mMasterExternalConnection.equals(mExternalConnection) && mMasterInternalConnection.equals(mInternalConnection);
 	}
 
-	public static NodeFarm getNodes() {
+	public static NodeFarm getNodeFarm() {
 		return mNodeFarm;
 	}
 
@@ -77,11 +77,11 @@ public class ApplicationContext {
 		mNodeFarm = new NodeFarm(nodeIps);
 	}
 	
-	public static ConnectionMetaData getInternalConnection() {
+	public static ConnectionMetaData getOwnInternalConnection() {
 		return mInternalConnection;
 	}
 	
-	public static ConnectionMetaData getExternalConnection() {
+	public static ConnectionMetaData getOwnExternalConnection() {
 		return mExternalConnection;
 	}
 	
@@ -108,5 +108,7 @@ public class ApplicationContext {
 	public static void setMasterExternalConnection(ConnectionMetaData externalConnection) {
 		mMasterExternalConnection = externalConnection;
 	}
+	
+	
 	
 }

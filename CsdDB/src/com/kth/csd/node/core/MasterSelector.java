@@ -9,7 +9,7 @@ public class MasterSelector {
 	private static final String TAG = MasterSelector.class.getCanonicalName();
 
 	public static void notifyMasterChanged(MasterMovedMessage masterData){
-		ApplicationContext.getNodes().broadCast(masterData);
+		ApplicationContext.getNodeFarm().broadCast(masterData);
 	}
 }
  
