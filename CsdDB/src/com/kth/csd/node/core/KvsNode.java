@@ -41,6 +41,7 @@ public class KvsNode {
         	startMonitoringKvsSocket(new ServerInternalInputInterface(), ApplicationContext.getOwnInternalConnection().getPort());
         	startMonitoringKvsSocket(new ServerExternalInputInterface(), ApplicationContext.getOwnExternalConnection().getPort());
         	
+
         	Thread thread = new Thread(){
         		public void run() {
         			try {
@@ -54,9 +55,8 @@ public class KvsNode {
         		}
         	};
         	thread.start();
-        	Logger.d(TAG, "node Ip " + ApplicationContext.getOwnInternalConnection().getHost());
-        	Logger.d(TAG, "ports: " + ApplicationContext.getOwnInternalConnection().getPort() + ", " + ApplicationContext.getOwnExternalConnection().getPort());
-
+        	Logger.d(TAG,"MY IP is " + configuration.getOwnInternalConnectionMetaData());
+        	
         	startPollingFarmForStatistics();
     	}
     }
@@ -83,4 +83,5 @@ public class KvsNode {
 		acceptor.bind( new InetSocketAddress(portNumber) );
 		System.out.println("acceptor after bind="+acceptor.toString());
 	}
+ 
 }
