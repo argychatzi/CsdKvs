@@ -55,6 +55,7 @@ public class KvsNode {
         		}
         	};
         	thread.start();
+
         	Logger.d(TAG,"MY IP is " + configuration.getOwnInternalConnectionMetaData());
         	
         	startPollingFarmForStatistics();
