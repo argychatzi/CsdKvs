@@ -1,11 +1,13 @@
 package com.kth.csd.networking.messages;
 
+import java.io.Serializable;
+
 import com.kth.csd.networking.ConnectionMetaData;
 import com.kth.csd.networking.messages.AbstractNetworkMessage.type;
 
-public class MasterMovedMessage extends AbstractNetworkMessage{
+public class MasterMovedMessage extends AbstractNetworkMessage implements Serializable{
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 7041586755481399997L;
 
 	public MasterMovedMessage(ConnectionMetaData internal, ConnectionMetaData external ){
 		super(type.MASTER_MOVED);
@@ -20,7 +22,9 @@ public class MasterMovedMessage extends AbstractNetworkMessage{
 		return ((MasterConnections) mData).getExternalConnection();
 	}
 	
-	private class MasterConnections{
+	private class MasterConnections implements Serializable{
+		private static final long serialVersionUID = -5775109155326515762L;
+
 		private ConnectionMetaData internalConnection;
 		private ConnectionMetaData externalConnection;
 		
@@ -36,7 +40,17 @@ public class MasterMovedMessage extends AbstractNetworkMessage{
 		public ConnectionMetaData getExternalConnection() {
 			return externalConnection;
 		}
-		
+
+		@Override
+		public String toString() {
+			return "MasterConnections [internalConnection="
+					+ internalConnection + ", externalConnection="
+					+ externalConnection + "]";
+		}
 	}
-	
+
+	@Override
+	public String toString() {
+		return "MasterMovedMessage [mData=" + (MasterConnections)mData + "]";
+	}
 }

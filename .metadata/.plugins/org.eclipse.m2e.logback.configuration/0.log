@@ -913,3 +913,11 @@ java.lang.NullPointerException: null
 2014-12-13 19:05:05,658 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/jawad/ik2200/ycsb/YCSB-master/csd/src/main/resources
 2014-12-13 19:05:05,668 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2014-12-13 19:05:05,668 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/jawad/ik2200/ycsb/YCSB-master/csd/src/test/resources
+2014-12-14 17:38:39,660 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-14 17:38:39,666 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/ycsb/YCSB-master/csd/src/main/resources
+2014-12-14 17:38:39,669 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-14 17:38:39,669 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/ycsb/YCSB-master/csd/src/test/resources
+2014-12-14 17:54:35,568 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-14 17:54:35,569 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/ycsb/YCSB-master/csd/src/main/resources
+2014-12-14 17:54:35,571 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-14 17:54:35,571 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/ycsb/YCSB-master/csd/src/test/resources

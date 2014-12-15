@@ -35,9 +35,20 @@ public class KvsWriter extends KvsOperation implements KvsExecutable {
 		Logger.d(TAG, "executing ...");
 		ApplicationContext.getKeyValueStore().put(mKeyValue.getKey(), mKeyValue.getValues());
 		if (ApplicationContext.isMaster()){
+//			incrementWriteForEveryClient(mYcsbclient);
 			ApplicationContext.getNodeFarm().broadCast(new OperationWriteMessage(mKeyValue));
 		}
 		
 		return new OperationWriteMessage(mKeyValue); 
 	}
+	
+//	public  void incrementWriteForEveryClient(String clientIPForIncrement){
+//		if(ycsbClientsStatisticsMapSoFar.containsKey(clientIPForIncrement)){
+//			ycsbClientsStatisticsMapSoFar.put(clientIPForIncrement, ycsbClientsStatisticsMapSoFar.get(clientIPForIncrement)+1);
+//		}
+//		else{
+//			ycsbClientsStatisticsMapSoFar.put(clientIPForIncrement, 1);
+//		}
+//	}
+	
 }

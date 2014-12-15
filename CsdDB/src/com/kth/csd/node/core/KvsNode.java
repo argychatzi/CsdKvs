@@ -18,6 +18,7 @@ import com.kth.csd.networking.interfaces.external.ServerExternalInputInterface;
 import com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface;
 import com.kth.csd.networking.messages.AbstractNetworkMessage;
 import com.kth.csd.networking.messages.StatisticsRequestMessage;
+import com.kth.csd.node.executors.StatisticsCollector;
 import com.kth.csd.utils.Configuration;
 import com.kth.csd.utils.ConfigurationReader;
 import com.kth.csd.utils.Logger;
@@ -26,7 +27,6 @@ import com.kth.csd.utils.Logger;
 public class KvsNode {
 
 	protected static final String TAG = KvsNode.class.getCanonicalName();
-	private static final int sendRequestInterval = 10000;//1 second
 
     public static void main(String[] args) throws IOException {
     	
@@ -54,46 +54,23 @@ public class KvsNode {
         		}
         	};
         	thread.start();
+        	Logger.d(TAG, "node Ip " + ApplicationContext.getOwnInternalConnection().getHost());
+        	Logger.d(TAG, "ports: " + ApplicationContext.getOwnInternalConnection().getPort() + ", " + ApplicationContext.getOwnExternalConnection().getPort());
+
         	startPollingFarmForStatistics();
     	}
     }
     
-    private static void startPollingFarmForStatistics(){
-    	Logger.d(TAG,"startPollingFarmForStatistics");
-    	if(ApplicationContext.isMaster()) {
-    		Logger.d(TAG,"isMaster");
-			Timer timer = new Timer();
-			TimerTask task = new TimerTask(){
-				//For every second, broadcast a request
-				@Override
-				public void run() {
-					//Broadcast to a nodeFarm. 
-					//You put the IP and the port of slaves you want to connect into myArray
-					//Then generate a NodeFarm
-					if(ApplicationContext.getYcsbIPs()!=null){
-						ArrayList<String> listOfYcsbClients = ApplicationContext.getYcsbIPs();
-						AbstractNetworkMessage requestMsg = new StatisticsRequestMessage(listOfYcsbClients);		
-						Logger.d(TAG, "requestMsg = " +  requestMsg.toString() );
-						//Broadcast
-						ApplicationContext.getNodeFarm().broadCast(requestMsg);
-						Logger.d(TAG, "Broadcast finished" );
-					}
+    private static void startPollingFarmForStatistics() {
+    	new StatisticsCollector().startPollingFarm();
+	}
 
-				}
-			};
-			timer.scheduleAtFixedRate(task, 0, sendRequestInterval);	
-		}
-    }
-
-    private static Configuration parseConfigurationFile(String fileNo) throws IOException {
+	private static Configuration parseConfigurationFile(String fileNo) throws IOException {
     	Configuration configuration = ConfigurationReader.loadConfigurationFile(fileNo);
-    	Logger.d(TAG, "configuration :: " + configuration);
     	return configuration; 
 	}
 
     private static void startMonitoringKvsSocket(IoHandler handler, final int portNumber) throws IOException {
-		
-		Logger.d(TAG, "starting Monitoring socket ...");
 		System.out.println("handler="+handler.toString());
 		
 		IoAcceptor acceptor = new NioSocketAcceptor();
@@ -105,7 +82,5 @@ public class KvsNode {
 		acceptor.getSessionConfig().setReadBufferSize( 2*2048 );
 		acceptor.bind( new InetSocketAddress(portNumber) );
 		System.out.println("acceptor after bind="+acceptor.toString());
-
-		Logger.d(TAG, "Opened port " + portNumber);
 	}
 }

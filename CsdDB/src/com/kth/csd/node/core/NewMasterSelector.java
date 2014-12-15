@@ -13,23 +13,24 @@ public class NewMasterSelector {
 
 	private static final String TAG = NewMasterSelector.class.getCanonicalName();
 	private static HashMap<String, Double> delayCostMap; 
-	private static double nodeDelayCost;
 	private static String masterWithMinimumDelay = null;
 	private static double minValue = Integer.MAX_VALUE;
 	
 	public static void putNodeWithCorrespondingDelay(HashMap<String, Double> ycsbclientsRttMapFromSlave, String slaveIp){		
-		nodeDelayCost = calculateCostForNode(ycsbclientsRttMapFromSlave);
+		double nodeDelayCost = calculateCostForNode(ycsbclientsRttMapFromSlave);
 		
 		ApplicationContext.updateNodeWithDelayCostMap(slaveIp, nodeDelayCost);
-		Logger.d(TAG, "putNodeWithCorrespondingDelay: Slave "+ slaveIp + "has delay cost "+ nodeDelayCost);
+		Logger.d(TAG, "putNodeWithCorrespondingDelay: Slave "+ slaveIp + " has delay cost "+ nodeDelayCost);
+		selectNewMasterAndBrodcastAPossibleUpdate(ycsbclientsRttMapFromSlave);
 	}
 	
 	//This method should be called passing the delayCostMap argument with
 	//ApplicationContext.getNodeWithDelayCostMap()	
 	public static void selectNewMasterAndBrodcastAPossibleUpdate(HashMap<String, Double> delayCostMap){
 		String newMasterIp = selectNewMaster(delayCostMap);
-		
-		if (ApplicationContext.getMasterExternalConnection().getHost() != newMasterIp){
+		Logger.d(TAG, "selectNewMasterAndBrodcastAPossibleUpdate: currentMaster: " +ApplicationContext.getMasterExternalConnection().getHost() + "newMaster " + newMasterIp);
+		if (!ApplicationContext.getMasterExternalConnection().getHost().equals(newMasterIp)){
+			Logger.d(TAG, "New master elected, switching ips");
 			ConnectionMetaData internal = new ConnectionMetaData(newMasterIp,  Constants.DEFAULT_INTERNAL_PORT);
 			ConnectionMetaData external = new ConnectionMetaData(newMasterIp, Constants.DEFAULT_EXTERNAL_PORT);
 			ApplicationContext.assignNewMaster(internal, external);

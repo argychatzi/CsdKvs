@@ -12,7 +12,7 @@ import com.kth.csd.utils.Logger;
 
 public class ClientExternalInputInterface extends IoHandlerAdapter {
 	
-	private static final String TAG = "YcsbClientIoHandlerAdapter";
+	private static final String TAG = ClientExternalInputInterface.class.getCanonicalName();
 	private YcsbTrafficInputInteraceHolder mHolder;
 	
 	public ClientExternalInputInterface(YcsbTrafficInputInteraceHolder holder) {

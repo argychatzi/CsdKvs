@@ -34,10 +34,7 @@ public class KvsClient implements IoFutureListener<IoFuture>{
 
 
 	public KvsClient(IoHandler handler, ConnectionMetaData connectionMetaData){
-//		System.out.println("KVSCLIENT CONSTRUCTOR HANDLER="+handler);
-//		System.out.println("KVSCLIENT CONSTRUCTOR ConnectionMetaData="+connectionMetaData);
 	    session = initSession(handler, connectionMetaData);
-
 	}
 		
 	private IoSession initSession(IoHandler handler, ConnectionMetaData connectionMetaData){
@@ -74,10 +71,7 @@ public class KvsClient implements IoFutureListener<IoFuture>{
 
 	
 	public int send(AbstractNetworkMessage message){
-		Logger.d(TAG,"send() called");
-		Logger.d(TAG,"send(), session is="+session.toString());
 		WriteFuture write  = session.write(message);
-		Logger.d(TAG,"send(),write done....");
 		try {
 			write.await(5000);
 		} catch (InterruptedException e) {
@@ -96,8 +90,6 @@ public class KvsClient implements IoFutureListener<IoFuture>{
 	}
 	
 	public void operationComplete(IoFuture arg0) {
-		Logger.d(TAG, "arg0.isDone();" + arg0.isDone());
-		Object attribute = arg0.getSession().getAttribute(ATTRIBUTE_ID);
-		Logger.d(TAG, "operationComplete ... " + attribute);
+//		Object attribute = arg0.getSession().getAttribute(ATTRIBUTE_ID);
 	}
 }

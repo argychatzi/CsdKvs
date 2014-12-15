@@ -26,10 +26,4 @@ public abstract class AbstractNetworkMessage implements Serializable{
 	protected AbstractNetworkMessage(type t){
 		mType = t;
 	}
-	
-	@Override
-	public String toString() {
-		return mType + mData.toString();
-	}
-	
 }

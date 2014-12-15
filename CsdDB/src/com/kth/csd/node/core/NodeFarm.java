@@ -8,10 +8,20 @@ import com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface;
 import com.kth.csd.networking.messages.AbstractNetworkMessage;
 
 public class NodeFarm {
+	
 	private static ArrayList<KvsClient> mNodeFarm;
 	private static final String TAG = NodeFarm.class.getCanonicalName();
-
-	public NodeFarm(ArrayList<ConnectionMetaData> nodeIps) {
+	private static NodeFarm sNodeFarm;
+	
+	public static NodeFarm getInstance(ArrayList<ConnectionMetaData> nodeIps){
+		if (sNodeFarm == null){
+			sNodeFarm = new NodeFarm(nodeIps);
+		}
+		return sNodeFarm;
+	}
+	
+	
+	private NodeFarm(ArrayList<ConnectionMetaData> nodeIps) {
 		mNodeFarm = new ArrayList<KvsClient>();
 
 		for(ConnectionMetaData connectionMetaData: nodeIps){
@@ -23,11 +33,8 @@ public class NodeFarm {
 	}
 
 	public void broadCast(AbstractNetworkMessage message){
-		System.out.print("mNodeFarm="+mNodeFarm==null);
 		for(KvsClient node: mNodeFarm){
-			//TODO check if master should be receiving braodcast messages!
-			System.out.print("message="+message);
-			System.out.print("node="+node);
+			System.out.print("Sending message="+message + " to node = "+node);
 			node.send(message);
 		}
 	}

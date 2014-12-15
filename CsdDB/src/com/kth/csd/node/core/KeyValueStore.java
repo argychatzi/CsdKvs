@@ -46,7 +46,7 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 	
 	private KeyValueStore(){
 		mFlushToDiskTimer.scheduleAtFixedRate(new FlushToDisk(), 0, Constants.FLUSH_TO_DISK_PERIOD);
-		mStatisticsTimer.schedule(new OperationsPerSecond(),0, OperationsPerSecond.TIME_WINDOW);
+		mStatisticsTimer.schedule(new OperationsPerSecond(),0, OperationsPerSecond.ONE_SECOND);
 		mGson = new Gson();
 		mDatabaseFile = new File(Constants.DATABASE_FILE);
 		//mWriteOperationsPerformedSoFar = 0;
@@ -72,11 +72,6 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 
 	@Override
 	public HashMap<String, String> put(String key, HashMap<String, String> value) {
-	// data broadcast to all other slave nodes
-//		ApplicationContext.getNodeFarm().broadCast(updateSlaveNodes(key, value));
-//		Logger.d(TAG, "data replication to slave nodes");
-//		
-//	    incrementWriteForEveryClient(getWritingClientIP());
 		return super.put(key, value);
 	}
 	
@@ -117,14 +112,6 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 	this.writingClientIP = currentlyWritingClientIP;
 }
 
-	public  void incrementWriteForEveryClient(String clientIPForIncrement){
-	if(ycsbClientsStatisticsMapSoFar.containsKey(clientIPForIncrement)){
-		ycsbClientsStatisticsMapSoFar.put(clientIPForIncrement, ycsbClientsStatisticsMapSoFar.get(clientIPForIncrement)+1);
-	}
-	else{
-		ycsbClientsStatisticsMapSoFar.put(clientIPForIncrement, 1);
-	}
-}
 	public HashMap <String, Integer> getYcsbClientsStatisticsMapSoFar(){
 	return ycsbClientsStatisticsMapSoFar;
 }
@@ -152,7 +139,7 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 
 	public class OperationsPerSecond extends TimerTask{
 
-		public static final int TIME_WINDOW = 1000;
+		public static final int ONE_SECOND = 999;
 
 		@Override
 		public void run() {
@@ -163,7 +150,7 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 				tempOperations.add(getYcsbClientsStatisticsMapSoFar().get(key));
 			}
 			try {
-				Thread.sleep(TIME_WINDOW -1);
+				Thread.sleep(ONE_SECOND);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

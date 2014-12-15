@@ -12,11 +12,6 @@ public class ApplicationContext {
 
 	protected static final String TAG = KvsNode.class.getCanonicalName();
 
-	//private static boolean isMaster = true;
-	private static boolean isMaster = false;
-	private static boolean isUpdate = false;
-
-
 	private static NodeFarm mNodeFarm;
 	private static KeyValueStore mKeyValueStore;
 	private static AbstractNetworkMessage slaveNodeStatistics;
@@ -45,6 +40,9 @@ public class ApplicationContext {
 		
 	}
 	public static void updateNodeWithDelayCostMap(String nodeIp, double nodeDelayCost){
+		if (mNodeWithDelayCostMap == null){
+			mNodeWithDelayCostMap = new HashMap<String, Double>();
+		}
 		mNodeWithDelayCostMap.put(nodeIp, nodeDelayCost);
 	}
 	public static HashMap<String, Double> getNodeWithDelayCostMap(){
@@ -59,22 +57,9 @@ public class ApplicationContext {
 		ApplicationContext.isFirstTimeMeasuringRTT =isFirstTimeMeasuringRTT;
 	}
 
-	public static AbstractNetworkMessage  statisticsResultstoMaster(AbstractNetworkMessage statisticsResults) {
-		return slaveNodeStatistics = statisticsResults;
-	}
-
-	// update for if write is from master
-	public static boolean isUpdate(){
-		return isUpdate;
-	}
-	// update for isMaster
-	public static void setIsMasterTrue(){
-		isMaster = true;
-	}
-
-	public static void setUpdateTrue(){
-		isUpdate = true;
-	}
+//	public static AbstractNetworkMessage  statisticsResultstoMaster(AbstractNetworkMessage statisticsResults) {
+//		return slaveNodeStatistics = statisticsResults;
+//	}
 
 	public static boolean isMaster() {
 		return mMasterExternalConnection.equals(mExternalConnection) && mMasterInternalConnection.equals(mInternalConnection);
@@ -98,7 +83,7 @@ public class ApplicationContext {
 
 	public static void generateNodeFarm(ArrayList<ConnectionMetaData> nodeIps) {
 		Logger.d(TAG, "generateNodeFarm " + nodeIps.toString());
-		mNodeFarm = new NodeFarm(nodeIps);
+		mNodeFarm = NodeFarm.getInstance(nodeIps);
 	}
 	
 	public static void assignNewMaster(ConnectionMetaData internal, ConnectionMetaData external){
@@ -141,7 +126,4 @@ public class ApplicationContext {
 	public static void setMasterExternalConnection(ConnectionMetaData externalConnection) {
 		mMasterExternalConnection = externalConnection;
 	}
-
-
-
 }

@@ -25,16 +25,14 @@ import com.kth.csd.node.operation.KvsOperation;
 import com.kth.csd.utils.Logger;
 
 public class ServerExternalInputInterface extends IoHandlerAdapter implements IoHandler, ExecutionResultCommunicator{
-	private static final String TAG = "ServerConnectionHandler";
+	
+	private static final String TAG = ServerExternalInputInterface.class.getCanonicalName();
 
 	public HashSet <String> updatedYCSBClientList = new HashSet <String>();
 	public static ArrayList <String> ycsbClientsList = new ArrayList<String>();	
-	private HashMap<KvsOperation, IoSession> mSessionVault;
 	
 	public ServerExternalInputInterface() {
-		Logger.d(TAG, "ExternalTrafficInputInterface ... ");
-		mSessionVault = new HashMap<KvsOperation, IoSession>();
-		Logger.d(TAG, "created !");
+		Logger.d(TAG, "ExternalTrafficInputInterface ... created");
 	}
 
 	@Override

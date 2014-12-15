@@ -19,6 +19,7 @@ import com.kth.csd.networking.messages.StatisticsRequestMessage;
 import com.kth.csd.networking.messages.StatisticsResultMessage;
 import com.kth.csd.node.core.ApplicationContext;
 import com.kth.csd.node.core.ExponentialMovingAverageExpanded;
+import com.kth.csd.node.core.NewMasterSelector;
 import com.kth.csd.node.core.NodeFarm;
 import com.kth.csd.node.executors.KvsReader;
 import com.kth.csd.node.executors.KvsWriter;
@@ -28,7 +29,7 @@ import com.kth.csd.utils.Logger;
 
 public class ServerInternalInputInterface extends IoHandlerAdapter{
 	
-	private static final String TAG = "ServerConnectionHandler";
+	private static final String TAG = ServerInternalInputInterface.class.getCanonicalName();
 	private final static double alpha = 0.9;
 	private  ExponentialMovingAverageExpanded emaStateObj;
 	private boolean isFirstTime  = true;
@@ -43,7 +44,6 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 	@Override
 	public void messageReceived(IoSession session, Object message) throws Exception {
 		AbstractNetworkMessage response = (AbstractNetworkMessage) message;
-		Logger.d(TAG,"messageReceived"+response.toString());
 		switch(response.getType()){
 		/*
 		+ * In case of statistics req the list of client IPs is captured and then only one time we create EMA object to keep the state
@@ -52,10 +52,9 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 		+ * In case of statistics res, we pass the results to the application context.
 		+ */
 			case STATISTICS_REQ:{
-				Logger.d(TAG,"STATISTICS_REQ"+response.toString());
+				Logger.d(TAG,"messageReceived : "+((StatisticsRequestMessage)response).toString());
 				
 				ArrayList<String> incomingListOfYcsbClients = ((StatisticsRequestMessage)response).getListOfYcsbClients();
-				Logger.d(TAG, "incomingListOfYcsbClients =" + Arrays.toString(incomingListOfYcsbClients.toArray()));
 				if (ApplicationContext.getIsFirstTimeMeasuringRTT()){
 					Logger.d(TAG, "first time receiving STATISTICS_REQ");
 					ApplicationContext.setFirstTimeMeasuringRTT(false);
@@ -71,32 +70,47 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 				AbstractNetworkMessage statisticsResults = new StatisticsResultMessage (delayResultsHashmap);
 //				ApplicationContext.statisticsResultstoMaster(statisticsResults);
 				
-				ArrayList<ConnectionMetaData> nodeIps =new ArrayList<ConnectionMetaData>();
-				nodeIps.add(ApplicationContext.getMasterInternalConnection());
-				NodeFarm nodeFarmToMaster = new NodeFarm(nodeIps);
-				nodeFarmToMaster.broadCast(statisticsResults);
+//				ArrayList<ConnectionMetaData> nodeIps =new ArrayList<ConnectionMetaData>();
+//				nodeIps.add(ApplicationContext.getMasterInternalConnection());
+//				NodeFarm nodeFarmToMaster = new NodeFarm(nodeIps);
+//				nodeFarmToMaster.broadCast(statisticsResults);
+
+				session.write(statisticsResults);
 				break;
 			}
 			case STATISTICS_RES:{
-				Logger.d(TAG,"STATISTICS_RES"+response.toString());
-				StatisticsResultMessage statisticsResults = (StatisticsResultMessage)response;
-				Logger.d(TAG, "is statisticsResults empty ? "+String.valueOf(statisticsResults==null));
-				HashMap<String, Double> results = statisticsResults.getResultsOfDelayMeasurement();
-				Logger.d(TAG, "is results empty ?  "+String.valueOf(results==null));
-				Logger.d(TAG, "results"+ results);
-				ArrayList<String> ycsbIPs = ApplicationContext.getYcsbIPs();
-				Logger.d(TAG, "ycsbIPs"+ ycsbIPs);
-				for(String Key : ycsbIPs)
-					Logger.d(TAG, String.valueOf(results.get(Key)));
-//				Logger.d(TAG, String.valueOf(results.get("192.168.0.1")));
-//				Logger.d(TAG, String.valueOf(results.get("192.168.0.6")));
-//				Logger.d(TAG, String.valueOf(results.get("192.168.0.9")));
-				//AbstractNetworkMessage statisticsResults = new StatisticsResultMessage (EMAResults);
-				ApplicationContext.statisticsResultstoMaster(statisticsResults);
+//				Logger.d(TAG,"STATISTICS_RES"+response.toString());
+//				StatisticsResultMessage statisticsResults = (StatisticsResultMessage)response;
+//				Logger.d(TAG, "is statisticsResults empty ? "+String.valueOf(statisticsResults==null));
+//				HashMap<String, Double> results = statisticsResults.getResultsOfDelayMeasurement();
+//				Logger.d(TAG, "is results empty ?  "+String.valueOf(results==null));
+//				Logger.d(TAG, "results"+ results);
+//				ArrayList<String> ycsbIPs = ApplicationContext.getYcsbIPs();
+//				Logger.d(TAG, "ycsbIPs"+ ycsbIPs);
+//				for(String Key : ycsbIPs)
+//					Logger.d(TAG, String.valueOf(results.get(Key)));
+////				Logger.d(TAG, String.valueOf(results.get("192.168.0.1")));
+////				Logger.d(TAG, String.valueOf(results.get("192.168.0.6")));
+////				Logger.d(TAG, String.valueOf(results.get("192.168.0.9")));
+//				//AbstractNetworkMessage statisticsResults = new StatisticsResultMessage (EMAResults);
+//				ApplicationContext.statisticsResultstoMaster(statisticsResults);
+				
+				Logger.d(TAG,"messageReceived : "+((StatisticsResultMessage)response).toString());
+
+				
+				HashMap<String, Double> ycsbclientsRttMapFromSlave = ((StatisticsResultMessage)response).getResultsOfDelayMeasurement();	
+				String remoteIp = ConnectionMetaData.generateConnectionMetadaForRemoteEntityInSession(session).getHost();
+
+				ycsbclientsRttMapFromSlave = new  HashMap<String, Double> ();
+				ycsbclientsRttMapFromSlave.put("192.168.0.5", 0.01);
+				
+				NewMasterSelector.putNodeWithCorrespondingDelay(ycsbclientsRttMapFromSlave, remoteIp);
 				break;
 			}
 			case MASTER_MOVED:{
-				Logger.d(TAG,"MASTER_MOVED"+response.toString());
+				
+				Logger.d(TAG,"messageReceived : "+((MasterMovedMessage)response).toString());
+
 				ConnectionMetaData newMasterInternal = ((MasterMovedMessage)message).getNewMasterInternal();
 				ConnectionMetaData newMasterExternal = ((MasterMovedMessage)message).getNewMasterExternal();
 				
@@ -105,17 +119,16 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 				break;
 			}
 			case OPERATION_READ:{
-				Logger.d(TAG,"OPERATION_READ"+response.toString());
-				KeyValueEntry keyValueEntry = ((OperationWriteMessage)message).getKeyValueEntry();
+				Logger.d(TAG,"messageReceived : "+((OperationReadMessage)response).toString());
+				KeyValueEntry keyValueEntry = ((OperationReadMessage)message).getKeyValueEntry();
 				new KvsReader(keyValueEntry).execute();
 				break;
 			}
 			case OPERATION_WRITE:{
-				Logger.d(TAG,"OPERATION_WRITE Receive update from Master"+response.toString());
+				Logger.d(TAG,"messageReceived : "+((OperationWriteMessage)response).toString());
 				ConnectionMetaData connectionMetaData = ConnectionMetaData.generateConnectionMetadaForRemoteEntityInSession(session);
 				if(ApplicationContext.connectionMetadatBelongsToMasterInternal(connectionMetaData)){
-					KeyValueEntry keyValueEntry = ((OperationReadMessage)message).getKeyValueEntry();
-					ApplicationContext.setUpdateTrue();
+					KeyValueEntry keyValueEntry = ((OperationWriteMessage)message).getKeyValueEntry();
 					new KvsWriter(keyValueEntry).execute();
 				}
 				break;
