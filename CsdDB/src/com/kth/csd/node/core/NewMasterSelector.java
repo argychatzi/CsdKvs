@@ -1,9 +1,6 @@
 package com.kth.csd.node.core;
 
 import java.util.HashMap;
-
-import org.apache.mina.core.session.IoSession;
-
 import com.kth.csd.networking.ConnectionMetaData;
 import com.kth.csd.networking.messages.MasterMovedMessage;
 import com.kth.csd.node.Constants;
@@ -12,7 +9,7 @@ import com.kth.csd.utils.Logger;
 public class NewMasterSelector {
 
 	private static final String TAG = NewMasterSelector.class.getCanonicalName();
-	private static HashMap<String, Double> delayCostMap; 
+	//private static HashMap<String, Double> delayCostMap; 
 	private static String masterWithMinimumDelay = null;
 	private static double minValue = Integer.MAX_VALUE;
 	
@@ -36,15 +33,13 @@ public class NewMasterSelector {
 			ApplicationContext.assignNewMaster(internal, external);
 		}
 	}
-	
 	// delay cost calculator for single node
 	public static double calculateCostForNode(HashMap<String, Double> ycsbclientRttMap){
 		double nodeDelayCost = 0;
-		HashMap<String, Double> tempWriteMap = new HashMap<String, Double>();
-		tempWriteMap= ApplicationContext.getKeyValueStore().getycsbClientWritePerSecStatisticsMapWithEma();
+		HashMap<String, Double> stateWriteMap = ApplicationContext.getmYcsbClientsStatisticsMapPerSecondWithEma();
 		
-		for (String key: tempWriteMap.keySet()){
-			double delayfromycsbClient= tempWriteMap.get(key)* ycsbclientRttMap.get(key);
+		for (String key: stateWriteMap.keySet()){
+			double delayfromycsbClient= stateWriteMap.get(key)* ycsbclientRttMap.get(key);
 			
 			nodeDelayCost += delayfromycsbClient;
 		}
