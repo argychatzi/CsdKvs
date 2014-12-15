@@ -41,6 +41,7 @@ public class KvsNode {
         	startMonitoringKvsSocket(new ServerInternalInputInterface(), ApplicationContext.getOwnInternalConnection().getPort());
         	startMonitoringKvsSocket(new ServerExternalInputInterface(), ApplicationContext.getOwnExternalConnection().getPort());
         	
+
         	Thread thread = new Thread(){
         		public void run() {
         			try {
@@ -54,16 +55,49 @@ public class KvsNode {
         		}
         	};
         	thread.start();
+<<<<<<< HEAD
         	Logger.d(TAG, "node Ip " + ApplicationContext.getOwnInternalConnection().getHost());
         	Logger.d(TAG, "ports: " + ApplicationContext.getOwnInternalConnection().getPort() + ", " + ApplicationContext.getOwnExternalConnection().getPort());
+=======
+
+        	Logger.d(TAG,"MY IP is " + configuration.getOwnInternalConnectionMetaData());
+        	
+>>>>>>> 4e6a7bd4c166993e65c101eace673b31305c2422
 
         	startPollingFarmForStatistics();
     	}
     }
     
+<<<<<<< HEAD
     private static void startPollingFarmForStatistics() {
     	new StatisticsCollector().startPollingFarm();
 	}
+=======
+    private static void startPollingFarmForStatistics(){
+    	Logger.d(TAG,"startPollingFarmForStatistics");
+    	if(ApplicationContext.isMaster()) {
+    		Logger.d(TAG,"I am Master");
+			Timer timer = new Timer();
+			TimerTask task = new TimerTask(){
+				//For every second, broadcast a request
+				@Override
+				public void run() {
+					// Master send a message to slaves asking them to provide delay statistics by pinging a list of YCSBClients
+					if(ApplicationContext.getYcsbIPs()!=null){
+						ArrayList<String> listOfYcsbClients = ApplicationContext.getYcsbIPs();
+						AbstractNetworkMessage requestMsg = new StatisticsRequestMessage(listOfYcsbClients);		
+						Logger.d(TAG, "requestMsg = " +  requestMsg.toString() );
+						//Broadcast
+						ApplicationContext.getNodeFarm().broadCast(requestMsg);
+						Logger.d(TAG, "Broadcast finished" );
+					}
+
+				}
+			};
+			timer.scheduleAtFixedRate(task, 0, sendRequestInterval);	
+		}
+    }
+>>>>>>> 4e6a7bd4c166993e65c101eace673b31305c2422
 
 	private static Configuration parseConfigurationFile(String fileNo) throws IOException {
     	Configuration configuration = ConfigurationReader.loadConfigurationFile(fileNo);
@@ -83,4 +117,5 @@ public class KvsNode {
 		acceptor.bind( new InetSocketAddress(portNumber) );
 		System.out.println("acceptor after bind="+acceptor.toString());
 	}
+ 
 }

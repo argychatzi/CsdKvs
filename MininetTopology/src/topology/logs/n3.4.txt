@@ -1,13 +1,13 @@
-4:55:29:991:::com.kth.csd.node.core.KvsNode:::main started 
-4:55:30:19:::com.kth.csd.node.core.KvsNode:::Main method here 10
-4:55:30:317:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile10
-4:55:30:335:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_10.json
+7:2:21:307:::com.kth.csd.node.core.KvsNode:::main started 
+7:2:21:352:::com.kth.csd.node.core.KvsNode:::Main method here 10
+7:2:21:675:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile10
+7:2:21:682:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_10.json
 Exception in thread "main" com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Unterminated object at line 49 column 15 path $.nodes[0].host
 	at com.google.gson.internal.Streams.parse(Streams.java:56)
 	at com.google.gson.JsonParser.parse(JsonParser.java:84)
 	at com.google.gson.JsonParser.parse(JsonParser.java:59)
 	at com.kth.csd.utils.ConfigurationReader.loadConfigurationFile(ConfigurationReader.java:29)
-	at com.kth.csd.node.core.KvsNode.parseConfigurationFile(KvsNode.java:95)
+	at com.kth.csd.node.core.KvsNode.parseConfigurationFile(KvsNode.java:96)
 	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:49)
 Caused by: com.google.gson.stream.MalformedJsonException: Unterminated object at line 49 column 15 path $.nodes[0].host
 	at com.google.gson.stream.JsonReader.syntaxError(JsonReader.java:1572)

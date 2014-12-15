@@ -31,14 +31,13 @@ public class ExponentialMovingAverageExpanded {
 		Logger.d(TAG, "inside ExponentialMovingAverageExpanded constructor");
 		for (int i=0; i<clientYCSPListIP.size(); i++){
 			Logger.d(TAG, "i="+ i);
-			Logger.d(TAG, "filling the EMA object" + "alpha="+alpha+"interval"+interval+"intervalUnit="+intervalUnit );
-			Logger.d(TAG, "Here");
+			//Logger.d(TAG, "filling the EMA object" + "alpha="+alpha+"interval"+interval+"intervalUnit="+intervalUnit );
 			try{
 				Logger.d(TAG, "EWMAObj created");
 				//ExponentialMovingAverage exponentialMovingAverage = new ExponentialMovingAverage();
 				EWMA mEWMAObj = new EWMA(alpha, interval, intervalUnit);
 				EMAHashmapKeeper.put(clientYCSPListIP.get(i), mEWMAObj );
-				Logger.d(TAG, "EMAHashmapKeeper put");
+				Logger.d(TAG, "EMAHashmapKeeper put" + EMAHashmapKeeper.toString());
 			}
 			catch (Exception e) {
 				Logger.d(TAG, e.toString());
