@@ -20,6 +20,13 @@ public class ApplicationContext {
 
 	private static ConnectionMetaData mMasterExternalConnection;
 	private static ConnectionMetaData mMasterInternalConnection;
+	
+	private static HashMap <String, Integer> mYcsbClientsStatisticsMapSoFar;
+	public static HashMap <String, Integer> mYcsbClientsStatisticsMapPerSecond;
+	public static HashMap <String, Double> mYcsbClientsStatisticsMapPerSecondWithEma;
+	
+	//TODO Ahmed remove
+	private static boolean isFirstTimeMeasuringRTT;
 
 	public static ArrayList<String> getYcsbWritingIPs() {
 		if (ipsOfWritingYcsbClients == null){
@@ -47,6 +54,52 @@ public class ApplicationContext {
 	
 	public static HashMap<String, Double> getNodeWithDelayCostMap(){
 		return mNodeWithDelayCostMap;
+	}
+
+	//TODO Ahmed remove
+	public static boolean getIsFirstTimeMeasuringRTT() {
+		return isFirstTimeMeasuringRTT;
+	}
+
+	public static void setFirstTimeMeasuringRTT(boolean isFirstTimeMeasuringRTT) {
+		ApplicationContext.isFirstTimeMeasuringRTT =isFirstTimeMeasuringRTT;
+	}
+
+//	public static AbstractNetworkMessage  statisticsResultstoMaster(AbstractNetworkMessage statisticsResults) {
+//		return slaveNodeStatistics = statisticsResults;
+//	}
+       
+	public static HashMap<String, Integer> getmYcsbClientsStatisticsMapSoFar() {
+		return mYcsbClientsStatisticsMapSoFar;
+	}
+
+	public static void updatemYcsbClientsStatisticsMapSoFar(String clientIP, int writesSoFar){
+		if (mYcsbClientsStatisticsMapSoFar == null){
+			mYcsbClientsStatisticsMapSoFar = new HashMap<String, Integer>();
+		}
+		mYcsbClientsStatisticsMapSoFar.put(clientIP, writesSoFar);
+	}
+
+	public static HashMap<String, Integer> getmYcsbClientsStatisticsMapPerSecond() {
+		return mYcsbClientsStatisticsMapPerSecond;
+	}
+	
+	public static void updatemYcsbClientsStatisticsMapPerSecond(String clientIP, int writesPerSec){
+		if (mYcsbClientsStatisticsMapPerSecond == null){
+			mYcsbClientsStatisticsMapPerSecond = new HashMap<String, Integer>();
+		}
+		mYcsbClientsStatisticsMapPerSecond.put(clientIP, writesPerSec);
+	}
+
+	public static HashMap<String, Double> getmYcsbClientsStatisticsMapPerSecondWithEma() {
+		return mYcsbClientsStatisticsMapPerSecondWithEma;
+	}
+
+	public static void updatemYcsbClientsStatisticsMapPerSecondWithEma(String clientIP, double writesPerSecWithEma){
+		if (mYcsbClientsStatisticsMapPerSecondWithEma == null){
+			mYcsbClientsStatisticsMapPerSecondWithEma = new HashMap<String, Double>();
+		}
+		mYcsbClientsStatisticsMapPerSecondWithEma.put(clientIP, writesPerSecWithEma);
 	}
 
 	public static boolean isMaster() {
