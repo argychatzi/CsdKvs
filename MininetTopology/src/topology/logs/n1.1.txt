@@ -1,107 +1,99 @@
-7:2:21:310:::com.kth.csd.node.core.KvsNode:::main started 
-7:2:21:357:::com.kth.csd.node.core.KvsNode:::Main method here 1
-7:2:21:724:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile1
-7:2:21:738:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_1.json
-7:2:22:228:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_1.json
-7:2:22:239:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile jsonObject{"masterInternal":{"host":"192.168.0.2","port":5000},"masterExternal":{"host":"192.168.0.2","port":6000},"ownInternal":{"host":"192.168.0.2","port":5000},"ownExternal":{"host":"192.168.0.2","port":6000},"nodes":[{"host":"192.168.0.3","port":5000},{"host":"192.168.0.4","port":5000},{"host":"192.168.0.5","port":5000},{"host":"192.168.0.7","port":5000},{"host":"192.168.0.8","port":5000},{"host":"192.168.0.10","port":5000},{"host":"192.168.0.11","port":5000},{"host":"192.168.0.12","port":5000},{"host":"192.168.0.13","port":5000}]}
-7:2:23:320:::com.kth.csd.node.core.KvsNode:::configuration :: Configuration [masterInternalConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=5000], masterExternalConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=6000], ownInternalConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=5000], ownExternalConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=6000], nodesInFarm=[ConnectionMetaData [host=192.168.0.3, port=5000], ConnectionMetaData [host=192.168.0.4, port=5000], ConnectionMetaData [host=192.168.0.5, port=5000], ConnectionMetaData [host=192.168.0.7, port=5000], ConnectionMetaData [host=192.168.0.8, port=5000], ConnectionMetaData [host=192.168.0.10, port=5000], ConnectionMetaData [host=192.168.0.11, port=5000], ConnectionMetaData [host=192.168.0.12, port=5000], ConnectionMetaData [host=192.168.0.13, port=5000]]]
+1:13:0:573:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile1
+1:13:0:710:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_1.json
+1:13:0:850:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_1.json
+1:13:0:897:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile jsonObject{"masterInternal":{"host":"192.168.0.2","port":5000},"masterExternal":{"host":"192.168.0.2","port":6000},"ownInternal":{"host":"192.168.0.2","port":5000},"ownExternal":{"host":"192.168.0.2","port":6000},"nodes":[{"host":"192.168.0.3","port":5000},{"host":"192.168.0.4","port":5000},{"host":"192.168.0.5","port":5000},{"host":"192.168.0.7","port":5000},{"host":"192.168.0.8","port":5000},{"host":"192.168.0.10","port":5000},{"host":"192.168.0.11","port":5000},{"host":"192.168.0.12","port":5000},{"host":"192.168.0.13","port":5000}]}
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-7:2:23:368:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
-handler=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@fd34eac
+handler=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@60aee53f
 acceptor after bind=(nio socket acceptor: localAddress(es): [/0:0:0:0:0:0:0:0:5000], managedSessionCount: 0)
-7:2:23:993:::com.kth.csd.node.core.KvsNode:::Opened port 5000
-7:2:24:13:::ServerConnectionHandler:::ExternalTrafficInputInterface ... 
-7:2:24:13:::ServerConnectionHandler:::created !
-7:2:24:14:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
-handler=com.kth.csd.networking.interfaces.external.ServerExternalInputInterface@4a1d8867
+1:13:2:777:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::ExternalTrafficInputInterface ... created
+handler=com.kth.csd.networking.interfaces.external.ServerExternalInputInterface@6adc0b2f
 acceptor after bind=(nio socket acceptor: localAddress(es): [/0:0:0:0:0:0:0:0:6000], managedSessionCount: 0)
-7:2:24:28:::com.kth.csd.node.core.KvsNode:::Opened port 6000
-7:2:24:29:::com.kth.csd.node.core.KvsNode:::generateNodeFarm [ConnectionMetaData [host=192.168.0.3, port=5000], ConnectionMetaData [host=192.168.0.4, port=5000], ConnectionMetaData [host=192.168.0.5, port=5000], ConnectionMetaData [host=192.168.0.7, port=5000], ConnectionMetaData [host=192.168.0.8, port=5000], ConnectionMetaData [host=192.168.0.10, port=5000], ConnectionMetaData [host=192.168.0.11, port=5000], ConnectionMetaData [host=192.168.0.12, port=5000], ConnectionMetaData [host=192.168.0.13, port=5000]]
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@30619488
-7:2:24:139:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.3:5000
-7:2:24:140:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.3 port No. 5000
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@64cbdef5
-7:2:24:199:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.4:5000
-7:2:24:200:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.4 port No. 5000
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@3f36f39e
-7:2:24:223:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.5:5000
-7:2:24:223:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.5 port No. 5000
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@4a8e836c
-7:2:24:249:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.7:5000
-7:2:24:250:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.7 port No. 5000
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@11c2b60e
-7:2:24:272:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.8:5000
-7:2:24:272:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.8 port No. 5000
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@606145c5
-7:2:24:308:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.10:5000
-7:2:24:308:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.10 port No. 5000
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@4627e2d8
-7:2:24:325:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.11:5000
-7:2:24:326:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.11 port No. 5000
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@530020bb
-7:2:24:354:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.12:5000
-7:2:24:355:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.12 port No. 5000
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@23d1f3f2
-Failed to connect.
-org.apache.mina.core.RuntimeIoException: Failed to get the session.
-	at org.apache.mina.core.future.DefaultConnectFuture.getSession(DefaultConnectFuture.java:58)
-	at com.kth.csd.networking.KvsClient.initSession(KvsClient.java:55)
-	at com.kth.csd.networking.KvsClient.<init>(KvsClient.java:39)
-	at com.kth.csd.node.core.NodeFarm.<init>(NodeFarm.java:19)
-	at com.kth.csd.node.core.ApplicationContext.generateNodeFarm(ApplicationContext.java:92)
-	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:60)
-Caused by: java.net.ConnectException: Connection refused
-	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
-	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
-	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:221)
-	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:47)
-	at org.apache.mina.core.polling.AbstractPollingIoConnector.processConnections(AbstractPollingIoConnector.java:459)
-	at org.apache.mina.core.polling.AbstractPollingIoConnector.access$700(AbstractPollingIoConnector.java:65)
-	at org.apache.mina.core.polling.AbstractPollingIoConnector$Connector.run(AbstractPollingIoConnector.java:527)
-	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
-	at java.lang.Thread.run(Thread.java:745)
-7:2:31:309:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.13 port No. 5000
-7:2:31:310:::com.kth.csd.node.core.KvsNode:::MY IP is ConnectionMetaData [host=192.168.0.2, port=5000]
-7:2:31:310:::com.kth.csd.node.core.KvsNode:::startPollingFarmForStatistics
-7:2:31:310:::com.kth.csd.node.core.KvsNode:::isMaster
-7:2:49:23:::ServerConnectionHandler:::OPERATION_WRITE192.168.0.1
-7:2:49:23:::com.kth.csd.node.core.KvsNode:::adding IP192.168.0.1
-7:2:49:97:::com.kth.csd.node.executors.KvsWriter:::executing ...
-false7:2:49:135:::FlushToDisk:::will flush to disk
-message=OPERATION_WRITEKeyValueEntry [key=user6284781860667377211, values={field1==, field0=>}]node=com.kth.csd.networking.KvsClient@71b5438d7:2:49:136:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:136:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000001: nio socket, client, /192.168.0.2:42049 => /192.168.0.3:5000)
-7:2:49:153:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user6284781860667377211, values={field1==, field0=>}]node=com.kth.csd.networking.KvsClient@3366184d7:2:49:155:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:155:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000002: nio socket, client, /192.168.0.2:50865 => /192.168.0.4:5000)
-7:2:49:157:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user6284781860667377211, values={field1==, field0=>}]node=com.kth.csd.networking.KvsClient@73c581977:2:49:167:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:168:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000003: nio socket, client, /192.168.0.2:50296 => /192.168.0.5:5000)
-7:2:49:170:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user6284781860667377211, values={field1==, field0=>}]node=com.kth.csd.networking.KvsClient@2bbf1be27:2:49:171:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:171:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000004: nio socket, client, /192.168.0.2:34889 => /192.168.0.7:5000)
-7:2:49:172:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user6284781860667377211, values={field1==, field0=>}]node=com.kth.csd.networking.KvsClient@fbfa8de7:2:49:196:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:199:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000005: nio socket, client, /192.168.0.2:37548 => /192.168.0.8:5000)
-7:2:49:200:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user6284781860667377211, values={field1==, field0=>}]node=com.kth.csd.networking.KvsClient@6fe78ee57:2:49:227:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:227:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000006: nio socket, client, /192.168.0.2:37469 => /192.168.0.10:5000)
-7:2:49:231:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user6284781860667377211, values={field1==, field0=>}]node=com.kth.csd.networking.KvsClient@4b5695c87:2:49:238:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:238:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000007: nio socket, client, /192.168.0.2:57607 => /192.168.0.11:5000)
-7:2:49:252:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user6284781860667377211, values={field1==, field0=>}]node=com.kth.csd.networking.KvsClient@2183a41c7:2:49:253:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:265:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000008: nio socket, client, /192.168.0.2:55912 => /192.168.0.12:5000)
-7:2:49:268:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user6284781860667377211, values={field1==, field0=>}]node=com.kth.csd.networking.KvsClient@498b3b747:2:49:276:::com.kth.csd.networking.KvsClient:::send() called
-java.lang.NullPointerException
-	at com.kth.csd.networking.KvsClient.send(KvsClient.java:78)
-	at com.kth.csd.node.core.NodeFarm.broadCast(NodeFarm.java:31)
-	at com.kth.csd.node.executors.KvsWriter.execute(KvsWriter.java:38)
-	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:68)
+1:13:2:802:::com.kth.csd.node.core.KvsNode:::MY IP is ConnectionMetaData [host=192.168.0.2, port=5000]
+1:13:12:818:::com.kth.csd.node.core.KvsNode:::generateNodeFarm [ConnectionMetaData [host=192.168.0.3, port=5000], ConnectionMetaData [host=192.168.0.4, port=5000], ConnectionMetaData [host=192.168.0.5, port=5000], ConnectionMetaData [host=192.168.0.7, port=5000], ConnectionMetaData [host=192.168.0.8, port=5000], ConnectionMetaData [host=192.168.0.10, port=5000], ConnectionMetaData [host=192.168.0.11, port=5000], ConnectionMetaData [host=192.168.0.12, port=5000], ConnectionMetaData [host=192.168.0.13, port=5000]]
+1:13:13:75:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@10588116
+1:13:13:584:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.3:5000
+1:13:13:585:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.3 port No. 5000
+1:13:13:595:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@1eac6995
+1:13:13:619:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.4:5000
+1:13:13:620:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.4 port No. 5000
+1:13:13:626:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@72732600
+1:13:13:643:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.5:5000
+1:13:13:644:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.5 port No. 5000
+1:13:13:656:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@5cbf5bb7
+1:13:13:661:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.7:5000
+1:13:13:662:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.7 port No. 5000
+1:13:13:673:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@24cd6034
+1:13:13:680:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.8:5000
+1:13:13:683:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.8 port No. 5000
+1:13:13:705:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@2ab8cdc7
+1:13:13:713:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.10:5000
+1:13:13:714:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.10 port No. 5000
+1:13:13:741:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@2653a1b3
+1:13:13:750:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.11:5000
+1:13:13:751:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.11 port No. 5000
+1:13:13:767:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@168e4ea6
+1:13:13:772:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.12:5000
+1:13:13:775:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.12 port No. 5000
+1:13:13:793:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@6600167a
+1:13:13:796:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.13:5000
+1:13:13:799:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.13 port No. 5000
+1:13:13:816:::com.kth.csd.node.core.NodeFarm:::broadCast : StatisticsRequestMessage [mData=[]]
+1:13:14:128:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.10:::StatisticsResultMessage [mData={}]
+1:13:14:130:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.4:::StatisticsResultMessage [mData={}]
+1:13:14:131:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.5:::StatisticsResultMessage [mData={}]
+1:13:14:137:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.7:::StatisticsResultMessage [mData={}]
+1:13:14:140:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.3:::StatisticsResultMessage [mData={}]
+1:13:14:143:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.8:::StatisticsResultMessage [mData={}]
+1:13:14:145:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.12:::StatisticsResultMessage [mData={}]
+1:13:14:150:::FlushToDisk:::will flush to disk
+1:13:14:151:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.10 has delay cost 0.0
+1:13:14:152:::com.kth.csd.node.executors.MasterSelector:::executing master selector
+1:13:14:155:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.13:::StatisticsResultMessage [mData={}]
+1:13:14:161:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.11:::StatisticsResultMessage [mData={}]
+1:13:14:164:::FlushToDisk:::will flush to disk
+1:13:14:172:::FlushToDisk:::will flush to disk
+1:13:14:185:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.13 has delay cost 0.0
+1:13:14:187:::com.kth.csd.node.executors.MasterSelector:::executing master selector
+1:13:14:189:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.5 has delay cost 0.0
+1:13:14:191:::com.kth.csd.node.executors.MasterSelector:::executing master selector
+1:13:14:192:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.4 has delay cost 0.0
+1:13:14:193:::com.kth.csd.node.executors.MasterSelector:::executing master selector
+1:13:14:193:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.7 has delay cost 0.0
+1:13:14:193:::com.kth.csd.node.executors.MasterSelector:::executing master selector
+1:13:14:196:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.11 has delay cost 0.0
+1:13:14:196:::com.kth.csd.node.executors.MasterSelector:::executing master selector
+1:13:14:197:::com.kth.csd.node.executors.MasterSelector:::selectNewMasterAndBrodcastAPossibleUpdate: currentMaster: 192.168.0.2newMaster 192.168.0.5
+1:13:14:200:::com.kth.csd.node.executors.MasterSelector:::New master elected, switching ips
+1:13:14:208:::FlushToDisk:::will flush to disk
+1:13:14:210:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.3 has delay cost 0.0
+1:13:14:213:::com.kth.csd.node.executors.MasterSelector:::executing master selector
+1:13:14:216:::FlushToDisk:::will flush to disk
+1:13:14:219:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.8 has delay cost 0.0
+1:13:14:221:::com.kth.csd.node.executors.MasterSelector:::executing master selector
+1:13:14:221:::com.kth.csd.node.core.NodeFarm:::broadCast : MasterMovedMessage [mData=MasterConnections [internalConnection=ConnectionMetaData [host=192.168.0.5, port=5000], externalConnection=ConnectionMetaData [host=192.168.0.5, port=6000]]]
+1:13:14:223:::FlushToDisk:::will flush to disk
+1:13:14:224:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.12 has delay cost 0.0
+1:13:14:228:::com.kth.csd.node.executors.MasterSelector:::executing master selector
+1:13:14:229:::FlushToDisk:::will flush to disk
+1:13:24:148:::FlushToDisk:::will flush to disk
+1:13:24:165:::FlushToDisk:::will flush to disk
+1:13:24:172:::FlushToDisk:::will flush to disk
+1:13:24:184:::FlushToDisk:::will flush to disk
+1:13:24:198:::FlushToDisk:::will flush to disk
+1:13:24:203:::FlushToDisk:::will flush to disk
+1:13:24:212:::FlushToDisk:::will flush to disk
+1:13:33:673:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user6284781860667377211, values={field1==, field0=7}]
+1:13:34:148:::FlushToDisk:::will flush to disk
+1:13:34:168:::FlushToDisk:::will flush to disk
+1:13:34:173:::FlushToDisk:::will flush to disk
+1:13:34:185:::FlushToDisk:::will flush to disk
+1:13:34:199:::FlushToDisk:::will flush to disk
+1:13:34:203:::FlushToDisk:::will flush to disk
+1:13:34:211:::FlushToDisk:::will flush to disk
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
@@ -127,38 +119,9 @@ java.lang.NullPointerException
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:745)
-7:2:49:297:::ServerConnectionHandler:::OPERATION_WRITE192.168.0.1
-7:2:49:298:::com.kth.csd.node.executors.KvsWriter:::executing ...
-falsemessage=OPERATION_WRITEKeyValueEntry [key=user8517097267634966620, values={field1=%, field0=#}]node=com.kth.csd.networking.KvsClient@71b5438d7:2:49:298:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:299:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000001: nio socket, client, /192.168.0.2:42049 => /192.168.0.3:5000)
-7:2:49:300:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user8517097267634966620, values={field1=%, field0=#}]node=com.kth.csd.networking.KvsClient@3366184d7:2:49:303:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:304:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000002: nio socket, client, /192.168.0.2:50865 => /192.168.0.4:5000)
-7:2:49:305:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user8517097267634966620, values={field1=%, field0=#}]node=com.kth.csd.networking.KvsClient@73c581977:2:49:309:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:309:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000003: nio socket, client, /192.168.0.2:50296 => /192.168.0.5:5000)
-7:2:49:310:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user8517097267634966620, values={field1=%, field0=#}]node=com.kth.csd.networking.KvsClient@2bbf1be27:2:49:314:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:315:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000004: nio socket, client, /192.168.0.2:34889 => /192.168.0.7:5000)
-7:2:49:317:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user8517097267634966620, values={field1=%, field0=#}]node=com.kth.csd.networking.KvsClient@fbfa8de7:2:49:319:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:320:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000005: nio socket, client, /192.168.0.2:37548 => /192.168.0.8:5000)
-7:2:49:326:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user8517097267634966620, values={field1=%, field0=#}]node=com.kth.csd.networking.KvsClient@6fe78ee57:2:49:328:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:329:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000006: nio socket, client, /192.168.0.2:37469 => /192.168.0.10:5000)
-7:2:49:341:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user8517097267634966620, values={field1=%, field0=#}]node=com.kth.csd.networking.KvsClient@4b5695c87:2:49:342:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:343:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000007: nio socket, client, /192.168.0.2:57607 => /192.168.0.11:5000)
-7:2:49:348:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user8517097267634966620, values={field1=%, field0=#}]node=com.kth.csd.networking.KvsClient@2183a41c7:2:49:349:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:350:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000008: nio socket, client, /192.168.0.2:55912 => /192.168.0.12:5000)
-7:2:49:353:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user8517097267634966620, values={field1=%, field0=#}]node=com.kth.csd.networking.KvsClient@498b3b747:2:49:354:::com.kth.csd.networking.KvsClient:::send() called
-java.lang.NullPointerException
-	at com.kth.csd.networking.KvsClient.send(KvsClient.java:78)
-	at com.kth.csd.node.core.NodeFarm.broadCast(NodeFarm.java:31)
-	at com.kth.csd.node.executors.KvsWriter.execute(KvsWriter.java:38)
-	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:68)
+1:13:37:106:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user879817313296471393, values={field1=$, field0=.}]
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
@@ -184,38 +147,8 @@ java.lang.NullPointerException
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:745)
-7:2:49:356:::ServerConnectionHandler:::OPERATION_WRITE192.168.0.1
-7:2:49:357:::com.kth.csd.node.executors.KvsWriter:::executing ...
-falsemessage=OPERATION_WRITEKeyValueEntry [key=user1820151046732198393, values={field1=-, field0=.}]node=com.kth.csd.networking.KvsClient@71b5438d7:2:49:357:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:358:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000001: nio socket, client, /192.168.0.2:42049 => /192.168.0.3:5000)
-7:2:49:359:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user1820151046732198393, values={field1=-, field0=.}]node=com.kth.csd.networking.KvsClient@3366184d7:2:49:360:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:360:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000002: nio socket, client, /192.168.0.2:50865 => /192.168.0.4:5000)
-7:2:49:362:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user1820151046732198393, values={field1=-, field0=.}]node=com.kth.csd.networking.KvsClient@73c581977:2:49:362:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:363:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000003: nio socket, client, /192.168.0.2:50296 => /192.168.0.5:5000)
-7:2:49:365:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user1820151046732198393, values={field1=-, field0=.}]node=com.kth.csd.networking.KvsClient@2bbf1be27:2:49:365:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:366:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000004: nio socket, client, /192.168.0.2:34889 => /192.168.0.7:5000)
-7:2:49:368:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user1820151046732198393, values={field1=-, field0=.}]node=com.kth.csd.networking.KvsClient@fbfa8de7:2:49:369:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:369:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000005: nio socket, client, /192.168.0.2:37548 => /192.168.0.8:5000)
-7:2:49:370:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user1820151046732198393, values={field1=-, field0=.}]node=com.kth.csd.networking.KvsClient@6fe78ee57:2:49:371:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:371:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000006: nio socket, client, /192.168.0.2:37469 => /192.168.0.10:5000)
-7:2:49:373:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user1820151046732198393, values={field1=-, field0=.}]node=com.kth.csd.networking.KvsClient@4b5695c87:2:49:373:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:373:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000007: nio socket, client, /192.168.0.2:57607 => /192.168.0.11:5000)
-7:2:49:451:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user1820151046732198393, values={field1=-, field0=.}]node=com.kth.csd.networking.KvsClient@2183a41c7:2:49:454:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:455:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000008: nio socket, client, /192.168.0.2:55912 => /192.168.0.12:5000)
-7:2:49:455:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user1820151046732198393, values={field1=-, field0=.}]node=com.kth.csd.networking.KvsClient@498b3b747:2:49:458:::com.kth.csd.networking.KvsClient:::send() called
-java.lang.NullPointerException
-	at com.kth.csd.networking.KvsClient.send(KvsClient.java:78)
-	at com.kth.csd.node.core.NodeFarm.broadCast(NodeFarm.java:31)
-	at com.kth.csd.node.executors.KvsWriter.execute(KvsWriter.java:38)
-	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:68)
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
@@ -241,38 +174,8 @@ java.lang.NullPointerException
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:745)
-7:2:49:460:::ServerConnectionHandler:::OPERATION_WRITE192.168.0.1
-7:2:49:460:::com.kth.csd.node.executors.KvsWriter:::executing ...
-falsemessage=OPERATION_WRITEKeyValueEntry [key=user4052466453699787802, values={field1=0, field0=,}]node=com.kth.csd.networking.KvsClient@71b5438d7:2:49:461:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:461:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000001: nio socket, client, /192.168.0.2:42049 => /192.168.0.3:5000)
-7:2:49:463:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user4052466453699787802, values={field1=0, field0=,}]node=com.kth.csd.networking.KvsClient@3366184d7:2:49:463:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:463:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000002: nio socket, client, /192.168.0.2:50865 => /192.168.0.4:5000)
-7:2:49:464:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user4052466453699787802, values={field1=0, field0=,}]node=com.kth.csd.networking.KvsClient@73c581977:2:49:464:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:465:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000003: nio socket, client, /192.168.0.2:50296 => /192.168.0.5:5000)
-7:2:49:466:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user4052466453699787802, values={field1=0, field0=,}]node=com.kth.csd.networking.KvsClient@2bbf1be27:2:49:467:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:468:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000004: nio socket, client, /192.168.0.2:34889 => /192.168.0.7:5000)
-7:2:49:469:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user4052466453699787802, values={field1=0, field0=,}]node=com.kth.csd.networking.KvsClient@fbfa8de7:2:49:470:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:471:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000005: nio socket, client, /192.168.0.2:37548 => /192.168.0.8:5000)
-7:2:49:472:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user4052466453699787802, values={field1=0, field0=,}]node=com.kth.csd.networking.KvsClient@6fe78ee57:2:49:473:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:473:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000006: nio socket, client, /192.168.0.2:37469 => /192.168.0.10:5000)
-7:2:49:474:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user4052466453699787802, values={field1=0, field0=,}]node=com.kth.csd.networking.KvsClient@4b5695c87:2:49:475:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:475:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000007: nio socket, client, /192.168.0.2:57607 => /192.168.0.11:5000)
-7:2:49:476:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user4052466453699787802, values={field1=0, field0=,}]node=com.kth.csd.networking.KvsClient@2183a41c7:2:49:476:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:477:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000008: nio socket, client, /192.168.0.2:55912 => /192.168.0.12:5000)
-7:2:49:478:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user4052466453699787802, values={field1=0, field0=,}]node=com.kth.csd.networking.KvsClient@498b3b747:2:49:478:::com.kth.csd.networking.KvsClient:::send() called
-java.lang.NullPointerException
-	at com.kth.csd.networking.KvsClient.send(KvsClient.java:78)
-	at com.kth.csd.node.core.NodeFarm.broadCast(NodeFarm.java:31)
-	at com.kth.csd.node.executors.KvsWriter.execute(KvsWriter.java:38)
-	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:68)
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
@@ -298,38 +201,9 @@ java.lang.NullPointerException
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:745)
-7:2:49:481:::ServerConnectionHandler:::OPERATION_WRITE192.168.0.1
-7:2:49:481:::com.kth.csd.node.executors.KvsWriter:::executing ...
-falsemessage=OPERATION_WRITEKeyValueEntry [key=user3232700585171816769, values={field1=0, field0=$}]node=com.kth.csd.networking.KvsClient@71b5438d7:2:49:481:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:482:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000001: nio socket, client, /192.168.0.2:42049 => /192.168.0.3:5000)
-7:2:49:483:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user3232700585171816769, values={field1=0, field0=$}]node=com.kth.csd.networking.KvsClient@3366184d7:2:49:488:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:489:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000002: nio socket, client, /192.168.0.2:50865 => /192.168.0.4:5000)
-7:2:49:490:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user3232700585171816769, values={field1=0, field0=$}]node=com.kth.csd.networking.KvsClient@73c581977:2:49:491:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:491:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000003: nio socket, client, /192.168.0.2:50296 => /192.168.0.5:5000)
-7:2:49:492:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user3232700585171816769, values={field1=0, field0=$}]node=com.kth.csd.networking.KvsClient@2bbf1be27:2:49:494:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:495:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000004: nio socket, client, /192.168.0.2:34889 => /192.168.0.7:5000)
-7:2:49:495:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user3232700585171816769, values={field1=0, field0=$}]node=com.kth.csd.networking.KvsClient@fbfa8de7:2:49:496:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:496:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000005: nio socket, client, /192.168.0.2:37548 => /192.168.0.8:5000)
-7:2:49:497:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user3232700585171816769, values={field1=0, field0=$}]node=com.kth.csd.networking.KvsClient@6fe78ee57:2:49:497:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:498:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000006: nio socket, client, /192.168.0.2:37469 => /192.168.0.10:5000)
-7:2:49:498:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user3232700585171816769, values={field1=0, field0=$}]node=com.kth.csd.networking.KvsClient@4b5695c87:2:49:499:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:499:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000007: nio socket, client, /192.168.0.2:57607 => /192.168.0.11:5000)
-7:2:49:500:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user3232700585171816769, values={field1=0, field0=$}]node=com.kth.csd.networking.KvsClient@2183a41c7:2:49:501:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:502:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000008: nio socket, client, /192.168.0.2:55912 => /192.168.0.12:5000)
-7:2:49:503:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user3232700585171816769, values={field1=0, field0=$}]node=com.kth.csd.networking.KvsClient@498b3b747:2:49:504:::com.kth.csd.networking.KvsClient:::send() called
-java.lang.NullPointerException
-	at com.kth.csd.networking.KvsClient.send(KvsClient.java:78)
-	at com.kth.csd.node.core.NodeFarm.broadCast(NodeFarm.java:31)
-	at com.kth.csd.node.executors.KvsWriter.execute(KvsWriter.java:38)
-	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:68)
+1:13:37:210:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user1352498093671118016, values={field1=5, field0='}]
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
@@ -355,38 +229,9 @@ java.lang.NullPointerException
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:745)
-7:2:49:506:::ServerConnectionHandler:::OPERATION_WRITE192.168.0.1
-7:2:49:507:::com.kth.csd.node.executors.KvsWriter:::executing ...
-falsemessage=OPERATION_WRITEKeyValueEntry [key=user1000385178204227360, values={field1=:, field0==}]node=com.kth.csd.networking.KvsClient@71b5438d7:2:49:507:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:507:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000001: nio socket, client, /192.168.0.2:42049 => /192.168.0.3:5000)
-7:2:49:508:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user1000385178204227360, values={field1=:, field0==}]node=com.kth.csd.networking.KvsClient@3366184d7:2:49:508:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:509:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000002: nio socket, client, /192.168.0.2:50865 => /192.168.0.4:5000)
-7:2:49:509:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user1000385178204227360, values={field1=:, field0==}]node=com.kth.csd.networking.KvsClient@73c581977:2:49:510:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:510:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000003: nio socket, client, /192.168.0.2:50296 => /192.168.0.5:5000)
-7:2:49:511:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user1000385178204227360, values={field1=:, field0==}]node=com.kth.csd.networking.KvsClient@2bbf1be27:2:49:513:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:513:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000004: nio socket, client, /192.168.0.2:34889 => /192.168.0.7:5000)
-7:2:49:514:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user1000385178204227360, values={field1=:, field0==}]node=com.kth.csd.networking.KvsClient@fbfa8de7:2:49:514:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:514:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000005: nio socket, client, /192.168.0.2:37548 => /192.168.0.8:5000)
-7:2:49:515:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user1000385178204227360, values={field1=:, field0==}]node=com.kth.csd.networking.KvsClient@6fe78ee57:2:49:515:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:515:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000006: nio socket, client, /192.168.0.2:37469 => /192.168.0.10:5000)
-7:2:49:516:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user1000385178204227360, values={field1=:, field0==}]node=com.kth.csd.networking.KvsClient@4b5695c87:2:49:516:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:517:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000007: nio socket, client, /192.168.0.2:57607 => /192.168.0.11:5000)
-7:2:49:518:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user1000385178204227360, values={field1=:, field0==}]node=com.kth.csd.networking.KvsClient@2183a41c7:2:49:518:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:519:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000008: nio socket, client, /192.168.0.2:55912 => /192.168.0.12:5000)
-7:2:49:519:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user1000385178204227360, values={field1=:, field0==}]node=com.kth.csd.networking.KvsClient@498b3b747:2:49:520:::com.kth.csd.networking.KvsClient:::send() called
-java.lang.NullPointerException
-	at com.kth.csd.networking.KvsClient.send(KvsClient.java:78)
-	at com.kth.csd.node.core.NodeFarm.broadCast(NodeFarm.java:31)
-	at com.kth.csd.node.executors.KvsWriter.execute(KvsWriter.java:38)
-	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:68)
+1:13:37:226:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user5344448127231650211, values={field1=-, field0=0}]
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
@@ -412,38 +257,8 @@ java.lang.NullPointerException
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:745)
-7:2:49:522:::ServerConnectionHandler:::OPERATION_WRITE192.168.0.1
-7:2:49:522:::com.kth.csd.node.executors.KvsWriter:::executing ...
-falsemessage=OPERATION_WRITEKeyValueEntry [key=user7697331399106995587, values={field1=3, field0=/}]node=com.kth.csd.networking.KvsClient@71b5438d7:2:49:523:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:523:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000001: nio socket, client, /192.168.0.2:42049 => /192.168.0.3:5000)
-7:2:49:524:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user7697331399106995587, values={field1=3, field0=/}]node=com.kth.csd.networking.KvsClient@3366184d7:2:49:524:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:525:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000002: nio socket, client, /192.168.0.2:50865 => /192.168.0.4:5000)
-7:2:49:526:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user7697331399106995587, values={field1=3, field0=/}]node=com.kth.csd.networking.KvsClient@73c581977:2:49:526:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:527:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000003: nio socket, client, /192.168.0.2:50296 => /192.168.0.5:5000)
-7:2:49:528:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user7697331399106995587, values={field1=3, field0=/}]node=com.kth.csd.networking.KvsClient@2bbf1be27:2:49:528:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:528:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000004: nio socket, client, /192.168.0.2:34889 => /192.168.0.7:5000)
-7:2:49:529:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user7697331399106995587, values={field1=3, field0=/}]node=com.kth.csd.networking.KvsClient@fbfa8de7:2:49:530:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:530:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000005: nio socket, client, /192.168.0.2:37548 => /192.168.0.8:5000)
-7:2:49:531:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user7697331399106995587, values={field1=3, field0=/}]node=com.kth.csd.networking.KvsClient@6fe78ee57:2:49:531:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:531:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000006: nio socket, client, /192.168.0.2:37469 => /192.168.0.10:5000)
-7:2:49:532:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user7697331399106995587, values={field1=3, field0=/}]node=com.kth.csd.networking.KvsClient@4b5695c87:2:49:534:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:535:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000007: nio socket, client, /192.168.0.2:57607 => /192.168.0.11:5000)
-7:2:49:536:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user7697331399106995587, values={field1=3, field0=/}]node=com.kth.csd.networking.KvsClient@2183a41c7:2:49:536:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:536:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000008: nio socket, client, /192.168.0.2:55912 => /192.168.0.12:5000)
-7:2:49:537:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user7697331399106995587, values={field1=3, field0=/}]node=com.kth.csd.networking.KvsClient@498b3b747:2:49:537:::com.kth.csd.networking.KvsClient:::send() called
-java.lang.NullPointerException
-	at com.kth.csd.networking.KvsClient.send(KvsClient.java:78)
-	at com.kth.csd.node.core.NodeFarm.broadCast(NodeFarm.java:31)
-	at com.kth.csd.node.executors.KvsWriter.execute(KvsWriter.java:38)
-	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:68)
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
@@ -469,38 +284,10 @@ java.lang.NullPointerException
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:745)
-7:2:49:539:::ServerConnectionHandler:::OPERATION_WRITE192.168.0.1
-7:2:49:539:::com.kth.csd.node.executors.KvsWriter:::executing ...
-falsemessage=OPERATION_WRITEKeyValueEntry [key=user5465015992139406178, values={field1=9, field0=:}]node=com.kth.csd.networking.KvsClient@71b5438d7:2:49:540:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:540:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000001: nio socket, client, /192.168.0.2:42049 => /192.168.0.3:5000)
-7:2:49:541:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user5465015992139406178, values={field1=9, field0=:}]node=com.kth.csd.networking.KvsClient@3366184d7:2:49:541:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:541:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000002: nio socket, client, /192.168.0.2:50865 => /192.168.0.4:5000)
-7:2:49:542:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user5465015992139406178, values={field1=9, field0=:}]node=com.kth.csd.networking.KvsClient@73c581977:2:49:542:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:543:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000003: nio socket, client, /192.168.0.2:50296 => /192.168.0.5:5000)
-7:2:49:544:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user5465015992139406178, values={field1=9, field0=:}]node=com.kth.csd.networking.KvsClient@2bbf1be27:2:49:544:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:544:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000004: nio socket, client, /192.168.0.2:34889 => /192.168.0.7:5000)
-7:2:49:545:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user5465015992139406178, values={field1=9, field0=:}]node=com.kth.csd.networking.KvsClient@fbfa8de7:2:49:545:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:546:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000005: nio socket, client, /192.168.0.2:37548 => /192.168.0.8:5000)
-7:2:49:546:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user5465015992139406178, values={field1=9, field0=:}]node=com.kth.csd.networking.KvsClient@6fe78ee57:2:49:547:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:547:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000006: nio socket, client, /192.168.0.2:37469 => /192.168.0.10:5000)
-7:2:49:548:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user5465015992139406178, values={field1=9, field0=:}]node=com.kth.csd.networking.KvsClient@4b5695c87:2:49:548:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:548:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000007: nio socket, client, /192.168.0.2:57607 => /192.168.0.11:5000)
-7:2:49:549:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user5465015992139406178, values={field1=9, field0=:}]node=com.kth.csd.networking.KvsClient@2183a41c7:2:49:549:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:550:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000008: nio socket, client, /192.168.0.2:55912 => /192.168.0.12:5000)
-7:2:49:551:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user5465015992139406178, values={field1=9, field0=:}]node=com.kth.csd.networking.KvsClient@498b3b747:2:49:553:::com.kth.csd.networking.KvsClient:::send() called
-java.lang.NullPointerException
-	at com.kth.csd.networking.KvsClient.send(KvsClient.java:78)
-	at com.kth.csd.node.core.NodeFarm.broadCast(NodeFarm.java:31)
-	at com.kth.csd.node.executors.KvsWriter.execute(KvsWriter.java:38)
-	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:68)
+1:13:37:281:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user3112132720264060802, values={field1=$, field0=&}]
+1:13:37:290:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user9220858123197992685, values={field1=:, field0='}]
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
@@ -526,38 +313,10 @@ java.lang.NullPointerException
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:745)
-7:2:49:554:::ServerConnectionHandler:::OPERATION_WRITE192.168.0.1
-7:2:49:554:::com.kth.csd.node.executors.KvsWriter:::executing ...
-falsemessage=OPERATION_WRITEKeyValueEntry [key=user6873002678636213555, values={field1=#, field0=)}]node=com.kth.csd.networking.KvsClient@71b5438d7:2:49:555:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:555:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000001: nio socket, client, /192.168.0.2:42049 => /192.168.0.3:5000)
-7:2:49:556:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user6873002678636213555, values={field1=#, field0=)}]node=com.kth.csd.networking.KvsClient@3366184d7:2:49:556:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:557:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000002: nio socket, client, /192.168.0.2:50865 => /192.168.0.4:5000)
-7:2:49:557:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user6873002678636213555, values={field1=#, field0=)}]node=com.kth.csd.networking.KvsClient@73c581977:2:49:558:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:558:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000003: nio socket, client, /192.168.0.2:50296 => /192.168.0.5:5000)
-7:2:49:559:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user6873002678636213555, values={field1=#, field0=)}]node=com.kth.csd.networking.KvsClient@2bbf1be27:2:49:560:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:560:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000004: nio socket, client, /192.168.0.2:34889 => /192.168.0.7:5000)
-7:2:49:561:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user6873002678636213555, values={field1=#, field0=)}]node=com.kth.csd.networking.KvsClient@fbfa8de7:2:49:563:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:578:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000005: nio socket, client, /192.168.0.2:37548 => /192.168.0.8:5000)
-7:2:49:579:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user6873002678636213555, values={field1=#, field0=)}]node=com.kth.csd.networking.KvsClient@6fe78ee57:2:49:579:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:579:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000006: nio socket, client, /192.168.0.2:37469 => /192.168.0.10:5000)
-7:2:49:585:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user6873002678636213555, values={field1=#, field0=)}]node=com.kth.csd.networking.KvsClient@4b5695c87:2:49:585:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:586:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000007: nio socket, client, /192.168.0.2:57607 => /192.168.0.11:5000)
-7:2:49:587:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user6873002678636213555, values={field1=#, field0=)}]node=com.kth.csd.networking.KvsClient@2183a41c7:2:49:597:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:597:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000008: nio socket, client, /192.168.0.2:55912 => /192.168.0.12:5000)
-7:2:49:604:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user6873002678636213555, values={field1=#, field0=)}]node=com.kth.csd.networking.KvsClient@498b3b747:2:49:604:::com.kth.csd.networking.KvsClient:::send() called
-java.lang.NullPointerException
-	at com.kth.csd.networking.KvsClient.send(KvsClient.java:78)
-	at com.kth.csd.node.core.NodeFarm.broadCast(NodeFarm.java:31)
-	at com.kth.csd.node.executors.KvsWriter.execute(KvsWriter.java:38)
-	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:68)
+1:13:37:311:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user6988542716230403276, values={field1=$, field0=?}]
+1:13:37:312:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user4761255136576380113, values={field1=*, field0=1}]
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
@@ -583,38 +342,8 @@ java.lang.NullPointerException
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:745)
-7:2:49:606:::ServerConnectionHandler:::OPERATION_WRITE192.168.0.1
-7:2:49:607:::com.kth.csd.node.executors.KvsWriter:::executing ...
-falsemessage=OPERATION_WRITEKeyValueEntry [key=user9105318085603802964, values={field1=$, field0=:}]node=com.kth.csd.networking.KvsClient@71b5438d7:2:49:607:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:607:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000001: nio socket, client, /192.168.0.2:42049 => /192.168.0.3:5000)
-7:2:49:608:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user9105318085603802964, values={field1=$, field0=:}]node=com.kth.csd.networking.KvsClient@3366184d7:2:49:609:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:609:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000002: nio socket, client, /192.168.0.2:50865 => /192.168.0.4:5000)
-7:2:49:613:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user9105318085603802964, values={field1=$, field0=:}]node=com.kth.csd.networking.KvsClient@73c581977:2:49:613:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:614:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000003: nio socket, client, /192.168.0.2:50296 => /192.168.0.5:5000)
-7:2:49:615:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user9105318085603802964, values={field1=$, field0=:}]node=com.kth.csd.networking.KvsClient@2bbf1be27:2:49:615:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:615:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000004: nio socket, client, /192.168.0.2:34889 => /192.168.0.7:5000)
-7:2:49:616:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user9105318085603802964, values={field1=$, field0=:}]node=com.kth.csd.networking.KvsClient@fbfa8de7:2:49:616:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:617:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000005: nio socket, client, /192.168.0.2:37548 => /192.168.0.8:5000)
-7:2:49:618:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user9105318085603802964, values={field1=$, field0=:}]node=com.kth.csd.networking.KvsClient@6fe78ee57:2:49:618:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:618:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000006: nio socket, client, /192.168.0.2:37469 => /192.168.0.10:5000)
-7:2:49:619:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user9105318085603802964, values={field1=$, field0=:}]node=com.kth.csd.networking.KvsClient@4b5695c87:2:49:619:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:620:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000007: nio socket, client, /192.168.0.2:57607 => /192.168.0.11:5000)
-7:2:49:620:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user9105318085603802964, values={field1=$, field0=:}]node=com.kth.csd.networking.KvsClient@2183a41c7:2:49:621:::com.kth.csd.networking.KvsClient:::send() called
-7:2:49:621:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000008: nio socket, client, /192.168.0.2:55912 => /192.168.0.12:5000)
-7:2:49:622:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=OPERATION_WRITEKeyValueEntry [key=user9105318085603802964, values={field1=$, field0=:}]node=com.kth.csd.networking.KvsClient@498b3b747:2:49:622:::com.kth.csd.networking.KvsClient:::send() called
-java.lang.NullPointerException
-	at com.kth.csd.networking.KvsClient.send(KvsClient.java:78)
-	at com.kth.csd.node.core.NodeFarm.broadCast(NodeFarm.java:31)
-	at com.kth.csd.node.executors.KvsWriter.execute(KvsWriter.java:38)
-	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:68)
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
 	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
@@ -640,850 +369,316 @@ java.lang.NullPointerException
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:745)
-7:2:51:443:::com.kth.csd.node.core.KvsNode:::requestMsg = STATISTICS_REQ[192.168.0.1]
-falsemessage=STATISTICS_REQ[192.168.0.1]node=com.kth.csd.networking.KvsClient@71b5438d7:2:51:444:::com.kth.csd.networking.KvsClient:::send() called
-7:2:51:444:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000001: nio socket, client, /192.168.0.2:42049 => /192.168.0.3:5000)
-7:2:51:449:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=STATISTICS_REQ[192.168.0.1]node=com.kth.csd.networking.KvsClient@3366184d7:2:51:449:::com.kth.csd.networking.KvsClient:::send() called
-7:2:51:450:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000002: nio socket, client, /192.168.0.2:50865 => /192.168.0.4:5000)
-7:2:51:451:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=STATISTICS_REQ[192.168.0.1]node=com.kth.csd.networking.KvsClient@73c581977:2:51:455:::com.kth.csd.networking.KvsClient:::send() called
-7:2:51:455:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000003: nio socket, client, /192.168.0.2:50296 => /192.168.0.5:5000)
-7:2:51:455:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=STATISTICS_REQ[192.168.0.1]node=com.kth.csd.networking.KvsClient@2bbf1be27:2:51:456:::com.kth.csd.networking.KvsClient:::send() called
-7:2:51:456:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000004: nio socket, client, /192.168.0.2:34889 => /192.168.0.7:5000)
-7:2:51:456:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=STATISTICS_REQ[192.168.0.1]node=com.kth.csd.networking.KvsClient@fbfa8de7:2:51:457:::com.kth.csd.networking.KvsClient:::send() called
-7:2:51:457:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000005: nio socket, client, /192.168.0.2:37548 => /192.168.0.8:5000)
-7:2:51:457:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=STATISTICS_REQ[192.168.0.1]node=com.kth.csd.networking.KvsClient@6fe78ee57:2:51:458:::com.kth.csd.networking.KvsClient:::send() called
-7:2:51:458:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000006: nio socket, client, /192.168.0.2:37469 => /192.168.0.10:5000)
-7:2:51:471:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=STATISTICS_REQ[192.168.0.1]node=com.kth.csd.networking.KvsClient@4b5695c87:2:51:471:::com.kth.csd.networking.KvsClient:::send() called
-7:2:51:471:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000007: nio socket, client, /192.168.0.2:57607 => /192.168.0.11:5000)
-7:2:51:473:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=STATISTICS_REQ[192.168.0.1]node=com.kth.csd.networking.KvsClient@2183a41c7:2:51:475:::com.kth.csd.networking.KvsClient:::send() called
-7:2:51:475:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000008: nio socket, client, /192.168.0.2:55912 => /192.168.0.12:5000)
-7:2:51:476:::com.kth.csd.networking.KvsClient:::send(),write done....
-message=STATISTICS_REQ[192.168.0.1]node=com.kth.csd.networking.KvsClient@498b3b747:2:51:476:::com.kth.csd.networking.KvsClient:::send() called
-Exception in thread "Timer-0" java.lang.NullPointerException
-	at com.kth.csd.networking.KvsClient.send(KvsClient.java:78)
-	at com.kth.csd.node.core.NodeFarm.broadCast(NodeFarm.java:31)
-	at com.kth.csd.node.core.KvsNode$1.run(KvsNode.java:85)
-	at java.util.TimerThread.mainLoop(Timer.java:555)
-	at java.util.TimerThread.run(Timer.java:505)
-7:2:51:718:::ServerConnectionHandler:::messageReceivedSTATISTICS_RES{192.168.0.1=34.8}
-7:2:51:719:::ServerConnectionHandler:::STATISTICS_RES STATISTICS_RES{192.168.0.1=34.8}
-7:2:51:720:::ServerConnectionHandler:::results of ping recieved from : (0x0000000C: nio socket, server, /192.168.0.7:42576 => /192.168.0.2:5000)Results = {192.168.0.1=34.8}
-7:2:51:722:::ServerConnectionHandler:::messageReceivedSTATISTICS_RES{192.168.0.1=4.2}
-7:2:51:722:::ServerConnectionHandler:::STATISTICS_RES STATISTICS_RES{192.168.0.1=4.2}
-7:2:51:723:::ServerConnectionHandler:::results of ping recieved from : (0x0000000B: nio socket, server, /192.168.0.4:53442 => /192.168.0.2:5000)Results = {192.168.0.1=4.2}
-7:2:51:724:::ServerConnectionHandler:::messageReceivedSTATISTICS_RES{192.168.0.1=30.7}
-7:2:51:725:::ServerConnectionHandler:::STATISTICS_RES STATISTICS_RES{192.168.0.1=30.7}
-7:2:51:725:::ServerConnectionHandler:::results of ping recieved from : (0x0000000E: nio socket, server, /192.168.0.3:38569 => /192.168.0.2:5000)Results = {192.168.0.1=30.7}
-7:2:51:739:::ServerConnectionHandler:::messageReceivedSTATISTICS_RES{192.168.0.1=3.83}
-7:2:51:739:::ServerConnectionHandler:::STATISTICS_RES STATISTICS_RES{192.168.0.1=3.83}
-7:2:51:743:::ServerConnectionHandler:::results of ping recieved from : (0x0000000A: nio socket, server, /192.168.0.5:60729 => /192.168.0.2:5000)Results = {192.168.0.1=3.83}
-7:2:51:759:::ServerConnectionHandler:::messageReceivedSTATISTICS_RES{192.168.0.1=61.3}
-7:2:51:759:::ServerConnectionHandler:::STATISTICS_RES STATISTICS_RES{192.168.0.1=61.3}
-7:2:51:760:::ServerConnectionHandler:::results of ping recieved from : (0x00000011: nio socket, server, /192.168.0.11:48530 => /192.168.0.2:5000)Results = {192.168.0.1=61.3}
-7:2:51:762:::ServerConnectionHandler:::messageReceivedSTATISTICS_RES{192.168.0.1=58.3}
-7:2:51:762:::ServerConnectionHandler:::STATISTICS_RES STATISTICS_RES{192.168.0.1=58.3}
-7:2:51:763:::ServerConnectionHandler:::results of ping recieved from : (0x00000010: nio socket, server, /192.168.0.10:37152 => /192.168.0.2:5000)Results = {192.168.0.1=58.3}
-7:2:51:764:::ServerConnectionHandler:::messageReceivedSTATISTICS_RES{192.168.0.1=48.0}
-7:2:51:764:::ServerConnectionHandler:::STATISTICS_RES STATISTICS_RES{192.168.0.1=48.0}
-7:2:51:765:::ServerConnectionHandler:::results of ping recieved from : (0x0000000F: nio socket, server, /192.168.0.12:48455 => /192.168.0.2:5000)Results = {192.168.0.1=48.0}
-7:2:51:769:::ServerConnectionHandler:::messageReceivedSTATISTICS_RES{192.168.0.1=35.2}
-7:2:51:769:::ServerConnectionHandler:::STATISTICS_RES STATISTICS_RES{192.168.0.1=35.2}
-7:2:51:770:::ServerConnectionHandler:::results of ping recieved from : (0x0000000D: nio socket, server, /192.168.0.8:55188 => /192.168.0.2:5000)Results = {192.168.0.1=35.2}
-7:2:55:266:::com.kth.csd.node.executors.KvsReader:::executing ...
-7:2:55:266:::com.kth.csd.node.core.KeyValueStore:::not found in memory, going to file
-7:2:59:131:::FlushToDisk:::will flush to disk
-7:2:59:984:::com.kth.csd.node.executors.KvsReader:::executing ...
-7:2:59:984:::com.kth.csd.node.core.KeyValueStore:::not found in memory, going to file
-7:3:3:671:::com.kth.csd.node.executors.KvsReader:::executing ...
-7:3:3:671:::com.kth.csd.node.core.KeyValueStore:::not found in memory, going to file
-7:3:8:921:::com.kth.csd.node.executors.KvsReader:::executing ...
-7:3:8:921:::com.kth.csd.node.core.KeyValueStore:::not found in memory, going to file
-7:3:9:131:::FlushToDisk:::will flush to disk
-7:3:19:132:::FlushToDisk:::will flush to disk
-7:3:21:205:::com.kth.csd.node.executors.KvsReader:::executing ...
-7:3:21:205:::com.kth.csd.node.core.KeyValueStore:::not found in memory, going to file
-7:3:29:131:::FlushToDisk:::will flush to disk
-7:3:39:131:::FlushToDisk:::will flush to disk
-7:3:49:131:::FlushToDisk:::will flush to disk
-7:3:59:131:::FlushToDisk:::will flush to disk
-7:4:9:132:::FlushToDisk:::will flush to disk
-7:4:19:131:::FlushToDisk:::will flush to disk
-7:4:29:131:::FlushToDisk:::will flush to disk
-7:4:39:131:::FlushToDisk:::will flush to disk
-7:4:49:131:::FlushToDisk:::will flush to disk
-7:4:59:132:::FlushToDisk:::will flush to disk
-7:5:9:131:::FlushToDisk:::will flush to disk
-7:5:19:131:::FlushToDisk:::will flush to disk
-7:5:29:132:::FlushToDisk:::will flush to disk
-7:5:39:131:::FlushToDisk:::will flush to disk
-7:5:49:131:::FlushToDisk:::will flush to disk
-7:5:59:131:::FlushToDisk:::will flush to disk
-7:6:9:131:::FlushToDisk:::will flush to disk
-7:6:19:132:::FlushToDisk:::will flush to disk
-7:6:29:131:::FlushToDisk:::will flush to disk
-7:6:39:131:::FlushToDisk:::will flush to disk
-7:6:49:131:::FlushToDisk:::will flush to disk
-7:6:59:131:::FlushToDisk:::will flush to disk
-7:7:9:132:::FlushToDisk:::will flush to disk
-7:7:19:131:::FlushToDisk:::will flush to disk
-7:7:29:131:::FlushToDisk:::will flush to disk
-7:7:39:131:::FlushToDisk:::will flush to disk
-7:7:49:131:::FlushToDisk:::will flush to disk
-7:7:59:132:::FlushToDisk:::will flush to disk
-7:8:9:131:::FlushToDisk:::will flush to disk
-7:8:19:131:::FlushToDisk:::will flush to disk
-7:8:29:131:::FlushToDisk:::will flush to disk
-7:8:39:131:::FlushToDisk:::will flush to disk
-7:8:49:131:::FlushToDisk:::will flush to disk
-7:8:59:131:::FlushToDisk:::will flush to disk
-7:9:9:131:::FlushToDisk:::will flush to disk
-7:9:19:131:::FlushToDisk:::will flush to disk
-7:9:29:131:::FlushToDisk:::will flush to disk
-7:9:39:132:::FlushToDisk:::will flush to disk
-7:9:49:131:::FlushToDisk:::will flush to disk
-7:9:59:131:::FlushToDisk:::will flush to disk
-7:10:9:131:::FlushToDisk:::will flush to disk
-7:10:19:131:::FlushToDisk:::will flush to disk
-7:10:29:132:::FlushToDisk:::will flush to disk
-7:10:39:131:::FlushToDisk:::will flush to disk
-7:10:49:131:::FlushToDisk:::will flush to disk
-7:10:59:132:::FlushToDisk:::will flush to disk
-7:11:9:131:::FlushToDisk:::will flush to disk
-7:11:19:131:::FlushToDisk:::will flush to disk
-7:11:29:132:::FlushToDisk:::will flush to disk
-7:11:39:131:::FlushToDisk:::will flush to disk
-7:11:49:132:::FlushToDisk:::will flush to disk
-7:11:59:131:::FlushToDisk:::will flush to disk
-7:12:9:131:::FlushToDisk:::will flush to disk
-7:12:19:132:::FlushToDisk:::will flush to disk
-7:12:29:131:::FlushToDisk:::will flush to disk
-7:12:39:131:::FlushToDisk:::will flush to disk
-7:12:49:131:::FlushToDisk:::will flush to disk
-7:12:59:131:::FlushToDisk:::will flush to disk
-7:13:9:131:::FlushToDisk:::will flush to disk
-7:13:19:131:::FlushToDisk:::will flush to disk
-7:13:29:132:::FlushToDisk:::will flush to disk
-7:13:39:131:::FlushToDisk:::will flush to disk
-7:13:49:131:::FlushToDisk:::will flush to disk
-7:13:59:131:::FlushToDisk:::will flush to disk
-7:14:9:131:::FlushToDisk:::will flush to disk
-7:14:19:131:::FlushToDisk:::will flush to disk
-7:14:29:131:::FlushToDisk:::will flush to disk
-7:14:39:131:::FlushToDisk:::will flush to disk
-7:14:49:131:::FlushToDisk:::will flush to disk
-7:14:59:131:::FlushToDisk:::will flush to disk
-7:15:9:131:::FlushToDisk:::will flush to disk
-7:15:19:131:::FlushToDisk:::will flush to disk
-7:15:29:131:::FlushToDisk:::will flush to disk
-7:15:39:132:::FlushToDisk:::will flush to disk
-7:15:49:131:::FlushToDisk:::will flush to disk
-7:15:59:131:::FlushToDisk:::will flush to disk
-7:16:9:131:::FlushToDisk:::will flush to disk
-7:16:19:131:::FlushToDisk:::will flush to disk
-7:16:29:132:::FlushToDisk:::will flush to disk
-7:16:39:131:::FlushToDisk:::will flush to disk
-7:16:49:131:::FlushToDisk:::will flush to disk
-7:16:59:131:::FlushToDisk:::will flush to disk
-7:17:9:131:::FlushToDisk:::will flush to disk
-7:17:19:131:::FlushToDisk:::will flush to disk
-7:17:29:131:::FlushToDisk:::will flush to disk
-7:17:39:132:::FlushToDisk:::will flush to disk
-7:17:49:131:::FlushToDisk:::will flush to disk
-7:17:59:131:::FlushToDisk:::will flush to disk
-7:18:9:131:::FlushToDisk:::will flush to disk
-7:18:19:131:::FlushToDisk:::will flush to disk
-7:18:29:132:::FlushToDisk:::will flush to disk
-7:18:39:131:::FlushToDisk:::will flush to disk
-7:18:49:131:::FlushToDisk:::will flush to disk
-7:18:59:131:::FlushToDisk:::will flush to disk
-7:19:9:131:::FlushToDisk:::will flush to disk
-7:19:19:132:::FlushToDisk:::will flush to disk
-7:19:29:131:::FlushToDisk:::will flush to disk
-7:19:39:131:::FlushToDisk:::will flush to disk
-7:19:49:132:::FlushToDisk:::will flush to disk
-7:19:59:131:::FlushToDisk:::will flush to disk
-7:20:9:131:::FlushToDisk:::will flush to disk
-7:20:19:131:::FlushToDisk:::will flush to disk
-7:20:29:131:::FlushToDisk:::will flush to disk
-7:20:39:132:::FlushToDisk:::will flush to disk
-7:20:49:131:::FlushToDisk:::will flush to disk
-7:20:59:131:::FlushToDisk:::will flush to disk
-7:21:9:131:::FlushToDisk:::will flush to disk
-7:21:19:131:::FlushToDisk:::will flush to disk
-7:21:29:132:::FlushToDisk:::will flush to disk
-7:21:39:131:::FlushToDisk:::will flush to disk
-7:21:49:131:::FlushToDisk:::will flush to disk
-7:21:59:132:::FlushToDisk:::will flush to disk
-7:22:9:131:::FlushToDisk:::will flush to disk
-7:22:19:131:::FlushToDisk:::will flush to disk
-7:22:29:131:::FlushToDisk:::will flush to disk
-7:22:39:131:::FlushToDisk:::will flush to disk
-7:22:49:132:::FlushToDisk:::will flush to disk
-7:22:59:131:::FlushToDisk:::will flush to disk
-7:23:9:132:::FlushToDisk:::will flush to disk
-7:23:19:131:::FlushToDisk:::will flush to disk
-7:23:29:132:::FlushToDisk:::will flush to disk
-7:23:39:131:::FlushToDisk:::will flush to disk
-7:23:49:131:::FlushToDisk:::will flush to disk
-7:23:59:131:::FlushToDisk:::will flush to disk
-7:24:9:131:::FlushToDisk:::will flush to disk
-7:24:19:131:::FlushToDisk:::will flush to disk
-7:24:29:132:::FlushToDisk:::will flush to disk
-7:24:39:131:::FlushToDisk:::will flush to disk
-7:24:49:131:::FlushToDisk:::will flush to disk
-7:24:59:131:::FlushToDisk:::will flush to disk
-7:25:9:131:::FlushToDisk:::will flush to disk
-7:25:19:132:::FlushToDisk:::will flush to disk
-7:25:29:131:::FlushToDisk:::will flush to disk
-7:25:39:131:::FlushToDisk:::will flush to disk
-7:25:49:131:::FlushToDisk:::will flush to disk
-7:25:59:131:::FlushToDisk:::will flush to disk
-7:26:9:132:::FlushToDisk:::will flush to disk
-7:26:19:131:::FlushToDisk:::will flush to disk
-7:26:29:131:::FlushToDisk:::will flush to disk
-7:26:39:131:::FlushToDisk:::will flush to disk
-7:26:49:131:::FlushToDisk:::will flush to disk
-7:26:59:132:::FlushToDisk:::will flush to disk
-7:27:9:131:::FlushToDisk:::will flush to disk
-7:27:19:131:::FlushToDisk:::will flush to disk
-7:27:29:131:::FlushToDisk:::will flush to disk
-7:27:39:131:::FlushToDisk:::will flush to disk
-7:27:49:132:::FlushToDisk:::will flush to disk
-7:27:59:131:::FlushToDisk:::will flush to disk
-7:28:9:131:::FlushToDisk:::will flush to disk
-7:28:19:131:::FlushToDisk:::will flush to disk
-7:28:29:131:::FlushToDisk:::will flush to disk
-7:28:39:132:::FlushToDisk:::will flush to disk
-7:28:49:131:::FlushToDisk:::will flush to disk
-7:28:59:131:::FlushToDisk:::will flush to disk
-7:29:9:131:::FlushToDisk:::will flush to disk
-7:29:19:131:::FlushToDisk:::will flush to disk
-7:29:29:131:::FlushToDisk:::will flush to disk
-7:29:39:131:::FlushToDisk:::will flush to disk
-7:29:49:131:::FlushToDisk:::will flush to disk
-7:29:59:132:::FlushToDisk:::will flush to disk
-7:30:9:131:::FlushToDisk:::will flush to disk
-7:30:19:131:::FlushToDisk:::will flush to disk
-7:30:29:131:::FlushToDisk:::will flush to disk
-7:30:39:131:::FlushToDisk:::will flush to disk
-7:30:49:132:::FlushToDisk:::will flush to disk
-7:30:59:131:::FlushToDisk:::will flush to disk
-7:31:9:131:::FlushToDisk:::will flush to disk
-7:31:19:132:::FlushToDisk:::will flush to disk
-7:31:29:131:::FlushToDisk:::will flush to disk
-7:31:39:131:::FlushToDisk:::will flush to disk
-7:31:49:131:::FlushToDisk:::will flush to disk
-7:31:59:131:::FlushToDisk:::will flush to disk
-7:32:9:131:::FlushToDisk:::will flush to disk
-7:32:19:132:::FlushToDisk:::will flush to disk
-7:32:29:131:::FlushToDisk:::will flush to disk
-7:32:39:131:::FlushToDisk:::will flush to disk
-7:32:49:131:::FlushToDisk:::will flush to disk
-7:32:59:131:::FlushToDisk:::will flush to disk
-7:33:9:132:::FlushToDisk:::will flush to disk
-7:33:19:131:::FlushToDisk:::will flush to disk
-7:33:29:131:::FlushToDisk:::will flush to disk
-7:33:39:131:::FlushToDisk:::will flush to disk
-7:33:49:131:::FlushToDisk:::will flush to disk
-7:33:59:131:::FlushToDisk:::will flush to disk
-7:34:9:131:::FlushToDisk:::will flush to disk
-7:34:19:131:::FlushToDisk:::will flush to disk
-7:34:29:132:::FlushToDisk:::will flush to disk
-7:34:39:131:::FlushToDisk:::will flush to disk
-7:34:49:131:::FlushToDisk:::will flush to disk
-7:34:59:131:::FlushToDisk:::will flush to disk
-7:35:9:131:::FlushToDisk:::will flush to disk
-7:35:19:131:::FlushToDisk:::will flush to disk
-7:35:29:131:::FlushToDisk:::will flush to disk
-7:35:39:131:::FlushToDisk:::will flush to disk
-7:35:49:132:::FlushToDisk:::will flush to disk
-7:35:59:131:::FlushToDisk:::will flush to disk
-7:36:9:131:::FlushToDisk:::will flush to disk
-7:36:19:132:::FlushToDisk:::will flush to disk
-7:36:29:131:::FlushToDisk:::will flush to disk
-7:36:39:131:::FlushToDisk:::will flush to disk
-7:36:49:131:::FlushToDisk:::will flush to disk
-7:36:59:131:::FlushToDisk:::will flush to disk
-7:37:9:132:::FlushToDisk:::will flush to disk
-7:37:19:131:::FlushToDisk:::will flush to disk
-7:37:29:131:::FlushToDisk:::will flush to disk
-7:37:39:131:::FlushToDisk:::will flush to disk
-7:37:49:131:::FlushToDisk:::will flush to disk
-7:37:59:132:::FlushToDisk:::will flush to disk
-7:38:9:131:::FlushToDisk:::will flush to disk
-7:38:19:132:::FlushToDisk:::will flush to disk
-7:38:29:131:::FlushToDisk:::will flush to disk
-7:38:39:131:::FlushToDisk:::will flush to disk
-7:38:49:132:::FlushToDisk:::will flush to disk
-7:38:59:131:::FlushToDisk:::will flush to disk
-7:39:9:131:::FlushToDisk:::will flush to disk
-7:39:19:131:::FlushToDisk:::will flush to disk
-7:39:29:131:::FlushToDisk:::will flush to disk
-7:39:39:131:::FlushToDisk:::will flush to disk
-7:39:49:131:::FlushToDisk:::will flush to disk
-7:39:59:131:::FlushToDisk:::will flush to disk
-7:40:9:131:::FlushToDisk:::will flush to disk
-7:40:19:131:::FlushToDisk:::will flush to disk
-7:40:29:131:::FlushToDisk:::will flush to disk
-7:40:39:131:::FlushToDisk:::will flush to disk
-7:40:49:132:::FlushToDisk:::will flush to disk
-7:40:59:131:::FlushToDisk:::will flush to disk
-7:41:9:131:::FlushToDisk:::will flush to disk
-7:41:19:132:::FlushToDisk:::will flush to disk
-7:41:29:131:::FlushToDisk:::will flush to disk
-7:41:39:131:::FlushToDisk:::will flush to disk
-7:41:49:131:::FlushToDisk:::will flush to disk
-7:41:59:131:::FlushToDisk:::will flush to disk
-7:42:9:132:::FlushToDisk:::will flush to disk
-7:42:19:131:::FlushToDisk:::will flush to disk
-7:42:29:131:::FlushToDisk:::will flush to disk
-7:42:39:131:::FlushToDisk:::will flush to disk
-7:42:49:131:::FlushToDisk:::will flush to disk
-7:42:59:132:::FlushToDisk:::will flush to disk
-7:43:9:131:::FlushToDisk:::will flush to disk
-7:43:19:131:::FlushToDisk:::will flush to disk
-7:43:29:131:::FlushToDisk:::will flush to disk
-7:43:39:131:::FlushToDisk:::will flush to disk
-7:43:49:131:::FlushToDisk:::will flush to disk
-7:43:59:131:::FlushToDisk:::will flush to disk
-7:44:9:132:::FlushToDisk:::will flush to disk
-7:44:19:131:::FlushToDisk:::will flush to disk
-7:44:29:131:::FlushToDisk:::will flush to disk
-7:44:39:131:::FlushToDisk:::will flush to disk
-7:44:49:131:::FlushToDisk:::will flush to disk
-7:44:59:132:::FlushToDisk:::will flush to disk
-7:45:9:131:::FlushToDisk:::will flush to disk
-7:45:19:131:::FlushToDisk:::will flush to disk
-7:45:29:131:::FlushToDisk:::will flush to disk
-7:45:39:131:::FlushToDisk:::will flush to disk
-7:45:49:131:::FlushToDisk:::will flush to disk
-7:45:59:131:::FlushToDisk:::will flush to disk
-7:46:9:132:::FlushToDisk:::will flush to disk
-7:46:19:131:::FlushToDisk:::will flush to disk
-7:46:29:131:::FlushToDisk:::will flush to disk
-7:46:39:131:::FlushToDisk:::will flush to disk
-7:46:49:131:::FlushToDisk:::will flush to disk
-7:46:59:132:::FlushToDisk:::will flush to disk
-7:47:9:131:::FlushToDisk:::will flush to disk
-7:47:19:131:::FlushToDisk:::will flush to disk
-7:47:29:131:::FlushToDisk:::will flush to disk
-7:47:39:131:::FlushToDisk:::will flush to disk
-7:47:49:132:::FlushToDisk:::will flush to disk
-7:47:59:131:::FlushToDisk:::will flush to disk
-7:48:9:131:::FlushToDisk:::will flush to disk
-7:48:19:131:::FlushToDisk:::will flush to disk
-7:48:29:131:::FlushToDisk:::will flush to disk
-7:48:39:132:::FlushToDisk:::will flush to disk
-7:48:49:131:::FlushToDisk:::will flush to disk
-7:48:59:131:::FlushToDisk:::will flush to disk
-7:49:9:131:::FlushToDisk:::will flush to disk
-7:49:19:131:::FlushToDisk:::will flush to disk
-7:49:29:131:::FlushToDisk:::will flush to disk
-7:49:39:131:::FlushToDisk:::will flush to disk
-7:49:49:132:::FlushToDisk:::will flush to disk
-7:49:59:131:::FlushToDisk:::will flush to disk
-7:50:9:131:::FlushToDisk:::will flush to disk
-7:50:19:131:::FlushToDisk:::will flush to disk
-7:50:29:131:::FlushToDisk:::will flush to disk
-7:50:39:131:::FlushToDisk:::will flush to disk
-7:50:49:131:::FlushToDisk:::will flush to disk
-7:50:59:131:::FlushToDisk:::will flush to disk
-7:51:9:131:::FlushToDisk:::will flush to disk
-7:51:19:131:::FlushToDisk:::will flush to disk
-7:51:29:132:::FlushToDisk:::will flush to disk
-7:51:39:131:::FlushToDisk:::will flush to disk
-7:51:49:131:::FlushToDisk:::will flush to disk
-7:51:59:131:::FlushToDisk:::will flush to disk
-7:52:9:131:::FlushToDisk:::will flush to disk
-7:52:19:132:::FlushToDisk:::will flush to disk
-7:52:29:131:::FlushToDisk:::will flush to disk
-7:52:39:131:::FlushToDisk:::will flush to disk
-7:52:49:131:::FlushToDisk:::will flush to disk
-7:52:59:131:::FlushToDisk:::will flush to disk
-7:53:9:131:::FlushToDisk:::will flush to disk
-7:53:19:131:::FlushToDisk:::will flush to disk
-7:53:29:132:::FlushToDisk:::will flush to disk
-7:53:39:131:::FlushToDisk:::will flush to disk
-7:53:49:131:::FlushToDisk:::will flush to disk
-7:53:59:132:::FlushToDisk:::will flush to disk
-7:54:9:131:::FlushToDisk:::will flush to disk
-7:54:19:131:::FlushToDisk:::will flush to disk
-7:54:29:132:::FlushToDisk:::will flush to disk
-7:54:39:131:::FlushToDisk:::will flush to disk
-7:54:49:131:::FlushToDisk:::will flush to disk
-7:54:59:131:::FlushToDisk:::will flush to disk
-7:55:9:131:::FlushToDisk:::will flush to disk
-7:55:19:132:::FlushToDisk:::will flush to disk
-7:55:29:131:::FlushToDisk:::will flush to disk
-7:55:39:131:::FlushToDisk:::will flush to disk
-7:55:49:131:::FlushToDisk:::will flush to disk
-7:55:59:131:::FlushToDisk:::will flush to disk
-7:56:9:132:::FlushToDisk:::will flush to disk
-7:56:19:131:::FlushToDisk:::will flush to disk
-7:56:29:131:::FlushToDisk:::will flush to disk
-7:56:39:131:::FlushToDisk:::will flush to disk
-7:56:49:131:::FlushToDisk:::will flush to disk
-7:56:59:132:::FlushToDisk:::will flush to disk
-7:57:9:131:::FlushToDisk:::will flush to disk
-7:57:19:131:::FlushToDisk:::will flush to disk
-7:57:29:131:::FlushToDisk:::will flush to disk
-7:57:39:131:::FlushToDisk:::will flush to disk
-7:57:49:132:::FlushToDisk:::will flush to disk
-7:57:59:131:::FlushToDisk:::will flush to disk
-7:58:9:131:::FlushToDisk:::will flush to disk
-7:58:19:131:::FlushToDisk:::will flush to disk
-7:58:29:131:::FlushToDisk:::will flush to disk
-7:58:39:132:::FlushToDisk:::will flush to disk
-7:58:49:131:::FlushToDisk:::will flush to disk
-7:58:59:131:::FlushToDisk:::will flush to disk
-7:59:9:131:::FlushToDisk:::will flush to disk
-7:59:19:131:::FlushToDisk:::will flush to disk
-7:59:29:132:::FlushToDisk:::will flush to disk
-7:59:39:131:::FlushToDisk:::will flush to disk
-7:59:49:131:::FlushToDisk:::will flush to disk
-7:59:59:132:::FlushToDisk:::will flush to disk
-8:0:9:131:::FlushToDisk:::will flush to disk
-8:0:19:132:::FlushToDisk:::will flush to disk
-8:0:29:131:::FlushToDisk:::will flush to disk
-8:0:39:131:::FlushToDisk:::will flush to disk
-8:0:49:131:::FlushToDisk:::will flush to disk
-8:0:59:131:::FlushToDisk:::will flush to disk
-8:1:9:132:::FlushToDisk:::will flush to disk
-8:1:19:131:::FlushToDisk:::will flush to disk
-8:1:29:131:::FlushToDisk:::will flush to disk
-8:1:39:131:::FlushToDisk:::will flush to disk
-8:1:49:131:::FlushToDisk:::will flush to disk
-8:1:59:132:::FlushToDisk:::will flush to disk
-8:2:9:131:::FlushToDisk:::will flush to disk
-8:2:19:131:::FlushToDisk:::will flush to disk
-8:2:29:131:::FlushToDisk:::will flush to disk
-8:2:39:131:::FlushToDisk:::will flush to disk
-8:2:49:132:::FlushToDisk:::will flush to disk
-8:2:59:131:::FlushToDisk:::will flush to disk
-8:3:9:132:::FlushToDisk:::will flush to disk
-8:3:19:131:::FlushToDisk:::will flush to disk
-8:3:29:131:::FlushToDisk:::will flush to disk
-8:3:39:131:::FlushToDisk:::will flush to disk
-8:3:49:131:::FlushToDisk:::will flush to disk
-8:3:59:132:::FlushToDisk:::will flush to disk
-8:4:9:131:::FlushToDisk:::will flush to disk
-8:4:19:131:::FlushToDisk:::will flush to disk
-8:4:29:131:::FlushToDisk:::will flush to disk
-8:4:39:131:::FlushToDisk:::will flush to disk
-8:4:49:132:::FlushToDisk:::will flush to disk
-8:4:59:131:::FlushToDisk:::will flush to disk
-8:5:9:131:::FlushToDisk:::will flush to disk
-8:5:19:131:::FlushToDisk:::will flush to disk
-8:5:29:131:::FlushToDisk:::will flush to disk
-8:5:39:132:::FlushToDisk:::will flush to disk
-8:5:49:131:::FlushToDisk:::will flush to disk
-8:5:59:132:::FlushToDisk:::will flush to disk
-8:6:9:131:::FlushToDisk:::will flush to disk
-8:6:19:131:::FlushToDisk:::will flush to disk
-8:6:29:131:::FlushToDisk:::will flush to disk
-8:6:39:131:::FlushToDisk:::will flush to disk
-8:6:49:132:::FlushToDisk:::will flush to disk
-8:6:59:131:::FlushToDisk:::will flush to disk
-8:7:9:131:::FlushToDisk:::will flush to disk
-8:7:19:131:::FlushToDisk:::will flush to disk
-8:7:29:131:::FlushToDisk:::will flush to disk
-8:7:39:132:::FlushToDisk:::will flush to disk
-8:7:49:131:::FlushToDisk:::will flush to disk
-8:7:59:131:::FlushToDisk:::will flush to disk
-8:8:9:131:::FlushToDisk:::will flush to disk
-8:8:19:131:::FlushToDisk:::will flush to disk
-8:8:29:131:::FlushToDisk:::will flush to disk
-8:8:39:131:::FlushToDisk:::will flush to disk
-8:8:49:131:::FlushToDisk:::will flush to disk
-8:8:59:132:::FlushToDisk:::will flush to disk
-8:9:9:131:::FlushToDisk:::will flush to disk
-8:9:19:131:::FlushToDisk:::will flush to disk
-8:9:29:131:::FlushToDisk:::will flush to disk
-8:9:39:131:::FlushToDisk:::will flush to disk
-8:9:49:132:::FlushToDisk:::will flush to disk
-8:9:59:131:::FlushToDisk:::will flush to disk
-8:10:9:132:::FlushToDisk:::will flush to disk
-8:10:19:131:::FlushToDisk:::will flush to disk
-8:10:29:131:::FlushToDisk:::will flush to disk
-8:10:39:131:::FlushToDisk:::will flush to disk
-8:10:49:131:::FlushToDisk:::will flush to disk
-8:10:59:132:::FlushToDisk:::will flush to disk
-8:11:9:131:::FlushToDisk:::will flush to disk
-8:11:19:131:::FlushToDisk:::will flush to disk
-8:11:29:131:::FlushToDisk:::will flush to disk
-8:11:39:131:::FlushToDisk:::will flush to disk
-8:11:49:132:::FlushToDisk:::will flush to disk
-8:11:59:131:::FlushToDisk:::will flush to disk
-8:12:9:132:::FlushToDisk:::will flush to disk
-8:12:19:131:::FlushToDisk:::will flush to disk
-8:12:29:131:::FlushToDisk:::will flush to disk
-8:12:39:131:::FlushToDisk:::will flush to disk
-8:12:49:131:::FlushToDisk:::will flush to disk
-8:12:59:132:::FlushToDisk:::will flush to disk
-8:13:9:131:::FlushToDisk:::will flush to disk
-8:13:19:131:::FlushToDisk:::will flush to disk
-8:13:29:131:::FlushToDisk:::will flush to disk
-8:13:39:131:::FlushToDisk:::will flush to disk
-8:13:49:131:::FlushToDisk:::will flush to disk
-8:13:59:131:::FlushToDisk:::will flush to disk
-8:14:9:132:::FlushToDisk:::will flush to disk
-8:14:19:131:::FlushToDisk:::will flush to disk
-8:14:29:131:::FlushToDisk:::will flush to disk
-8:14:39:131:::FlushToDisk:::will flush to disk
-8:14:49:131:::FlushToDisk:::will flush to disk
-8:14:59:132:::FlushToDisk:::will flush to disk
-8:15:9:131:::FlushToDisk:::will flush to disk
-8:15:19:131:::FlushToDisk:::will flush to disk
-8:15:29:131:::FlushToDisk:::will flush to disk
-8:15:39:131:::FlushToDisk:::will flush to disk
-8:15:49:131:::FlushToDisk:::will flush to disk
-8:15:59:131:::FlushToDisk:::will flush to disk
-8:16:9:131:::FlushToDisk:::will flush to disk
-8:16:19:131:::FlushToDisk:::will flush to disk
-8:16:29:132:::FlushToDisk:::will flush to disk
-8:16:39:131:::FlushToDisk:::will flush to disk
-8:16:49:131:::FlushToDisk:::will flush to disk
-8:16:59:132:::FlushToDisk:::will flush to disk
-8:17:9:131:::FlushToDisk:::will flush to disk
-8:17:19:131:::FlushToDisk:::will flush to disk
-8:17:29:131:::FlushToDisk:::will flush to disk
-8:17:39:131:::FlushToDisk:::will flush to disk
-8:17:49:132:::FlushToDisk:::will flush to disk
-8:17:59:131:::FlushToDisk:::will flush to disk
-8:18:9:131:::FlushToDisk:::will flush to disk
-8:18:19:132:::FlushToDisk:::will flush to disk
-8:18:29:131:::FlushToDisk:::will flush to disk
-8:18:39:131:::FlushToDisk:::will flush to disk
-8:18:49:132:::FlushToDisk:::will flush to disk
-8:18:59:131:::FlushToDisk:::will flush to disk
-8:19:9:132:::FlushToDisk:::will flush to disk
-8:19:19:131:::FlushToDisk:::will flush to disk
-8:19:29:131:::FlushToDisk:::will flush to disk
-8:19:39:131:::FlushToDisk:::will flush to disk
-8:19:49:131:::FlushToDisk:::will flush to disk
-8:19:59:132:::FlushToDisk:::will flush to disk
-8:20:9:131:::FlushToDisk:::will flush to disk
-8:20:19:131:::FlushToDisk:::will flush to disk
-8:20:29:131:::FlushToDisk:::will flush to disk
-8:20:39:131:::FlushToDisk:::will flush to disk
-8:20:49:132:::FlushToDisk:::will flush to disk
-8:20:59:131:::FlushToDisk:::will flush to disk
-8:21:9:132:::FlushToDisk:::will flush to disk
-8:21:19:131:::FlushToDisk:::will flush to disk
-8:21:29:131:::FlushToDisk:::will flush to disk
-8:21:39:131:::FlushToDisk:::will flush to disk
-8:21:49:131:::FlushToDisk:::will flush to disk
-8:21:59:132:::FlushToDisk:::will flush to disk
-8:22:9:131:::FlushToDisk:::will flush to disk
-8:22:19:132:::FlushToDisk:::will flush to disk
-8:22:29:131:::FlushToDisk:::will flush to disk
-8:22:39:131:::FlushToDisk:::will flush to disk
-8:22:49:131:::FlushToDisk:::will flush to disk
-8:22:59:131:::FlushToDisk:::will flush to disk
-8:23:9:132:::FlushToDisk:::will flush to disk
-8:23:19:131:::FlushToDisk:::will flush to disk
-8:23:29:132:::FlushToDisk:::will flush to disk
-8:23:39:131:::FlushToDisk:::will flush to disk
-8:23:49:131:::FlushToDisk:::will flush to disk
-8:23:59:131:::FlushToDisk:::will flush to disk
-8:24:9:131:::FlushToDisk:::will flush to disk
-8:24:19:131:::FlushToDisk:::will flush to disk
-8:24:29:131:::FlushToDisk:::will flush to disk
-8:24:39:131:::FlushToDisk:::will flush to disk
-8:24:49:131:::FlushToDisk:::will flush to disk
-8:24:59:132:::FlushToDisk:::will flush to disk
-8:25:9:131:::FlushToDisk:::will flush to disk
-8:25:19:131:::FlushToDisk:::will flush to disk
-8:25:29:131:::FlushToDisk:::will flush to disk
-8:25:39:131:::FlushToDisk:::will flush to disk
-8:25:49:132:::FlushToDisk:::will flush to disk
-8:25:59:131:::FlushToDisk:::will flush to disk
-8:26:9:131:::FlushToDisk:::will flush to disk
-8:26:19:132:::FlushToDisk:::will flush to disk
-8:26:29:131:::FlushToDisk:::will flush to disk
-8:26:39:132:::FlushToDisk:::will flush to disk
-8:26:49:131:::FlushToDisk:::will flush to disk
-8:26:59:131:::FlushToDisk:::will flush to disk
-8:27:9:131:::FlushToDisk:::will flush to disk
-8:27:19:131:::FlushToDisk:::will flush to disk
-8:27:29:131:::FlushToDisk:::will flush to disk
-8:27:39:131:::FlushToDisk:::will flush to disk
-8:27:49:131:::FlushToDisk:::will flush to disk
-8:27:59:131:::FlushToDisk:::will flush to disk
-8:28:9:131:::FlushToDisk:::will flush to disk
-8:28:19:131:::FlushToDisk:::will flush to disk
-8:28:29:131:::FlushToDisk:::will flush to disk
-8:28:39:132:::FlushToDisk:::will flush to disk
-8:28:49:131:::FlushToDisk:::will flush to disk
-8:28:59:132:::FlushToDisk:::will flush to disk
-8:29:9:131:::FlushToDisk:::will flush to disk
-8:29:19:131:::FlushToDisk:::will flush to disk
-8:29:29:131:::FlushToDisk:::will flush to disk
-8:29:39:131:::FlushToDisk:::will flush to disk
-8:29:49:131:::FlushToDisk:::will flush to disk
-8:29:59:131:::FlushToDisk:::will flush to disk
-8:30:9:132:::FlushToDisk:::will flush to disk
-8:30:19:131:::FlushToDisk:::will flush to disk
-8:30:29:131:::FlushToDisk:::will flush to disk
-8:30:39:131:::FlushToDisk:::will flush to disk
-8:30:49:131:::FlushToDisk:::will flush to disk
-8:30:59:132:::FlushToDisk:::will flush to disk
-8:31:9:131:::FlushToDisk:::will flush to disk
-8:31:19:132:::FlushToDisk:::will flush to disk
-8:31:29:131:::FlushToDisk:::will flush to disk
-8:31:39:131:::FlushToDisk:::will flush to disk
-8:31:49:131:::FlushToDisk:::will flush to disk
-8:31:59:131:::FlushToDisk:::will flush to disk
-8:32:9:132:::FlushToDisk:::will flush to disk
-8:32:19:131:::FlushToDisk:::will flush to disk
-8:32:29:131:::FlushToDisk:::will flush to disk
-8:32:39:131:::FlushToDisk:::will flush to disk
-8:32:49:131:::FlushToDisk:::will flush to disk
-8:32:59:131:::FlushToDisk:::will flush to disk
-8:33:9:131:::FlushToDisk:::will flush to disk
-8:33:19:132:::FlushToDisk:::will flush to disk
-8:33:29:131:::FlushToDisk:::will flush to disk
-8:33:39:132:::FlushToDisk:::will flush to disk
-8:33:49:186:::FlushToDisk:::will flush to disk
-8:33:59:131:::FlushToDisk:::will flush to disk
-8:34:9:131:::FlushToDisk:::will flush to disk
-8:34:19:142:::FlushToDisk:::will flush to disk
-8:34:29:132:::FlushToDisk:::will flush to disk
-8:34:39:131:::FlushToDisk:::will flush to disk
-8:34:49:131:::FlushToDisk:::will flush to disk
-8:34:59:131:::FlushToDisk:::will flush to disk
-8:35:9:131:::FlushToDisk:::will flush to disk
-8:35:19:132:::FlushToDisk:::will flush to disk
-8:35:29:131:::FlushToDisk:::will flush to disk
-8:35:39:131:::FlushToDisk:::will flush to disk
-8:35:49:131:::FlushToDisk:::will flush to disk
-8:35:59:131:::FlushToDisk:::will flush to disk
-8:36:9:132:::FlushToDisk:::will flush to disk
-8:36:19:131:::FlushToDisk:::will flush to disk
-8:36:29:131:::FlushToDisk:::will flush to disk
-8:36:39:131:::FlushToDisk:::will flush to disk
-8:36:49:131:::FlushToDisk:::will flush to disk
-8:36:59:132:::FlushToDisk:::will flush to disk
-8:37:9:131:::FlushToDisk:::will flush to disk
-8:37:19:131:::FlushToDisk:::will flush to disk
-8:37:29:131:::FlushToDisk:::will flush to disk
-8:37:39:131:::FlushToDisk:::will flush to disk
-8:37:49:131:::FlushToDisk:::will flush to disk
-8:37:59:131:::FlushToDisk:::will flush to disk
-8:38:9:132:::FlushToDisk:::will flush to disk
-8:38:19:131:::FlushToDisk:::will flush to disk
-8:38:29:131:::FlushToDisk:::will flush to disk
-8:38:39:131:::FlushToDisk:::will flush to disk
-8:38:49:131:::FlushToDisk:::will flush to disk
-8:38:59:132:::FlushToDisk:::will flush to disk
-8:39:9:131:::FlushToDisk:::will flush to disk
-8:39:19:131:::FlushToDisk:::will flush to disk
-8:39:29:131:::FlushToDisk:::will flush to disk
-8:39:39:131:::FlushToDisk:::will flush to disk
-8:39:49:131:::FlushToDisk:::will flush to disk
-8:39:59:131:::FlushToDisk:::will flush to disk
-8:40:9:132:::FlushToDisk:::will flush to disk
-8:40:19:131:::FlushToDisk:::will flush to disk
-8:40:29:143:::FlushToDisk:::will flush to disk
-8:40:39:131:::FlushToDisk:::will flush to disk
-8:40:49:131:::FlushToDisk:::will flush to disk
-8:40:59:131:::FlushToDisk:::will flush to disk
-8:41:9:131:::FlushToDisk:::will flush to disk
-8:41:19:132:::FlushToDisk:::will flush to disk
-8:41:29:131:::FlushToDisk:::will flush to disk
-8:41:39:132:::FlushToDisk:::will flush to disk
-8:41:49:131:::FlushToDisk:::will flush to disk
-8:41:59:131:::FlushToDisk:::will flush to disk
-8:42:9:131:::FlushToDisk:::will flush to disk
-8:42:19:131:::FlushToDisk:::will flush to disk
-8:42:29:132:::FlushToDisk:::will flush to disk
-8:42:39:132:::FlushToDisk:::will flush to disk
-8:42:49:131:::FlushToDisk:::will flush to disk
-8:42:59:132:::FlushToDisk:::will flush to disk
-8:43:9:131:::FlushToDisk:::will flush to disk
-8:43:19:132:::FlushToDisk:::will flush to disk
-8:43:29:131:::FlushToDisk:::will flush to disk
-8:43:39:131:::FlushToDisk:::will flush to disk
-8:43:49:132:::FlushToDisk:::will flush to disk
-8:43:59:131:::FlushToDisk:::will flush to disk
-8:44:9:131:::FlushToDisk:::will flush to disk
-8:44:19:131:::FlushToDisk:::will flush to disk
-8:44:29:131:::FlushToDisk:::will flush to disk
-8:44:39:132:::FlushToDisk:::will flush to disk
-8:44:49:131:::FlushToDisk:::will flush to disk
-8:44:59:131:::FlushToDisk:::will flush to disk
-8:45:9:132:::FlushToDisk:::will flush to disk
-8:45:19:131:::FlushToDisk:::will flush to disk
-8:45:29:132:::FlushToDisk:::will flush to disk
-8:45:39:131:::FlushToDisk:::will flush to disk
-8:45:49:131:::FlushToDisk:::will flush to disk
-8:45:59:131:::FlushToDisk:::will flush to disk
-8:46:9:131:::FlushToDisk:::will flush to disk
-8:46:19:131:::FlushToDisk:::will flush to disk
-8:46:29:131:::FlushToDisk:::will flush to disk
-8:46:39:131:::FlushToDisk:::will flush to disk
-8:46:49:131:::FlushToDisk:::will flush to disk
-8:46:59:132:::FlushToDisk:::will flush to disk
-8:47:9:131:::FlushToDisk:::will flush to disk
-8:47:19:132:::FlushToDisk:::will flush to disk
-8:47:29:131:::FlushToDisk:::will flush to disk
-8:47:39:131:::FlushToDisk:::will flush to disk
-8:47:49:131:::FlushToDisk:::will flush to disk
-8:47:59:131:::FlushToDisk:::will flush to disk
-8:48:9:132:::FlushToDisk:::will flush to disk
-8:48:19:131:::FlushToDisk:::will flush to disk
-8:48:29:131:::FlushToDisk:::will flush to disk
-8:48:39:131:::FlushToDisk:::will flush to disk
-8:48:49:131:::FlushToDisk:::will flush to disk
-8:48:59:166:::FlushToDisk:::will flush to disk
-8:49:9:131:::FlushToDisk:::will flush to disk
-8:49:19:131:::FlushToDisk:::will flush to disk
-8:49:29:132:::FlushToDisk:::will flush to disk
-8:49:39:131:::FlushToDisk:::will flush to disk
-8:49:49:131:::FlushToDisk:::will flush to disk
-8:49:59:131:::FlushToDisk:::will flush to disk
- to disk
-8:44:56:48:::FlushToDisk:::will flush to disk
-8:45:6:48:::FlushToDisk:::will flush to disk
-8:45:16:48:::FlushToDisk:::will flush to disk
-8:45:26:48:::FlushToDisk:::will flush to disk
-8:45:36:48:::FlushToDisk:::will flush to disk
-8:45:46:48:::FlushToDisk:::will flush to disk
-8:45:56:48:::FlushToDisk:::will flush to disk
-8:46:6:48:::FlushToDisk:::will flush to disk
-8:46:16:48:::FlushToDisk:::will flush to disk
-8:46:26:48:::FlushToDisk:::will flush to disk
-8:46:36:49:::FlushToDisk:::will flush to disk
-8:46:46:48:::FlushToDisk:::will flush to disk
-8:46:56:48:::FlushToDisk:::will flush to disk
-8:47:6:48:::FlushToDisk:::will flush to disk
-8:47:16:48:::FlushToDisk:::will flush to disk
-8:47:26:48:::FlushToDisk:::will flush to disk
-8:47:36:48:::FlushToDisk:::will flush to disk
-8:47:46:49:::FlushToDisk:::will flush to disk
-8:47:56:48:::FlushToDisk:::will flush to disk
-8:48:6:49:::FlushToDisk:::will flush to disk
-8:48:16:48:::FlushToDisk:::will flush to disk
-8:48:26:49:::FlushToDisk:::will flush to disk
-8:48:36:48:::FlushToDisk:::will flush to disk
-8:48:46:48:::FlushToDisk:::will flush to disk
-8:48:56:48:::FlushToDisk:::will flush to disk
-8:49:6:48:::FlushToDisk:::will flush to disk
-8:49:16:48:::FlushToDisk:::will flush to disk
-8:49:26:48:::FlushToDisk:::will flush to disk
-8:49:36:48:::FlushToDisk:::will flush to disk
-8:49:46:48:::FlushToDisk:::will flush to disk
-8:49:56:49:::FlushToDisk:::will flush to disk
-l flush to disk
-8:32:32:12:::FlushToDisk:::will flush to disk
-8:32:42:12:::FlushToDisk:::will flush to disk
-8:32:52:13:::FlushToDisk:::will flush to disk
-8:33:2:12:::FlushToDisk:::will flush to disk
-8:33:12:12:::FlushToDisk:::will flush to disk
-8:33:22:12:::FlushToDisk:::will flush to disk
-8:33:32:12:::FlushToDisk:::will flush to disk
-8:33:42:12:::FlushToDisk:::will flush to disk
-8:33:52:12:::FlushToDisk:::will flush to disk
-8:34:2:13:::FlushToDisk:::will flush to disk
-8:34:12:13:::FlushToDisk:::will flush to disk
-8:34:22:12:::FlushToDisk:::will flush to disk
-8:34:32:12:::FlushToDisk:::will flush to disk
-8:34:42:12:::FlushToDisk:::will flush to disk
-8:34:52:12:::FlushToDisk:::will flush to disk
-8:35:2:12:::FlushToDisk:::will flush to disk
-8:35:12:12:::FlushToDisk:::will flush to disk
-8:35:22:13:::FlushToDisk:::will flush to disk
-8:35:32:12:::FlushToDisk:::will flush to disk
-8:35:42:12:::FlushToDisk:::will flush to disk
-8:35:52:12:::FlushToDisk:::will flush to disk
-8:36:2:12:::FlushToDisk:::will flush to disk
-8:36:12:12:::FlushToDisk:::will flush to disk
-8:36:22:12:::FlushToDisk:::will flush to disk
-8:36:32:13:::FlushToDisk:::will flush to disk
-8:36:42:12:::FlushToDisk:::will flush to disk
-8:36:52:12:::FlushToDisk:::will flush to disk
-8:37:2:12:::FlushToDisk:::will flush to disk
-8:37:12:12:::FlushToDisk:::will flush to disk
-8:37:22:13:::FlushToDisk:::will flush to disk
-8:37:32:57:::FlushToDisk:::will flush to disk
-8:37:42:12:::FlushToDisk:::will flush to disk
-8:37:52:12:::FlushToDisk:::will flush to disk
-8:38:2:12:::FlushToDisk:::will flush to disk
-8:38:12:13:::FlushToDisk:::will flush to disk
-8:38:22:12:::FlushToDisk:::will flush to disk
-8:38:32:13:::FlushToDisk:::will flush to disk
-8:38:42:12:::FlushToDisk:::will flush to disk
-8:38:52:12:::FlushToDisk:::will flush to disk
-8:39:2:12:::FlushToDisk:::will flush to disk
-8:39:12:12:::FlushToDisk:::will flush to disk
-8:39:22:12:::FlushToDisk:::will flush to disk
-8:39:32:12:::FlushToDisk:::will flush to disk
-8:39:42:12:::FlushToDisk:::will flush to disk
-8:39:52:13:::FlushToDisk:::will flush to disk
-8:40:2:12:::FlushToDisk:::will flush to disk
-8:40:12:12:::FlushToDisk:::will flush to disk
-8:40:22:12:::FlushToDisk:::will flush to disk
-8:40:32:12:::FlushToDisk:::will flush to disk
-8:40:42:13:::FlushToDisk:::will flush to disk
-8:40:52:12:::FlushToDisk:::will flush to disk
-8:41:2:13:::FlushToDisk:::will flush to disk
-8:41:12:12:::FlushToDisk:::will flush to disk
-8:41:22:12:::FlushToDisk:::will flush to disk
-8:41:32:12:::FlushToDisk:::will flush to disk
-8:41:42:12:::FlushToDisk:::will flush to disk
-8:41:52:13:::FlushToDisk:::will flush to disk
-8:42:2:12:::FlushToDisk:::will flush to disk
-8:42:12:13:::FlushToDisk:::will flush to disk
-8:42:22:12:::FlushToDisk:::will flush to disk
-8:42:32:12:::FlushToDisk:::will flush to disk
-8:42:42:12:::FlushToDisk:::will flush to disk
-8:42:52:12:::FlushToDisk:::will flush to disk
-8:43:2:12:::FlushToDisk:::will flush to disk
-8:43:12:12:::FlushToDisk:::will flush to disk
-8:43:22:12:::FlushToDisk:::will flush to disk
-8:43:32:12:::FlushToDisk:::will flush to disk
-8:43:42:12:::FlushToDisk:::will flush to disk
-8:43:52:12:::FlushToDisk:::will flush to disk
-8:44:2:12:::FlushToDisk:::will flush to disk
-8:44:12:13:::FlushToDisk:::will flush to disk
-8:44:22:12:::FlushToDisk:::will flush to disk
-8:44:32:13:::FlushToDisk:::will flush to disk
-8:44:42:12:::FlushToDisk:::will flush to disk
-8:44:52:12:::FlushToDisk:::will flush to disk
-8:45:2:12:::FlushToDisk:::will flush to disk
-8:45:12:12:::FlushToDisk:::will flush to disk
-8:45:22:12:::FlushToDisk:::will flush to disk
-8:45:32:12:::FlushToDisk:::will flush to disk
-8:45:42:12:::FlushToDisk:::will flush to disk
-8:45:52:12:::FlushToDisk:::will flush to disk
-8:46:2:13:::FlushToDisk:::will flush to disk
-8:46:12:12:::FlushToDisk:::will flush to disk
-8:46:22:12:::FlushToDisk:::will flush to disk
-8:46:32:12:::FlushToDisk:::will flush to disk
-8:46:42:12:::FlushToDisk:::will flush to disk
-8:46:52:12:::FlushToDisk:::will flush to disk
-8:47:2:13:::FlushToDisk:::will flush to disk
-8:47:12:12:::FlushToDisk:::will flush to disk
-8:47:22:12:::FlushToDisk:::will flush to disk
-8:47:32:12:::FlushToDisk:::will flush to disk
-8:47:42:12:::FlushToDisk:::will flush to disk
-8:47:52:12:::FlushToDisk:::will flush to disk
-8:48:2:12:::FlushToDisk:::will flush to disk
-8:48:12:12:::FlushToDisk:::will flush to disk
-8:48:22:12:::FlushToDisk:::will flush to disk
-8:48:32:12:::FlushToDisk:::will flush to disk
-8:48:42:12:::FlushToDisk:::will flush to disk
-8:48:52:12:::FlushToDisk:::will flush to disk
-8:49:2:12:::FlushToDisk:::will flush to disk
-8:49:12:13:::FlushToDisk:::will flush to disk
-8:49:22:12:::FlushToDisk:::will flush to disk
-8:49:32:12:::FlushToDisk:::will flush to disk
-8:49:42:12:::FlushToDisk:::will flush to disk
-8:49:52:12:::FlushToDisk:::will flush to disk
+1:13:37:392:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user6993570543543969522, values={field1=3, field0=-}]
+1:13:37:398:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user291596495327635049, values={field1=%, field0='}]
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+1:13:37:458:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user1940718911639954360, values={field1=0, field0=8}]
+1:13:37:626:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user4756227309262813867, values={field1=2, field0=,}]
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+1:13:37:701:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user2523911902295224458, values={field1=>, field0=2}]
+1:13:37:703:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user8632637305229156341, values={field1=<, field0=8}]
+1:13:37:708:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user6400321898261566932, values={field1=7, field0=(}]
+1:13:37:714:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user5349475954545216457, values={field1==, field0=7}]
+1:13:37:732:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user7581791361512805866, values={field1=8, field0="}]
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+1:13:37:782:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user296624322641201295, values={field1=$, field0=7}]
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+1:13:37:821:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user2528939729608790704, values={field1=6, field0=6}]
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+1:13:37:916:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user4168006491293977523, values={field1=., field0=/}]
+1:13:37:925:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user1935691084326388114, values={field1=/, field0=4}]
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+1:13:37:971:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user4640687271668624146, values={field1==}]
+1:13:37:973:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user8044416487260319997, values={field1=-, field0=*}]
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+1:13:38:0:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user5812101080292730588, values={field1=&, field0=!}]
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)

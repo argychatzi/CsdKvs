@@ -1,108 +1,101 @@
-7:2:21:311:::com.kth.csd.node.core.KvsNode:::main started 
-7:2:21:356:::com.kth.csd.node.core.KvsNode:::Main method here 8
-7:2:21:682:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile8
-7:2:21:692:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_8.json
-7:2:22:175:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_8.json
-7:2:22:184:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile jsonObject{"masterInternal":{"host":"192.168.0.2","port":5000},"masterExternal":{"host":"192.168.0.2","port":6000},"ownInternal":{"host":"192.168.0.11","port":5000},"ownExternal":{"host":"192.168.0.11","port":6000},"nodes":[{"host":"192.168.0.3","port":5000},{"host":"192.168.0.4","port":5000},{"host":"192.168.0.5","port":5000},{"host":"192.168.0.7","port":5000},{"host":"192.168.0.8","port":5000},{"host":"192.168.0.10","port":5000},{"host":"192.168.0.12","port":5000},{"host":"192.168.0.13","port":5000}]}
-7:2:23:317:::com.kth.csd.node.core.KvsNode:::configuration :: Configuration [masterInternalConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=5000], masterExternalConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=6000], ownInternalConnectionMetaData=ConnectionMetaData [host=192.168.0.11, port=5000], ownExternalConnectionMetaData=ConnectionMetaData [host=192.168.0.11, port=6000], nodesInFarm=[ConnectionMetaData [host=192.168.0.3, port=5000], ConnectionMetaData [host=192.168.0.4, port=5000], ConnectionMetaData [host=192.168.0.5, port=5000], ConnectionMetaData [host=192.168.0.7, port=5000], ConnectionMetaData [host=192.168.0.8, port=5000], ConnectionMetaData [host=192.168.0.10, port=5000], ConnectionMetaData [host=192.168.0.12, port=5000], ConnectionMetaData [host=192.168.0.13, port=5000]]]
+1:13:0:565:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile8
+1:13:0:716:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_8.json
+1:13:0:871:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_8.json
+1:13:0:926:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile jsonObject{"masterInternal":{"host":"192.168.0.2","port":5000},"masterExternal":{"host":"192.168.0.2","port":6000},"ownInternal":{"host":"192.168.0.11","port":5000},"ownExternal":{"host":"192.168.0.11","port":6000},"nodes":[{"host":"192.168.0.3","port":5000},{"host":"192.168.0.4","port":5000},{"host":"192.168.0.5","port":5000},{"host":"192.168.0.7","port":5000},{"host":"192.168.0.8","port":5000},{"host":"192.168.0.10","port":5000},{"host":"192.168.0.12","port":5000},{"host":"192.168.0.13","port":5000}]}
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-7:2:23:387:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
-handler=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@fd34eac
+handler=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@60aee53f
 acceptor after bind=(nio socket acceptor: localAddress(es): [/0:0:0:0:0:0:0:0:5000], managedSessionCount: 0)
-7:2:23:991:::com.kth.csd.node.core.KvsNode:::Opened port 5000
-7:2:24:17:::ServerConnectionHandler:::ExternalTrafficInputInterface ... 
-7:2:24:18:::ServerConnectionHandler:::created !
-7:2:24:18:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
-handler=com.kth.csd.networking.interfaces.external.ServerExternalInputInterface@4a1d8867
+1:13:2:802:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::ExternalTrafficInputInterface ... created
+handler=com.kth.csd.networking.interfaces.external.ServerExternalInputInterface@6adc0b2f
 acceptor after bind=(nio socket acceptor: localAddress(es): [/0:0:0:0:0:0:0:0:6000], managedSessionCount: 0)
-7:2:24:36:::com.kth.csd.node.core.KvsNode:::Opened port 6000
-7:2:24:37:::com.kth.csd.node.core.KvsNode:::generateNodeFarm [ConnectionMetaData [host=192.168.0.3, port=5000], ConnectionMetaData [host=192.168.0.4, port=5000], ConnectionMetaData [host=192.168.0.5, port=5000], ConnectionMetaData [host=192.168.0.7, port=5000], ConnectionMetaData [host=192.168.0.8, port=5000], ConnectionMetaData [host=192.168.0.10, port=5000], ConnectionMetaData [host=192.168.0.12, port=5000], ConnectionMetaData [host=192.168.0.13, port=5000]]
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@30619488
-7:2:24:132:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.3:5000
-7:2:24:132:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.3 port No. 5000
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@64cbdef5
-7:2:24:189:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.4:5000
-7:2:24:189:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.4 port No. 5000
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@3f36f39e
-7:2:24:238:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.5:5000
-7:2:24:239:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.5 port No. 5000
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@4a8e836c
-7:2:24:293:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.7:5000
-7:2:24:293:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.7 port No. 5000
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@5c535d84
-7:2:24:361:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.8:5000
-7:2:24:361:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.8 port No. 5000
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@29ed3da1
-7:2:24:371:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.10:5000
-7:2:24:372:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.10 port No. 5000
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@74793ec9
-7:2:24:378:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.12:5000
-7:2:24:378:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.12 port No. 5000
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@7c883540
-Failed to connect.
-org.apache.mina.core.RuntimeIoException: Failed to get the session.
-	at org.apache.mina.core.future.DefaultConnectFuture.getSession(DefaultConnectFuture.java:58)
-	at com.kth.csd.networking.KvsClient.initSession(KvsClient.java:55)
-	at com.kth.csd.networking.KvsClient.<init>(KvsClient.java:39)
-	at com.kth.csd.node.core.NodeFarm.<init>(NodeFarm.java:19)
-	at com.kth.csd.node.core.ApplicationContext.generateNodeFarm(ApplicationContext.java:92)
-	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:60)
-Caused by: java.net.ConnectException: Connection refused
-	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
-	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
-	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:221)
-	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:47)
-	at org.apache.mina.core.polling.AbstractPollingIoConnector.processConnections(AbstractPollingIoConnector.java:459)
-	at org.apache.mina.core.polling.AbstractPollingIoConnector.access$700(AbstractPollingIoConnector.java:65)
-	at org.apache.mina.core.polling.AbstractPollingIoConnector$Connector.run(AbstractPollingIoConnector.java:527)
-	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
-	at java.lang.Thread.run(Thread.java:745)
-7:2:31:312:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.13 port No. 5000
-7:2:31:312:::com.kth.csd.node.core.KvsNode:::MY IP is ConnectionMetaData [host=192.168.0.11, port=5000]
-7:2:31:312:::com.kth.csd.node.core.KvsNode:::startPollingFarmForStatistics
-7:2:49:337:::ServerConnectionHandler:::messageReceivedOPERATION_WRITEKeyValueEntry [key=user6284781860667377211, values={field1==, field0=>}]
-7:2:49:338:::ServerConnectionHandler:::OPERATION_WRITE Receive update from MasterOPERATION_WRITEKeyValueEntry [key=user6284781860667377211, values={field1==, field0=>}]
-7:2:49:347:::ServerConnectionHandler:::messageReceivedOPERATION_WRITEKeyValueEntry [key=user8517097267634966620, values={field1=%, field0=#}]
-7:2:49:347:::ServerConnectionHandler:::OPERATION_WRITE Receive update from MasterOPERATION_WRITEKeyValueEntry [key=user8517097267634966620, values={field1=%, field0=#}]
-7:2:49:453:::ServerConnectionHandler:::messageReceivedOPERATION_WRITEKeyValueEntry [key=user1820151046732198393, values={field1=-, field0=.}]
-7:2:49:453:::ServerConnectionHandler:::OPERATION_WRITE Receive update from MasterOPERATION_WRITEKeyValueEntry [key=user1820151046732198393, values={field1=-, field0=.}]
-7:2:49:477:::ServerConnectionHandler:::messageReceivedOPERATION_WRITEKeyValueEntry [key=user4052466453699787802, values={field1=0, field0=,}]
-7:2:49:478:::ServerConnectionHandler:::OPERATION_WRITE Receive update from MasterOPERATION_WRITEKeyValueEntry [key=user4052466453699787802, values={field1=0, field0=,}]
-7:2:49:502:::ServerConnectionHandler:::messageReceivedOPERATION_WRITEKeyValueEntry [key=user3232700585171816769, values={field1=0, field0=$}]
-7:2:49:503:::ServerConnectionHandler:::OPERATION_WRITE Receive update from MasterOPERATION_WRITEKeyValueEntry [key=user3232700585171816769, values={field1=0, field0=$}]
-7:2:49:523:::ServerConnectionHandler:::messageReceivedOPERATION_WRITEKeyValueEntry [key=user1000385178204227360, values={field1=:, field0==}]
-7:2:49:523:::ServerConnectionHandler:::OPERATION_WRITE Receive update from MasterOPERATION_WRITEKeyValueEntry [key=user1000385178204227360, values={field1=:, field0==}]
-7:2:49:537:::ServerConnectionHandler:::messageReceivedOPERATION_WRITEKeyValueEntry [key=user7697331399106995587, values={field1=3, field0=/}]
-7:2:49:538:::ServerConnectionHandler:::OPERATION_WRITE Receive update from MasterOPERATION_WRITEKeyValueEntry [key=user7697331399106995587, values={field1=3, field0=/}]
-7:2:49:552:::ServerConnectionHandler:::messageReceivedOPERATION_WRITEKeyValueEntry [key=user5465015992139406178, values={field1=9, field0=:}]
-7:2:49:552:::ServerConnectionHandler:::OPERATION_WRITE Receive update from MasterOPERATION_WRITEKeyValueEntry [key=user5465015992139406178, values={field1=9, field0=:}]
-7:2:49:590:::ServerConnectionHandler:::messageReceivedOPERATION_WRITEKeyValueEntry [key=user6873002678636213555, values={field1=#, field0=)}]
-7:2:49:595:::ServerConnectionHandler:::OPERATION_WRITE Receive update from MasterOPERATION_WRITEKeyValueEntry [key=user6873002678636213555, values={field1=#, field0=)}]
-7:2:49:622:::ServerConnectionHandler:::messageReceivedOPERATION_WRITEKeyValueEntry [key=user9105318085603802964, values={field1=$, field0=:}]
-7:2:49:623:::ServerConnectionHandler:::OPERATION_WRITE Receive update from MasterOPERATION_WRITEKeyValueEntry [key=user9105318085603802964, values={field1=$, field0=:}]
-7:2:51:479:::ServerConnectionHandler:::messageReceivedSTATISTICS_REQ[192.168.0.1]
-7:2:51:479:::ServerConnectionHandler:::STATISTICS_REQSTATISTICS_REQ[192.168.0.1]
-7:2:51:480:::ServerConnectionHandler:::incomingListOfYcsbClients =[192.168.0.1]
-7:2:51:480:::ServerConnectionHandler:::first time receiving STATISTICS_REQ
-7:2:51:500:::ExponentialMovingAverageExpanded:::inside ExponentialMovingAverageExpanded constructor
-7:2:51:501:::ExponentialMovingAverageExpanded:::i=0
-7:2:51:501:::ExponentialMovingAverageExpanded:::EWMAObj created
-7:2:51:522:::ExponentialMovingAverageExpanded:::EMAHashmapKeeper put{192.168.0.1=com.codahale.metrics.EWMA@42f25b18}
-7:2:51:523:::ServerConnectionHandler:::getIsFirstTimeMeasuringRTTfalse
-7:2:51:524:::ServerConnectionHandler:::Starting delay measurement calculations
-7:2:51:525:::DelayMeasurement:::Configuration done.
-7:2:51:626:::DelayMeasurement:::inputLine=PING 192.168.0.1 (192.168.0.1) 56(84) bytes of data.
-7:2:51:627:::DelayMeasurement:::final lines=PING 192.168.0.1 (192.168.0.1) 56(84) bytes of data.
-7:2:51:628:::DelayMeasurement:::time found
-7:2:51:628:::DelayMeasurement:::time=61.3
-7:2:51:630:::ServerConnectionHandler:::delayResultsHashmap to be sent to Master {192.168.0.1=61.3}
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@5236151c
-7:2:51:734:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.2:5000
-7:2:51:734:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.2 port No. 5000
-falsemessage=STATISTICS_RES{192.168.0.1=61.3}node=com.kth.csd.networking.KvsClient@672330a67:2:51:735:::com.kth.csd.networking.KvsClient:::send() called
-7:2:51:735:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000010: nio socket, client, /192.168.0.11:48530 => /192.168.0.2:5000)
-7:2:51:754:::com.kth.csd.networking.KvsClient:::send(),write done....
+1:13:2:832:::com.kth.csd.node.core.KvsNode:::MY IP is ConnectionMetaData [host=192.168.0.11, port=5000]
+1:13:12:840:::com.kth.csd.node.core.KvsNode:::generateNodeFarm [ConnectionMetaData [host=192.168.0.3, port=5000], ConnectionMetaData [host=192.168.0.4, port=5000], ConnectionMetaData [host=192.168.0.5, port=5000], ConnectionMetaData [host=192.168.0.7, port=5000], ConnectionMetaData [host=192.168.0.8, port=5000], ConnectionMetaData [host=192.168.0.10, port=5000], ConnectionMetaData [host=192.168.0.12, port=5000], ConnectionMetaData [host=192.168.0.13, port=5000]]
+1:13:13:84:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@78e36a63
+1:13:13:259:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.3:5000
+1:13:13:261:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.3 port No. 5000
+1:13:13:297:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@65c404b3
+1:13:13:326:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.4:5000
+1:13:13:327:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.4 port No. 5000
+1:13:13:352:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@5219f360
+1:13:13:399:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.5:5000
+1:13:13:400:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.5 port No. 5000
+1:13:13:421:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@7d95609
+1:13:13:443:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.7:5000
+1:13:13:447:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.7 port No. 5000
+1:13:13:468:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@7031086c
+1:13:13:488:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.8:5000
+1:13:13:490:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.8 port No. 5000
+1:13:13:535:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@58cd7fdb
+1:13:13:565:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.10:5000
+1:13:13:566:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.10 port No. 5000
+1:13:13:589:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@23757423
+1:13:13:609:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.12:5000
+1:13:13:610:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.12 port No. 5000
+1:13:13:619:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@cffd2a8
+1:13:13:634:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.13:5000
+1:13:13:636:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.13 port No. 5000
+1:13:14:4:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[]]
+1:13:14:11:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  []
+1:13:14:18:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::mockLinkDelays -result{}
+1:13:14:302:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived MASTER_MOVED: MasterMovedMessage [mData=MasterConnections [internalConnection=ConnectionMetaData [host=192.168.0.5, port=5000], externalConnection=ConnectionMetaData [host=192.168.0.5, port=6000]]]
+1:13:23:699:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[]]
+1:13:23:700:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  []
+1:13:23:701:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::mockLinkDelays -result{}
+1:13:33:633:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[]]
+1:13:33:635:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  []
+1:13:33:636:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::mockLinkDelays -result{}
+1:13:33:845:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user8517097267634966620, values={field1=4, field0=8}]]
+1:13:33:966:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user1820151046732198393, values={field1=8, field0=0}]]
+1:13:34:10:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user4052466453699787802, values={field1=>, field0=,}]]
+1:13:34:47:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user3232700585171816769, values={field1=/, field0=?}]]
+1:13:34:83:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user1000385178204227360, values={field1=?, field0=&}]]
+1:13:34:128:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user7697331399106995587, values={field1==, field0=9}]]
+1:13:34:175:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user5465015992139406178, values={field1=5, field0=#}]]
+1:13:34:225:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user6873002678636213555, values={field1=5, field0=8}]]
+1:13:34:283:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user9105318085603802964, values={field1=?, field0=9}]]
+1:13:34:334:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user2408371864701034737, values={field1=#, field0=2}]]
+1:13:34:367:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user4640687271668624146, values={field1=?, field0=-}]]
+1:13:34:412:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user2644479767202980425, values={field1=2, field0=.}]]
+1:13:34:485:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user412164360235391016, values={field1=!, field0=!}]]
+1:13:34:527:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user7109110581138159243, values={field1=,, field0=3}]]
+1:13:34:558:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user4876795174170569834, values={field1=;, field0=0}]]
+1:13:34:625:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user7461223496605049899, values={field1=', field0="}]]
+1:13:34:712:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user8753205170136912308, values={field1=6, field0=>}]]
+1:13:34:741:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user2996592682669871081, values={field1=?, field0=&}]]
+1:13:34:767:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user5228908089637460490, values={field1=-, field0=*}]]
+1:13:34:801:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user2056258949234144081, values={field1=?, field0=)}]]
+1:13:34:849:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user176056457733445328, values={field1=3, field0=%}]]
+1:13:34:888:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user6520889763169322899, values={field1=$, field0=)}]]
+1:13:34:929:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user4288574356201733490, values={field1=:, field0=(}]]
+1:13:34:967:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user8049444314573886243, values={field1=$, field0=+}]]
+1:13:35:6:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user8164984352168075964, values={field1=2, field0="}]]
+1:13:35:47:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user3584813500638707425, values={field1=+, field0=/}]]
+1:13:35:93:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user5817128907606296834, values={field1=0, field0=0}]]
+1:13:35:135:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user1468038131265307737, values={field1=', field0=%}]]
+1:13:35:176:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user764277275702281672, values={field1=0, field0=0}]]
+1:13:35:217:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user5932668945200486555, values={field1=%, field0=?}]]
+1:13:35:272:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user3700353538232897146, values={field1=<, field0=8}]]
+1:13:35:345:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user3931898588792031835, values={field1=<, field0=(}]]
+1:13:35:388:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user6164213995759621244, values={field1=-, field0=#}]]
+1:13:35:425:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user532732225143146983, values={field1=), field0=4}]]
+1:13:37:345:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user3353268450079572736, values={field1="}]]
+1:13:37:425:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user3946517095361975326, values={field1=2, field0=;}]]
+1:13:37:479:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user2162208307571956557, values={field1=/, field0=?}]]
+1:13:37:536:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user70107099395632852, values={field1=8, field0=3}]]
+1:13:37:602:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user6626839121507135375, values={field1=2, field0=4}]]
+1:13:37:671:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user4394523714539545966, values={field1=,, field0=$}]]
+1:13:37:811:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user6767053320298401079, values={field1=4, field0=0}]]
+1:13:37:919:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user8999368727265990488, values={field1=%, field0=1}]]
+1:13:38:40:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user2302422506363222261, values={field1=:, field0=?}]]
+1:13:38:75:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user4534737913330811670, values={field1=<, field0=,}]]
+1:13:38:98:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user1573987489603120213, values={field1=1, field0=1}]]
+1:13:38:136:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user658327917364469196, values={field1=>, field0=)}]]
+1:13:38:168:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user6038618303538299031, values={field1=', field0=(}]]
+1:13:38:321:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user3806302896570709622, values={field1=', field0=1}]]
+1:13:38:341:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user7355274138267237423, values={field1=!, field0=-}]]
+1:13:38:409:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user8859154528474724784, values={field1=/, field0=#}]]
+1:13:38:435:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user2890643324332058605, values={field1=9, field0=&}]]
+1:13:38:497:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user5122958731299648014, values={field1=$, field0= }]]
+1:13:38:521:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived OPERATION_WRITE: OperationWriteMessage [mData=KeyValueEntry [key=user985766671634283869, values={field1=&, field0=:}]]

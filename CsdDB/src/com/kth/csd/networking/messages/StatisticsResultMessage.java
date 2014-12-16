@@ -2,8 +2,6 @@ package com.kth.csd.networking.messages;
 
 import java.util.HashMap;
 
-import com.kth.csd.networking.messages.AbstractNetworkMessage.type;
-
 public class StatisticsResultMessage extends AbstractNetworkMessage{
 	
 	private static final long serialVersionUID = 1400344446837376847L;
@@ -21,4 +19,5 @@ public class StatisticsResultMessage extends AbstractNetworkMessage{
 	public String toString() {
 		return "StatisticsResultMessage [mData=" + (HashMap<String, Double>)mData + "]";
 	}
+	
 }

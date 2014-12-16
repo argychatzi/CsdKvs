@@ -176,7 +176,6 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 			if(keyValueEntry.getKey()!=null && keyValueEntry.getValues() != null){
 				
 				try{
-
 					//TODO have Writers as member fields
 					FileWriter fileWriter = new FileWriter(mDatabaseFile, true);
 		            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.kth.csd.networking.ConnectionMetaData;
-import com.kth.csd.networking.messages.AbstractNetworkMessage;
 import com.kth.csd.networking.messages.MasterMovedMessage;
 import com.kth.csd.utils.Logger;
 
@@ -13,11 +12,8 @@ public class ApplicationContext {
 	protected static final String TAG = KvsNode.class.getCanonicalName();
 
 	private static NodeFarm mNodeFarm;
-	private static KeyValueStore mKeyValueStore;
-	private static AbstractNetworkMessage slaveNodeStatistics;
 	private static HashMap<String, Double>mNodeWithDelayCostMap;
-	private static boolean isFirstTimeMeasuringRTT=true;
-	private static ArrayList<String> ycsbIPs;
+	private static ArrayList<String> ipsOfWritingYcsbClients;
 
 	private static ConnectionMetaData mInternalConnection;
 	private static ConnectionMetaData mExternalConnection;
@@ -25,41 +21,33 @@ public class ApplicationContext {
 	private static ConnectionMetaData mMasterExternalConnection;
 	private static ConnectionMetaData mMasterInternalConnection;
 
-	public static ArrayList<String> getYcsbIPs() {
-		return ycsbIPs;
+	public static ArrayList<String> getYcsbWritingIPs() {
+		if (ipsOfWritingYcsbClients == null){
+			ipsOfWritingYcsbClients = new ArrayList<String>();
+		}
+		return ipsOfWritingYcsbClients;
 	}
 
-	public static void addIpToYcsbIPs(String oneYcsbIP) {
-		if(ycsbIPs==null){
-			ycsbIPs = new ArrayList<String> ();
+	public static void addIpToYcsbWritingIPs(String oneYcsbIP) {
+		if(ipsOfWritingYcsbClients == null){
+			ipsOfWritingYcsbClients = new ArrayList<String> ();
 		}
-		if(!ApplicationContext.ycsbIPs.contains(oneYcsbIP)){
+		if(!ipsOfWritingYcsbClients.contains(oneYcsbIP)){
 			Logger.d(TAG, "adding IP"+oneYcsbIP);
-			ApplicationContext.ycsbIPs.add(oneYcsbIP);	
+			ApplicationContext.ipsOfWritingYcsbClients.add(oneYcsbIP);	
 		}
-		
 	}
+	
 	public static void updateNodeWithDelayCostMap(String nodeIp, double nodeDelayCost){
 		if (mNodeWithDelayCostMap == null){
 			mNodeWithDelayCostMap = new HashMap<String, Double>();
 		}
 		mNodeWithDelayCostMap.put(nodeIp, nodeDelayCost);
 	}
+	
 	public static HashMap<String, Double> getNodeWithDelayCostMap(){
 		return mNodeWithDelayCostMap;
 	}
-
-	public static boolean getIsFirstTimeMeasuringRTT() {
-		return isFirstTimeMeasuringRTT;
-	}
-
-	public static void setFirstTimeMeasuringRTT(boolean isFirstTimeMeasuringRTT) {
-		ApplicationContext.isFirstTimeMeasuringRTT =isFirstTimeMeasuringRTT;
-	}
-
-//	public static AbstractNetworkMessage  statisticsResultstoMaster(AbstractNetworkMessage statisticsResults) {
-//		return slaveNodeStatistics = statisticsResults;
-//	}
 
 	public static boolean isMaster() {
 		return mMasterExternalConnection.equals(mExternalConnection) && mMasterInternalConnection.equals(mInternalConnection);

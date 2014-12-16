@@ -13,17 +13,18 @@ import com.kth.csd.networking.messages.MasterMovedMessage;
 import com.kth.csd.networking.messages.StatisticsResultMessage;
 import com.kth.csd.node.operation.KeyValueEntry;
 import com.kth.csd.node.operation.KvsOperation;
-import com.kth.csd.node.core.NewMasterSelector;
+import com.kth.csd.node.core.ApplicationContext;
+import com.kth.csd.node.executors.CostFunctionCalculator;
+import com.kth.csd.node.executors.MasterSelector;
 import com.kth.csd.utils.Logger;
 
 public class ClientInternalInputInterface extends IoHandlerAdapter implements IoHandler, ExecutionResultCommunicator{
 	
 	private static final String TAG = ClientInternalInputInterface.class.getCanonicalName();
-	private HashMap<KvsOperation, IoSession> mSessionVault;
-	private HashMap<String, Double> ycsbclientsRttMapFromSlave;
+	private MasterSelector masterSelector;
 	
 	public ClientInternalInputInterface() {
-		mSessionVault = new HashMap<KvsOperation, IoSession>();
+		masterSelector = new MasterSelector();
 	}
 	
 	@Override
@@ -36,19 +37,29 @@ public class ClientInternalInputInterface extends IoHandlerAdapter implements Io
 		AbstractNetworkMessage response = (AbstractNetworkMessage) message;
 		
 		switch(response.getType()){
-		
 			case STATISTICS_RES:{		
-				Logger.d(TAG,"messageReceived : "+((StatisticsResultMessage)response).toString());
 				HashMap<String, Double> ycsbclientsRttMapFromSlave = ((StatisticsResultMessage)response).getResultsOfDelayMeasurement();	
 				String remoteIp = ConnectionMetaData.generateConnectionMetadaForRemoteEntityInSession(session).getHost();
+				Logger.d(TAG,"messageReceived STATISTICS_RES from: " + remoteIp + ":::" + ((StatisticsResultMessage)response).toString() );
 
-				ycsbclientsRttMapFromSlave = new  HashMap<String, Double> ();
-				ycsbclientsRttMapFromSlave.put("192.168.0.5", 0.01);
+				if(remoteIp.equals("192.168.0.5")) {
+					ycsbclientsRttMapFromSlave.put("192.168.0.1", 0.01);
+				}
 				
-				NewMasterSelector.putNodeWithCorrespondingDelay(ycsbclientsRttMapFromSlave, remoteIp);
+				storeDelayStatisticsForNode(ycsbclientsRttMapFromSlave, remoteIp);
+				masterSelector.execute();
 				break;
 			}
 		}
+	}
+	
+	private void storeDelayStatisticsForNode(HashMap<String, Double> ycsbclientsRttMapFromSlave, String slaveIp){		
+		//TODO revert!
+		double cost = CostFunctionCalculator.calculateCostForNode(ycsbclientsRttMapFromSlave);
+		ApplicationContext.updateNodeWithDelayCostMap(slaveIp, cost);
+		
+		
+		Logger.d(TAG, "storeDelayStatisticsForNode:  "+ slaveIp + " has delay cost "+ cost);
 	}
 	
 	@Override

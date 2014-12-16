@@ -2,9 +2,6 @@ package com.kth.csd.node.core;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
-import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import org.apache.mina.core.service.IoAcceptor;
 import org.apache.mina.core.service.IoHandler;
@@ -13,11 +10,8 @@ import org.apache.mina.filter.codec.serialization.ObjectSerializationCodecFactor
 import org.apache.mina.filter.logging.LoggingFilter;
 import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
 
-import com.kth.csd.networking.ConnectionMetaData;
 import com.kth.csd.networking.interfaces.external.ServerExternalInputInterface;
 import com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface;
-import com.kth.csd.networking.messages.AbstractNetworkMessage;
-import com.kth.csd.networking.messages.StatisticsRequestMessage;
 import com.kth.csd.node.executors.StatisticsCollector;
 import com.kth.csd.utils.Configuration;
 import com.kth.csd.utils.ConfigurationReader;
@@ -26,6 +20,7 @@ import com.kth.csd.utils.Logger;
 
 public class KvsNode {
 
+	private static final int SETUP_DELAY = 10000;
 	protected static final String TAG = KvsNode.class.getCanonicalName();
 
     public static void main(String[] args) throws IOException {
@@ -41,31 +36,24 @@ public class KvsNode {
         	startMonitoringKvsSocket(new ServerInternalInputInterface(), ApplicationContext.getOwnInternalConnection().getPort());
         	startMonitoringKvsSocket(new ServerExternalInputInterface(), ApplicationContext.getOwnExternalConnection().getPort());
         	
-
+        	Logger.d(TAG,"MY IP is " + configuration.getOwnInternalConnectionMetaData());
         	Thread thread = new Thread(){
         		public void run() {
         			try {
-						Thread.sleep(10000);
+						Thread.sleep(SETUP_DELAY);
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} finally{
 						ApplicationContext.generateNodeFarm(configuration.getNodesInFarm());
+						new StatisticsCollector().startPollingFarm();					
 					}
         		}
         	};
         	thread.start();
-
-        	Logger.d(TAG,"MY IP is " + configuration.getOwnInternalConnectionMetaData());
-        	
-        	startPollingFarmForStatistics();
     	}
     }
     
-    private static void startPollingFarmForStatistics() {
-    	new StatisticsCollector().startPollingFarm();
-	}
-
 	private static Configuration parseConfigurationFile(String fileNo) throws IOException {
     	Configuration configuration = ConfigurationReader.loadConfigurationFile(fileNo);
     	return configuration; 

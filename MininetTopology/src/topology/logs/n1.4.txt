@@ -1,108 +1,683 @@
-7:2:21:305:::com.kth.csd.node.core.KvsNode:::main started 
-7:2:21:355:::com.kth.csd.node.core.KvsNode:::Main method here 4
-7:2:21:665:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile4
-7:2:21:671:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_4.json
-7:2:22:175:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_4.json
-7:2:22:224:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile jsonObject{"masterInternal":{"host":"192.168.0.2","port":5000},"masterExternal":{"host":"192.168.0.2","port":6000},"ownInternal":{"host":"192.168.0.5","port":5000},"ownExternal":{"host":"192.168.0.5","port":6000},"nodes":[{"host":"192.168.0.3","port":5000},{"host":"192.168.0.4","port":5000},{"host":"192.168.0.7","port":5000},{"host":"192.168.0.8","port":5000},{"host":"192.168.0.10","port":5000},{"host":"192.168.0.11","port":5000},{"host":"192.168.0.12","port":5000},{"host":"192.168.0.13","port":5000}]}
-7:2:23:320:::com.kth.csd.node.core.KvsNode:::configuration :: Configuration [masterInternalConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=5000], masterExternalConnectionMetaData=ConnectionMetaData [host=192.168.0.2, port=6000], ownInternalConnectionMetaData=ConnectionMetaData [host=192.168.0.5, port=5000], ownExternalConnectionMetaData=ConnectionMetaData [host=192.168.0.5, port=6000], nodesInFarm=[ConnectionMetaData [host=192.168.0.3, port=5000], ConnectionMetaData [host=192.168.0.4, port=5000], ConnectionMetaData [host=192.168.0.7, port=5000], ConnectionMetaData [host=192.168.0.8, port=5000], ConnectionMetaData [host=192.168.0.10, port=5000], ConnectionMetaData [host=192.168.0.11, port=5000], ConnectionMetaData [host=192.168.0.12, port=5000], ConnectionMetaData [host=192.168.0.13, port=5000]]]
+1:13:0:484:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile4
+1:13:0:575:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_4.json
+1:13:0:741:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_4.json
+1:13:0:811:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile jsonObject{"masterInternal":{"host":"192.168.0.2","port":5000},"masterExternal":{"host":"192.168.0.2","port":6000},"ownInternal":{"host":"192.168.0.5","port":5000},"ownExternal":{"host":"192.168.0.5","port":6000},"nodes":[{"host":"192.168.0.3","port":5000},{"host":"192.168.0.4","port":5000},{"host":"192.168.0.7","port":5000},{"host":"192.168.0.8","port":5000},{"host":"192.168.0.10","port":5000},{"host":"192.168.0.11","port":5000},{"host":"192.168.0.12","port":5000},{"host":"192.168.0.13","port":5000}]}
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-7:2:23:385:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
-handler=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@fd34eac
+handler=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@60aee53f
 acceptor after bind=(nio socket acceptor: localAddress(es): [/0:0:0:0:0:0:0:0:5000], managedSessionCount: 0)
-7:2:23:992:::com.kth.csd.node.core.KvsNode:::Opened port 5000
-7:2:24:12:::ServerConnectionHandler:::ExternalTrafficInputInterface ... 
-7:2:24:13:::ServerConnectionHandler:::created !
-7:2:24:13:::com.kth.csd.node.core.KvsNode:::starting Monitoring socket ...
-handler=com.kth.csd.networking.interfaces.external.ServerExternalInputInterface@4a1d8867
+1:13:2:705:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::ExternalTrafficInputInterface ... created
+handler=com.kth.csd.networking.interfaces.external.ServerExternalInputInterface@14627178
 acceptor after bind=(nio socket acceptor: localAddress(es): [/0:0:0:0:0:0:0:0:6000], managedSessionCount: 0)
-7:2:24:28:::com.kth.csd.node.core.KvsNode:::Opened port 6000
-7:2:24:28:::com.kth.csd.node.core.KvsNode:::generateNodeFarm [ConnectionMetaData [host=192.168.0.3, port=5000], ConnectionMetaData [host=192.168.0.4, port=5000], ConnectionMetaData [host=192.168.0.7, port=5000], ConnectionMetaData [host=192.168.0.8, port=5000], ConnectionMetaData [host=192.168.0.10, port=5000], ConnectionMetaData [host=192.168.0.11, port=5000], ConnectionMetaData [host=192.168.0.12, port=5000], ConnectionMetaData [host=192.168.0.13, port=5000]]
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@30619488
-7:2:24:137:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.3:5000
-7:2:24:138:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.3 port No. 5000
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@3f36f39e
-7:2:24:185:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.4:5000
-7:2:24:186:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.4 port No. 5000
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@52564db1
-7:2:24:202:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.7:5000
-7:2:24:203:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.7 port No. 5000
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@7685dfcf
-7:2:24:246:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.8:5000
-7:2:24:247:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.8 port No. 5000
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@2d64ff8f
-7:2:24:348:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.10:5000
-7:2:24:349:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.10 port No. 5000
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@29ed3da1
-7:2:24:365:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.11:5000
-7:2:24:365:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.11 port No. 5000
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@74793ec9
-7:2:24:377:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.12:5000
-7:2:24:378:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.12 port No. 5000
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@7c883540
-Failed to connect.
-org.apache.mina.core.RuntimeIoException: Failed to get the session.
-	at org.apache.mina.core.future.DefaultConnectFuture.getSession(DefaultConnectFuture.java:58)
-	at com.kth.csd.networking.KvsClient.initSession(KvsClient.java:55)
-	at com.kth.csd.networking.KvsClient.<init>(KvsClient.java:39)
-	at com.kth.csd.node.core.NodeFarm.<init>(NodeFarm.java:19)
-	at com.kth.csd.node.core.ApplicationContext.generateNodeFarm(ApplicationContext.java:92)
-	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:60)
-Caused by: java.net.ConnectException: Connection refused
-	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
-	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
-	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:221)
-	at org.apache.mina.transport.socket.nio.NioSocketConnector.finishConnect(NioSocketConnector.java:47)
-	at org.apache.mina.core.polling.AbstractPollingIoConnector.processConnections(AbstractPollingIoConnector.java:459)
-	at org.apache.mina.core.polling.AbstractPollingIoConnector.access$700(AbstractPollingIoConnector.java:65)
-	at org.apache.mina.core.polling.AbstractPollingIoConnector$Connector.run(AbstractPollingIoConnector.java:527)
+1:13:2:734:::com.kth.csd.node.core.KvsNode:::MY IP is ConnectionMetaData [host=192.168.0.5, port=5000]
+1:13:12:753:::com.kth.csd.node.core.KvsNode:::generateNodeFarm [ConnectionMetaData [host=192.168.0.3, port=5000], ConnectionMetaData [host=192.168.0.4, port=5000], ConnectionMetaData [host=192.168.0.7, port=5000], ConnectionMetaData [host=192.168.0.8, port=5000], ConnectionMetaData [host=192.168.0.10, port=5000], ConnectionMetaData [host=192.168.0.11, port=5000], ConnectionMetaData [host=192.168.0.12, port=5000], ConnectionMetaData [host=192.168.0.13, port=5000]]
+1:13:12:978:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@e805af4
+1:13:13:62:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.3:5000
+1:13:13:64:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.3 port No. 5000
+1:13:13:84:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@65c404b3
+1:13:13:104:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.4:5000
+1:13:13:105:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.4 port No. 5000
+1:13:13:132:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@25b94dbc
+1:13:13:152:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.7:5000
+1:13:13:153:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.7 port No. 5000
+1:13:13:184:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@fb4538d
+1:13:13:209:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.8:5000
+1:13:13:212:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.8 port No. 5000
+1:13:13:233:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@4a891e7e
+1:13:13:270:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.10:5000
+1:13:13:271:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.10 port No. 5000
+1:13:13:412:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@58cd7fdb
+1:13:13:428:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.11:5000
+1:13:13:432:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.11 port No. 5000
+1:13:13:480:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@741bb804
+1:13:13:514:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.12:5000
+1:13:13:525:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.12 port No. 5000
+1:13:13:546:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@cffd2a8
+1:13:13:573:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.13:5000
+1:13:13:575:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.13 port No. 5000
+1:13:13:970:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[]]
+1:13:13:995:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  []
+1:13:13:997:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::mockLinkDelays -result{}
+1:13:14:286:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived MASTER_MOVED: MasterMovedMessage [mData=MasterConnections [internalConnection=ConnectionMetaData [host=192.168.0.5, port=5000], externalConnection=ConnectionMetaData [host=192.168.0.5, port=6000]]]
+1:13:23:617:::com.kth.csd.node.core.NodeFarm:::broadCast : StatisticsRequestMessage [mData=[]]
+1:13:23:643:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.3:::StatisticsResultMessage [mData={}]
+1:13:23:646:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.8:::StatisticsResultMessage [mData={}]
+1:13:23:648:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.4:::StatisticsResultMessage [mData={}]
+1:13:23:650:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.7:::StatisticsResultMessage [mData={}]
+1:13:23:659:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.4 has delay cost 0.0
+1:13:23:660:::com.kth.csd.node.executors.MasterSelector:::executing master selector
+1:13:23:665:::FlushToDisk:::will flush to disk
+1:13:23:668:::FlushToDisk:::will flush to disk
+1:13:23:671:::FlushToDisk:::will flush to disk
+1:13:23:682:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.8 has delay cost 0.0
+1:13:23:683:::com.kth.csd.node.executors.MasterSelector:::executing master selector
+1:13:23:685:::FlushToDisk:::will flush to disk
+1:13:23:688:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.3 has delay cost 0.0
+1:13:23:713:::com.kth.csd.node.executors.MasterSelector:::executing master selector
+1:13:23:714:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.7 has delay cost 0.0
+1:13:23:716:::com.kth.csd.node.executors.MasterSelector:::executing master selector
+1:13:23:720:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.12:::StatisticsResultMessage [mData={}]
+1:13:23:721:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.12 has delay cost 0.0
+1:13:23:723:::com.kth.csd.node.executors.MasterSelector:::executing master selector
+1:13:23:724:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.13:::StatisticsResultMessage [mData={}]
+1:13:23:725:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.13 has delay cost 0.0
+1:13:23:726:::com.kth.csd.node.executors.MasterSelector:::executing master selector
+1:13:23:728:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.11:::StatisticsResultMessage [mData={}]
+1:13:23:730:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.11 has delay cost 0.0
+1:13:23:735:::com.kth.csd.node.executors.MasterSelector:::executing master selector
+1:13:23:737:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.10:::StatisticsResultMessage [mData={}]
+1:13:23:740:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.10 has delay cost 0.0
+1:13:23:742:::com.kth.csd.node.executors.MasterSelector:::executing master selector
+1:13:33:618:::com.kth.csd.node.core.NodeFarm:::broadCast : StatisticsRequestMessage [mData=[]]
+1:13:33:638:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.3:::StatisticsResultMessage [mData={}]
+1:13:33:640:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.3 has delay cost 0.0
+1:13:33:640:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.11:::StatisticsResultMessage [mData={}]
+1:13:33:642:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.11 has delay cost 0.0
+1:13:33:646:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.10:::StatisticsResultMessage [mData={}]
+1:13:33:650:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.10 has delay cost 0.0
+1:13:33:654:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.8:::StatisticsResultMessage [mData={}]
+1:13:33:658:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.8 has delay cost 0.0
+1:13:33:660:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.7:::StatisticsResultMessage [mData={}]
+1:13:33:660:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.7 has delay cost 0.0
+1:13:33:661:::FlushToDisk:::will flush to disk
+1:13:33:665:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.12:::StatisticsResultMessage [mData={}]
+1:13:33:667:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.12 has delay cost 0.0
+1:13:33:674:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.4:::StatisticsResultMessage [mData={}]
+1:13:33:676:::FlushToDisk:::will flush to disk
+1:13:33:677:::FlushToDisk:::will flush to disk
+1:13:33:677:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.4 has delay cost 0.0
+1:13:33:679:::FlushToDisk:::will flush to disk
+1:13:33:689:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.13:::StatisticsResultMessage [mData={}]
+1:13:33:690:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.13 has delay cost 0.0
+1:13:33:757:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user8517097267634966620, values={field1=4, field0=8}]
+1:13:33:766:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:33:771:::com.kth.csd.node.core.KvsNode:::adding IP192.168.0.1
+1:13:33:784:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:33:793:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user8517097267634966620, values={field1=4, field0=8}]]
+1:13:33:934:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user1820151046732198393, values={field1=8, field0=0}]
+1:13:33:936:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:33:942:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:33:944:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user1820151046732198393, values={field1=8, field0=0}]]
+1:13:33:974:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user4052466453699787802, values={field1=>, field0=,}]
+1:13:33:978:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:33:982:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:33:984:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user4052466453699787802, values={field1=>, field0=,}]]
+1:13:34:21:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user3232700585171816769, values={field1=/, field0=?}]
+1:13:34:24:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:34:27:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:34:28:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user3232700585171816769, values={field1=/, field0=?}]]
+1:13:34:55:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user1000385178204227360, values={field1=?, field0=&}]
+1:13:34:61:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:34:64:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:34:65:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user1000385178204227360, values={field1=?, field0=&}]]
+1:13:34:93:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user7697331399106995587, values={field1==, field0=9}]
+1:13:34:96:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:34:98:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:34:102:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user7697331399106995587, values={field1==, field0=9}]]
+1:13:34:141:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user5465015992139406178, values={field1=5, field0=#}]
+1:13:34:142:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:34:147:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:34:149:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user5465015992139406178, values={field1=5, field0=#}]]
+1:13:34:186:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user6873002678636213555, values={field1=5, field0=8}]
+1:13:34:189:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:34:191:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:34:191:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user6873002678636213555, values={field1=5, field0=8}]]
+1:13:34:245:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user9105318085603802964, values={field1=?, field0=9}]
+1:13:34:251:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:34:252:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:34:254:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user9105318085603802964, values={field1=?, field0=9}]]
+1:13:34:294:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user2408371864701034737, values={field1=#, field0=2}]
+1:13:34:300:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:34:302:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:34:308:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user2408371864701034737, values={field1=#, field0=2}]]
+1:13:34:343:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user4640687271668624146, values={field1=?, field0=-}]
+1:13:34:346:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:34:346:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:34:349:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user4640687271668624146, values={field1=?, field0=-}]]
+1:13:34:380:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user2644479767202980425, values={field1=2, field0=.}]
+1:13:34:383:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:34:385:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:34:389:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user2644479767202980425, values={field1=2, field0=.}]]
+1:13:34:461:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user412164360235391016, values={field1=!, field0=!}]
+1:13:34:465:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:34:471:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:34:471:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user412164360235391016, values={field1=!, field0=!}]]
+1:13:34:491:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user7109110581138159243, values={field1=,, field0=3}]
+1:13:34:496:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:34:500:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:34:505:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user7109110581138159243, values={field1=,, field0=3}]]
+1:13:34:536:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user4876795174170569834, values={field1=;, field0=0}]
+1:13:34:540:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:34:543:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:34:546:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user4876795174170569834, values={field1=;, field0=0}]]
+1:13:34:565:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user7461223496605049899, values={field1=', field0="}]
+1:13:34:569:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:34:570:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:34:572:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user7461223496605049899, values={field1=', field0="}]]
+1:13:34:659:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user8753205170136912308, values={field1=6, field0=>}]
+1:13:34:667:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:34:677:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:34:681:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user8753205170136912308, values={field1=6, field0=>}]]
+1:13:34:724:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user2996592682669871081, values={field1=?, field0=&}]
+1:13:34:725:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:34:726:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:34:728:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user2996592682669871081, values={field1=?, field0=&}]]
+1:13:34:748:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user5228908089637460490, values={field1=-, field0=*}]
+1:13:34:756:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:34:756:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:34:756:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user5228908089637460490, values={field1=-, field0=*}]]
+1:13:34:773:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user2056258949234144081, values={field1=?, field0=)}]
+1:13:34:776:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:34:777:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:34:778:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user2056258949234144081, values={field1=?, field0=)}]]
+1:13:34:810:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user176056457733445328, values={field1=3, field0=%}]
+1:13:34:811:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:34:812:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:34:812:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user176056457733445328, values={field1=3, field0=%}]]
+1:13:34:863:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user6520889763169322899, values={field1=$, field0=)}]
+1:13:34:868:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:34:869:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:34:869:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user6520889763169322899, values={field1=$, field0=)}]]
+1:13:34:898:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user4288574356201733490, values={field1=:, field0=(}]
+1:13:34:900:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:34:902:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:34:904:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user4288574356201733490, values={field1=:, field0=(}]]
+1:13:34:939:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user8049444314573886243, values={field1=$, field0=+}]
+1:13:34:943:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:34:944:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:34:944:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user8049444314573886243, values={field1=$, field0=+}]]
+1:13:34:980:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user8164984352168075964, values={field1=2, field0="}]
+1:13:34:980:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:34:982:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:34:982:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user8164984352168075964, values={field1=2, field0="}]]
+1:13:35:14:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user3584813500638707425, values={field1=+, field0=/}]
+1:13:35:16:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:35:17:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:35:21:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user3584813500638707425, values={field1=+, field0=/}]]
+1:13:35:55:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user5817128907606296834, values={field1=0, field0=0}]
+1:13:35:59:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:35:63:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:35:65:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user5817128907606296834, values={field1=0, field0=0}]]
+1:13:35:101:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user1468038131265307737, values={field1=', field0=%}]
+1:13:35:102:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:35:104:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:35:105:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user1468038131265307737, values={field1=', field0=%}]]
+1:13:35:145:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user764277275702281672, values={field1=0, field0=0}]
+1:13:35:150:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:35:154:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:35:159:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user764277275702281672, values={field1=0, field0=0}]]
+1:13:35:187:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user5932668945200486555, values={field1=%, field0=?}]
+1:13:35:190:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:35:192:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:35:196:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user5932668945200486555, values={field1=%, field0=?}]]
+1:13:35:230:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user3700353538232897146, values={field1=<, field0=8}]
+1:13:35:233:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:35:234:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:35:234:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user3700353538232897146, values={field1=<, field0=8}]]
+1:13:35:307:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user3931898588792031835, values={field1=<, field0=(}]
+1:13:35:314:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:35:317:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:35:318:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user3931898588792031835, values={field1=<, field0=(}]]
+1:13:35:352:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user6164213995759621244, values={field1=-, field0=#}]
+1:13:35:355:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:35:357:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:35:360:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user6164213995759621244, values={field1=-, field0=#}]]
+1:13:35:393:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user532732225143146983, values={field1=), field0=4}]
+1:13:35:393:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:35:401:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:35:403:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user532732225143146983, values={field1=), field0=4}]]
+1:13:37:318:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user3353268450079572736, values={field1="}]
+1:13:37:320:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:37:321:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:37:322:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user3353268450079572736, values={field1="}]]
+1:13:37:394:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user3946517095361975326, values={field1=2, field0=;}]
+1:13:37:397:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:37:399:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:37:401:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user3946517095361975326, values={field1=2, field0=;}]]
+1:13:37:436:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user2162208307571956557, values={field1=/, field0=?}]
+1:13:37:444:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:37:444:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:37:447:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user2162208307571956557, values={field1=/, field0=?}]]
+1:13:37:484:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user70107099395632852, values={field1=8, field0=3}]
+1:13:37:491:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:37:494:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:37:499:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user70107099395632852, values={field1=8, field0=3}]]
+1:13:37:550:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user6626839121507135375, values={field1=2, field0=4}]
+1:13:37:565:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:37:571:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:37:573:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user6626839121507135375, values={field1=2, field0=4}]]
+1:13:37:615:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user4394523714539545966, values={field1=,, field0=$}]
+1:13:37:623:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:37:624:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:37:627:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user4394523714539545966, values={field1=,, field0=$}]]
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
 	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:745)
-7:2:31:312:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.13 port No. 5000
-7:2:31:312:::com.kth.csd.node.core.KvsNode:::MY IP is ConnectionMetaData [host=192.168.0.5, port=5000]
-7:2:31:313:::com.kth.csd.node.core.KvsNode:::startPollingFarmForStatistics
-7:2:49:361:::ServerConnectionHandler:::messageReceivedOPERATION_WRITEKeyValueEntry [key=user6284781860667377211, values={field1==, field0=>}]
-7:2:49:361:::ServerConnectionHandler:::OPERATION_WRITE Receive update from MasterOPERATION_WRITEKeyValueEntry [key=user6284781860667377211, values={field1==, field0=>}]
-7:2:49:364:::ServerConnectionHandler:::messageReceivedOPERATION_WRITEKeyValueEntry [key=user8517097267634966620, values={field1=%, field0=#}]
-7:2:49:365:::ServerConnectionHandler:::OPERATION_WRITE Receive update from MasterOPERATION_WRITEKeyValueEntry [key=user8517097267634966620, values={field1=%, field0=#}]
-7:2:49:367:::ServerConnectionHandler:::messageReceivedOPERATION_WRITEKeyValueEntry [key=user1820151046732198393, values={field1=-, field0=.}]
-7:2:49:367:::ServerConnectionHandler:::OPERATION_WRITE Receive update from MasterOPERATION_WRITEKeyValueEntry [key=user1820151046732198393, values={field1=-, field0=.}]
-7:2:49:468:::ServerConnectionHandler:::messageReceivedOPERATION_WRITEKeyValueEntry [key=user4052466453699787802, values={field1=0, field0=,}]
-7:2:49:469:::ServerConnectionHandler:::OPERATION_WRITE Receive update from MasterOPERATION_WRITEKeyValueEntry [key=user4052466453699787802, values={field1=0, field0=,}]
-7:2:49:493:::ServerConnectionHandler:::messageReceivedOPERATION_WRITEKeyValueEntry [key=user3232700585171816769, values={field1=0, field0=$}]
-7:2:49:494:::ServerConnectionHandler:::OPERATION_WRITE Receive update from MasterOPERATION_WRITEKeyValueEntry [key=user3232700585171816769, values={field1=0, field0=$}]
-7:2:49:512:::ServerConnectionHandler:::messageReceivedOPERATION_WRITEKeyValueEntry [key=user1000385178204227360, values={field1=:, field0==}]
-7:2:49:512:::ServerConnectionHandler:::OPERATION_WRITE Receive update from MasterOPERATION_WRITEKeyValueEntry [key=user1000385178204227360, values={field1=:, field0==}]
-7:2:49:529:::ServerConnectionHandler:::messageReceivedOPERATION_WRITEKeyValueEntry [key=user7697331399106995587, values={field1=3, field0=/}]
-7:2:49:529:::ServerConnectionHandler:::OPERATION_WRITE Receive update from MasterOPERATION_WRITEKeyValueEntry [key=user7697331399106995587, values={field1=3, field0=/}]
-7:2:49:545:::ServerConnectionHandler:::messageReceivedOPERATION_WRITEKeyValueEntry [key=user5465015992139406178, values={field1=9, field0=:}]
-7:2:49:545:::ServerConnectionHandler:::OPERATION_WRITE Receive update from MasterOPERATION_WRITEKeyValueEntry [key=user5465015992139406178, values={field1=9, field0=:}]
-7:2:49:563:::ServerConnectionHandler:::messageReceivedOPERATION_WRITEKeyValueEntry [key=user6873002678636213555, values={field1=#, field0=)}]
-7:2:49:563:::ServerConnectionHandler:::OPERATION_WRITE Receive update from MasterOPERATION_WRITEKeyValueEntry [key=user6873002678636213555, values={field1=#, field0=)}]
-7:2:49:616:::ServerConnectionHandler:::messageReceivedOPERATION_WRITEKeyValueEntry [key=user9105318085603802964, values={field1=$, field0=:}]
-7:2:49:617:::ServerConnectionHandler:::OPERATION_WRITE Receive update from MasterOPERATION_WRITEKeyValueEntry [key=user9105318085603802964, values={field1=$, field0=:}]
-7:2:51:462:::ServerConnectionHandler:::messageReceivedSTATISTICS_REQ[192.168.0.1]
-7:2:51:462:::ServerConnectionHandler:::STATISTICS_REQSTATISTICS_REQ[192.168.0.1]
-7:2:51:463:::ServerConnectionHandler:::incomingListOfYcsbClients =[192.168.0.1]
-7:2:51:463:::ServerConnectionHandler:::first time receiving STATISTICS_REQ
-7:2:51:473:::ExponentialMovingAverageExpanded:::inside ExponentialMovingAverageExpanded constructor
-7:2:51:474:::ExponentialMovingAverageExpanded:::i=0
-7:2:51:474:::ExponentialMovingAverageExpanded:::EWMAObj created
-7:2:51:494:::ExponentialMovingAverageExpanded:::EMAHashmapKeeper put{192.168.0.1=com.codahale.metrics.EWMA@42f25b18}
-7:2:51:495:::ServerConnectionHandler:::getIsFirstTimeMeasuringRTTfalse
-7:2:51:495:::ServerConnectionHandler:::Starting delay measurement calculations
-7:2:51:508:::DelayMeasurement:::Configuration done.
-7:2:51:570:::DelayMeasurement:::inputLine=PING 192.168.0.1 (192.168.0.1) 56(84) bytes of data.
-7:2:51:577:::DelayMeasurement:::final lines=PING 192.168.0.1 (192.168.0.1) 56(84) bytes of data.
-7:2:51:578:::DelayMeasurement:::time found
-7:2:51:578:::DelayMeasurement:::time=3.83
-7:2:51:579:::ServerConnectionHandler:::delayResultsHashmap to be sent to Master {192.168.0.1=3.83}
-KVSCLIENT initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@5236151c
-7:2:51:722:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.2:5000
-7:2:51:722:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.2 port No. 5000
-falsemessage=STATISTICS_RES{192.168.0.1=3.83}node=com.kth.csd.networking.KvsClient@661c28c87:2:51:723:::com.kth.csd.networking.KvsClient:::send() called
-7:2:51:723:::com.kth.csd.networking.KvsClient:::send(), session is=(0x00000010: nio socket, client, /192.168.0.5:60729 => /192.168.0.2:5000)
-7:2:51:736:::com.kth.csd.networking.KvsClient:::send(),write done....
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+1:13:37:777:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user6767053320298401079, values={field1=4, field0=0}]
+1:13:37:781:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:37:783:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:37:784:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user6767053320298401079, values={field1=4, field0=0}]]
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+1:13:37:884:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user8999368727265990488, values={field1=%, field0=1}]
+1:13:37:885:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:37:890:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:37:891:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user8999368727265990488, values={field1=%, field0=1}]]
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+1:13:38:18:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user2302422506363222261, values={field1=:, field0=?}]
+1:13:38:19:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:38:21:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:38:21:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user2302422506363222261, values={field1=:, field0=?}]]
+1:13:38:51:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user4534737913330811670, values={field1=<, field0=,}]
+1:13:38:58:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:38:60:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:38:63:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user4534737913330811670, values={field1=<, field0=,}]]
+1:13:38:80:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user1573987489603120213, values={field1=1, field0=1}]
+1:13:38:83:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:38:85:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:38:85:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user1573987489603120213, values={field1=1, field0=1}]]
+1:13:38:109:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user658327917364469196, values={field1=>, field0=)}]
+1:13:38:120:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:38:121:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:38:121:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user658327917364469196, values={field1=>, field0=)}]]
+1:13:38:142:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user6038618303538299031, values={field1=', field0=(}]
+1:13:38:146:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:38:147:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:38:151:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user6038618303538299031, values={field1=', field0=(}]]
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+1:13:38:297:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user3806302896570709622, values={field1=', field0=1}]
+1:13:38:297:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:38:297:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:38:298:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user3806302896570709622, values={field1=', field0=1}]]
+1:13:38:326:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user7355274138267237423, values={field1=!, field0=-}]
+1:13:38:326:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:38:327:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:38:327:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user7355274138267237423, values={field1=!, field0=-}]]
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+1:13:38:397:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user8859154528474724784, values={field1=/, field0=#}]
+1:13:38:397:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:38:398:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:38:398:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user8859154528474724784, values={field1=/, field0=#}]]
+1:13:38:414:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user2890643324332058605, values={field1=9, field0=&}]
+1:13:38:419:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:38:421:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:38:422:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user2890643324332058605, values={field1=9, field0=&}]]
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+1:13:38:474:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user5122958731299648014, values={field1=$, field0= }]
+1:13:38:477:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:38:480:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:38:484:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user5122958731299648014, values={field1=$, field0= }]]
+1:13:38:501:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : OPERATION_WRITEKeyValueEntry [key=user985766671634283869, values={field1=&, field0=:}]
+1:13:38:504:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::messageReceived : ycsbClientIp 192.168.0.1
+1:13:38:508:::com.kth.csd.node.executors.KvsWriter:::executing ...
+1:13:38:508:::com.kth.csd.node.core.NodeFarm:::broadCast : OperationWriteMessage [mData=KeyValueEntry [key=user985766671634283869, values={field1=&, field0=:}]]
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+java.lang.ClassCastException: com.kth.csd.networking.messages.OperationReadMessage cannot be cast to com.kth.csd.networking.messages.OperationWriteMessage
+	at com.kth.csd.networking.interfaces.external.ServerExternalInputInterface.messageReceived(ServerExternalInputInterface.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:854)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:405)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:235)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:943)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:535)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:714)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)

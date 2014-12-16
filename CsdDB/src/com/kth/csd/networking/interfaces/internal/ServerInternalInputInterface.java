@@ -19,10 +19,11 @@ import com.kth.csd.networking.messages.StatisticsRequestMessage;
 import com.kth.csd.networking.messages.StatisticsResultMessage;
 import com.kth.csd.node.core.ApplicationContext;
 import com.kth.csd.node.core.ExponentialMovingAverageExpanded;
-import com.kth.csd.node.core.NewMasterSelector;
 import com.kth.csd.node.core.NodeFarm;
 import com.kth.csd.node.executors.KvsReader;
 import com.kth.csd.node.executors.KvsWriter;
+import com.kth.csd.node.executors.MasterSelector;
+import com.kth.csd.node.executors.StatisticsCollector;
 import com.kth.csd.node.operation.KeyValueEntry;
 import com.kth.csd.node.operation.KvsOperation;
 import com.kth.csd.utils.Logger;
@@ -30,11 +31,12 @@ import com.kth.csd.utils.Logger;
 public class ServerInternalInputInterface extends IoHandlerAdapter{
 	
 	private static final String TAG = ServerInternalInputInterface.class.getCanonicalName();
-	private final static double alpha = 0.9;
-	private  ExponentialMovingAverageExpanded emaStateObj;
-	private boolean isFirstTime  = true;
-	private static HashMap<String, Double> EMAResults;
-	private HashMap<KvsOperation, IoSession> mSessionVault;
+	private MasterSelector masterSelector;
+	
+	
+	public ServerInternalInputInterface(){
+		masterSelector = new MasterSelector();
+	}
 	
 	@Override
 	public void exceptionCaught(IoSession session, Throwable cause) throws Exception {
@@ -45,72 +47,23 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 	public void messageReceived(IoSession session, Object message) throws Exception {
 		AbstractNetworkMessage response = (AbstractNetworkMessage) message;
 		switch(response.getType()){
-		/*
-		+ * In case of statistics req the list of client IPs is captured and then only one time we create EMA object to keep the state
-		+ * of EMA, we couldn't initialize this object above as it needs the list of clients IPs.
-		+ * Then we do the calculations and save it/
-		+ * In case of statistics res, we pass the results to the application context.
-		+ */
 			case STATISTICS_REQ:{
-				Logger.d(TAG,"messageReceived : "+((StatisticsRequestMessage)response).toString());
-				
-				ArrayList<String> incomingListOfYcsbClients = ((StatisticsRequestMessage)response).getListOfYcsbClients();
-				if (ApplicationContext.getIsFirstTimeMeasuringRTT()){
-					Logger.d(TAG, "first time receiving STATISTICS_REQ");
-					ApplicationContext.setFirstTimeMeasuringRTT(false);
-					emaStateObj = new ExponentialMovingAverageExpanded(Constants.ALPHA, incomingListOfYcsbClients);
-					//Logger.d(TAG, "emaStateObj" + emaStateObj.toString());
-					Logger.d(TAG, "getIsFirstTimeMeasuringRTT" + ApplicationContext.getIsFirstTimeMeasuringRTT());
+				Logger.d(TAG,"messageReceived STATISTICS_REQ : "+((StatisticsRequestMessage)response).toString());
+			
+				ArrayList<String> listOfYcsbClients = ((StatisticsRequestMessage)response).getListOfYcsbClients();
+				if(listOfYcsbClients != null){
+					Logger.d(TAG, "list of clients::  " + listOfYcsbClients);
+					
+					//TODO#Ahmed call your class (the one that executes the ping command and collects the result)
+					
+					HashMap<String,Double> delayResultsHashmap = mockLinkDelays(listOfYcsbClients);
+					StatisticsResultMessage statisticsResults = new StatisticsResultMessage (delayResultsHashmap);
+					session.write(statisticsResults);
 				}
-				Logger.d(TAG, "Starting delay measurement calculations");
-				DelayMeasurement.CalculateDelayFromSlaveToClientNode(incomingListOfYcsbClients);
-			    EMAResults = emaStateObj.calculatExponentialMovingAverage(DelayMeasurement.getDelayResultsHashmap());
-				HashMap<String, Double> delayResultsHashmap = DelayMeasurement.getDelayResultsHashmap();
-				Logger.d(TAG, "delayResultsHashmap to be sent to Master " + delayResultsHashmap);
-				AbstractNetworkMessage statisticsResults = new StatisticsResultMessage (delayResultsHashmap);
-				
-//				ApplicationContext.statisticsResultstoMaster(statisticsResults);
-				
-//				ArrayList<ConnectionMetaData> nodeIps =new ArrayList<ConnectionMetaData>();
-//				nodeIps.add(ApplicationContext.getMasterInternalConnection());
-//				NodeFarm nodeFarmToMaster = new NodeFarm(nodeIps);
-//				nodeFarmToMaster.broadCast(statisticsResults);
-
-				session.write(statisticsResults);
-				break;
-			}
-			case STATISTICS_RES:{
-//				Logger.d(TAG,"STATISTICS_RES"+response.toString());
-//				StatisticsResultMessage statisticsResults = (StatisticsResultMessage)response;
-//				Logger.d(TAG, "is statisticsResults empty ? "+String.valueOf(statisticsResults==null));
-//				HashMap<String, Double> results = statisticsResults.getResultsOfDelayMeasurement();
-//				Logger.d(TAG, "is results empty ?  "+String.valueOf(results==null));
-//				Logger.d(TAG, "results"+ results);
-//				ArrayList<String> ycsbIPs = ApplicationContext.getYcsbIPs();
-//				Logger.d(TAG, "ycsbIPs"+ ycsbIPs);
-//				for(String Key : ycsbIPs)
-//					Logger.d(TAG, String.valueOf(results.get(Key)));
-////				Logger.d(TAG, String.valueOf(results.get("192.168.0.1")));
-////				Logger.d(TAG, String.valueOf(results.get("192.168.0.6")));
-////				Logger.d(TAG, String.valueOf(results.get("192.168.0.9")));
-//				//AbstractNetworkMessage statisticsResults = new StatisticsResultMessage (EMAResults);
-//				ApplicationContext.statisticsResultstoMaster(statisticsResults);
-				
-				Logger.d(TAG,"messageReceived : "+((StatisticsResultMessage)response).toString());
-
-				
-				HashMap<String, Double> ycsbclientsRttMapFromSlave = ((StatisticsResultMessage)response).getResultsOfDelayMeasurement();	
-				String remoteIp = ConnectionMetaData.generateConnectionMetadaForRemoteEntityInSession(session).getHost();
-
-				ycsbclientsRttMapFromSlave = new  HashMap<String, Double> ();
-				ycsbclientsRttMapFromSlave.put("192.168.0.5", 0.01);
-				
-				NewMasterSelector.putNodeWithCorrespondingDelay(ycsbclientsRttMapFromSlave, remoteIp);
 				break;
 			}
 			case MASTER_MOVED:{
-				
-				Logger.d(TAG,"messageReceived : "+((MasterMovedMessage)response).toString());
+				Logger.d(TAG,"messageReceived MASTER_MOVED: "+((MasterMovedMessage)response).toString());
 
 				ConnectionMetaData newMasterInternal = ((MasterMovedMessage)message).getNewMasterInternal();
 				ConnectionMetaData newMasterExternal = ((MasterMovedMessage)message).getNewMasterExternal();
@@ -120,13 +73,13 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 				break;
 			}
 			case OPERATION_READ:{
-				Logger.d(TAG,"messageReceived : "+((OperationReadMessage)response).toString());
+				Logger.d(TAG,"messageReceived OPERATION_READ: "+((OperationReadMessage)response).toString());
 				KeyValueEntry keyValueEntry = ((OperationReadMessage)message).getKeyValueEntry();
 				new KvsReader(keyValueEntry).execute();
 				break;
 			}
 			case OPERATION_WRITE:{
-				Logger.d(TAG,"messageReceived : "+((OperationWriteMessage)response).toString());
+				Logger.d(TAG,"messageReceived OPERATION_WRITE: "+((OperationWriteMessage)response).toString());
 				ConnectionMetaData connectionMetaData = ConnectionMetaData.generateConnectionMetadaForRemoteEntityInSession(session);
 				if(ApplicationContext.connectionMetadatBelongsToMasterInternal(connectionMetaData)){
 					KeyValueEntry keyValueEntry = ((OperationWriteMessage)message).getKeyValueEntry();
@@ -135,6 +88,19 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 				break;
 			}
 		}
+	}
+
+	private HashMap<String, Double> mockLinkDelays(ArrayList<String> listOfYcsbClients) {
+		HashMap<String, Double> result = new HashMap<String, Double>();
+		for(int i=0; i < listOfYcsbClients.size(); i++){
+			if( i > 1){
+				result.put(listOfYcsbClients.get(i), i*0.1);
+			} else {
+				result.put(listOfYcsbClients.get(i), 10.00);
+			}
+		}
+		Logger.d(TAG, "mockLinkDelays -result" + result);
+		return result;
 	}
 }
 
