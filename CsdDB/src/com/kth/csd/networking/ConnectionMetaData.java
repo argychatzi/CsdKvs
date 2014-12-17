@@ -17,6 +17,10 @@ public class ConnectionMetaData implements Serializable{
 		this.port = port;
 	}
 	
+	public void setHost(String newHost){
+		host = newHost;
+	}
+	
 	public String getHost() {
 		return host;
 	}

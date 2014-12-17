@@ -31,12 +31,6 @@ import com.kth.csd.utils.Logger;
 public class ServerInternalInputInterface extends IoHandlerAdapter{
 	
 	private static final String TAG = ServerInternalInputInterface.class.getCanonicalName();
-	private MasterSelector masterSelector;
-	
-	
-	public ServerInternalInputInterface(){
-		masterSelector = new MasterSelector();
-	}
 	
 	@Override
 	public void exceptionCaught(IoSession session, Throwable cause) throws Exception {

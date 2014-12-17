@@ -21,11 +21,6 @@ import com.kth.csd.utils.Logger;
 public class ClientInternalInputInterface extends IoHandlerAdapter implements IoHandler, ExecutionResultCommunicator{
 	
 	private static final String TAG = ClientInternalInputInterface.class.getCanonicalName();
-	private MasterSelector masterSelector;
-	
-	public ClientInternalInputInterface() {
-		masterSelector = new MasterSelector();
-	}
 	
 	@Override
 	public void exceptionCaught(IoSession session, Throwable cause) throws Exception {
@@ -47,7 +42,6 @@ public class ClientInternalInputInterface extends IoHandlerAdapter implements Io
 				}
 				
 				storeDelayStatisticsForNode(ycsbclientsRttMapFromSlave, remoteIp);
-				masterSelector.execute();
 				break;
 			}
 		}

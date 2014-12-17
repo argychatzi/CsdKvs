@@ -45,21 +45,23 @@ public class ServerExternalInputInterface extends IoHandlerAdapter implements Io
 
 		switch(response.getType()){
 			case OPERATION_READ:{
-				Logger.d(TAG, "messageReceived : OPERATION_READ" + ((OperationReadMessage)response).getKeyValueEntry());
+				String ycsbClientIp = ConnectionMetaData.generateConnectionMetadaForRemoteEntityInSession(session).getHost();
+				Logger.d(TAG, "messageReceived by:" + ycsbClientIp +" OPERATION_READ" + ((OperationReadMessage)response).getKeyValueEntry());
 				keyValueEntry = ((OperationReadMessage)response).getKeyValueEntry();
 				executionResult = new KvsReader(keyValueEntry).execute();
 				break;
 			}
 		
 			case OPERATION_WRITE:{
-				Logger.d(TAG, "messageReceived : OPERATION_WRITE" + ((OperationWriteMessage)response).getKeyValueEntry());
+				String ycsbClientIp = ConnectionMetaData.generateConnectionMetadaForRemoteEntityInSession(session).getHost();
+				Logger.d(TAG, "messageReceived by:" + ycsbClientIp +" OPERATION_WRITE" + ((OperationWriteMessage)response).getKeyValueEntry());
 				if(ApplicationContext.isMaster()) {
+					Logger.d(TAG, "performing write");
 					keyValueEntry = ((OperationWriteMessage)response).getKeyValueEntry();
-					String ycsbClientIp = ConnectionMetaData.generateConnectionMetadaForRemoteEntityInSession(session).getHost();
-					Logger.d(TAG, "messageReceived : ycsbClientIp " + ycsbClientIp);
 					ApplicationContext.addIpToYcsbWritingIPs(ycsbClientIp); 
 					executionResult = new KvsWriter(keyValueEntry, ycsbClientIp).execute();
 				} else {
+					Logger.d(TAG, "Received request by " + ycsbClientIp + " I am no longer the master");
 					executionResult = new MasterMovedMessage(ApplicationContext.getMasterInternalConnection(), ApplicationContext.getMasterExternalConnection());
 				}
 				break;

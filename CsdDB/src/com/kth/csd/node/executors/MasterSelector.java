@@ -13,13 +13,10 @@ import com.kth.csd.utils.Logger;
 public class MasterSelector {
 
 	private static final String TAG = MasterSelector.class.getCanonicalName();
-	private static String masterWithMinimumDelay = null;
 	private static double minValue = Integer.MAX_VALUE;
 	
-	private Timer mTimer = null;
-	
 	private class SelectNewMasterTask extends TimerTask{
-		public static final int SELECT_NEW_MASTER_INTERVAL = 1000;
+		public static final int SELECT_NEW_MASTER_INTERVAL = 5000;
 		
 		@Override
 		public void run() {
@@ -27,24 +24,46 @@ public class MasterSelector {
 				HashMap<String, Double> nodeWithDelayCostMap = ApplicationContext.getNodeWithDelayCostMap();
 
 //				String newMasterIp = selectNewMaster(nodeWithDelayCostMap);
-				String newMasterIp = "192.168.0.5";
+				String currentMasterIp = ApplicationContext.getOwnExternalConnection().getHost();
+				String newMasterIp = mockMasterMoving(currentMasterIp);
+				Logger.d(TAG, "node " + currentMasterIp + "compares " + currentMasterIp + " and " + newMasterIp);
 				
-				if (!ApplicationContext.getMasterExternalConnection().getHost().equals(newMasterIp)){
+				if (!currentMasterIp.equals(newMasterIp)){
+					Logger.d(TAG, "broadcast");
 					brodcastUpdate(newMasterIp);	
 				}
 			}
 		}
 		
+		private String mockMasterMoving(String ip) {
+			String result = "192.168.0.2";
+			if(ip.equals("192.168.0.2")){
+				result = "192.168.0.5";
+			} else if(ip.equals("192.168.0.5")){
+				result = "192.168.0.4";
+			} else if(ip.equals("192.168.0.4")){
+				result = "192.168.0.7";
+			} else if(ip.equals("192.168.0.7")){
+				result = "192.168.0.8";
+			} else if(ip.equals("192.168.0.8")){
+				result = "192.168.0.10";
+			} else if(ip.equals("192.168.0.10")){
+				result = "192.168.0.11";
+			} else if(ip.equals("192.168.0.11")){
+				result = "192.168.0.12";
+			}
+			return result;
+		}
+
 		private void brodcastUpdate(String newMasterIp){
 			Logger.d(TAG, "selectNewMasterAndBrodcastAPossibleUpdate: currentMaster: " +ApplicationContext.getMasterExternalConnection().getHost() + "newMaster " + newMasterIp);
 			Logger.d(TAG, "New master elected, switching ips");
-			ConnectionMetaData internal = new ConnectionMetaData(newMasterIp,  Constants.DEFAULT_INTERNAL_PORT);
-			ConnectionMetaData external = new ConnectionMetaData(newMasterIp, Constants.DEFAULT_EXTERNAL_PORT);
-			ApplicationContext.assignNewMaster(internal, external);
+			ApplicationContext.assignNewMaster(newMasterIp);
 		}
 		
 		private String selectNewMaster(HashMap<String, Double> mapOfNodeandDelay){
 			double masterDelayCost = CostFunctionCalculator.calculateCostForNode(MasterOwnDelaytoClients.calculatDelayToYCSB());
+			String masterWithMinimumDelay = null;
 			for (String key: mapOfNodeandDelay.keySet() ) {
 				double value = mapOfNodeandDelay.get(key);
 				if (value < minValue) {
@@ -62,11 +81,9 @@ public class MasterSelector {
 
 
 	public void execute() {
-		if(mTimer == null){
-			Logger.d(TAG, "executing master selector");
-			mTimer = new Timer();
-			mTimer.schedule(new SelectNewMasterTask(), 0, SelectNewMasterTask.SELECT_NEW_MASTER_INTERVAL);
-		}
+		Timer mTimer = new Timer();
+		TimerTask task = new SelectNewMasterTask();
+		mTimer.scheduleAtFixedRate(task, 0, SelectNewMasterTask.SELECT_NEW_MASTER_INTERVAL);
 	}
 
 

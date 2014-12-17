@@ -26,4 +26,32 @@ public abstract class AbstractNetworkMessage implements Serializable{
 	protected AbstractNetworkMessage(type t){
 		mType = t;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((mData == null) ? 0 : mData.hashCode());
+		result = prime * result + ((mType == null) ? 0 : mType.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		AbstractNetworkMessage other = (AbstractNetworkMessage) obj;
+		if (mData == null) {
+			if (other.mData != null)
+				return false;
+		} else if (!mData.equals(other.mData))
+			return false;
+		if (mType != other.mType)
+			return false;
+		return true;
+	}
 }

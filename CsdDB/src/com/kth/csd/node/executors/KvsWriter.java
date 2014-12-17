@@ -19,7 +19,7 @@ public class KvsWriter extends KvsOperation implements KvsExecutable {
 
 	private static final String TAG = KvsWriter.class.getCanonicalName();
 	
-	public static String mYcsbclient;
+	public static String mYcsbclientIp;
 	private Timer mStatisticsTimer = new Timer(); 
 	
 	public KvsWriter(KeyValueEntry keyValue) {
@@ -28,7 +28,7 @@ public class KvsWriter extends KvsOperation implements KvsExecutable {
 	
 	public KvsWriter(KeyValueEntry keyValue, String ycsbClientIp){
 		mKeyValue = keyValue;
-		mYcsbclient = ycsbClientIp;
+		mYcsbclientIp = ycsbClientIp;
 		mStatisticsTimer.schedule(new OperationsPerSecond(),0, OperationsPerSecond.ONE_SECOND *5);
 	}
 	
@@ -37,7 +37,7 @@ public class KvsWriter extends KvsOperation implements KvsExecutable {
 		Logger.d(TAG, "executing ...");
 		ApplicationContext.getKeyValueStore().put(mKeyValue.getKey(), mKeyValue.getValues());
 		if (ApplicationContext.isMaster()){
-			incrementWriteForEveryClient(mYcsbclient); 
+			incrementWriteForClientWithIp(mYcsbclientIp); 
 			ApplicationContext.getNodeFarm().broadCast(new OperationWriteMessage(mKeyValue));
 		}
 		
@@ -45,14 +45,12 @@ public class KvsWriter extends KvsOperation implements KvsExecutable {
 	}
 	
 	// increment the number of writes performed by ycsb clients
-	public  void incrementWriteForEveryClient(String clientIPForIncrement){
-		if(ApplicationContext.getmYcsbClientsStatisticsMapSoFar().containsKey(clientIPForIncrement)){
-			ApplicationContext.updatemYcsbClientsStatisticsMapSoFar(clientIPForIncrement, ApplicationContext.getmYcsbClientsStatisticsMapSoFar().get(clientIPForIncrement)+1);
+	public  void incrementWriteForClientWithIp(String clientIp){
+		if(ApplicationContext.getmYcsbClientsStatisticsMapSoFar().containsKey(clientIp)){
+			ApplicationContext.updatemYcsbClientsStatisticsMapSoFar(clientIp, ApplicationContext.getmYcsbClientsStatisticsMapSoFar().get(clientIp)+1);
+		} else{
+			ApplicationContext.updatemYcsbClientsStatisticsMapSoFar(clientIp, 1);
 		}
-		else{
-			ApplicationContext.updatemYcsbClientsStatisticsMapSoFar(clientIPForIncrement, 1);
-		}
-		
 	}
 	
 	public void getycsbClientWritePerSecStatisticsMapWithEma(){
@@ -62,7 +60,6 @@ public class KvsWriter extends KvsOperation implements KvsExecutable {
 	    	double movingAverageValue = exponentialMovingAverage.exponentialMovingAverage(stateSavedPerSecMap.get(key));
 	    	ApplicationContext.updatemYcsbClientsStatisticsMapPerSecondWithEma(key, movingAverageValue);
 	    }
-	    
 	}
  
  

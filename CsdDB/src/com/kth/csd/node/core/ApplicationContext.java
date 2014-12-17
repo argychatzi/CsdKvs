@@ -70,6 +70,9 @@ public class ApplicationContext {
 //	}
        
 	public static HashMap<String, Integer> getmYcsbClientsStatisticsMapSoFar() {
+		if(mYcsbClientsStatisticsMapPerSecond == null){
+			mYcsbClientsStatisticsMapPerSecond = new HashMap<String, Integer>();
+		}
 		return mYcsbClientsStatisticsMapSoFar;
 	}
 
@@ -127,11 +130,11 @@ public class ApplicationContext {
 		mNodeFarm = NodeFarm.getInstance(nodeIps);
 	}
 	
-	public static void assignNewMaster(ConnectionMetaData internal, ConnectionMetaData external){
-		setMasterInternalConnection(internal);
-		setMasterExternalConnection(external);
+	public static void assignNewMaster(String newIp){
+		mMasterExternalConnection.setHost(newIp);
+		mMasterInternalConnection.setHost(newIp);
 		
-		MasterMovedMessage masterMovedMessage = new MasterMovedMessage(internal, external);
+		MasterMovedMessage masterMovedMessage = new MasterMovedMessage(mMasterInternalConnection, mMasterExternalConnection);
 		ApplicationContext.getNodeFarm().broadCast(masterMovedMessage);
 	}
 	
@@ -160,11 +163,13 @@ public class ApplicationContext {
 		mExternalConnection = externalConnection;
 	}
 
-	public static void setMasterInternalConnection(ConnectionMetaData internalConnection) {
+	public synchronized static void setMasterInternalConnection(ConnectionMetaData internalConnection) {
+		Logger.d(TAG, "assignNewMasterInternal " + internalConnection);
 		mMasterInternalConnection = internalConnection;
 	}
 
-	public static void setMasterExternalConnection(ConnectionMetaData externalConnection) {
+	public synchronized static void setMasterExternalConnection(ConnectionMetaData externalConnection) {
+		Logger.d(TAG, "assignNewMasterInternal " + externalConnection);
 		mMasterExternalConnection = externalConnection;
 	}
 }

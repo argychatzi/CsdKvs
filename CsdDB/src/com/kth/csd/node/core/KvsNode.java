@@ -12,6 +12,7 @@ import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
 
 import com.kth.csd.networking.interfaces.external.ServerExternalInputInterface;
 import com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface;
+import com.kth.csd.node.executors.MasterSelector;
 import com.kth.csd.node.executors.StatisticsCollector;
 import com.kth.csd.utils.Configuration;
 import com.kth.csd.utils.ConfigurationReader;
@@ -46,7 +47,8 @@ public class KvsNode {
 						e.printStackTrace();
 					} finally{
 						ApplicationContext.generateNodeFarm(configuration.getNodesInFarm());
-						new StatisticsCollector().startPollingFarm();					
+						new StatisticsCollector().startPollingFarm();			
+						new MasterSelector().execute();
 					}
         		}
         	};
