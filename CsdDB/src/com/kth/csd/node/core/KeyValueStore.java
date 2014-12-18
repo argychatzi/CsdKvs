@@ -45,10 +45,12 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 	public static HashMap <String, Double> ycsbClientsStatisticsMapPerSecondWithEma = new HashMap <String, Double>();
 	
 	private KeyValueStore(){
-		mFlushToDiskTimer.scheduleAtFixedRate(new FlushToDisk(), 0, Constants.FLUSH_TO_DISK_PERIOD);
+		mFlushToDiskTimer.scheduleAtFixedRate(new FlushToDisk(sKeyValueStore), 0, Constants.FLUSH_TO_DISK_PERIOD);
 		mStatisticsTimer.schedule(new OperationsPerSecond(),0, OperationsPerSecond.ONE_SECOND);
 		mGson = new Gson();
-		mDatabaseFile = new File(Constants.DATABASE_FILE);
+		
+		String databaseFile = ApplicationContext.getOwnInternalConnection().getHost() + ".txt";
+		mDatabaseFile = new File(databaseFile);
 		//mWriteOperationsPerformedSoFar = 0;
 	}
 	
@@ -165,38 +167,41 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 	
 	private class FlushToDisk extends TimerTask{
 		private static final String TAG = "FlushToDisk";
+		private KeyValueStore keyValueStore;
+		
+		public FlushToDisk(KeyValueStore keyValueStore) {
+			this.keyValueStore = keyValueStore;
+		}
 
 		@Override
 		public void run() {
 			Logger.d(TAG,  "will flush to disk");
+			flushToDisk();
 		}
 		
-		private int writeToKvs(KeyValueEntry keyValueEntry){
-			int resultCode = Constants.RESULT_CODE_FAILURE;
-			if(keyValueEntry.getKey()!=null && keyValueEntry.getValues() != null){
-				
-				try{
+		private void flushToDisk(){
+			for (String key: keyValueStore.keySet()) {
 
-					//TODO have Writers as member fields
-					FileWriter fileWriter = new FileWriter(mDatabaseFile, true);
-		            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-		
-		            KeyValueEntry entry = new KeyValueEntry(keyValueEntry.getKey(), keyValueEntry.getValues());
-		
-		            bufferedWriter.write( mGson.toJson(entry) );
-		            bufferedWriter.newLine();
-		
-		            bufferedWriter.close();
-		            fileWriter.close();
+				if(key!=null && keyValueStore.get(key) != null){
 					
-					resultCode = Constants.RESULT_CODE_SUCCESS;
-				} catch(IOException e){
-					e.printStackTrace();
+					try{
+						
+						//TODO have Writers as member fields
+						FileWriter fileWriter = new FileWriter(mDatabaseFile, false);
+						BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+						
+						KeyValueEntry entry = new KeyValueEntry(key, keyValueStore.get(key));
+						
+						bufferedWriter.write( mGson.toJson(entry) );
+						bufferedWriter.newLine();
+						
+						bufferedWriter.close();
+						fileWriter.close();
+					} catch(IOException e){
+						e.printStackTrace();
+					}
 				}
-			} else {
-				
 			}
-			return resultCode;
 		}
 	}
 }

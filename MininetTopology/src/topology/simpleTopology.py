@@ -14,6 +14,7 @@ from mininet.net import Mininet
 from mininet.topo import Topo
 from mininet.util import dumpNodeConnections
 from mininet.node import Node, Host
+import time
 
 class SingleSwitchNetwork():
     
@@ -81,7 +82,7 @@ def run():
     #print "Testing network connectivity"
     #net.pingAll()
 
-    CLI( net )
+    #CLI( net )
     
     #net.stop()
     
@@ -122,22 +123,28 @@ def runNetworkClasses(net):
         print( 'Starting server %s...' % node.name )
         node.cmd('java -jar network/server/CsdDBServer.jar ' + str(i+7) + ' &> logs/' + node.name + '.txt &')
         
+    #time.sleep(5)        
     # Starting clients...
 
- #   print( 'Starting client %s...' % c1_1.name )
-#    setServerIP( n1_1.IP() )
- #   result = c1_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workloadc >logs/' + c1_1.name + '.txt &')
-  #@  print( 'Client result %s' % result )
-  
- #   print( 'Starting client %s...' % c2_1.name )    
-#   setServerIP( n2_2.IP() )
- #   result = c2_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workloadc >logs/' + c2_1.name + '.txt &')
-  #  print( 'Client result %s' % result )
-    
-   # print( 'Starting client %s...' % c3_1.name )
-#    setServerIP( n3_3.IP() )
-    #result = c3_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workloadc >logs/' + c3_1.name + '.txt')
+    #print( 'Starting client %s...' % c1_1.name )
+    #setServerIP( n1_1.IP() )
+    #result = c1_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_csd &> logs/' + c1_1.name + '.txt &')
     #print( 'Client result %s' % result )
+
+    #time.sleep(1)        
+  
+    #print( 'Starting client %s...' % c2_1.name )    
+    #setServerIP( n2_2.IP() )
+    #result = c2_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workloadc %> logs/' + c2_1.name + '.txt &')
+    #print( 'Client result %s' % result )
+    
+    #print( 'Starting client %s...' % c3_1.name )
+    #setServerIP( n3_3.IP() )
+    #result = c3_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_csd &> logs/' + c3_1.name + '.txt')
+    #print( 'Client result %s' % result )
+    
+    
+    #time.sleep(10)
     
 def setServerIP(serverIP):
     propertiesFile = 'properties/server_ip.txt'
@@ -154,33 +161,6 @@ def getYcsbPath():
     f.close()
     
     return ycsbPath
-
-#def CompileUpdateClasses(net):
-    
-#    print 'Compiling update Server, and client sniffer classes'
-#    node= net.get('n1.1')
-#    resultServer= node.cmd('javac /home/jawad/ik2200/multicastServer/src/multicastServer/MulticastServer.java')
-#    print resultServer
-#    resultclient= node.cmd ('javac /home/jawad/ik2200/multicastServer/src/clientbroadcastsniffer/Snifferclient.java')
-#    print resultclient
-
-def runupdateinterface(net):
-    
-    print ('Client Sniffer running on n3.1, n3.2, n3.3, n3.4')
-
-    for i in range(4):
-       nodeClient =net.get('n3.%s' % (i+1))
-       print ('Running Snifferclient %s ' % nodeClient.name)
-       nodeClient.cmd ('java /home/jawad/ik2200/multicastServer/src/clientbroadcastsniffer/Snifferclient' + ' > logs/' + nodeClient.name + '.txt')
-
-    
-
-    nodeserver= net.get('n1.1')
-
-    print ('running master broadcast node on %s..' % nodeserver.name)
-    nodeserver.cmd ('java /home/jawad/ik2200/multicastServer/src/multicastServer/MulticastServer')
-
- 
 
 if __name__ == '__main__':
 # Tell mininet to print useful information

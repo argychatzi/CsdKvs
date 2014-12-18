@@ -1,21 +1,23 @@
-7:2:21:307:::com.kth.csd.node.core.KvsNode:::main started 
-7:2:21:352:::com.kth.csd.node.core.KvsNode:::Main method here 10
-7:2:21:675:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile10
-7:2:21:682:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_10.json
-Exception in thread "main" com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Unterminated object at line 49 column 15 path $.nodes[0].host
-	at com.google.gson.internal.Streams.parse(Streams.java:56)
-	at com.google.gson.JsonParser.parse(JsonParser.java:84)
-	at com.google.gson.JsonParser.parse(JsonParser.java:59)
-	at com.kth.csd.utils.ConfigurationReader.loadConfigurationFile(ConfigurationReader.java:29)
-	at com.kth.csd.node.core.KvsNode.parseConfigurationFile(KvsNode.java:96)
-	at com.kth.csd.node.core.KvsNode.main(KvsNode.java:49)
-Caused by: com.google.gson.stream.MalformedJsonException: Unterminated object at line 49 column 15 path $.nodes[0].host
-	at com.google.gson.stream.JsonReader.syntaxError(JsonReader.java:1572)
-	at com.google.gson.stream.JsonReader.doPeek(JsonReader.java:493)
-	at com.google.gson.stream.JsonReader.hasNext(JsonReader.java:416)
-	at com.google.gson.internal.bind.TypeAdapters$25.read(TypeAdapters.java:666)
-	at com.google.gson.internal.bind.TypeAdapters$25.read(TypeAdapters.java:659)
-	at com.google.gson.internal.bind.TypeAdapters$25.read(TypeAdapters.java:667)
-	at com.google.gson.internal.bind.TypeAdapters$25.read(TypeAdapters.java:642)
-	at com.google.gson.internal.Streams.parse(Streams.java:44)
-	... 5 more
+6:27:6:430:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile10
+6:27:6:525:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_10.json
+6:27:6:643:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_10.json
+6:27:6:719:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile jsonObject{"masterInternal":{"host":"192.168.0.2","port":5000},"masterExternal":{"host":"192.168.0.2","port":6000},"ownInternal":{"host":"192.168.0.13","port":5000},"ownExternal":{"host":"192.168.0.13","port":6000},"nodes":[{"host":"192.168.0.3","port":5000},{"host":"192.168.0.4","port":5000},{"host":"192.168.0.5","port":5000},{"host":"192.168.0.7","port":5000},{"host":"192.168.0.8","port":5000},{"host":"192.168.0.10","port":5000},{"host":"192.168.0.11","port":5000},{"host":"192.168.0.12","port":5000}]}
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+handler=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@359c41f
+acceptor after bind=(nio socket acceptor: localAddress(es): [/0:0:0:0:0:0:0:0:5000], managedSessionCount: 0)
+6:27:8:566:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::ExternalTrafficInputInterface ... created
+handler=com.kth.csd.networking.interfaces.external.ServerExternalInputInterface@a52ded2
+acceptor after bind=(nio socket acceptor: localAddress(es): [/0:0:0:0:0:0:0:0:6000], managedSessionCount: 0)
+6:27:8:602:::com.kth.csd.node.core.KvsNode:::MY IP is ConnectionMetaData [host=192.168.0.13, port=5000]
+6:27:18:608:::com.kth.csd.node.core.KvsNode:::generateNodeFarm [ConnectionMetaData [host=192.168.0.3, port=5000], ConnectionMetaData [host=192.168.0.4, port=5000], ConnectionMetaData [host=192.168.0.5, port=5000], ConnectionMetaData [host=192.168.0.7, port=5000], ConnectionMetaData [host=192.168.0.8, port=5000], ConnectionMetaData [host=192.168.0.10, port=5000], ConnectionMetaData [host=192.168.0.11, port=5000], ConnectionMetaData [host=192.168.0.12, port=5000]]
+6:27:18:717:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@7535942c
+6:27:18:873:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.3:5000
+6:27:18:873:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.3 port No. 5000
+6:27:18:876:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@64c9a946
+6:27:18:980:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.4:5000
+6:27:18:980:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.4 port No. 5000
+6:27:19:13:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@3d301f04
+6:27:19:67:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.5:5000
+6:27:19:67:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.5 port No. 5000

@@ -21,7 +21,6 @@ public class Constants {
 	public static final String MASTER_MOVED_HOST_PORT_KEY = "MASTER_MOVED_HOST_PORT_KEY";
 	public static final String MASTER_MOVED_KEY = "MASTER_MOVED_KEY";
 
-	public static final String DATABASE_FILE = "db.txt";
 	public static final long FLUSH_TO_DISK_PERIOD = 10000;
 	public static final double ALPHA = 0.9;
 	
