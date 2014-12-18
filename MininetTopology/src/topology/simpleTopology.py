@@ -123,7 +123,7 @@ def runNetworkClasses(net):
         print( 'Starting server %s...' % node.name )
         node.cmd('java -jar network/server/CsdDBServer.jar ' + str(i+7) + ' &> logs/' + node.name + '.txt &')
         
-    #time.sleep(5)        
+    time.sleep(1)        
     # Starting clients...
 
     #print( 'Starting client %s...' % c1_1.name )

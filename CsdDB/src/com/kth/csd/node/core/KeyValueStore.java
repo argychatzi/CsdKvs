@@ -26,27 +26,13 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 	private static final long serialVersionUID = 1L;
 	private static final String TAG = KeyValueStore.class.getCanonicalName();
 	private Timer mFlushToDiskTimer = new Timer();
-	private Timer mStatisticsTimer = new Timer(); 
 	protected File mDatabaseFile;
-	private int mWriteOperationsPerformedSoFar;
-	private int mWriteOperationsPerSecond;
 	private Gson mGson;
-	private static ConnectionMetaData connectionMetaData;
-	private static AbstractNetworkMessage abstractNetworkMessage;
-	private static OperationReadMessage operationReadMessage;
-	
-	//private static NodeFarm nodeFarm;
-	
 	private static KeyValueStore sKeyValueStore;
-	
-	private String writingClientIP; 
-	private static HashMap <String, Integer> ycsbClientsStatisticsMapSoFar = new HashMap <String, Integer> ();
-	public static HashMap <String, Integer> ycsbClientsStatisticsMapPerSecond = new HashMap <String, Integer>();
-	public static HashMap <String, Double> ycsbClientsStatisticsMapPerSecondWithEma = new HashMap <String, Double>();
-	
+
 	private KeyValueStore(){
+
 		mFlushToDiskTimer.scheduleAtFixedRate(new FlushToDisk(sKeyValueStore), 0, Constants.FLUSH_TO_DISK_PERIOD);
-		mStatisticsTimer.schedule(new OperationsPerSecond(),0, OperationsPerSecond.ONE_SECOND);
 		mGson = new Gson();
 		
 		String databaseFile = ApplicationContext.getOwnInternalConnection().getHost() + ".txt";
@@ -100,69 +86,6 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 			e.printStackTrace();
 		}
 		return value;
-	}
-	
-	
-	//casting keyvalueEntry to AbstractNetworkMessage
-	public AbstractNetworkMessage updateSlaveNodes(String key, HashMap<String, String> value){
-	KeyValueEntry keyValueEntry = new KeyValueEntry(key, value);
-	OperationWriteMessage operationWriteMessage = new OperationWriteMessage(keyValueEntry);
-		return operationWriteMessage;
-	}
-	
-	public void updateWritingClientIP(String currentlyWritingClientIP){
-	this.writingClientIP = currentlyWritingClientIP;
-}
-
-	public HashMap <String, Integer> getYcsbClientsStatisticsMapSoFar(){
-	return ycsbClientsStatisticsMapSoFar;
-}
-	public String getWritingClientIP(){
-	return writingClientIP;
-}
-
-// getter for delay cost calculation for a node
-	public static HashMap<String, Integer> getycsbClientWritePerSecStatistics(){
-	return ycsbClientsStatisticsMapPerSecond;
-}
-
-	public static HashMap<String, Double> getycsbClientWritePerSecStatisticsMapWithEma(){
-    HashMap<String, Integer> tempHashMap = new HashMap<String, Integer>();
-    tempHashMap = getycsbClientWritePerSecStatistics();
-    ExponentialMovingAverage exponentialMovingAverage = new ExponentialMovingAverage();
-    
-    for (String key: tempHashMap.keySet()){
-    	double movingAverageValue = exponentialMovingAverage.exponentialMovingAverage(tempHashMap.get(key));
-    	ycsbClientsStatisticsMapPerSecondWithEma.put(key, movingAverageValue);
-    }
-	return ycsbClientsStatisticsMapPerSecondWithEma;
-}
-
-
-	public class OperationsPerSecond extends TimerTask{
-
-		public static final int ONE_SECOND = 999;
-
-		@Override
-		public void run() {
-			
-			ArrayList<Integer> tempOperations = new ArrayList<Integer>();
-			int counter=0;
-			for(String key:ycsbClientsStatisticsMapSoFar.keySet()){
-				tempOperations.add(getYcsbClientsStatisticsMapSoFar().get(key));
-			}
-			try {
-				Thread.sleep(ONE_SECOND);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-	
-			for(String key:ycsbClientsStatisticsMapSoFar.keySet()){
-	
-				ycsbClientsStatisticsMapPerSecond.put(key, getYcsbClientsStatisticsMapSoFar().get(key)-tempOperations.get(counter));	
-				counter++;
-			}
-		}
 	}
 	
 	private class FlushToDisk extends TimerTask{

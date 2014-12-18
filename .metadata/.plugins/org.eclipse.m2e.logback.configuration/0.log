@@ -966,3 +966,7 @@ java.lang.NullPointerException: null
 2014-12-13 20:31:33,510 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ahmed/ProjectFinal/ik2200/ycsb/YCSB-master/csd/src/test/resources
 >>>>>>> Stashed changes
 >>>>>>> 4e6a7bd4c166993e65c101eace673b31305c2422
+2014-12-16 20:03:36,692 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-16 20:03:36,695 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/ycsb/YCSB-master/csd/src/main/resources
+2014-12-16 20:03:36,697 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-16 20:03:36,697 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/anargyros.chatzaras/Documents/Development/Workspaces/Personal/ik2200/ycsb/YCSB-master/csd/src/test/resources

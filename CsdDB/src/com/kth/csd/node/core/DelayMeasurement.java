@@ -31,7 +31,7 @@ public class DelayMeasurement {
 +	  Output is returned using two methods  getResultsString or getResultsList
 +	  Output format NodeIP IP1:Delay,IP2:Delay,IP3:Delay i.e.  1.1.1.1 google.com:3,facebook.com:142,bbc.com:44
 +	 */
-	public static int CalculateDelayFromSlaveToClientNode(ArrayList<String> clientsIPString) {
+	public static int calculateDelayFromSlaveToClientNode(ArrayList<String> clientsIPString) {
 
 
 		try {

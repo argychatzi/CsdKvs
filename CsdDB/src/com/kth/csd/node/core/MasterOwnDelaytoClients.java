@@ -14,20 +14,17 @@ public static HashMap<String, Double> calculatDelayToYCSB() {
 	
 	HashMap<String, Double> delayResultsHashmap = new HashMap<String, Double>();
 	
-		if (!(ApplicationContext.getYcsbIPs()==null)){
-			ArrayList<String> ListOfYcsbClients = ApplicationContext.getYcsbIPs();
-			if (!MasteremaStateObj.equals(null)){
-				Logger.d(TAG, "EWMA Master Object");
-				MasteremaStateObj = new ExponentialMovingAverageExpanded(Constants.ALPHA, ListOfYcsbClients);
-			}
-			Logger.d(TAG, "Master pinging client");
-			DelayMeasurement.CalculateDelayFromSlaveToClientNode(ListOfYcsbClients);
-			masteremaResults = MasteremaStateObj.calculatExponentialMovingAverage(DelayMeasurement.getDelayResultsHashmap());
-			delayResultsHashmap = DelayMeasurement.getDelayResultsHashmap();		
-		}
-		
+//		if (!(ApplicationContext.getYcsbIPs()==null)){
+//			ArrayList<String> ListOfYcsbClients = ApplicationContext.getYcsbIPs();
+//			if (!MasteremaStateObj.equals(null)){
+//				Logger.d(TAG, "EWMA Master Object");
+//				MasteremaStateObj = new ExponentialMovingAverageExpanded(Constants.ALPHA, ListOfYcsbClients);
+//			}
+//			Logger.d(TAG, "Master pinging client");
+//			DelayMeasurement.CalculateDelayFromSlaveToClientNode(ListOfYcsbClients);
+//			masteremaResults = MasteremaStateObj.calculatExponentialMovingAverage(DelayMeasurement.getDelayResultsHashmap());
+//			delayResultsHashmap = DelayMeasurement.getDelayResultsHashmap();		
+//		}
 		return delayResultsHashmap;
-			
-		
 	}
 }
