@@ -71,23 +71,23 @@ public class DelayMeasurement {
 						}
 						lines += inputLine;
 					}
-
 					incoming.close();
+					if(timeString[0]!=null){				
+						//Change the unit from ms to us
+						Double convertstringtodouble = Double.parseDouble(timeString[0])*1000;			
+						rawDelay.put(clientIP, convertstringtodouble);
+						Logger.d(TAG, "time="+convertstringtodouble);
+					}
+					else {
+						Logger.d(TAG, "time not found");
+						rawDelay.put(clientIP, TIME_NOT_FOUND_VALUE);
+					}
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}			
 
-				if(timeString[0]!=null){				
-					//Change the unit from ms to us
-					Double convertstringtodouble = Double.parseDouble(timeString[0])*1000;			
-					rawDelay.put(clientIP, convertstringtodouble);
-					Logger.d(TAG, "time="+convertstringtodouble);
-				}
-				else {
-					Logger.d(TAG, "time not found");
-					rawDelay.put(clientIP, TIME_NOT_FOUND_VALUE);
-				}
+
 			}
 
 		}
