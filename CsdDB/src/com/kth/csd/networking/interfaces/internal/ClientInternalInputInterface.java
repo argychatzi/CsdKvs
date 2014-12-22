@@ -36,11 +36,11 @@ public class ClientInternalInputInterface extends IoHandlerAdapter implements Io
 				HashMap<String, Double> ycsbclientsRttMapFromSlave = ((StatisticsResultMessage)response).getResultsOfDelayMeasurement();	
 				String remoteIp = ConnectionMetaData.generateConnectionMetadaForRemoteEntityInSession(session).getHost();
 				Logger.d(TAG,"messageReceived STATISTICS_RES from: " + remoteIp + ":::" + ((StatisticsResultMessage)response).toString() );
-
-				if(remoteIp.equals("192.168.0.5")) {
-					ycsbclientsRttMapFromSlave.put("192.168.0.1", 0.01);
-				}
-				
+				Logger.d(TAG,"ycsbclientsRttMapFromSlave"+ycsbclientsRttMapFromSlave);
+		
+				//TODO Add master RTT to the hashmap
+				Logger.d(TAG,"ycsbclientsRttMapFromSlave"+ycsbclientsRttMapFromSlave.toString());
+				//Input the RTT, Calculate the cost, and put it into mNodeWithDelayCostMap
 				storeDelayStatisticsForNode(ycsbclientsRttMapFromSlave, remoteIp);
 				break;
 			}
@@ -49,11 +49,14 @@ public class ClientInternalInputInterface extends IoHandlerAdapter implements Io
 	
 	private void storeDelayStatisticsForNode(HashMap<String, Double> ycsbclientsRttMapFromSlave, String slaveIp){		
 		//TODO revert!
-		double cost = CostFunctionCalculator.calculateCostForNode(ycsbclientsRttMapFromSlave);
-		ApplicationContext.updateNodeWithDelayCostMap(slaveIp, cost);
-		
-		
-		Logger.d(TAG, "storeDelayStatisticsForNode:  "+ slaveIp + " has delay cost "+ cost);
+		double cost=0;
+		HashMap<String, Double> throuputMap = ApplicationContext.getmYcsbClientsStatisticsMapPerSecondWithEma();
+		if(ycsbclientsRttMapFromSlave!=null && throuputMap!=null){
+			cost = CostFunctionCalculator.calculateCostForNode(ycsbclientsRttMapFromSlave,throuputMap);
+			ApplicationContext.updateNodeWithDelayCostMap(slaveIp, cost);
+			Logger.d(TAG, "storeDelayStatisticsForNode:  "+ slaveIp + " has delay cost "+ cost);
+		}	
+
 	}
 	
 	@Override

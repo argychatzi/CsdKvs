@@ -20,12 +20,12 @@ import com.kth.csd.node.operation.KeyValueEntry;
 import com.kth.csd.utils.Logger;
 
 public class ServerExternalInputInterface extends IoHandlerAdapter implements IoHandler, ExecutionResultCommunicator{
-	
+
 	private static final String TAG = ServerExternalInputInterface.class.getCanonicalName();
 
 	public HashSet <String> updatedYCSBClientList = new HashSet <String>();
 	public static ArrayList <String> ycsbClientsList = new ArrayList<String>();	
-	
+
 	public ServerExternalInputInterface() {
 		Logger.d(TAG, "ExternalTrafficInputInterface ... created");
 	}
@@ -37,43 +37,44 @@ public class ServerExternalInputInterface extends IoHandlerAdapter implements Io
 
 	@Override
 	public void messageReceived(IoSession session, Object message) throws Exception {
-		
+
 		AbstractNetworkMessage response = (AbstractNetworkMessage) message;
 		KeyValueEntry keyValueEntry = null;
-		
+
 		AbstractNetworkMessage executionResult = null;
 
 		switch(response.getType()){
-			case OPERATION_READ:{
-				String ycsbClientIp = ConnectionMetaData.generateConnectionMetadaForRemoteEntityInSession(session).getHost();
-				Logger.d(TAG, "messageReceived by:" + ycsbClientIp +" OPERATION_READ" + ((OperationReadMessage)response).getKeyValueEntry());
-				keyValueEntry = ((OperationReadMessage)response).getKeyValueEntry();
-				executionResult = new KvsReader(keyValueEntry).execute();
-				break;
+		case OPERATION_READ:{
+			String ycsbClientIp = ConnectionMetaData.generateConnectionMetadaForRemoteEntityInSession(session).getHost();
+			Logger.d(TAG, "messageReceived by:" + ycsbClientIp +" OPERATION_READ" + ((OperationReadMessage)response).getKeyValueEntry());
+			keyValueEntry = ((OperationReadMessage)response).getKeyValueEntry();
+			executionResult = new KvsReader(keyValueEntry).execute();
+			break;
+		}
+
+		case OPERATION_WRITE:{
+			String ycsbClientIp = ConnectionMetaData.generateConnectionMetadaForRemoteEntityInSession(session).getHost();
+			Logger.d(TAG, "messageReceived by:" + ycsbClientIp +" OPERATION_WRITE" + ((OperationWriteMessage)response).getKeyValueEntry());			
+
+			if(ApplicationContext.isMaster()) {
+				Logger.d(TAG, "performing write");
+				keyValueEntry = ((OperationWriteMessage)response).getKeyValueEntry();
+				ApplicationContext.addIpToYcsbWritingIPs(ycsbClientIp); 
+				executionResult = new KvsWriter(keyValueEntry, ycsbClientIp).execute();
+			} else {
+				Logger.d(TAG, "Received request by " + ycsbClientIp + " I am no longer the master");
+				executionResult = new MasterMovedMessage(ApplicationContext.getMasterInternalConnection(), ApplicationContext.getMasterExternalConnection());
 			}
-		
-			case OPERATION_WRITE:{
-				String ycsbClientIp = ConnectionMetaData.generateConnectionMetadaForRemoteEntityInSession(session).getHost();
-				Logger.d(TAG, "messageReceived by:" + ycsbClientIp +" OPERATION_WRITE" + ((OperationWriteMessage)response).getKeyValueEntry());
-				if(ApplicationContext.isMaster()) {
-					Logger.d(TAG, "performing write");
-					keyValueEntry = ((OperationWriteMessage)response).getKeyValueEntry();
-					ApplicationContext.addIpToYcsbWritingIPs(ycsbClientIp); 
-					executionResult = new KvsWriter(keyValueEntry, ycsbClientIp).execute();
-				} else {
-					Logger.d(TAG, "Received request by " + ycsbClientIp + " I am no longer the master");
-					executionResult = new MasterMovedMessage(ApplicationContext.getMasterInternalConnection(), ApplicationContext.getMasterExternalConnection());
-				}
-				break;
-			}
+			break;
+		}
 		}
 		session.write(executionResult);
 	}
-	
+
 
 	@Override
 	public void excutionFinished(KeyValueEntry entry) {
-//		IoSession session = mSessionVault.get(entry);
-//		session.write(entry);
+		//		IoSession session = mSessionVault.get(entry);
+		//		session.write(entry);
 	}
 }

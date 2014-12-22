@@ -7,6 +7,7 @@ import java.util.HashMap;
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;
 
+import com.codahale.metrics.EWMA;
 import com.kth.csd.node.Constants;
 import com.kth.csd.node.core.DelayMeasurement;
 import com.kth.csd.networking.ConnectionMetaData;
@@ -18,7 +19,6 @@ import com.kth.csd.networking.messages.OperationWriteMessage;
 import com.kth.csd.networking.messages.StatisticsRequestMessage;
 import com.kth.csd.networking.messages.StatisticsResultMessage;
 import com.kth.csd.node.core.ApplicationContext;
-import com.kth.csd.node.core.ExponentialMovingAverageExpanded;
 import com.kth.csd.node.core.NodeFarm;
 import com.kth.csd.node.executors.KvsReader;
 import com.kth.csd.node.executors.KvsWriter;
@@ -31,6 +31,7 @@ import com.kth.csd.utils.Logger;
 public class ServerInternalInputInterface extends IoHandlerAdapter{
 	
 	private static final String TAG = ServerInternalInputInterface.class.getCanonicalName();
+	
 	
 	@Override
 	public void exceptionCaught(IoSession session, Throwable cause) throws Exception {
@@ -49,9 +50,17 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 					Logger.d(TAG, "list of clients::  " + listOfYcsbClients);
 					
 					//TODO#Ahmed call your class (the one that executes the ping command and collects the result)
-					
-					HashMap<String,Double> delayResultsHashmap = mockLinkDelays(listOfYcsbClients);
-					StatisticsResultMessage statisticsResults = new StatisticsResultMessage (delayResultsHashmap);
+					if(ApplicationContext.getIsFirstTimeMeasuringRTT()){
+						ApplicationContext.setFirstTimeMeasuringRTT(false);
+						ApplicationContext.ewmaKeeper = new HashMap <String, EWMA> ();
+					}
+					DelayMeasurement measurement = new DelayMeasurement();
+					HashMap<String,Double> rawDelay = measurement.pingAndGetDelay(listOfYcsbClients);	
+					Logger.d(TAG,"rawDelay"+ rawDelay.toString());
+					HashMap<String,Double> processedDelay = measurement.getProcessedDelay(rawDelay);
+					Logger.d(TAG,"processedDelay"+ processedDelay.toString());
+//					HashMap<String,Double> delayResultsHashmap = mockLinkDelays(listOfYcsbClients);
+					StatisticsResultMessage statisticsResults = new StatisticsResultMessage (processedDelay);
 					session.write(statisticsResults);
 				}
 				break;
@@ -73,7 +82,7 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 				break;
 			}
 			case OPERATION_WRITE:{
-				Logger.d(TAG,"messageReceived OPERATION_WRITE: "+((OperationWriteMessage)response).toString());
+				//Logger.d(TAG,"messageReceived OPERATION_WRITE: "+((OperationWriteMessage)response).toString());
 				ConnectionMetaData connectionMetaData = ConnectionMetaData.generateConnectionMetadaForRemoteEntityInSession(session);
 				if(ApplicationContext.connectionMetadatBelongsToMasterInternal(connectionMetaData)){
 					KeyValueEntry keyValueEntry = ((OperationWriteMessage)message).getKeyValueEntry();
@@ -84,18 +93,18 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 		}
 	}
 
-	private HashMap<String, Double> mockLinkDelays(ArrayList<String> listOfYcsbClients) {
-		HashMap<String, Double> result = new HashMap<String, Double>();
-		for(int i=0; i < listOfYcsbClients.size(); i++){
-			if( i > 1){
-				result.put(listOfYcsbClients.get(i), i*0.1);
-			} else {
-				result.put(listOfYcsbClients.get(i), 10.00);
-			}
-		}
-		Logger.d(TAG, "mockLinkDelays -result" + result);
-		return result;
-	}
+//	private HashMap<String, Double> mockLinkDelays(ArrayList<String> listOfYcsbClients) {
+//		HashMap<String, Double> result = new HashMap<String, Double>();
+//		for(int i=0; i < listOfYcsbClients.size(); i++){
+//			if( i > 1){
+//				result.put(listOfYcsbClients.get(i), i*0.1);
+//			} else {
+//				result.put(listOfYcsbClients.get(i), 10.00);
+//			}
+//		}
+//		Logger.d(TAG, "mockLinkDelays -result" + result);
+//		return result;
+//	}
 }
 
 

@@ -1,92 +1,468 @@
-1:51:5:574:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile8
-1:51:5:813:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_8.json
-1:51:5:992:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_8.json
-1:51:6:82:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile jsonObject{"masterInternal":{"host":"192.168.0.2","port":5000},"masterExternal":{"host":"192.168.0.2","port":6000},"ownInternal":{"host":"192.168.0.11","port":5000},"ownExternal":{"host":"192.168.0.11","port":6000},"nodes":[{"host":"192.168.0.3","port":5000},{"host":"192.168.0.4","port":5000},{"host":"192.168.0.5","port":5000},{"host":"192.168.0.7","port":5000},{"host":"192.168.0.8","port":5000},{"host":"192.168.0.10","port":5000},{"host":"192.168.0.12","port":5000},{"host":"192.168.0.13","port":5000}]}
-1:51:7:86:::com.kth.csd.node.core.KvsNode:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.2, port=6000]
-1:51:7:86:::com.kth.csd.node.core.KvsNode:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.2, port=5000]
+7:46:13:613:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile8
+7:46:13:680:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_8.json
+7:46:13:724:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_8.json
+7:46:13:763:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile jsonObject{"masterInternal":{"host":"192.168.0.2","port":5000},"masterExternal":{"host":"192.168.0.2","port":6000},"ownInternal":{"host":"192.168.0.11","port":5000},"ownExternal":{"host":"192.168.0.11","port":6000},"nodes":[{"host":"192.168.0.3","port":5000},{"host":"192.168.0.4","port":5000},{"host":"192.168.0.5","port":5000},{"host":"192.168.0.7","port":5000},{"host":"192.168.0.8","port":5000},{"host":"192.168.0.10","port":5000},{"host":"192.168.0.12","port":5000},{"host":"192.168.0.13","port":5000}]}
+7:46:14:113:::com.kth.csd.node.core.KvsNode:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.2, port=6000]
+7:46:14:114:::com.kth.csd.node.core.KvsNode:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.2, port=5000]
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-handler=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@7b8d343a
+handler=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@5d3892b3
 acceptor after bind=(nio socket acceptor: localAddress(es): [/0:0:0:0:0:0:0:0:5000], managedSessionCount: 0)
-1:51:8:210:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::ExternalTrafficInputInterface ... created
-handler=com.kth.csd.networking.interfaces.external.ServerExternalInputInterface@cea9d22
+7:46:14:745:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::ExternalTrafficInputInterface ... created
+handler=com.kth.csd.networking.interfaces.external.ServerExternalInputInterface@4173b223
 acceptor after bind=(nio socket acceptor: localAddress(es): [/0:0:0:0:0:0:0:0:6000], managedSessionCount: 0)
-1:51:8:228:::com.kth.csd.node.core.KvsNode:::MY IP is ConnectionMetaData [host=192.168.0.11, port=5000]
-1:51:18:248:::com.kth.csd.node.core.KvsNode:::generateNodeFarm [ConnectionMetaData [host=192.168.0.3, port=5000], ConnectionMetaData [host=192.168.0.4, port=5000], ConnectionMetaData [host=192.168.0.5, port=5000], ConnectionMetaData [host=192.168.0.7, port=5000], ConnectionMetaData [host=192.168.0.8, port=5000], ConnectionMetaData [host=192.168.0.10, port=5000], ConnectionMetaData [host=192.168.0.12, port=5000], ConnectionMetaData [host=192.168.0.13, port=5000]]
-1:51:18:672:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@7535942c
-1:51:19:534:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.3:5000
-1:51:19:534:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.3 port No. 5000
-1:51:19:568:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@3d301f04
-1:51:19:649:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.4:5000
-1:51:19:649:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.4 port No. 5000
-1:51:19:700:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@519fbfd6
-1:51:19:788:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.5:5000
-1:51:19:788:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.5 port No. 5000
-1:51:19:899:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@53395472
-1:51:19:971:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.7:5000
-1:51:19:972:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.7 port No. 5000
-1:51:19:990:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@6ed2a49d
-1:51:20:36:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.8:5000
-1:51:20:45:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.8 port No. 5000
-1:51:20:63:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@4351aa16
-1:51:20:76:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.10:5000
-1:51:20:76:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.10 port No. 5000
-1:51:20:85:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@72d876d9
-1:51:20:90:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.12:5000
-1:51:20:91:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.12 port No. 5000
-1:51:20:101:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@6634c748
-1:51:20:109:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.13:5000
-1:51:20:109:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.13 port No. 5000
-1:51:20:885:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[]]
-1:51:20:890:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  []
-1:51:20:890:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::mockLinkDelays -result{}
-1:51:21:10:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived MASTER_MOVED: MasterMovedMessage [mData=MasterConnections [internalConnection=ConnectionMetaData [host=192.168.0.5, port=5000], externalConnection=ConnectionMetaData [host=192.168.0.5, port=6000]]]
-1:51:21:20:::com.kth.csd.node.core.KvsNode:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.5, port=6000]
-1:51:21:21:::com.kth.csd.node.core.KvsNode:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.5, port=5000]
-1:51:24:609:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived MASTER_MOVED: MasterMovedMessage [mData=MasterConnections [internalConnection=ConnectionMetaData [host=192.168.0.4, port=5000], externalConnection=ConnectionMetaData [host=192.168.0.4, port=6000]]]
-1:51:24:609:::com.kth.csd.node.core.KvsNode:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.4, port=6000]
-1:51:24:610:::com.kth.csd.node.core.KvsNode:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.4, port=5000]
-1:51:24:683:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived MASTER_MOVED: MasterMovedMessage [mData=MasterConnections [internalConnection=ConnectionMetaData [host=192.168.0.7, port=5000], externalConnection=ConnectionMetaData [host=192.168.0.7, port=6000]]]
-1:51:24:683:::com.kth.csd.node.core.KvsNode:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.7, port=6000]
-1:51:24:683:::com.kth.csd.node.core.KvsNode:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.7, port=5000]
-1:51:25:26:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived MASTER_MOVED: MasterMovedMessage [mData=MasterConnections [internalConnection=ConnectionMetaData [host=192.168.0.8, port=5000], externalConnection=ConnectionMetaData [host=192.168.0.8, port=6000]]]
-1:51:25:26:::com.kth.csd.node.core.KvsNode:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.8, port=6000]
-1:51:25:26:::com.kth.csd.node.core.KvsNode:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.8, port=5000]
-1:51:29:562:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[]]
-1:51:29:564:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  []
-1:51:29:583:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::mockLinkDelays -result{}
-1:51:29:774:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived MASTER_MOVED: MasterMovedMessage [mData=MasterConnections [internalConnection=ConnectionMetaData [host=192.168.0.10, port=5000], externalConnection=ConnectionMetaData [host=192.168.0.10, port=6000]]]
-1:51:29:775:::com.kth.csd.node.core.KvsNode:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.10, port=6000]
-1:51:29:775:::com.kth.csd.node.core.KvsNode:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.10, port=5000]
-1:51:30:44:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[]]
-1:51:30:45:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  []
-1:51:30:45:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::mockLinkDelays -result{}
-1:51:30:74:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived MASTER_MOVED: MasterMovedMessage [mData=MasterConnections [internalConnection=ConnectionMetaData [host=192.168.0.11, port=5000], externalConnection=ConnectionMetaData [host=192.168.0.11, port=6000]]]
-1:51:30:74:::com.kth.csd.node.core.KvsNode:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.11, port=6000]
-1:51:30:74:::com.kth.csd.node.core.KvsNode:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.11, port=5000]
-1:51:30:120:::com.kth.csd.node.core.NodeFarm:::broadCast : StatisticsRequestMessage [mData=[]]
-1:51:30:122:::com.kth.csd.node.executors.MasterSelector:::node 192.168.0.11compares 192.168.0.11 and 192.168.0.12
-1:51:30:123:::com.kth.csd.node.executors.MasterSelector:::broadcast
-1:51:30:127:::com.kth.csd.node.executors.MasterSelector:::selectNewMasterAndBrodcastAPossibleUpdate: currentMaster: 192.168.0.11newMaster 192.168.0.12
-1:51:30:128:::com.kth.csd.node.executors.MasterSelector:::New master elected, switching ips
-1:51:30:128:::com.kth.csd.node.core.NodeFarm:::broadCast : MasterMovedMessage [mData=MasterConnections [internalConnection=ConnectionMetaData [host=192.168.0.12, port=5000], externalConnection=ConnectionMetaData [host=192.168.0.12, port=6000]]]
-1:51:30:156:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.4:::StatisticsResultMessage [mData={}]
-1:51:30:162:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.4 has delay cost 10.0
-1:51:30:180:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.7:::StatisticsResultMessage [mData={}]
-1:51:30:181:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.7 has delay cost 10.0
-1:51:30:190:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.8:::StatisticsResultMessage [mData={}]
-1:51:30:190:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.8 has delay cost 10.0
-1:51:30:191:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.3:::StatisticsResultMessage [mData={}]
-1:51:30:192:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.3 has delay cost 10.0
-1:51:30:193:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.5:::StatisticsResultMessage [mData={}]
-1:51:30:193:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.5 has delay cost 10.0
-1:51:30:208:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.10:::StatisticsResultMessage [mData={}]
-1:51:30:208:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.10 has delay cost 10.0
-1:51:30:232:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.13:::StatisticsResultMessage [mData={}]
-1:51:30:232:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.13 has delay cost 10.0
-1:51:30:235:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::messageReceived STATISTICS_RES from: 192.168.0.12:::StatisticsResultMessage [mData={}]
-1:51:30:236:::com.kth.csd.networking.interfaces.internal.ClientInternalInputInterface:::storeDelayStatisticsForNode:  192.168.0.12 has delay cost 10.0
-1:51:35:163:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived MASTER_MOVED: MasterMovedMessage [mData=MasterConnections [internalConnection=ConnectionMetaData [host=192.168.0.2, port=5000], externalConnection=ConnectionMetaData [host=192.168.0.2, port=6000]]]
-1:51:35:163:::com.kth.csd.node.core.KvsNode:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.2, port=6000]
-1:51:35:164:::com.kth.csd.node.core.KvsNode:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.2, port=5000]
+7:46:14:772:::com.kth.csd.node.core.KvsNode:::MY IP is ConnectionMetaData [host=192.168.0.11, port=5000]
+7:46:14:773:::com.kth.csd.node.core.KvsNode:::I am Master ? false
+7:46:19:774:::com.kth.csd.node.core.KvsNode:::generateNodeFarm [ConnectionMetaData [host=192.168.0.3, port=5000], ConnectionMetaData [host=192.168.0.4, port=5000], ConnectionMetaData [host=192.168.0.5, port=5000], ConnectionMetaData [host=192.168.0.7, port=5000], ConnectionMetaData [host=192.168.0.8, port=5000], ConnectionMetaData [host=192.168.0.10, port=5000], ConnectionMetaData [host=192.168.0.12, port=5000], ConnectionMetaData [host=192.168.0.13, port=5000]]
+7:46:21:335:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@4e0517dc
+7:46:21:483:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.3:5000
+7:46:21:483:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.3 port No. 5000
+7:46:21:576:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@3f36f39e
+7:46:21:605:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.4:5000
+7:46:21:605:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.4 port No. 5000
+7:46:21:611:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@11c2b60e
+7:46:21:625:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.5:5000
+7:46:21:625:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.5 port No. 5000
+7:46:21:627:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@4627e2d8
+7:46:21:654:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.7:5000
+7:46:21:654:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.7 port No. 5000
+7:46:21:662:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@52675236
+7:46:21:679:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.8:5000
+7:46:21:682:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.8 port No. 5000
+7:46:21:684:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@711aed03
+7:46:21:695:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.10:5000
+7:46:21:695:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.10 port No. 5000
+7:46:21:699:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@7d83be38
+7:46:21:703:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.12:5000
+7:46:21:703:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.12 port No. 5000
+7:46:21:705:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@7ab2f62
+7:46:21:721:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.13:5000
+7:46:21:722:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.13 port No. 5000
+7:46:41:970:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1]]
+7:46:41:970:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1]
+7:46:42:315:::DelayMeasurement:::time=19300.0
+7:46:42:316:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.1=19300.0}
+7:46:42:326:::DelayMeasurement:::processedDelayIP doesn't exit in the keeper, adding192.168.0.1
+7:46:44:980:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.1=19300.0}
+7:46:51:901:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1]]
+7:46:51:902:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1]
+7:46:51:907:::DelayMeasurement:::time=534.0
+7:46:51:908:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.1=534.0}
+7:46:51:909:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:46:51:922:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.1=2410.6}
+7:47:1:910:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1]]
+7:47:1:910:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1]
+7:47:1:916:::DelayMeasurement:::time=344.0
+7:47:1:919:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.1=344.0}
+7:47:1:919:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:47:1:920:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.1=550.66}
+7:47:11:901:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1]]
+7:47:11:901:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1]
+7:47:11:906:::DelayMeasurement:::time=470.0
+7:47:11:906:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.1=470.0}
+7:47:11:907:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:47:11:907:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.1=478.066}
+7:47:21:899:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1]]
+7:47:21:900:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1]
+7:47:21:923:::DelayMeasurement:::time=342.0
+7:47:21:924:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.1=342.0}
+7:47:21:924:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:47:21:924:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.1=355.6066}
+7:47:31:909:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1]]
+7:47:31:911:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1]
+7:47:31:927:::DelayMeasurement:::time=569.0
+7:47:31:927:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.1=569.0}
+7:47:31:927:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:47:31:928:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.1=547.66066}
+7:47:41:898:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1]]
+7:47:41:898:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1]
+7:47:41:909:::DelayMeasurement:::time=389.0
+7:47:41:909:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.1=389.0}
+7:47:41:909:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:47:41:910:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.1=404.86607}
+7:47:51:913:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1]]
+7:47:51:913:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1]
+7:47:51:935:::DelayMeasurement:::time=449.0
+7:47:51:935:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.1=449.0}
+7:47:51:936:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:47:51:936:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.1=444.58661}
+7:48:1:903:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1]]
+7:48:1:904:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1]
+7:48:1:913:::DelayMeasurement:::time=365.0
+7:48:1:913:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.1=365.0}
+7:48:1:913:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:48:1:914:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.1=372.95866}
+7:48:11:899:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1]]
+7:48:11:899:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1]
+7:48:11:908:::DelayMeasurement:::time=476.0
+7:48:11:908:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.1=476.0}
+7:48:11:909:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:48:11:909:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.1=465.69587}
+7:48:21:899:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1]]
+7:48:21:900:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1]
+7:48:21:909:::DelayMeasurement:::time=544.0
+7:48:21:909:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.1=544.0}
+7:48:21:910:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:48:21:910:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.1=536.16959}
+7:48:31:901:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1]]
+7:48:31:902:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1]
+7:48:31:916:::DelayMeasurement:::time=444.0
+7:48:31:916:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.1=444.0}
+7:48:31:917:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:48:31:917:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.1=453.21696}
+7:48:41:909:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1]]
+7:48:41:911:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1]
+7:48:41:924:::DelayMeasurement:::time=509.0
+7:48:41:925:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.1=509.0}
+7:48:41:925:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:48:41:925:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.1=503.4217}
+7:48:51:899:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1]]
+7:48:51:900:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1]
+7:48:51:913:::DelayMeasurement:::time=485.0
+7:48:51:914:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.1=485.0}
+7:48:51:915:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:48:51:915:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.1=486.84217}
+7:49:1:903:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1]]
+7:49:1:903:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1]
+7:49:1:920:::DelayMeasurement:::time=1040.0
+7:49:1:921:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.1=1040.0}
+7:49:1:921:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:49:1:922:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.1=984.68422}
+7:49:11:914:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1]]
+7:49:11:915:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1]
+7:49:12:473:::DelayMeasurement:::time=641.0
+7:49:12:474:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.1=641.0}
+7:49:12:474:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:49:12:475:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.1=675.36842}
+7:49:21:904:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1]]
+7:49:21:904:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1]
+7:49:21:911:::DelayMeasurement:::time=652.0
+7:49:21:911:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.1=652.0}
+7:49:21:911:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:49:21:912:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.1=654.33684}
+7:49:31:906:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1]]
+7:49:31:906:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1]
+7:49:31:912:::DelayMeasurement:::time=561.0
+7:49:31:912:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.1=561.0}
+7:49:31:912:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:49:31:913:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.1=570.33368}
+7:49:41:896:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1]]
+7:49:41:897:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1]
+7:49:41:902:::DelayMeasurement:::time=558.0
+7:49:41:902:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.1=558.0}
+7:49:41:902:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:49:41:903:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.1=559.23337}
+7:49:51:896:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1]]
+7:49:51:897:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1]
+7:49:51:907:::DelayMeasurement:::time=528.0
+7:49:51:908:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.1=528.0}
+7:49:51:908:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:49:51:908:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.1=531.12334}
+7:50:1:897:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:50:1:898:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:50:1:902:::DelayMeasurement:::time=458.0
+7:50:1:931:::DelayMeasurement:::time=19900.0
+7:50:1:932:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=19900.0, 192.168.0.1=458.0}
+7:50:1:932:::DelayMeasurement:::processedDelayIP doesn't exit in the keeper, adding192.168.0.6
+7:50:1:932:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:50:1:933:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=19900.0, 192.168.0.1=465.31233}
+7:50:11:895:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:50:11:896:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:50:11:905:::DelayMeasurement:::time=443.0
+7:50:11:933:::DelayMeasurement:::time=249.0
+7:50:11:933:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=249.0, 192.168.0.1=443.0}
+7:50:11:934:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:50:11:934:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:50:11:934:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=2214.1, 192.168.0.1=445.23123}
+7:50:21:904:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:50:21:905:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:50:21:925:::DelayMeasurement:::time=480.0
+7:50:21:937:::DelayMeasurement:::time=429.0
+7:50:21:938:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=429.0, 192.168.0.1=480.0}
+7:50:21:938:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:50:21:938:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:50:21:939:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=607.51, 192.168.0.1=476.52312}
+7:50:31:904:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:50:31:904:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:50:31:912:::DelayMeasurement:::time=497.0
+7:50:31:920:::DelayMeasurement:::time=400.0
+7:50:31:921:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=400.0, 192.168.0.1=497.0}
+7:50:31:921:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:50:31:921:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:50:31:922:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=420.751, 192.168.0.1=494.95231}
+7:50:41:898:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:50:41:899:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:50:41:910:::DelayMeasurement:::time=513.0
+7:50:41:916:::DelayMeasurement:::time=731.0
+7:50:41:917:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=731.0, 192.168.0.1=513.0}
+7:50:41:917:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:50:41:917:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:50:41:918:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=699.9751, 192.168.0.1=511.19523}
+7:50:51:901:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f26b81214f2, pid=15655, tid=139803940681472
+#
+# JRE version: Java(TM) SE Runtime Environment (7.0_71-b14) (build 1.7.0_71-b14)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (24.71-b01 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# C  [libc.so.6+0x1524f2]  __nss_hosts_lookup+0x1a7f2
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# An error report file with more information is saved as:
+# /home/ahmed/ProjectFinal/ik2200/MininetTopology/src/topology/hs_err_pid15655.log
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+ternal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:51:1:911:::DelayMeasurement:::time=470.0
+7:51:1:924:::DelayMeasurement:::time=313.0
+7:51:1:924:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=313.0, 192.168.0.1=470.0}
+7:51:1:925:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:51:1:925:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:51:1:926:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=329.01975, 192.168.0.1=492.01195}
+7:51:11:895:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:51:11:896:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:51:11:906:::DelayMeasurement:::time=634.0
+7:51:11:921:::DelayMeasurement:::time=407.0
+7:51:11:921:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=407.0, 192.168.0.1=634.0}
+7:51:11:921:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:51:11:922:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:51:11:922:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=399.20198, 192.168.0.1=619.8012}
+7:51:21:900:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:51:21:901:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:51:21:933:::DelayMeasurement:::time=348.0
+7:51:21:945:::DelayMeasurement:::time=410.0
+7:51:21:945:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=410.0, 192.168.0.1=348.0}
+7:51:21:946:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:51:21:946:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:51:21:946:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=408.9202, 192.168.0.1=375.18012}
+7:51:31:898:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:51:31:898:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:51:31:906:::DelayMeasurement:::time=465.0
+7:51:31:921:::DelayMeasurement:::time=263.0
+7:51:31:921:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=263.0, 192.168.0.1=465.0}
+7:51:31:921:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:51:31:922:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:51:31:922:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=277.59202, 192.168.0.1=456.01801}
+7:51:41:895:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:51:41:895:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:51:41:906:::DelayMeasurement:::time=381.0
+7:51:41:937:::DelayMeasurement:::time=392.0
+7:51:41:937:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=392.0, 192.168.0.1=381.0}
+7:51:41:937:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:51:41:938:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:51:41:938:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=380.5592, 192.168.0.1=388.5018}
+7:51:51:901:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:51:51:901:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:51:51:927:::DelayMeasurement:::time=542.0
+7:51:51:934:::DelayMeasurement:::time=423.0
+7:51:51:934:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=423.0, 192.168.0.1=542.0}
+7:51:51:935:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:51:51:935:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:51:51:935:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=418.75592, 192.168.0.1=526.65018}
+7:52:1:900:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:52:1:904:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:52:1:921:::DelayMeasurement:::time=479.0
+7:52:1:945:::DelayMeasurement:::time=409.0
+7:52:1:945:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=409.0, 192.168.0.1=479.0}
+7:52:1:946:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:52:1:947:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:52:1:948:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=409.97559, 192.168.0.1=483.76502}
+7:52:11:895:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:52:11:896:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:52:11:911:::DelayMeasurement:::time=1570.0
+7:52:11:932:::DelayMeasurement:::time=338.0
+7:52:11:933:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=338.0, 192.168.0.1=1570.0}
+7:52:11:933:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:52:11:933:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:52:11:935:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=345.19756, 192.168.0.1=1461.3765}
+7:52:21:902:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:52:21:902:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:52:21:918:::DelayMeasurement:::time=596.0
+7:52:21:928:::DelayMeasurement:::time=474.0
+7:52:21:929:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=474.0, 192.168.0.1=596.0}
+7:52:21:929:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:52:21:929:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:52:21:929:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=461.11976, 192.168.0.1=682.53765}
+7:52:31:900:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:52:31:901:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:52:31:910:::DelayMeasurement:::time=480.0
+7:52:31:918:::DelayMeasurement:::time=275.0
+7:52:31:919:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=275.0, 192.168.0.1=480.0}
+7:52:31:919:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:52:31:919:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:52:31:920:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=293.61198, 192.168.0.1=500.25377}
+7:52:41:901:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:52:41:901:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:52:41:937:::DelayMeasurement:::time=516.0
+7:52:41:964:::DelayMeasurement:::time=293.0
+7:52:41:965:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=293.0, 192.168.0.1=516.0}
+7:52:41:965:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:52:41:965:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:52:41:966:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=293.0612, 192.168.0.1=514.42538}
+7:52:51:898:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:52:51:899:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:52:51:914:::DelayMeasurement:::time=491.0
+7:52:51:930:::DelayMeasurement:::time=233.0
+7:52:51:930:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=233.0, 192.168.0.1=491.0}
+7:52:51:930:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:52:51:931:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:52:51:931:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=239.00612, 192.168.0.1=493.34254}
+7:53:1:900:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:53:1:900:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:53:1:913:::DelayMeasurement:::time=513.0
+7:53:1:918:::DelayMeasurement:::time=394.0
+7:53:1:919:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=394.0, 192.168.0.1=513.0}
+7:53:1:919:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:53:1:919:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:53:1:920:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=378.50061, 192.168.0.1=511.03425}
+7:53:11:902:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:53:11:902:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:53:11:914:::DelayMeasurement:::time=513.0
+7:53:12:19:::DelayMeasurement:::time=100000.0
+7:53:12:21:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=100000.0, 192.168.0.1=513.0}
+7:53:12:21:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:53:12:21:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:53:12:22:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=90037.85006, 192.168.0.1=512.80343}
+7:53:21:901:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:53:21:901:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:53:21:915:::DelayMeasurement:::time=358.0
+7:53:22:23:::DelayMeasurement:::time=100000.0
+7:53:22:24:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=100000.0, 192.168.0.1=358.0}
+7:53:22:24:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:53:22:24:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:53:22:25:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=99003.78501, 192.168.0.1=373.48034}
+7:53:31:901:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:53:31:902:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:53:31:917:::DelayMeasurement:::time=488.0
+7:53:32:25:::DelayMeasurement:::time=100000.0
+7:53:32:25:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=100000.0, 192.168.0.1=488.0}
+7:53:32:25:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:53:32:25:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:53:32:26:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=99900.3785, 192.168.0.1=476.54803}
+7:53:41:897:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:53:41:898:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:53:41:902:::DelayMeasurement:::time=515.0
+7:53:42:16:::DelayMeasurement:::time=100000.0
+7:53:42:16:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=100000.0, 192.168.0.1=515.0}
+7:53:42:17:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:53:42:18:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:53:42:18:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=99990.03785, 192.168.0.1=511.1548}
+7:53:51:903:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:53:51:903:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:53:51:918:::DelayMeasurement:::time=363.0
+7:53:52:61:::DelayMeasurement:::time=100000.0
+7:53:52:61:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=100000.0, 192.168.0.1=363.0}
+7:53:52:61:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:53:52:62:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:53:52:62:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=99999.00379, 192.168.0.1=377.81548}
+7:54:1:897:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:54:1:898:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:54:1:912:::DelayMeasurement:::time=506.0
+7:54:2:21:::DelayMeasurement:::time=100000.0
+7:54:2:22:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=100000.0, 192.168.0.1=506.0}
+7:54:2:22:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:54:2:22:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:54:2:22:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=99999.90038, 192.168.0.1=493.18155}
+7:54:11:906:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:54:11:906:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:54:11:913:::DelayMeasurement:::time=513.0
+7:54:12:17:::DelayMeasurement:::time=100000.0
+7:54:12:18:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=100000.0, 192.168.0.1=513.0}
+7:54:12:18:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:54:12:19:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:54:12:20:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=99999.99004, 192.168.0.1=511.01815}
+7:54:21:897:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:54:21:907:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:54:21:916:::DelayMeasurement:::time=387.0
+7:54:22:24:::DelayMeasurement:::time=100000.0
+7:54:22:25:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=100000.0, 192.168.0.1=387.0}
+7:54:22:25:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:54:22:25:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:54:22:26:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=99999.999, 192.168.0.1=399.40182}
+7:54:31:897:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:54:31:897:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:54:31:905:::DelayMeasurement:::time=365.0
+7:54:32:14:::DelayMeasurement:::time=100000.0
+7:54:32:14:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=100000.0, 192.168.0.1=365.0}
+7:54:32:15:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:54:32:16:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:54:32:18:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=99999.9999, 192.168.0.1=368.44018}
+7:54:41:902:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:54:41:903:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:54:41:913:::DelayMeasurement:::time=655.0
+7:54:42:25:::DelayMeasurement:::time=100000.0
+7:54:42:25:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=100000.0, 192.168.0.1=655.0}
+7:54:42:26:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:54:42:26:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:54:42:26:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=99999.99999, 192.168.0.1=626.34402}
+7:54:51:898:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:54:51:898:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:54:51:905:::DelayMeasurement:::time=494.0
+7:54:52:11:::DelayMeasurement:::time=100000.0
+7:54:52:12:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=100000.0, 192.168.0.1=494.0}
+7:54:52:12:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:54:52:14:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:54:52:15:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=100000.0, 192.168.0.1=507.2344}
+7:55:1:899:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:55:1:899:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:55:1:913:::DelayMeasurement:::time=521.0
+7:55:2:23:::DelayMeasurement:::time=100000.0
+7:55:2:24:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=100000.0, 192.168.0.1=521.0}
+7:55:2:25:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:55:2:25:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:55:2:25:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=100000.0, 192.168.0.1=519.62344}
+7:55:11:898:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:55:11:899:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:55:11:922:::DelayMeasurement:::time=463.0
+7:55:12:41:::DelayMeasurement:::time=100000.0
+7:55:12:42:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=100000.0, 192.168.0.1=463.0}
+7:55:12:42:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:55:12:42:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:55:12:43:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=100000.0, 192.168.0.1=468.66234}
+7:55:21:903:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:55:21:903:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:55:21:913:::DelayMeasurement:::time=477.0
+7:55:22:21:::DelayMeasurement:::time=100000.0
+7:55:22:22:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=100000.0, 192.168.0.1=477.0}
+7:55:22:22:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:55:22:22:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:55:22:22:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=100000.0, 192.168.0.1=476.16623}
+7:55:31:897:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:55:31:897:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:55:31:910:::DelayMeasurement:::time=410.0
+7:55:32:20:::DelayMeasurement:::time=100000.0
+7:55:32:21:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=100000.0, 192.168.0.1=410.0}
+7:55:32:21:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:55:32:22:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:55:32:22:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=100000.0, 192.168.0.1=416.61662}
+7:55:41:898:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:55:41:898:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:55:41:917:::DelayMeasurement:::time=352.0
+7:55:42:31:::DelayMeasurement:::time=100000.0
+7:55:42:31:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=100000.0, 192.168.0.1=352.0}
+7:55:42:32:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:55:42:32:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:55:42:49:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=100000.0, 192.168.0.1=358.46166}
+7:55:51:895:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:55:51:896:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:55:51:908:::DelayMeasurement:::time=523.0
+7:55:52:17:::DelayMeasurement:::time=100000.0
+7:55:52:17:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=100000.0, 192.168.0.1=523.0}
+7:55:52:17:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:55:52:18:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:55:52:18:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=100000.0, 192.168.0.1=506.54617}
+7:56:1:895:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.1, 192.168.0.6]]
+7:56:1:895:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.1, 192.168.0.6]
+7:56:1:914:::DelayMeasurement:::time=474.0
+7:56:2:25:::DelayMeasurement:::time=100000.0
+7:56:2:25:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=100000.0, 192.168.0.1=474.0}
+7:56:2:25:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+7:56:2:25:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.1
+7:56:2:26:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=100000.0, 192.168.0.1=477.25462}

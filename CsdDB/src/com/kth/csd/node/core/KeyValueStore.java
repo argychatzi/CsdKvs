@@ -103,6 +103,13 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 		}
 		
 		private void flushToDisk(){
+			if (keyValueStore==null || keyValueStore.isEmpty()){
+				Logger.d(TAG,  "keyValueStore is empty");	
+			}
+			
+			else {
+			
+			Logger.d(TAG,  "keyValueStore is not empty");
 			for (String key: keyValueStore.keySet()) {
 
 				if(key!=null && keyValueStore.get(key) != null){
@@ -125,6 +132,7 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 					}
 				}
 			}
+		}
 		}
 	}
 }

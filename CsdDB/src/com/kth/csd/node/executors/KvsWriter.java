@@ -35,10 +35,15 @@ public class KvsWriter extends KvsOperation implements KvsExecutable {
 	@Override
 	public AbstractNetworkMessage execute() {
 		Logger.d(TAG, "executing ...");
+		//Logger.d(TAG, "ApplicationContext.getKeyValueStore()" + ApplicationContext.getKeyValueStore().toString());
 		ApplicationContext.getKeyValueStore().put(mKeyValue.getKey(), mKeyValue.getValues());
+		//Logger.d(TAG, "ApplicationContext.getKeyValueStore()" + ApplicationContext.getKeyValueStore().toString());
+
 		if (ApplicationContext.isMaster()){
+			Logger.d(TAG," execute"+"I am master and I am going to incrementWriteForClientWithIp");
 			incrementWriteForClientWithIp(mYcsbclientIp); 
 			ApplicationContext.getNodeFarm().broadCast(new OperationWriteMessage(mKeyValue));
+			Logger.d(TAG,"Broadcast finished");
 		}
 		
 		return new OperationWriteMessage(mKeyValue); 
@@ -46,10 +51,22 @@ public class KvsWriter extends KvsOperation implements KvsExecutable {
 	
 	// increment the number of writes performed by ycsb clients
 	public  void incrementWriteForClientWithIp(String clientIp){
-		if(ApplicationContext.getmYcsbClientsStatisticsMapSoFar().containsKey(clientIp)){
-			ApplicationContext.updatemYcsbClientsStatisticsMapSoFar(clientIp, ApplicationContext.getmYcsbClientsStatisticsMapSoFar().get(clientIp)+1);
-		} else{
+		Logger.d(TAG,"incrementWriteForClientWithIp ApplicationContext.getmYcsbClientsStatisticsMapSoFar()"+ApplicationContext.getmYcsbClientsStatisticsMapSoFar());
+		Logger.d(TAG,"incrementWriteForClientWithIp clientIp"+clientIp);
+		//Logger.d(TAG,"ApplicationContext.getmYcsbClientsStatisticsMapSoFar().containsKey(clientIp)" + ApplicationContext.getmYcsbClientsStatisticsMapSoFar().toString());
+		HashMap<String, Integer> YCSBClientsWriteStatistics= ApplicationContext.getmYcsbClientsStatisticsMapSoFar();
+		if( YCSBClientsWriteStatistics.isEmpty()){
 			ApplicationContext.updatemYcsbClientsStatisticsMapSoFar(clientIp, 1);
+			Logger.d(TAG, "client is the first element in the list");
+		} 
+		else if(!YCSBClientsWriteStatistics.containsKey(clientIp)){
+			ApplicationContext.updatemYcsbClientsStatisticsMapSoFar(clientIp, 1);
+			Logger.d(TAG, "Client added to list");
+		}
+		else{
+			int writeStatistics= ApplicationContext.getmYcsbClientsStatisticsMapSoFar().get(clientIp)+1;
+			ApplicationContext.updatemYcsbClientsStatisticsMapSoFar(clientIp, writeStatistics);
+			Logger.d(TAG, "counter for client increased, the number of writes is = " + YCSBClientsWriteStatistics.get(clientIp));
 		}
 	}
 	

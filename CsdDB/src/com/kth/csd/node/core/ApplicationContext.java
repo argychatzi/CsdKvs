@@ -3,8 +3,11 @@ package com.kth.csd.node.core;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.codahale.metrics.EWMA;
 import com.kth.csd.networking.ConnectionMetaData;
+import com.kth.csd.networking.messages.AbstractNetworkMessage;
 import com.kth.csd.networking.messages.MasterMovedMessage;
+import com.kth.csd.networking.messages.StatisticsRequestMessage;
 import com.kth.csd.utils.Logger;
 
 public class ApplicationContext {
@@ -21,9 +24,12 @@ public class ApplicationContext {
 	private static ConnectionMetaData mMasterExternalConnection;
 	private static ConnectionMetaData mMasterInternalConnection;
 	
-	private static HashMap <String, Integer> mYcsbClientsStatisticsMapSoFar;
+	private static HashMap <String, Integer> mYcsbClientsStatisticsMapSoFar = new HashMap<String, Integer>();
 	public static HashMap <String, Integer> mYcsbClientsStatisticsMapPerSecond;
 	public static HashMap <String, Double> mYcsbClientsStatisticsMapPerSecondWithEma;
+	
+	public static HashMap <String, EWMA> ewmaKeeper;
+	public static HashMap<String,Double> masterOwnDelay;
 	
 	//TODO Ahmed remove
 	private static boolean isFirstTimeMeasuringRTT;
@@ -36,12 +42,13 @@ public class ApplicationContext {
 	}
 
 	public static void addIpToYcsbWritingIPs(String oneYcsbIP) {
+		
 		if(ipsOfWritingYcsbClients == null){
 			ipsOfWritingYcsbClients = new ArrayList<String> ();
 		}
 		if(!ipsOfWritingYcsbClients.contains(oneYcsbIP)){
-			Logger.d(TAG, "adding IP"+oneYcsbIP);
-			ApplicationContext.ipsOfWritingYcsbClients.add(oneYcsbIP);	
+			Logger.d(TAG, "addIpToYcsbWritingIPs"+oneYcsbIP);
+			ipsOfWritingYcsbClients.add(oneYcsbIP);	
 		}
 	}
 	
@@ -70,16 +77,16 @@ public class ApplicationContext {
 //	}
        
 	public static HashMap<String, Integer> getmYcsbClientsStatisticsMapSoFar() {
-		if(mYcsbClientsStatisticsMapPerSecond == null){
-			mYcsbClientsStatisticsMapPerSecond = new HashMap<String, Integer>();
-		}
+//		if(mYcsbClientsStatisticsMapPerSecond == null){
+//			mYcsbClientsStatisticsMapPerSecond = new HashMap<String, Integer>();
+//		}
 		return mYcsbClientsStatisticsMapSoFar;
 	}
 
 	public static void updatemYcsbClientsStatisticsMapSoFar(String clientIP, int writesSoFar){
-		if (mYcsbClientsStatisticsMapSoFar == null){
-			mYcsbClientsStatisticsMapSoFar = new HashMap<String, Integer>();
-		}
+//		if (mYcsbClientsStatisticsMapSoFar == null){
+//			mYcsbClientsStatisticsMapSoFar = new HashMap<String, Integer>();
+//		}
 		mYcsbClientsStatisticsMapSoFar.put(clientIP, writesSoFar);
 	}
 

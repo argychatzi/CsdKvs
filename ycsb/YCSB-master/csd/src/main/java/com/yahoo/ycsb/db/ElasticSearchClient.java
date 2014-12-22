@@ -60,8 +60,6 @@ public class ElasticSearchClient extends DB implements YcsbTrafficInputInteraceH
 			FileReader fileReader = new FileReader(System.getProperty("user.dir") + "/properties/server_ip.txt");
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
 			serverIp = bufferedReader.readLine();
-			serverIp = "192.168.0.2";
-			
 			bufferedReader.close();
 		} catch (IOException e) {
 			Logger.d(TAG, "Read from file" + e.toString());

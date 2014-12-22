@@ -21,7 +21,7 @@ import com.kth.csd.utils.Logger;
 
 public class KvsNode {
 
-	private static final int SETUP_DELAY = 10000;
+	private static final int SETUP_DELAY = 5000;
 	protected static final String TAG = KvsNode.class.getCanonicalName();
 
     public static void main(String[] args) throws IOException {
@@ -38,6 +38,7 @@ public class KvsNode {
         	startMonitoringKvsSocket(new ServerExternalInputInterface(), ApplicationContext.getOwnExternalConnection().getPort());
         	
         	Logger.d(TAG,"MY IP is " + configuration.getOwnInternalConnectionMetaData());
+        	Logger.d(TAG,"I am Master ? " + ApplicationContext.isMaster());
         	Thread thread = new Thread(){
         		public void run() {
         			try {
@@ -47,8 +48,13 @@ public class KvsNode {
 						e.printStackTrace();
 					} finally{
 						ApplicationContext.generateNodeFarm(configuration.getNodesInFarm());
-						new StatisticsCollector().startPollingFarm();			
-						new MasterSelector().execute();
+						//We need here a timer to repeat the statistics collection and master selection tasks
+						if (ApplicationContext.isMaster()){
+							Logger.d(TAG,"inside");
+							new StatisticsCollector().startPollingFarm();			
+							new MasterSelector().execute();
+						}
+						
 					}
         		}
         	};
