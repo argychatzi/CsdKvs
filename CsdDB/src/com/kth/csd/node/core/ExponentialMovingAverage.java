@@ -13,7 +13,7 @@ public class ExponentialMovingAverage {
 	private EWMA ewma;
 	
 	public ExponentialMovingAverage(){
-//		ewma = new EWMA(alpha, interval, intervalUnit); 
+		ewma = new EWMA(alpha, interval, intervalUnit); 
 	}
 	
 	public double exponentialMovingAverage(long writeperSecond){

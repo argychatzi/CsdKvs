@@ -14,6 +14,7 @@ import com.kth.csd.networking.interfaces.external.ServerExternalInputInterface;
 import com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface;
 import com.kth.csd.node.executors.MasterSelector;
 import com.kth.csd.node.executors.StatisticsCollector;
+import com.kth.csd.node.executors.WriteOperationsPerSecCollector;
 import com.kth.csd.utils.Configuration;
 import com.kth.csd.utils.ConfigurationReader;
 import com.kth.csd.utils.Logger;
@@ -53,6 +54,7 @@ public class KvsNode {
 							Logger.d(TAG,"inside");
 							new StatisticsCollector().startPollingFarm();			
 							new MasterSelector().execute();
+							new WriteOperationsPerSecCollector().execute();
 						}
 						
 					}

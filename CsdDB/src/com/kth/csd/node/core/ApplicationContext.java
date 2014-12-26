@@ -25,8 +25,8 @@ public class ApplicationContext {
 	private static ConnectionMetaData mMasterInternalConnection;
 	
 	private static HashMap <String, Integer> mYcsbClientsStatisticsMapSoFar = new HashMap<String, Integer>();
-	public static HashMap <String, Integer> mYcsbClientsStatisticsMapPerSecond;
-	public static HashMap <String, Double> mYcsbClientsStatisticsMapPerSecondWithEma;
+	public static HashMap <String, Integer> mYcsbClientsStatisticsMapPerSecond = new HashMap<String, Integer>();
+	public static HashMap <String, Double> mYcsbClientsStatisticsMapPerSecondWithEma = new HashMap <String, Double>();
 	
 	public static HashMap <String, EWMA> ewmaKeeper;
 	public static HashMap<String,Double> masterOwnDelay;

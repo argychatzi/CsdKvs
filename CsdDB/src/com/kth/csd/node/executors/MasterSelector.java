@@ -7,6 +7,7 @@ import java.util.TimerTask;
 import com.kth.csd.networking.ConnectionMetaData;
 import com.kth.csd.node.Constants;
 import com.kth.csd.node.core.ApplicationContext;
+import com.kth.csd.node.core.ExponentialMovingAverage;
 import com.kth.csd.utils.Logger;
 
 public class MasterSelector {
@@ -23,6 +24,7 @@ public class MasterSelector {
 			if(ApplicationContext.isMaster()){
 				HashMap<String, Double> nodeWithDelayCostMap = ApplicationContext.getNodeWithDelayCostMap();
 				Logger.d(TAG,"slave cost map ="+nodeWithDelayCostMap);
+				getycsbClientWritePerSecStatisticsMapWithEma();
 				if(nodeWithDelayCostMap!=null){ 
 					if(!nodeWithDelayCostMap.isEmpty()){					
 						String newMasterIp = selectNewMaster(nodeWithDelayCostMap);
@@ -92,6 +94,15 @@ public class MasterSelector {
 				return ApplicationContext.getMasterExternalConnection().getHost();
 			}
 		}
+	}
+	public void getycsbClientWritePerSecStatisticsMapWithEma(){
+	 	HashMap<String, Integer> stateSavedPerSecMap = ApplicationContext.getmYcsbClientsStatisticsMapPerSecond();
+	 	ExponentialMovingAverage exponentialMovingAverage = new ExponentialMovingAverage();
+	    for (String key: ApplicationContext.getmYcsbClientsStatisticsMapPerSecond().keySet()){
+	    	double movingAverageValue = exponentialMovingAverage.exponentialMovingAverage(stateSavedPerSecMap.get(key));
+	    	ApplicationContext.updatemYcsbClientsStatisticsMapPerSecondWithEma(key, movingAverageValue);
+	    }
+	    //Logger.d(TAG, "within the SelectNewMasterTask class and run method, updater called before delay cost calculation");
 	}
 
 
