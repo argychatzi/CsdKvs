@@ -1,5 +1,6 @@
 package com.kth.csd.node.executors;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -72,28 +73,48 @@ public class MasterSelector {
 		}
 		
 		private String selectNewMaster(HashMap<String, Double> mapOfNodeandDelay){
-			HashMap<String, Double> throuputMap = ApplicationContext.getmYcsbClientsStatisticsMapPerSecondWithEma();
+			/*HashMap<String, Double> throuputMap = ApplicationContext.getmYcsbClientsStatisticsMapPerSecondWithEma();
 			double masterDelayCost = CostFunctionCalculator.calculateCostForNode(ApplicationContext.masterOwnDelay,throuputMap);
-			Logger.d(TAG,"masterDelayCost"+masterDelayCost);
+			Logger.d(TAG,"masterDelayCost"+masterDelayCost);*/
 			
 			String masterWithMinimumDelay = null;
 			//Logger.d(TAG, "mapOfNodeandDelay" + mapOfNodeandDelay.toString());
-			if (mapOfNodeandDelay==null){
+			if (mapOfNodeandDelay==null||allEqualDelayCostChecker(mapOfNodeandDelay)){
 				return currentMasterIp;
 			}
-			for (String key: mapOfNodeandDelay.keySet() ) {
-				double value = mapOfNodeandDelay.get(key);
-				if (value < minValue) {
-					minValue = value;
-					masterWithMinimumDelay = key;
+			else{
+				for (String key: mapOfNodeandDelay.keySet() ) {
+					double value = mapOfNodeandDelay.get(key);
+					if (value < minValue) {
+						minValue = value;
+						masterWithMinimumDelay = key;
+					}
 				}
+				return masterWithMinimumDelay;
 			}
-			if (minValue< masterDelayCost) {
+			/*if (minValue< masterDelayCost) {
 				return masterWithMinimumDelay;
 			} else {
 				return ApplicationContext.getMasterExternalConnection().getHost();
+			}*/
+		}
+	}
+	//This checker if added so that if the delay cost for every node including 
+	//the current master is the same, instead of going through the process of new
+	//master selection, it will enable us to make the current master continue as a master
+	public static boolean allEqualDelayCostChecker(HashMap<String, Double> mapOfNodeandDelay){
+		boolean flag = true;
+		ArrayList<Double> mArrayList = new ArrayList<Double>();
+		for(String key:mapOfNodeandDelay.keySet()){
+			mArrayList.add(mapOfNodeandDelay.get(key));
+		}
+		double first = mArrayList.get(0);
+		for(int i=1;i<mArrayList.size()&&flag;i++){
+			if (mArrayList.get(i)!=first){
+				flag = false;
 			}
 		}
+		return flag;
 	}
 	public void getycsbClientWritePerSecStatisticsMapWithEma(){
 	 	HashMap<String, Integer> stateSavedPerSecMap = ApplicationContext.getmYcsbClientsStatisticsMapPerSecond();
@@ -102,7 +123,7 @@ public class MasterSelector {
 	    	double movingAverageValue = exponentialMovingAverage.exponentialMovingAverage(stateSavedPerSecMap.get(key));
 	    	ApplicationContext.updatemYcsbClientsStatisticsMapPerSecondWithEma(key, movingAverageValue);
 	    }
-	    //Logger.d(TAG, "within the SelectNewMasterTask class and run method, updater called before delay cost calculation");
+	    //Logger.d(TAG, "SelectNewMasterTask, updater called before delay cost calculation");
 	}
 
 

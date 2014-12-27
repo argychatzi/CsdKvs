@@ -51,6 +51,14 @@ public class ClientInternalInputInterface extends IoHandlerAdapter implements Io
 		//TODO revert!
 		double cost=0;
 		HashMap<String, Double> throuputMap = ApplicationContext.getmYcsbClientsStatisticsMapPerSecondWithEma();
+		//The master delay cost should also be calculated here together with the slaves 
+		//Otherwise, calculating the master delay cost at a different time will lead to 
+		//a calculation based on different ema values of number of write operations 
+		//than the one used for the slaves which is wrong.
+		double masterDelayCost = CostFunctionCalculator.calculateCostForNode(ApplicationContext.masterOwnDelay,throuputMap);
+		Logger.d(TAG,"masterDelayCost"+masterDelayCost);
+		ApplicationContext.updateNodeWithDelayCostMap(ApplicationContext.getMasterInternalConnection().getHost(), masterDelayCost);
+		//HashMap<String, Double> throuputMap = ApplicationContext.getmYcsbClientsStatisticsMapPerSecondWithEma();
 		if(ycsbclientsRttMapFromSlave!=null && throuputMap!=null){
 			cost = CostFunctionCalculator.calculateCostForNode(ycsbclientsRttMapFromSlave,throuputMap);
 			ApplicationContext.updateNodeWithDelayCostMap(slaveIp, cost);
