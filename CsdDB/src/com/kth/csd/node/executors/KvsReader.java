@@ -24,8 +24,14 @@ public class KvsReader extends KvsOperation implements KvsExecutable {
 	public AbstractNetworkMessage execute() {
 		Logger.d(TAG, "executing ...");
 		KeyValueStore keyValueStore = ApplicationContext.getKeyValueStore();
-		HashMap<String,String> hashMap = keyValueStore.get(mKeyValue);
+		//HashMap<String,String> hashMap = keyValueStore.get(mKeyValue);
+		
+		//The argument that should have been passed to the get method of the keyvaluestore
+		//was just the key not the whole mkeyvalue. Actually this was the point that 
+		//makes every read operation unsuccessfull even if the entry is already in the store.
+		HashMap<String,String> hashMap = keyValueStore.get(mKeyValue.getKey());
 		mKeyValue.getValues().putAll(hashMap);
+		Logger.d(TAG, "After execution, the key value read is: "+mKeyValue);
 		return new OperationReadMessage(mKeyValue);
 	}
 }
