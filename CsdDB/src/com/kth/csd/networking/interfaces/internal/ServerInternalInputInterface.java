@@ -84,9 +84,18 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 			case OPERATION_WRITE:{
 				//Logger.d(TAG,"messageReceived OPERATION_WRITE: "+((OperationWriteMessage)response).toString());
 				ConnectionMetaData connectionMetaData = ConnectionMetaData.generateConnectionMetadaForRemoteEntityInSession(session);
-				if(ApplicationContext.connectionMetadatBelongsToMasterInternal(connectionMetaData)){
+				Logger.d(TAG, "messageReceived: OPERATION_WRITE, remote IP = "+connectionMetaData);
+				//The master node is using a different port than 5000. So, the remote connectionmetadata
+				//and the masterinternal connectionmetadata will never be equal. Due to this, this write operation 
+				//was never getting excuted and hence data replication was not actually being performed on the slaves
+				//if(ApplicationContext.connectionMetadatBelongsToMasterInternal(connectionMetaData)){
+				
+				//However, by just comparing the remote ip and with the master ip as it is done below,
+				//the data replication is successfully performed. 
+				if(ApplicationContext.connectionMetadataIPBelongsToMasterInternal(connectionMetaData)){
 					KeyValueEntry keyValueEntry = ((OperationWriteMessage)message).getKeyValueEntry();
 					new KvsWriter(keyValueEntry).execute();
+					Logger.d(TAG,"messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: "+keyValueEntry.toString());
 				}
 				break;
 			}

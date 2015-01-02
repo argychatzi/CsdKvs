@@ -123,13 +123,18 @@ public class ApplicationContext {
 	public static KeyValueStore getKeyValueStore() {
 		return KeyValueStore.getInstance();
 	}
-
-	public static boolean connectionMetadatBelongsToMasterExternal(ConnectionMetaData connectionMetaData){
-		return connectionMetaData.equals(mExternalConnection);
+	
+	/*public static boolean connectionMetadatBelongsToMasterExternal(ConnectionMetaData connectionMetaData){
+		//return connectionMetaData.equals(mExternalConnection);
+		return connectionMetaData.equals(mMasterExternalConnection);
 	}
 
 	public static boolean connectionMetadatBelongsToMasterInternal(ConnectionMetaData connectionMetaData){
-		return connectionMetaData.equals(mInternalConnection);
+		//return connectionMetaData.equals(mInternalConnection);
+		return connectionMetaData.equals(mMasterInternalConnection);
+	}*/
+	public static boolean connectionMetadataIPBelongsToMasterInternal(ConnectionMetaData connectionMetaData){
+		return connectionMetaData.getHost().equals(mMasterInternalConnection.getHost());
 	}
 
 	public static void generateNodeFarm(ArrayList<ConnectionMetaData> nodeIps) {

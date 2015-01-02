@@ -14,7 +14,6 @@ import com.kth.csd.utils.Logger;
 public class MasterSelector {
 
 	private static final String TAG = MasterSelector.class.getCanonicalName();
-	private static double minValue = Integer.MAX_VALUE;
 	
 	private class SelectNewMasterTask extends TimerTask{
 		public static final int SELECT_NEW_MASTER_INTERVAL = 10000;
@@ -29,6 +28,7 @@ public class MasterSelector {
 				if(nodeWithDelayCostMap!=null){ 
 					if(!nodeWithDelayCostMap.isEmpty()){					
 						String newMasterIp = selectNewMaster(nodeWithDelayCostMap);
+						Logger.d(TAG, "during comparison with last: "+newMasterIp);
 						Logger.d(TAG, "node " + currentMasterIp + "compares " + currentMasterIp + " and " + newMasterIp);
 						
 						if (!currentMasterIp.equals(newMasterIp)){
@@ -76,10 +76,11 @@ public class MasterSelector {
 			/*HashMap<String, Double> throuputMap = ApplicationContext.getmYcsbClientsStatisticsMapPerSecondWithEma();
 			double masterDelayCost = CostFunctionCalculator.calculateCostForNode(ApplicationContext.masterOwnDelay,throuputMap);
 			Logger.d(TAG,"masterDelayCost"+masterDelayCost);*/
-			
+			double minValue = Integer.MAX_VALUE;
 			String masterWithMinimumDelay = null;
-			//Logger.d(TAG, "mapOfNodeandDelay" + mapOfNodeandDelay.toString());
+			Logger.d(TAG, "mapOfNodeandDelay" + mapOfNodeandDelay.toString());
 			if (mapOfNodeandDelay==null||allEqualDelayCostChecker(mapOfNodeandDelay)){
+				Logger.d(TAG, "selectNewMaster: nodedelay map is null or all of them have equal delay");
 				return currentMasterIp;
 			}
 			else{
