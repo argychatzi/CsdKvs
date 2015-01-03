@@ -13,7 +13,7 @@ import com.kth.csd.utils.Logger;
 
 public class NodeFarm {
 	
-	private static ArrayList<KvsClient> mNodeFarm;
+	public static ArrayList<KvsClient> mNodeFarm;
 	private static final String TAG = NodeFarm.class.getCanonicalName();
 	private static NodeFarm sNodeFarm;
 	
