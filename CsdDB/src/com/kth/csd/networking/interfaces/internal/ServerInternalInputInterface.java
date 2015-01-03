@@ -24,6 +24,7 @@ import com.kth.csd.node.executors.KvsReader;
 import com.kth.csd.node.executors.KvsWriter;
 import com.kth.csd.node.executors.MasterSelector;
 import com.kth.csd.node.executors.StatisticsCollector;
+import com.kth.csd.node.executors.WriteOperationsPerSecCollector;
 import com.kth.csd.node.operation.KeyValueEntry;
 import com.kth.csd.node.operation.KvsOperation;
 import com.kth.csd.utils.Logger;
@@ -73,6 +74,17 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 				
 				ApplicationContext.setMasterExternalConnection(newMasterExternal);
 				ApplicationContext.setMasterInternalConnection(newMasterInternal);
+				
+				if (ApplicationContext.isMaster()){
+					Logger.d(TAG,"I am a new born master now and will act like a master");
+					new StatisticsCollector().startPollingFarm();			
+					new MasterSelector().execute();
+					new WriteOperationsPerSecCollector().execute();
+				}
+				else{
+					Logger.d(TAG,"I have received master moved but i am not the new master");
+				}
+				
 				break;
 			}
 			case OPERATION_READ:{

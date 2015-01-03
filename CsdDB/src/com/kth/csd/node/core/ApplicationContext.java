@@ -12,7 +12,7 @@ import com.kth.csd.utils.Logger;
 
 public class ApplicationContext {
 
-	protected static final String TAG = KvsNode.class.getCanonicalName();
+	protected static final String TAG = ApplicationContext.class.getCanonicalName();
 
 	private static NodeFarm mNodeFarm;
 	private static HashMap<String, Double>mNodeWithDelayCostMap;
