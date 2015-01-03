@@ -68,7 +68,9 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 			}
 			case MASTER_MOVED:{
 				Logger.d(TAG,"messageReceived MASTER_MOVED: "+((MasterMovedMessage)response).toString());
-
+				//The next two lines were added to include the previous master within the nodefarm so that it will also get updates
+				KvsClient client = new KvsClient(new ClientInternalInputInterface(), ApplicationContext.getMasterInternalConnection());
+				NodeFarm.mNodeFarm.add(client);
 				ConnectionMetaData newMasterInternal = ((MasterMovedMessage)message).getNewMasterInternal();
 				ConnectionMetaData newMasterExternal = ((MasterMovedMessage)message).getNewMasterExternal();
 				

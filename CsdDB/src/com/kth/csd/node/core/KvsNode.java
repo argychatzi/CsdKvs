@@ -50,12 +50,17 @@ public class KvsNode {
 					} finally{
 						ApplicationContext.generateNodeFarm(configuration.getNodesInFarm());
 						//We need here a timer to repeat the statistics collection and master selection tasks
-						if (ApplicationContext.isMaster()){
+						/*if (ApplicationContext.isMaster()){
 							Logger.d(TAG,"inside");
 							new StatisticsCollector().startPollingFarm();			
 							new MasterSelector().execute();
 							new WriteOperationsPerSecCollector().execute();
-						}
+						}*/
+						//There is no need for checking isMaster condition here
+						//otherwise after master handover, these tasks won't be performed by the new master
+						new StatisticsCollector().startPollingFarm();
+						new WriteOperationsPerSecCollector().execute();
+						new MasterSelector().execute();
 						
 					}
         		}
