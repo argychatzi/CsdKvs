@@ -1,5 +1,12 @@
 #!/usr/bin/python
 
+'''
+This simpleTopology.py is used to show the demo case: (DATAREPLICATION
+client1 first try to read and fails at master Node, than client2 write at master node,
+these changes are broadcasted to the slave nodes, and then 
+client3 only reads from slave node. 
+'''
+
 from __future__ import print_function    
 from mininet.cli import CLI
 from mininet.log import setLogLevel

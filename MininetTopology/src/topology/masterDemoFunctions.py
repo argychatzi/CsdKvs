@@ -1,5 +1,8 @@
 #!/usr/bin/python
 
+'''
+This is used to show demo case2: Master Moved and Master Handover
+'''
 
 from __future__ import print_function    
 from mininet.cli import CLI
