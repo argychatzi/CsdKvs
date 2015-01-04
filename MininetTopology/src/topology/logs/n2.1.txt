@@ -1,142 +1,110 @@
-7:58:25:472:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile5
-7:58:25:599:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_5.json
-7:58:25:723:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_5.json
-7:58:25:734:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile jsonObject{"masterInternal":{"host":"192.168.0.2","port":5000},"masterExternal":{"host":"192.168.0.2","port":6000},"ownInternal":{"host":"192.168.0.7","port":5000},"ownExternal":{"host":"192.168.0.7","port":6000},"nodes":[{"host":"192.168.0.3","port":5000},{"host":"192.168.0.4","port":5000},{"host":"192.168.0.5","port":5000},{"host":"192.168.0.8","port":5000},{"host":"192.168.0.10","port":5000},{"host":"192.168.0.11","port":5000},{"host":"192.168.0.12","port":5000},{"host":"192.168.0.13","port":5000}]}
-7:58:26:209:::com.kth.csd.node.core.ApplicationContext:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.2, port=6000]
-7:58:26:209:::com.kth.csd.node.core.ApplicationContext:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.2, port=5000]
+8:30:44:490:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile5
+8:30:44:665:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_5.json
+8:30:44:892:::com.kth.csd.utils.ConfigurationReader:::loadConfiguration loading file fromproperties/configurations/configuration_5.json
+8:30:45:2:::com.kth.csd.utils.ConfigurationReader:::loadConfigurationFile jsonObject{"masterInternal":{"host":"192.168.0.2","port":5000},"masterExternal":{"host":"192.168.0.2","port":6000},"ownInternal":{"host":"192.168.0.7","port":5000},"ownExternal":{"host":"192.168.0.7","port":6000},"nodes":[{"host":"192.168.0.3","port":5000},{"host":"192.168.0.4","port":5000},{"host":"192.168.0.5","port":5000},{"host":"192.168.0.8","port":5000},{"host":"192.168.0.10","port":5000},{"host":"192.168.0.11","port":5000},{"host":"192.168.0.12","port":5000},{"host":"192.168.0.13","port":5000}]}
+8:30:45:701:::com.kth.csd.node.core.ApplicationContext:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.2, port=6000]
+8:30:45:702:::com.kth.csd.node.core.ApplicationContext:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.2, port=5000]
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-handler=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@62a16977
+handler=com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface@79374ffd
 acceptor after bind=(nio socket acceptor: localAddress(es): [/0:0:0:0:0:0:0:0:5000], managedSessionCount: 0)
-7:58:28:199:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::ExternalTrafficInputInterface ... created
-handler=com.kth.csd.networking.interfaces.external.ServerExternalInputInterface@104c89a4
+8:30:47:330:::com.kth.csd.networking.interfaces.external.ServerExternalInputInterface:::ExternalTrafficInputInterface ... created
+handler=com.kth.csd.networking.interfaces.external.ServerExternalInputInterface@6762ffa1
 acceptor after bind=(nio socket acceptor: localAddress(es): [/0:0:0:0:0:0:0:0:6000], managedSessionCount: 0)
-7:58:28:215:::com.kth.csd.node.core.KvsNode:::MY IP is ConnectionMetaData [host=192.168.0.7, port=5000]
-7:58:28:216:::com.kth.csd.node.core.KvsNode:::I am Master ? false
-7:58:33:225:::com.kth.csd.node.core.ApplicationContext:::generateNodeFarm [ConnectionMetaData [host=192.168.0.3, port=5000], ConnectionMetaData [host=192.168.0.4, port=5000], ConnectionMetaData [host=192.168.0.5, port=5000], ConnectionMetaData [host=192.168.0.8, port=5000], ConnectionMetaData [host=192.168.0.10, port=5000], ConnectionMetaData [host=192.168.0.11, port=5000], ConnectionMetaData [host=192.168.0.12, port=5000], ConnectionMetaData [host=192.168.0.13, port=5000]]
-7:58:33:247:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@1cfeaf9c
-7:58:33:449:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.3:5000
-7:58:33:450:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.3 port No. 5000
-7:58:33:466:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@35bcfced
-7:58:33:491:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.4:5000
-7:58:33:492:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.4 port No. 5000
-7:58:33:506:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@70da3e7
-7:58:33:530:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.5:5000
-7:58:33:531:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.5 port No. 5000
-7:58:33:586:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@4563f0da
-7:58:33:603:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.8:5000
-7:58:33:604:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.8 port No. 5000
-7:58:33:607:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@47a34181
-7:58:33:658:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.10:5000
-7:58:33:659:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.10 port No. 5000
-7:58:33:662:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@12f2eb18
-7:58:33:794:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.11:5000
-7:58:33:794:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.11 port No. 5000
-7:58:33:812:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@58d7330d
-7:58:33:923:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.12:5000
-7:58:33:923:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.12 port No. 5000
-7:58:33:997:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@361b90be
-7:58:34:34:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.13:5000
-7:58:34:35:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.13 port No. 5000
-8:0:15:279:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=54660]
-8:0:15:317:::com.kth.csd.node.executors.KvsWriter:::executing ...
-8:0:15:335:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user6284781860667377211, values={field1=!, field0=#}]
-8:0:15:337:::FlushToDisk:::will flush to disk
-8:0:15:337:::FlushToDisk:::keyValueStore is empty
-8:0:15:352:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=54660]
-8:0:15:353:::com.kth.csd.node.executors.KvsWriter:::executing ...
-8:0:15:366:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user6284781860667377211, values={field1= , field0=:}]
-8:0:16:371:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=54660]
-8:0:16:372:::com.kth.csd.node.executors.KvsWriter:::executing ...
-8:0:16:372:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user8517097267634966620, values={field1=8, field0==}]
-8:0:16:410:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=54660]
-8:0:16:410:::com.kth.csd.node.executors.KvsWriter:::executing ...
-8:0:16:410:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user1820151046732198393, values={field1=(, field0= }]
-8:0:16:440:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=54660]
-8:0:16:441:::com.kth.csd.node.executors.KvsWriter:::executing ...
-8:0:16:441:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user4052466453699787802, values={field1=<, field0= }]
-8:0:16:482:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=54660]
-8:0:16:483:::com.kth.csd.node.executors.KvsWriter:::executing ...
-8:0:16:483:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user3232700585171816769, values={field1=), field0=>}]
-8:0:16:523:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=54660]
-8:0:16:523:::com.kth.csd.node.executors.KvsWriter:::executing ...
-8:0:16:524:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user1000385178204227360, values={field1=9, field0=%}]
-8:0:16:566:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=54660]
-8:0:16:567:::com.kth.csd.node.executors.KvsWriter:::executing ...
-8:0:16:567:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user7697331399106995587, values={field1=0, field0=$}]
-8:0:16:658:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=54660]
-8:0:16:659:::com.kth.csd.node.executors.KvsWriter:::executing ...
-8:0:16:660:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user5465015992139406178, values={field1=5, field0=7}]
-8:0:16:743:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=54660]
-8:0:16:744:::com.kth.csd.node.executors.KvsWriter:::executing ...
-8:0:16:759:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user6873002678636213555, values={field1=(, field0=?}]
-8:0:16:812:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=54660]
-8:0:16:814:::com.kth.csd.node.executors.KvsWriter:::executing ...
-8:0:16:814:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user9105318085603802964, values={field1=3, field0=3}]
-8:0:16:856:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=54660]
-8:0:16:878:::com.kth.csd.node.executors.KvsWriter:::executing ...
-8:0:16:879:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user8517097267634966620, values={field1=-, field0= }]
-8:0:16:957:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=54660]
-8:0:16:957:::com.kth.csd.node.executors.KvsWriter:::executing ...
-8:0:16:961:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user1820151046732198393, values={field1= , field0=6}]
-8:0:17:17:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=54660]
-8:0:17:17:::com.kth.csd.node.executors.KvsWriter:::executing ...
-8:0:17:18:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user4052466453699787802, values={field1=&, field0="}]
-8:0:17:59:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=54660]
-8:0:17:60:::com.kth.csd.node.executors.KvsWriter:::executing ...
-8:0:17:60:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user3232700585171816769, values={field1=!, field0=>}]
-8:0:17:124:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=54660]
-8:0:17:125:::com.kth.csd.node.executors.KvsWriter:::executing ...
-8:0:17:125:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user1000385178204227360, values={field1=8, field0=#}]
-8:0:17:190:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=54660]
-8:0:17:190:::com.kth.csd.node.executors.KvsWriter:::executing ...
-8:0:17:191:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user7697331399106995587, values={field1=:, field0=<}]
-8:0:17:237:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=54660]
-8:0:17:237:::com.kth.csd.node.executors.KvsWriter:::executing ...
-8:0:17:238:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user5465015992139406178, values={field1=5, field0=$}]
-8:0:17:285:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=54660]
-8:0:17:285:::com.kth.csd.node.executors.KvsWriter:::executing ...
-8:0:17:285:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user6873002678636213555, values={field1=(, field0=-}]
-8:0:17:331:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=54660]
-8:0:17:331:::com.kth.csd.node.executors.KvsWriter:::executing ...
-8:0:17:332:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user9105318085603802964, values={field1=:, field0=%}]
-8:0:24:463:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.6]]
-8:0:24:464:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.6]
-8:0:24:821:::DelayMeasurement:::time=7270.0
-8:0:24:874:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=7270.0}
-8:0:24:875:::DelayMeasurement:::processedDelayIP doesn't exit in the keeper, adding192.168.0.6
-8:0:24:982:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=7270.0}
-8:0:25:333:::FlushToDisk:::will flush to disk
-8:0:25:334:::FlushToDisk:::keyValueStore is empty
-8:0:34:398:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.6]]
-8:0:34:415:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.6]
-8:0:34:615:::DelayMeasurement:::time=370.0
-8:0:34:615:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=370.0}
-8:0:34:616:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
-8:0:34:616:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=1060.0}
-8:0:34:728:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived MASTER_MOVED: MasterMovedMessage [mData=MasterConnections [internalConnection=ConnectionMetaData [host=192.168.0.10, port=5000], externalConnection=ConnectionMetaData [host=192.168.0.10, port=6000]]]
-8:0:34:870:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@7f7e9b52
-8:0:34:913:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.2:5000
-8:0:34:914:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.2 port No. 5000
-8:0:34:914:::com.kth.csd.node.core.ApplicationContext:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.10, port=6000]
-8:0:34:915:::com.kth.csd.node.core.ApplicationContext:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.10, port=5000]
-8:0:34:915:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::I have received master moved but i am not the new master
-8:0:35:334:::FlushToDisk:::will flush to disk
-8:0:35:334:::FlushToDisk:::keyValueStore is empty
-8:0:45:333:::FlushToDisk:::will flush to disk
-8:0:45:333:::FlushToDisk:::keyValueStore is empty
-8:0:55:333:::FlushToDisk:::will flush to disk
-8:0:55:333:::FlushToDisk:::keyValueStore is empty
-8:1:5:333:::FlushToDisk:::will flush to disk
-8:1:5:333:::FlushToDisk:::keyValueStore is empty
-8:1:15:333:::FlushToDisk:::will flush to disk
-8:1:15:333:::FlushToDisk:::keyValueStore is empty
-8:1:25:333:::FlushToDisk:::will flush to disk
-8:1:25:333:::FlushToDisk:::keyValueStore is empty
-8:1:35:333:::FlushToDisk:::will flush to disk
-8:1:35:334:::FlushToDisk:::keyValueStore is empty
-8:1:45:333:::FlushToDisk:::will flush to disk
-8:1:45:333:::FlushToDisk:::keyValueStore is empty
-8:1:55:333:::FlushToDisk:::will flush to disk
-8:1:55:333:::FlushToDisk:::keyValueStore is empty
+8:30:47:370:::com.kth.csd.node.core.KvsNode:::MY IP is ConnectionMetaData [host=192.168.0.7, port=5000]
+8:30:47:371:::com.kth.csd.node.core.KvsNode:::I am Master ? false
+8:30:53:782:::com.kth.csd.node.core.ApplicationContext:::generateNodeFarm [ConnectionMetaData [host=192.168.0.3, port=5000], ConnectionMetaData [host=192.168.0.4, port=5000], ConnectionMetaData [host=192.168.0.5, port=5000], ConnectionMetaData [host=192.168.0.8, port=5000], ConnectionMetaData [host=192.168.0.10, port=5000], ConnectionMetaData [host=192.168.0.11, port=5000], ConnectionMetaData [host=192.168.0.12, port=5000], ConnectionMetaData [host=192.168.0.13, port=5000]]
+8:30:53:978:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@45500f57
+8:30:54:172:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.3:5000
+8:30:54:173:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.3 port No. 5000
+8:30:54:185:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@7ff81b9e
+8:30:54:520:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.4:5000
+8:30:54:521:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.4 port No. 5000
+8:30:54:525:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@3d3da092
+8:30:54:626:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.5:5000
+8:30:54:627:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.5 port No. 5000
+8:30:55:444:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@63b9e1e7
+8:30:55:487:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.8:5000
+8:30:55:487:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.8 port No. 5000
+8:30:55:493:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@7b40aa23
+8:30:55:668:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.10:5000
+8:30:55:669:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.10 port No. 5000
+8:30:55:709:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@213651ed
+8:30:55:770:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.11:5000
+8:30:55:771:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.11 port No. 5000
+8:30:55:774:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@1c7d672a
+8:30:55:871:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.12:5000
+8:30:55:872:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.12 port No. 5000
+8:30:55:898:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@1a3174f7
+8:30:55:964:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.13:5000
+8:30:55:965:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.13 port No. 5000
+8:32:37:214:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=35979]
+8:32:37:237:::com.kth.csd.node.executors.KvsWriter:::executing ...
+8:32:37:260:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user6284781860667377211, values={field1=1, field0=1}]
+8:32:37:262:::FlushToDisk:::will flush to disk
+8:32:37:267:::FlushToDisk:::keyValueStore is empty
+8:32:38:879:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=35979]
+8:32:38:879:::com.kth.csd.node.executors.KvsWriter:::executing ...
+8:32:38:880:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user8517097267634966620, values={field1=", field0=9}]
+8:32:38:973:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=35979]
+8:32:38:974:::com.kth.csd.node.executors.KvsWriter:::executing ...
+8:32:38:974:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user1820151046732198393, values={field1=4, field0=*}]
+8:32:39:31:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=35979]
+8:32:39:32:::com.kth.csd.node.executors.KvsWriter:::executing ...
+8:32:39:32:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user4052466453699787802, values={field1=!, field0=*}]
+8:32:39:106:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=35979]
+8:32:39:107:::com.kth.csd.node.executors.KvsWriter:::executing ...
+8:32:39:107:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user3232700585171816769, values={field1=<, field0=?}]
+8:32:39:158:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=35979]
+8:32:39:158:::com.kth.csd.node.executors.KvsWriter:::executing ...
+8:32:39:160:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user1000385178204227360, values={field1=5, field0=:}]
+8:32:39:232:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=35979]
+8:32:39:232:::com.kth.csd.node.executors.KvsWriter:::executing ...
+8:32:39:233:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user7697331399106995587, values={field1=2, field0=%}]
+8:32:39:294:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=35979]
+8:32:39:294:::com.kth.csd.node.executors.KvsWriter:::executing ...
+8:32:39:295:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user5465015992139406178, values={field1=3, field0=2}]
+8:32:39:361:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=35979]
+8:32:39:361:::com.kth.csd.node.executors.KvsWriter:::executing ...
+8:32:39:362:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user6873002678636213555, values={field1=0, field0=8}]
+8:32:39:458:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, remote IP = ConnectionMetaData [host=192.168.0.2, port=35979]
+8:32:39:458:::com.kth.csd.node.executors.KvsWriter:::executing ...
+8:32:39:463:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived: OPERATION_WRITE, Data Replication on Slave Finished: KeyValueEntry [key=user9105318085603802964, values={field1=9, field0='}]
+8:32:47:259:::FlushToDisk:::will flush to disk
+8:32:48:75:::FlushToDisk:::keyValueStore is empty
+8:32:48:126:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.6]]
+8:32:48:126:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.6]
+8:32:49:928:::DelayMeasurement:::time=389000.0
+8:32:49:933:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=389000.0}
+8:32:49:933:::DelayMeasurement:::processedDelayIP doesn't exit in the keeper, adding192.168.0.6
+8:32:50:51:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=389000.0}
+8:32:56:450:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived STATISTICS_REQ : StatisticsRequestMessage [mData=[192.168.0.6]]
+8:32:56:450:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::list of clients::  [192.168.0.6]
+8:32:56:583:::DelayMeasurement:::time=1100.0
+8:32:56:584:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::rawDelay{192.168.0.6=1100.0}
+8:32:56:584:::DelayMeasurement:::processedDelayIP already exits in the keeper192.168.0.6
+8:32:56:585:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::processedDelay{192.168.0.6=39890.0}
+8:32:56:834:::com.kth.csd.networking.interfaces.internal.ServerInternalInputInterface:::messageReceived MASTER_MOVED: MasterMovedMessage [mData=MasterConnections [internalConnection=ConnectionMetaData [host=192.168.0.10, port=5000], externalConnection=ConnectionMetaData [host=192.168.0.10, port=6000]]]
+8:32:57:4:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@11e71d39
+8:32:57:166:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.2:5000
+8:32:57:167:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.2 port No. 5000
+8:32:57:167:::com.kth.csd.node.core.ApplicationContext:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.10, port=6000]
+8:32:57:167:::com.kth.csd.node.core.ApplicationContext:::assignNewMasterInternal ConnectionMetaData [host=192.168.0.10, port=5000]
+8:32:57:259:::FlushToDisk:::will flush to disk
+8:32:57:260:::FlushToDisk:::keyValueStore is empty
+8:33:7:260:::FlushToDisk:::will flush to disk
+8:33:7:260:::FlushToDisk:::keyValueStore is empty
+8:33:17:260:::FlushToDisk:::will flush to disk
+8:33:17:263:::FlushToDisk:::keyValueStore is empty
+8:33:27:260:::FlushToDisk:::will flush to disk
+8:33:27:486:::FlushToDisk:::keyValueStore is empty
+8:33:37:260:::FlushToDisk:::will flush to disk
+8:33:38:371:::FlushToDisk:::keyValueStore is empty
+8:33:47:348:::FlushToDisk:::will flush to disk
+8:33:48:39:::FlushToDisk:::keyValueStore is empty
+8:33:57:260:::FlushToDisk:::will flush to disk
+8:33:58:421:::FlushToDisk:::keyValueStore is empty
+8:34:7:970:::FlushToDisk:::will flush to disk
+8:34:10:530:::FlushToDisk:::keyValueStore is empty
+8:34:17:260:::FlushToDisk:::will flush to disk

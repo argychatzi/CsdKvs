@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite hostname="jawad-VirtualBox" name="com.yahoo.ycsb.TestByteIterator" tests="1" failures="0" timestamp="4 Jan 2015 11:38:02 GMT" time="0.071" errors="0">
-  <testcase name="testRandomByteIterator" time="0.036" classname="com.yahoo.ycsb.TestByteIterator"/>
+<testsuite hostname="jawad-VirtualBox" name="com.yahoo.ycsb.TestByteIterator" tests="1" failures="0" timestamp="4 Jan 2015 19:29:40 GMT" time="0.078" errors="0">
+  <testcase name="testRandomByteIterator" time="0.048" classname="com.yahoo.ycsb.TestByteIterator"/>
 </testsuite>
