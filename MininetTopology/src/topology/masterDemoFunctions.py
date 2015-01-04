@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+
 from __future__ import print_function    
 from mininet.cli import CLI
 from mininet.log import setLogLevel
@@ -78,8 +79,7 @@ def run():
     #CLI( net )
     
     net.stop()
-
-    
+        
 def runNetworkClasses(net):
     pathToYcsb = getYcsbPath()
 
@@ -114,35 +114,22 @@ def runNetworkClasses(net):
     # Starting clients...
 
     print( 'Starting client %s...' % c1_1.name )
-    #setServerIP( n1_1.IP() )
-    result = c1_1.cmd( pathToYcsb + '/bin/ycsb run elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_readonly &> logs/' + c1_1.name + '.txt &')
+    result = c1_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_csd &> logs/' + c1_1.name + '.txt &')
     print( 'Client result %s' % result )
 
     time.sleep(10)        
   
     print( 'Starting client %s...' % c2_1.name )    
-    #setServerIP( n2_2.IP() )
-    result = c2_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_readonly &> logs/' + c2_1.name + '.txt &')
-    #result = c2_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_readonly &> logs/' + c2_1.name + '.txt &')
+    result = c2_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_csd &> logs/' + c2_1.name + '.txt &')
     print( 'Client result %s' % result )
     
     time.sleep(10)
     print( 'Starting client %s...' % c3_1.name )
-    setServerIP( n3_3.IP() ) # setting the server ip to be 192.168.0.12
-    #setServerIP( n2_2.IP() ) # setting server ip to be n2.2 
-    
-    result = c3_1.cmd( pathToYcsb + '/bin/ycsb run elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_readonly &> logs/' + c3_1.name + '.txt')
+    result = c3_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_csd &> logs/' + c3_1.name + '.txt')
     print( 'Client result %s' % result )
     
     
     time.sleep(10)
-    
-def setServerIP(serverIP):
-    propertiesFile = 'properties/server_ip.txt'
-
-    with open(propertiesFile, 'w') as f:
-        print(serverIP, file=f)
-    f.close()
     
 def getYcsbPath():
     propertiesFile = 'properties/ycsb_path.txt'
