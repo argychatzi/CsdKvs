@@ -128,20 +128,21 @@ def runNetworkClasses(net):
 
     print( 'Starting client %s...' % c1_1.name )
     #setServerIP( n1_1.IP() )
-    result = c1_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_csd &> logs/' + c1_1.name + '.txt &')
+    result = c1_1.cmd( pathToYcsb + '/bin/ycsb run elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_readonly &> logs/' + c1_1.name + '.txt &')
     print( 'Client result %s' % result )
 
     time.sleep(10)        
   
     print( 'Starting client %s...' % c2_1.name )    
     #setServerIP( n2_2.IP() )
-    result = c2_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_csd &> logs/' + c2_1.name + '.txt &')
+    result = c2_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_readonly &> logs/' + c2_1.name + '.txt &')
+    result = c2_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_readonly &> logs/' + c2_1.name + '.txt &')
     print( 'Client result %s' % result )
     
     time.sleep(10)
     print( 'Starting client %s...' % c3_1.name )
     #setServerIP( n3_3.IP() )
-    result = c3_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_csd &> logs/' + c3_1.name + '.txt')
+    result = c3_1.cmd( pathToYcsb + '/bin/ycsb run elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_readonly &> logs/' + c3_1.name + '.txt')
     print( 'Client result %s' % result )
     
     
