@@ -76,7 +76,7 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 				
 				ApplicationContext.setMasterExternalConnection(newMasterExternal);
 				ApplicationContext.setMasterInternalConnection(newMasterInternal);
-				
+				/*
 				if (ApplicationContext.isMaster()){
 					Logger.d(TAG,"I am a new born master now and will act like a master");
 					new StatisticsCollector().startPollingFarm();			
@@ -85,7 +85,7 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 				}
 				else{
 					Logger.d(TAG,"I have received master moved but i am not the new master");
-				}
+				}*/
 				
 				break;
 			}

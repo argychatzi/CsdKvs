@@ -82,9 +82,9 @@ def run():
     #print "Testing network connectivity"
     #net.pingAll()
 
-    CLI( net )
+    #CLI( net )
     
-    #net.stop()
+    net.stop()
     
 #def compileJavaClasses(net):
     #randomHost = net.get('c1.1')
@@ -123,28 +123,29 @@ def runNetworkClasses(net):
         print( 'Starting server %s...' % node.name )
         node.cmd('java -jar network/server/CsdDBServer.jar ' + str(i+7) + ' &> logs/' + node.name + '.txt &')
         
-    time.sleep(1)        
+    time.sleep(100)        
     # Starting clients...
 
-    #print( 'Starting client %s...' % c1_1.name )
+    print( 'Starting client %s...' % c1_1.name )
     #setServerIP( n1_1.IP() )
-    #result = c1_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_csd &> logs/' + c1_1.name + '.txt &')
-    #print( 'Client result %s' % result )
+    result = c1_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_csd &> logs/' + c1_1.name + '.txt &')
+    print( 'Client result %s' % result )
 
-    #time.sleep(1)        
+    time.sleep(10)        
   
-    #print( 'Starting client %s...' % c2_1.name )    
+    print( 'Starting client %s...' % c2_1.name )    
     #setServerIP( n2_2.IP() )
-    #result = c2_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workloadc %> logs/' + c2_1.name + '.txt &')
-    #print( 'Client result %s' % result )
+    result = c2_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_csd &> logs/' + c2_1.name + '.txt &')
+    print( 'Client result %s' % result )
     
-    #print( 'Starting client %s...' % c3_1.name )
+    time.sleep(10)
+    print( 'Starting client %s...' % c3_1.name )
     #setServerIP( n3_3.IP() )
-    #result = c3_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_csd &> logs/' + c3_1.name + '.txt')
-    #print( 'Client result %s' % result )
+    result = c3_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_csd &> logs/' + c3_1.name + '.txt')
+    print( 'Client result %s' % result )
     
     
-    #time.sleep(10)
+    time.sleep(10)
     
 def setServerIP(serverIP):
     propertiesFile = 'properties/server_ip.txt'
