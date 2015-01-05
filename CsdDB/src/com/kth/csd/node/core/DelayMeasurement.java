@@ -76,7 +76,7 @@ public class DelayMeasurement {
 						//Change the unit from ms to us
 						Double convertstringtodouble = Double.parseDouble(timeString[0])*1000;			
 						rawDelay.put(clientIP, convertstringtodouble);
-						Logger.d(TAG, "time="+convertstringtodouble);
+						//Logger.d(TAG, "time="+convertstringtodouble);
 					}
 					else {
 						Logger.d(TAG, "time not found");
@@ -112,10 +112,10 @@ public class DelayMeasurement {
 		for (String clientIP : rawDelay.keySet()) {
 			if(keeper.containsKey(clientIP)){
 				ewmaObject = keeper.get(clientIP);
-				Logger.d(TAG,"processedDelay"+"IP already exits in the keeper"+clientIP );
+				//Logger.d(TAG,"processedDelay"+"IP already exits in the keeper"+clientIP );
 			}			
 			else{
-				Logger.d(TAG,"processedDelay"+"IP doesn't exit in the keeper, adding"+clientIP );
+				//Logger.d(TAG,"processedDelay"+"IP doesn't exit in the keeper, adding"+clientIP );
 				ewmaObject = new EWMA(alpha, interval, intervalUnit); 
 				keeper.put(clientIP, ewmaObject);
 			}

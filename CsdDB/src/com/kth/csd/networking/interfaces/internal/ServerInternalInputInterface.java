@@ -44,11 +44,11 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 		AbstractNetworkMessage response = (AbstractNetworkMessage) message;
 		switch(response.getType()){
 			case STATISTICS_REQ:{
-				Logger.d(TAG,"messageReceived STATISTICS_REQ : "+((StatisticsRequestMessage)response).toString());
+				//Logger.d(TAG,"messageReceived STATISTICS_REQ : "+((StatisticsRequestMessage)response).toString());
 			
 				ArrayList<String> listOfYcsbClients = ((StatisticsRequestMessage)response).getListOfYcsbClients();
 				if(listOfYcsbClients != null){
-					Logger.d(TAG, "list of clients::  " + listOfYcsbClients);
+					//Logger.d(TAG, "list of clients::  " + listOfYcsbClients);
 					
 					//TODO#Ahmed call your class (the one that executes the ping command and collects the result)
 					if(ApplicationContext.getIsFirstTimeMeasuringRTT()){
@@ -57,9 +57,9 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 					}
 					DelayMeasurement measurement = new DelayMeasurement();
 					HashMap<String,Double> rawDelay = measurement.pingAndGetDelay(listOfYcsbClients);	
-					Logger.d(TAG,"rawDelay"+ rawDelay.toString());
+					//Logger.d(TAG,"rawDelay"+ rawDelay.toString());
 					HashMap<String,Double> processedDelay = measurement.getProcessedDelay(rawDelay);
-					Logger.d(TAG,"processedDelay"+ processedDelay.toString());
+					//Logger.d(TAG,"processedDelay"+ processedDelay.toString());
 //					HashMap<String,Double> delayResultsHashmap = mockLinkDelays(listOfYcsbClients);
 					StatisticsResultMessage statisticsResults = new StatisticsResultMessage (processedDelay);
 					session.write(statisticsResults);
@@ -98,7 +98,7 @@ public class ServerInternalInputInterface extends IoHandlerAdapter{
 			case OPERATION_WRITE:{
 				//Logger.d(TAG,"messageReceived OPERATION_WRITE: "+((OperationWriteMessage)response).toString());
 				ConnectionMetaData connectionMetaData = ConnectionMetaData.generateConnectionMetadaForRemoteEntityInSession(session);
-				Logger.d(TAG, "messageReceived: OPERATION_WRITE, remote IP = "+connectionMetaData);
+				//Logger.d(TAG, "messageReceived: OPERATION_WRITE, remote IP = "+connectionMetaData);
 				//The master node is using a different port than 5000. So, the remote connectionmetadata
 				//and the masterinternal connectionmetadata will never be equal. Due to this, this write operation 
 				//was never getting excuted and hence data replication was not actually being performed on the slaves

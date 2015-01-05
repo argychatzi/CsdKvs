@@ -16,20 +16,20 @@ public class MasterSelector {
 	private static final String TAG = MasterSelector.class.getCanonicalName();
 
 	private class SelectNewMasterTask extends TimerTask{
-		public static final int SELECT_NEW_MASTER_INTERVAL = 10000;
+		public static final int SELECT_NEW_MASTER_INTERVAL = 30000;
 		private String currentMasterIp = ApplicationContext.getOwnExternalConnection().getHost();
 
 		@Override
 		public void run() {
 			if(ApplicationContext.isMaster()){
 				HashMap<String, Double> nodeWithDelayCostMap = ApplicationContext.getNodeWithDelayCostMap();
-				Logger.d(TAG,"slave cost map ="+nodeWithDelayCostMap);
+				//Logger.d(TAG,"slave cost map ="+nodeWithDelayCostMap);
 				getycsbClientWritePerSecStatisticsMapWithEma();
 				if(nodeWithDelayCostMap!=null){ 
 					if(!nodeWithDelayCostMap.isEmpty()){					
 						String newMasterIp = selectNewMaster(nodeWithDelayCostMap);
-						Logger.d(TAG, "during comparison with last: "+newMasterIp);
-						Logger.d(TAG, "node " + currentMasterIp + "compares " + currentMasterIp + " and " + newMasterIp);
+					//	Logger.d(TAG, "during comparison with last: "+newMasterIp);
+					//	Logger.d(TAG, "node " + currentMasterIp + "compares " + currentMasterIp + " and " + newMasterIp);
 
 						if (!currentMasterIp.equals(newMasterIp)){
 							Logger.d(TAG, "broadcast");
@@ -78,7 +78,7 @@ public class MasterSelector {
 			Logger.d(TAG,"masterDelayCost"+masterDelayCost);*/
 			double minValue = Integer.MAX_VALUE;
 			String masterWithMinimumDelay = null;
-			Logger.d(TAG, "mapOfNodeandDelay" + mapOfNodeandDelay.toString());
+			//Logger.d(TAG, "mapOfNodeandDelay" + mapOfNodeandDelay.toString());
 			for (String key: mapOfNodeandDelay.keySet() ) {
 				double value = mapOfNodeandDelay.get(key);
 				if (value < minValue) {

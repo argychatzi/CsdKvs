@@ -113,7 +113,7 @@ def runNetworkClasses(net):
         print( 'Starting server %s...' % node.name )
         node.cmd('java -jar network/server/CsdDBServer.jar ' + str(i+7) + ' &> logs/' + node.name + '.txt &')
         
-    time.sleep(100)        
+    time.sleep(50)        
     # Starting clients...
 
     print( 'Starting client %s...' % c1_1.name )
@@ -131,9 +131,14 @@ def runNetworkClasses(net):
     result = c3_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_csd &> logs/' + c3_1.name + '.txt')
     print( 'Client result %s' % result )
     
-    
     time.sleep(10)
-    
+    print ('running the workload on clients')
+    result = c1_1.cmd( pathToYcsb + '/bin/ycsb run elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_csd &> logs/' + c1_1.name + '.txt &')
+    time.sleep(10)
+    result = c2_1.cmd( pathToYcsb + '/bin/ycsb run elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_csd &> logs/' + c2_1.name + '.txt &')
+    time.sleep(10)
+    result = c3_1.cmd( pathToYcsb + '/bin/ycsb run elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_csd &> logs/' + c3_1.name + '.txt')
+    time.sleep(10)
 def getYcsbPath():
     propertiesFile = 'properties/ycsb_path.txt'
 

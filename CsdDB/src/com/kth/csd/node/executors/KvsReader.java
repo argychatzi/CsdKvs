@@ -31,7 +31,7 @@ public class KvsReader extends KvsOperation implements KvsExecutable {
 		//makes every read operation unsuccessfull even if the entry is already in the store.
 		HashMap<String,String> hashMap = keyValueStore.get(mKeyValue.getKey());
 		mKeyValue.getValues().putAll(hashMap);
-		Logger.d(TAG, "After execution, the key value read is: "+mKeyValue);
+		Logger.d(TAG, "The keyValue read is: "+mKeyValue);
 		return new OperationReadMessage(mKeyValue);
 	}
 }

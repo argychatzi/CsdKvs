@@ -25,7 +25,7 @@ public class WriteOperationsPerSecCollector {
 							for(String key:newMap.keySet()){
 								int persec = newMap.get(key)-beforeOneSecStatisticsMap.get(key);
 								ApplicationContext.updatemYcsbClientsStatisticsMapPerSecond(key, persec);
-								Logger.d(TAG, "OperationPerSecTask, run: Per sec Write map = "+ApplicationContext.getmYcsbClientsStatisticsMapPerSecond());
+								//Logger.d(TAG, "OperationPerSecTask, run: Per sec Write map = "+ApplicationContext.getmYcsbClientsStatisticsMapPerSecond());
 							}
 						}
 						else{
