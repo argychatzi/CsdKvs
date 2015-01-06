@@ -25,18 +25,18 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 	
 	private static final long serialVersionUID = 1L;
 	private static final String TAG = KeyValueStore.class.getCanonicalName();
-	private Timer mFlushToDiskTimer = new Timer();
-	protected File mDatabaseFile;
+	//private Timer mFlushToDiskTimer = new Timer();
+	//protected File mDatabaseFile;
 	private Gson mGson;
 	private static KeyValueStore sKeyValueStore;
 
 	private KeyValueStore(){
 
-		mFlushToDiskTimer.scheduleAtFixedRate(new FlushToDisk(sKeyValueStore), 0, Constants.FLUSH_TO_DISK_PERIOD);
+		//mFlushToDiskTimer.scheduleAtFixedRate(new FlushToDisk(sKeyValueStore), 0, Constants.FLUSH_TO_DISK_PERIOD);
 		mGson = new Gson();
 		
-		String databaseFile = ApplicationContext.getOwnInternalConnection().getHost() + ".txt";
-		mDatabaseFile = new File(databaseFile);
+		//String databaseFile = ApplicationContext.getOwnInternalConnection().getHost() + ".txt";
+		//mDatabaseFile = new File(databaseFile);
 		//mWriteOperationsPerformedSoFar = 0;
 	}
 	
@@ -51,8 +51,8 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 	public HashMap<String, String> get(Object key) {
 		HashMap<String, String> value = super.get(key);
 		if (value == null ){
-			Logger.d(TAG, "not found in memory, going to file");
-			value = readValueFromFile(key.toString());
+			Logger.d(TAG, "not found in memory");
+			//value = readValueFromFile(key.toString());
 		}
 		return value;
 	}
@@ -62,7 +62,7 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 	public HashMap<String, String> put(String key, HashMap<String, String> value) {
 		return super.put(key, value);
 	}
-	
+/*	
 	private HashMap<String, String> readValueFromFile(String key){
 		HashMap<String, String> value = new HashMap<>();
 		try{
@@ -86,8 +86,8 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 			e.printStackTrace();
 		}
 		return value;
-	}
-	
+	}*/
+	/*
 	private class FlushToDisk extends TimerTask{
 		private static final String TAG = "FlushToDisk";
 		private KeyValueStore keyValueStore;
@@ -134,7 +134,7 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 			}
 		}
 		}
-	}
+	}*/
 }
 
 

@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 '''
-This is used to show demo case2: Master Moved and Master Handover
+This is used to show demo: Master Moved and Master Handover + Data replication on slave nodes
 '''
 
 from __future__ import print_function    
@@ -113,7 +113,7 @@ def runNetworkClasses(net):
         print( 'Starting server %s...' % node.name )
         node.cmd('java -jar network/server/CsdDBServer.jar ' + str(i+7) + ' &> logs/' + node.name + '.txt &')
         
-    time.sleep(50)        
+    time.sleep(30)        
     # Starting clients...
 
     print( 'Starting client %s...' % c1_1.name )
