@@ -53,6 +53,7 @@ public class KeyValueStore extends java.util.HashMap<String, HashMap<String, Str
 		if (value == null ){
 			Logger.d(TAG, "not found in memory");
 			//value = readValueFromFile(key.toString());
+			value = new HashMap<String, String>();
 		}
 		return value;
 	}
