@@ -1,184 +1,165 @@
-8914
+11822
 YCSB Client 0.1
 Command line: -db com.yahoo.ycsb.db.ElasticSearchClient -s -P /home/jawad/ik2200/ycsb/YCSB-master/workloads/workload_csd -t
 Loading workload...
 Starting test.
-10:50:40:74:::com.yahoo.ycsb.db.ElasticSearchClient:::init Called!
+11:34:2:639:::com.yahoo.ycsb.db.ElasticSearchClient:::init Called!
 -- listing properties --
 serverIp=192.168.0.2
-2015-01-06 10:50:40:603 2 sec: 0 operations; 
-10:50:43:612:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@1cb2e0be
-10:50:43:909:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.2:6000
-10:50:43:910:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.2 port No. 6000
-10:50:44:768:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user4067084960269731293, values={field1=6, field0=,}]]
-10:50:45:154:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user9105318085603802964, values={field1=$, field0=/}]]
-10:50:45:155:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... MasterMovedMessage [mData=MasterConnections [internalConnection=ConnectionMetaData [host=192.168.0.8, port=5000], externalConnection=ConnectionMetaData [host=192.168.0.8, port=6000]]]
-10:50:45:155:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::MASTER_MOVED ... MasterMovedMessage [mData=MasterConnections [internalConnection=ConnectionMetaData [host=192.168.0.8, port=5000], externalConnection=ConnectionMetaData [host=192.168.0.8, port=6000]]]
-10:50:45:156:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::master moved to:ConnectionMetaData [host=192.168.0.8, port=6000]
-10:50:45:270:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@46a2b249
-10:50:45:320:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.8:6000
-10:50:45:320:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.8 port No. 6000
-10:50:45:321:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... MasterMovedMessage [mData=MasterConnections [internalConnection=ConnectionMetaData [host=192.168.0.8, port=5000], externalConnection=ConnectionMetaData [host=192.168.0.8, port=6000]]]
-10:50:45:321:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::MASTER_MOVED ... MasterMovedMessage [mData=MasterConnections [internalConnection=ConnectionMetaData [host=192.168.0.8, port=5000], externalConnection=ConnectionMetaData [host=192.168.0.8, port=6000]]]
-10:50:45:321:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::master moved to:ConnectionMetaData [host=192.168.0.8, port=6000]
-10:50:45:355:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@6762ffa1
-10:50:45:384:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.8:6000
-10:50:45:384:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.8 port No. 6000
-10:50:45:385:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... MasterMovedMessage [mData=MasterConnections [internalConnection=ConnectionMetaData [host=192.168.0.8, port=5000], externalConnection=ConnectionMetaData [host=192.168.0.8, port=6000]]]
-10:50:45:385:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::MASTER_MOVED ... MasterMovedMessage [mData=MasterConnections [internalConnection=ConnectionMetaData [host=192.168.0.8, port=5000], externalConnection=ConnectionMetaData [host=192.168.0.8, port=6000]]]
-10:50:45:386:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::master moved to:ConnectionMetaData [host=192.168.0.8, port=6000]
-10:50:45:434:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@55936c40
-10:50:45:477:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.8:6000
-10:50:45:478:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.8 port No. 6000
-10:50:45:479:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user6159186168446054998, values={field1=(, field0=4}]]
-10:50:48:402:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user5590051723848587943, values={field1=6, field0=4}]]
-2015-01-06 10:50:50:768 12 sec: 484 operations; 47.62 current ops/sec; [INSERT AverageLatency(us)=11514.57] [READ AverageLatency(us)=15174.3] 
-10:50:53:116:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user2176826814141900048, values={field1=+, field0=,}]]
-10:51:0:444:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user8883487044377502202, values={field1=5, field0=4}]]
-2015-01-06 10:51:00:931 22 sec: 1116 operations; 62.18 current ops/sec; [INSERT AverageLatency(us)=6260.78] [READ AverageLatency(us)=26425.13] 
-10:51:7:476:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user2659439919067222481, values={field1=$, field0=9}]]
-2015-01-06 10:51:10:932 32 sec: 1900 operations; 78.39 current ops/sec; [INSERT AverageLatency(us)=3727.89] [READ AverageLatency(us)=17774.26] 
-10:51:12:827:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user4876795174170569834, values={field1= , field0=)}]]
-10:51:17:197:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user7094492074568215752, values={field1=-, field0= }]]
-2015-01-06 10:51:20:933 42 sec: 2620 operations; 71.99 current ops/sec; [INSERT AverageLatency(us)=4382.91] [READ AverageLatency(us)=14456.4] 
-10:51:22:290:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user6541096057564973084, values={field1=8, field0=4}]]
-10:51:26:347:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user2750989086052933349, values={field1=+, field0=$}]]
-10:51:28:146:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user4153387984724034032, values={field1=-, field0=$}]]
-10:51:30:461:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user542446234475980910, values={field1=6, field0=*}]]
-2015-01-06 10:51:30:934 52 sec: 3397 operations; 77.7 current ops/sec; [INSERT AverageLatency(us)=27594.3] [READ AverageLatency(us)=6315.41] 
-10:51:32:706:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user8164984352168075964, values={field1=+, field0=)}]]
-10:51:35:815:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user5681600890834298811, values={field1=-, field0=8}]]
-10:51:38:537:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user2976386388274220896, values={field1=4, field0=9}]]
-2015-01-06 10:51:40:935 62 sec: 4134 operations; 73.69 current ops/sec; [INSERT AverageLatency(us)=3767.75] [READ AverageLatency(us)=23831.39] 
-10:51:41:197:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user6178272541817424287, values={field1=-, field0=%}]]
-2015-01-06 10:51:50:935 72 sec: 4135 operations; 0.1 current ops/sec;  [READ AverageLatency(us)=10007240] 
-10:51:52:802:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user8975036211363213070, values={field1=), field0=.}]]
-2015-01-06 10:52:00:936 82 sec: 4499 operations; 36.4 current ops/sec; [INSERT AverageLatency(us)=2982.21] [READ AverageLatency(us)=17781.11] 
-10:52:0:966:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user3247660737036058825, values={field1=1, field0=;}]]
-10:52:8:687:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user7129316875533809428, values={field1=5, field0=8}]]
-10:52:10:871:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user2162768268084097005, values={field1=#, field0=4}]]
-2015-01-06 10:52:10:937 92 sec: 4863 operations; 36.4 current ops/sec; [INSERT AverageLatency(us)=57010.73] [READ AverageLatency(us)=27027.47] 
-10:52:11:113:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user1130667052444817254, values={field1=5, field0=2}]]
-10:52:11:415:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user5093380072865462467, values={field1=+, field0=#}]]
-10:52:11:887:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user2388165570305384552, values={field1=9, field0=+}]]
-10:52:12:100:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user6766493359786260631, values={field1=>, field0=+}]]
-10:52:12:331:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user8386815393394376726, values={field1=?, field0=/}]]
-10:52:12:624:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user3835881555004895169, values={field1=!, field0=2}]]
-10:52:13:78:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user2528939729608790704, values={field1=#, field0=:}]]
-10:52:13:339:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user7818800869821190567, values={field1=-, field0=-}]]
-10:52:13:446:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user8395627796920771640, values={field1=*, field0=:}]]
-10:52:13:575:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user3354170055886011749, values={field1=8, field0=$}]]
-10:52:13:787:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user4775873643146323604, values={field1=!, field0=!}]]
-10:52:13:971:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user2518447444545974446, values={field1=%, field0=?}]]
-10:52:14:86:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user4766719594325630125, values={field1=", field0=,}]]
-10:52:14:247:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user1935691084326388114, values={field1=,, field0=3}]]
-10:52:14:494:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user1231930228763362049, values={field1=7, field0=(}]]
-10:52:14:821:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user2061286776547710327, values={field1=*, field0=%}]]
-10:52:15:86:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user8285893862370130496, values={field1=!, field0=.}]]
-10:52:15:303:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user2534404187358040716, values={field1=., field0=4}]]
-10:52:15:594:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user9215393665448742673, values={field1=$, field0=#}]]
-10:52:15:818:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user3930996982985592822, values={field1=1, field0=4}]]
-10:52:15:906:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user8407021687790026911, values={field1=., field0=*}]]
-10:52:16:105:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user6752434813728457588, values={field1=", field0=7}]]
-10:52:16:201:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user7807406978951935296, values={field1=<, field0=-}]]
-10:52:16:355:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user7562145027629296129, values={field1=1, field0=<}]]
-10:52:16:400:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user4409483866403788022, values={field1=2, field0=%}]]
-10:52:16:447:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user3942390873854848093, values={field1=1, field0=-}]]
-10:52:16:500:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user3106668262514810790, values={field1=$, field0=8}]]
-10:52:16:539:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user4178498776356793781, values={field1=), field0=)}]]
-10:52:16:576:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user1946183369389204372, values={field1=%, field0==}]]
-10:52:16:622:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user8643129590291972599, values={field1=., field0=8}]]
-10:52:16:679:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user3342776165016756478, values={field1=., field0=3}]]
-10:52:16:734:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user8995242505758863255, values={field1=8, field0=<}]]
-10:52:16:820:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user7219186160983098952, values={field1= , field0=)}]]
-2015-01-06 10:52:16:890 98 sec: 10000 operations; 862.93 current ops/sec; [INSERT AverageLatency(us)=1377.92] [READ AverageLatency(us)=1446.22] [CLEANUP AverageLatency(us)=10] 
-[OVERALL], RunTime(ms), 98561.0
-[OVERALL], Throughput(ops/sec), 101.4600095372409
-[INSERT], Operations, 4972
-[INSERT], AverageLatency(us), 6898.673370876911
+2015-01-06 11:34:03:210 1 sec: 0 operations; 
+11:34:5:134:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@2d427def
+11:34:5:831:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.2:6000
+11:34:5:831:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.2 port No. 6000
+11:34:6:228:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... MasterMovedMessage [mData=MasterConnections [internalConnection=ConnectionMetaData [host=192.168.0.7, port=5000], externalConnection=ConnectionMetaData [host=192.168.0.7, port=6000]]]
+11:34:6:228:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::MASTER_MOVED ... MasterMovedMessage [mData=MasterConnections [internalConnection=ConnectionMetaData [host=192.168.0.7, port=5000], externalConnection=ConnectionMetaData [host=192.168.0.7, port=6000]]]
+11:34:6:229:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::master moved to:ConnectionMetaData [host=192.168.0.7, port=6000]
+11:34:6:232:::com.kth.csd.networking.KvsClient:::initSession FUTURE=org.apache.mina.core.polling.AbstractPollingIoConnector$ConnectionRequest@23edc0ad
+11:34:6:288:::com.kth.csd.networking.KvsClient:::connecting to /192.168.0.7:6000
+11:34:6:289:::com.kth.csd.networking.KvsClient:::new connection to 192.168.0.7 port No. 6000
+11:34:6:420:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user1935691084326388114, values={field1=*, field0=&}]]
+11:34:7:305:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user5465015992139406178, values={field1=#, field0= }]]
+11:34:7:784:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user3339209904021769693, values={field1=&, field0=%}]]
+11:34:9:131:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user2509293395725280967, values={field1=3, field0=#}]]
+11:34:11:303:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user45774583492855434, values={field1=:, field0=;}]]
+2015-01-06 11:34:13:240 11 sec: 806 operations; 80.35 current ops/sec; [INSERT AverageLatency(us)=9936.27] [READ AverageLatency(us)=8089.1] 
+11:34:15:976:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user6752434813728457588, values={field1=', field0=2}]]
+11:34:22:339:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user70107099395632852, values={field1=8, field0=5}]]
+2015-01-06 11:34:23:250 21 sec: 2072 operations; 126.47 current ops/sec; [INSERT AverageLatency(us)=11621.28] [READ AverageLatency(us)=4241.45] 
+11:34:27:405:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user6269821708803135155, values={field1=., field0=!}]]
+11:34:29:874:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user6058264637421808768, values={field1=,, field0=-}]]
+11:34:31:287:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user3564607206243057240, values={field1=+, field0=6}]]
+2015-01-06 11:34:33:251 31 sec: 3586 operations; 151.38 current ops/sec; [INSERT AverageLatency(us)=2480.12] [READ AverageLatency(us)=10601.86] 
+11:34:36:757:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user4992458541841216237, values={field1=), field0=&}]]
+11:34:40:32:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user5590051723848587943, values={field1=$, field0=*}]]
+11:34:41:667:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user4876795174170569834, values={field1=<, field0=+}]]
+2015-01-06 11:34:43:252 41 sec: 4184 operations; 59.79 current ops/sec; [INSERT AverageLatency(us)=10781.88] [READ AverageLatency(us)=23098.37] 
+11:34:43:526:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user8883487044377502202, values={field1=&, field0=>}]]
+11:34:46:408:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user2408371864701034737, values={field1=>, field0=,}]]
+11:34:48:276:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user2659439919067222481, values={field1=., field0==}]]
+11:34:50:403:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user6541096057564973084, values={field1=7, field0=6}]]
+11:34:52:910:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user2750989086052933349, values={field1=2, field0=/}]]
+2015-01-06 11:34:53:256 51 sec: 5023 operations; 83.87 current ops/sec; [INSERT AverageLatency(us)=17802.8] [READ AverageLatency(us)=3908.85] 
+11:34:54:735:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user4997363039078325801, values={field1=7, field0=?}]]
+11:34:55:439:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user542446234475980910, values={field1=/, field0=2}]]
+11:34:56:925:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user5681600890834298811, values={field1=/, field0=.}]]
+11:35:2:554:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user2976386388274220896, values={field1=>, field0=(}]]
+2015-01-06 11:35:03:258 61 sec: 5572 operations; 54.89 current ops/sec; [INSERT AverageLatency(us)=12021.23] [READ AverageLatency(us)=2279.35] 
+11:35:7:55:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user6178272541817424287, values={field1==, field0=9}]]
+11:35:10:961:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user4760913491282081548, values={field1=<, field0=8}]]
+2015-01-06 11:35:13:258 71 sec: 6123 operations; 55.1 current ops/sec; [INSERT AverageLatency(us)=2609.87] [READ AverageLatency(us)=58059.74] 
+11:35:14:567:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user8975036211363213070, values={field1=;, field0=/}]]
+11:35:18:196:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user3247660737036058825, values={field1=,, field0=,}]]
+11:35:22:456:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user6867974851322647309, values={field1=6, field0=)}]]
+2015-01-06 11:35:23:259 81 sec: 6664 operations; 54.09 current ops/sec; [INSERT AverageLatency(us)=21697.03] [READ AverageLatency(us)=1787.24] 
+11:35:27:154:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user7129316875533809428, values={field1=), field0=-}]]
+11:35:27:494:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user3685735031662953655, values={field1=*, field0=0}]]
+11:35:28:88:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user2162768268084097005, values={field1=., field0=2}]]
+11:35:28:461:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user1130667052444817254, values={field1=6, field0=9}]]
+11:35:28:621:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user2297736324343954580, values={field1=8, field0=-}]]
+11:35:28:780:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user5093380072865462467, values={field1=&, field0=9}]]
+11:35:28:964:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user7109110581138159243, values={field1=$, field0=0}]]
+11:35:29:98:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user2388165570305384552, values={field1=:, field0='}]]
+11:35:29:223:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user7943494956236073767, values={field1=', field0=/}]]
+11:35:29:433:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user7350587956247969742, values={field1=-, field0= }]]
+11:35:29:552:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user6766493359786260631, values={field1=9, field0=>}]]
+11:35:29:940:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user8386815393394376726, values={field1=:, field0=?}]]
+11:35:30:54:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user3835881555004895169, values={field1=;, field0=3}]]
+11:35:30:167:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user7818800869821190567, values={field1=<, field0=5}]]
+11:35:30:307:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user5450397485569462687, values={field1=5, field0=>}]]
+11:35:30:416:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user3459217808417385212, values={field1=), field0=.}]]
+11:35:30:530:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationReadMessage [mData=KeyValueEntry [key=user865198806726527902, values={field1==, field0=8}]]
+11:35:30:671:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user8395627796920771640, values={field1=+, field0=>}]]
+11:35:30:723:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user3354170055886011749, values={field1=', field0='}]]
+11:35:30:814:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user2518447444545974446, values={field1=!, field0='}]]
+11:35:30:997:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user4766719594325630125, values={field1=5, field0=:}]]
+2015-01-06 11:35:31:010 89 sec: 10000 operations; 430.4 current ops/sec; [INSERT AverageLatency(us)=2739.41] [READ AverageLatency(us)=4249.56] [CLEANUP AverageLatency(us)=31] 
+[OVERALL], RunTime(ms), 89092.0
+[OVERALL], Throughput(ops/sec), 112.24352354869124
+[INSERT], Operations, 5028
+[INSERT], AverageLatency(us), 7654.552704852824
 [INSERT], MinLatency(us), 187
-[INSERT], MaxLatency(us), 10001915
-[INSERT], 95thPercentileLatency(ms), 11
-[INSERT], 99thPercentileLatency(ms), 26
-[INSERT], Return=0, 4972
-[INSERT], 0, 2743
-[INSERT], 1, 712
-[INSERT], 2, 360
-[INSERT], 3, 209
-[INSERT], 4, 163
-[INSERT], 5, 139
-[INSERT], 6, 121
-[INSERT], 7, 77
-[INSERT], 8, 67
-[INSERT], 9, 49
-[INSERT], 10, 42
-[INSERT], 11, 49
-[INSERT], 12, 32
-[INSERT], 13, 19
-[INSERT], 14, 24
-[INSERT], 15, 15
-[INSERT], 16, 19
-[INSERT], 17, 17
-[INSERT], 18, 7
-[INSERT], 19, 9
-[INSERT], 20, 9
-[INSERT], 21, 13
-[INSERT], 22, 6
-[INSERT], 23, 7
+[INSERT], MaxLatency(us), 5682753
+[INSERT], 95thPercentileLatency(ms), 12
+[INSERT], 99thPercentileLatency(ms), 28
+[INSERT], Return=0, 5028
+[INSERT], 0, 2709
+[INSERT], 1, 619
+[INSERT], 2, 390
+[INSERT], 3, 276
+[INSERT], 4, 197
+[INSERT], 5, 166
+[INSERT], 6, 129
+[INSERT], 7, 94
+[INSERT], 8, 71
+[INSERT], 9, 50
+[INSERT], 10, 39
+[INSERT], 11, 34
+[INSERT], 12, 23
+[INSERT], 13, 29
+[INSERT], 14, 23
+[INSERT], 15, 25
+[INSERT], 16, 15
+[INSERT], 17, 19
+[INSERT], 18, 13
+[INSERT], 19, 13
+[INSERT], 20, 10
+[INSERT], 21, 10
+[INSERT], 22, 5
+[INSERT], 23, 4
 [INSERT], 24, 4
-[INSERT], 25, 5
-[INSERT], 26, 6
-[INSERT], 27, 4
-[INSERT], 28, 1
-[INSERT], 29, 4
-[INSERT], 30, 2
+[INSERT], 25, 3
+[INSERT], 26, 2
+[INSERT], 27, 2
+[INSERT], 28, 4
+[INSERT], 29, 5
+[INSERT], 30, 3
 [INSERT], 31, 3
-[INSERT], 32, 2
-[INSERT], 33, 0
+[INSERT], 32, 3
+[INSERT], 33, 1
 [INSERT], 34, 2
-[INSERT], 35, 2
-[INSERT], 36, 2
-[INSERT], 37, 2
-[INSERT], 38, 1
+[INSERT], 35, 1
+[INSERT], 36, 0
+[INSERT], 37, 4
+[INSERT], 38, 3
 [INSERT], 39, 0
 [INSERT], 40, 0
 [INSERT], 41, 1
 [INSERT], 42, 0
-[INSERT], 43, 1
-[INSERT], 44, 1
+[INSERT], 43, 0
+[INSERT], 44, 0
 [INSERT], 45, 1
 [INSERT], 46, 1
-[INSERT], 47, 2
+[INSERT], 47, 0
 [INSERT], 48, 3
 [INSERT], 49, 0
 [INSERT], 50, 0
-[INSERT], 51, 1
-[INSERT], 52, 0
-[INSERT], 53, 0
+[INSERT], 51, 0
+[INSERT], 52, 1
+[INSERT], 53, 1
 [INSERT], 54, 0
 [INSERT], 55, 0
-[INSERT], 56, 1
-[INSERT], 57, 1
-[INSERT], 58, 1
+[INSERT], 56, 0
+[INSERT], 57, 0
+[INSERT], 58, 0
 [INSERT], 59, 0
 [INSERT], 60, 0
 [INSERT], 61, 0
 [INSERT], 62, 0
-[INSERT], 63, 0
+[INSERT], 63, 1
 [INSERT], 64, 0
 [INSERT], 65, 0
 [INSERT], 66, 0
-[INSERT], 67, 0
+[INSERT], 67, 1
 [INSERT], 68, 0
 [INSERT], 69, 0
 [INSERT], 70, 0
 [INSERT], 71, 0
-[INSERT], 72, 0
+[INSERT], 72, 1
 [INSERT], 73, 0
 [INSERT], 74, 0
 [INSERT], 75, 0
 [INSERT], 76, 0
-[INSERT], 77, 1
+[INSERT], 77, 0
 [INSERT], 78, 0
 [INSERT], 79, 0
 [INSERT], 80, 0
@@ -190,7 +171,7 @@ serverIp=192.168.0.2
 [INSERT], 86, 0
 [INSERT], 87, 0
 [INSERT], 88, 0
-[INSERT], 89, 0
+[INSERT], 89, 2
 [INSERT], 90, 0
 [INSERT], 91, 0
 [INSERT], 92, 0
@@ -213,7 +194,7 @@ serverIp=192.168.0.2
 [INSERT], 109, 0
 [INSERT], 110, 0
 [INSERT], 111, 0
-[INSERT], 112, 0
+[INSERT], 112, 1
 [INSERT], 113, 0
 [INSERT], 114, 0
 [INSERT], 115, 0
@@ -251,14 +232,14 @@ serverIp=192.168.0.2
 [INSERT], 147, 0
 [INSERT], 148, 0
 [INSERT], 149, 0
-[INSERT], 150, 1
+[INSERT], 150, 0
 [INSERT], 151, 0
 [INSERT], 152, 0
 [INSERT], 153, 0
 [INSERT], 154, 0
 [INSERT], 155, 0
 [INSERT], 156, 0
-[INSERT], 157, 1
+[INSERT], 157, 0
 [INSERT], 158, 0
 [INSERT], 159, 0
 [INSERT], 160, 0
@@ -280,7 +261,7 @@ serverIp=192.168.0.2
 [INSERT], 176, 0
 [INSERT], 177, 0
 [INSERT], 178, 0
-[INSERT], 179, 1
+[INSERT], 179, 0
 [INSERT], 180, 0
 [INSERT], 181, 0
 [INSERT], 182, 0
@@ -294,7 +275,7 @@ serverIp=192.168.0.2
 [INSERT], 190, 0
 [INSERT], 191, 0
 [INSERT], 192, 0
-[INSERT], 193, 0
+[INSERT], 193, 1
 [INSERT], 194, 0
 [INSERT], 195, 0
 [INSERT], 196, 0
@@ -347,7 +328,7 @@ serverIp=192.168.0.2
 [INSERT], 243, 0
 [INSERT], 244, 0
 [INSERT], 245, 0
-[INSERT], 246, 0
+[INSERT], 246, 1
 [INSERT], 247, 0
 [INSERT], 248, 0
 [INSERT], 249, 0
@@ -390,11 +371,11 @@ serverIp=192.168.0.2
 [INSERT], 286, 0
 [INSERT], 287, 0
 [INSERT], 288, 0
-[INSERT], 289, 0
+[INSERT], 289, 1
 [INSERT], 290, 0
 [INSERT], 291, 0
 [INSERT], 292, 0
-[INSERT], 293, 1
+[INSERT], 293, 0
 [INSERT], 294, 0
 [INSERT], 295, 0
 [INSERT], 296, 0
@@ -465,7 +446,7 @@ serverIp=192.168.0.2
 [INSERT], 361, 0
 [INSERT], 362, 0
 [INSERT], 363, 0
-[INSERT], 364, 1
+[INSERT], 364, 0
 [INSERT], 365, 0
 [INSERT], 366, 0
 [INSERT], 367, 0
@@ -487,7 +468,7 @@ serverIp=192.168.0.2
 [INSERT], 383, 0
 [INSERT], 384, 0
 [INSERT], 385, 0
-[INSERT], 386, 0
+[INSERT], 386, 1
 [INSERT], 387, 0
 [INSERT], 388, 0
 [INSERT], 389, 0
@@ -519,7 +500,7 @@ serverIp=192.168.0.2
 [INSERT], 415, 0
 [INSERT], 416, 0
 [INSERT], 417, 0
-[INSERT], 418, 1
+[INSERT], 418, 0
 [INSERT], 419, 0
 [INSERT], 420, 0
 [INSERT], 421, 0
@@ -568,8 +549,7 @@ serverIp=192.168.0.2
 [INSERT], 464, 0
 [INSERT], 465, 0
 [INSERT], 466, 0
-[INSERT],10:52:16:934:::com.kth.csd.networking.interfaces.external.ClientExternalInputInterface:::messageReceived ... OperationWriteMessage [mData=KeyValueEntry [key=user4530611691823684437, values={field1=-, field0==}]]
- 467, 0
+[INSERT], 467, 0
 [INSERT], 468, 0
 [INSERT], 469, 0
 [INSERT], 470, 0
@@ -1102,81 +1082,81 @@ serverIp=192.168.0.2
 [INSERT], 997, 0
 [INSERT], 998, 0
 [INSERT], 999, 0
-[INSERT], >1000, 3
-[READ], Operations, 5028
-[READ], AverageLatency(us), 11435.603420843277
-[READ], MinLatency(us), 167
-[READ], MaxLatency(us), 10007240
+[INSERT], >1000, 7
+[READ], Operations, 4972
+[READ], AverageLatency(us), 9183.64863234111
+[READ], MinLatency(us), 184
+[READ], MaxLatency(us), 10002665
 [READ], 95thPercentileLatency(ms), 11
-[READ], 99thPercentileLatency(ms), 25
-[READ], Return=0, 5028
-[READ], 0, 2882
-[READ], 1, 710
-[READ], 2, 310
-[READ], 3, 241
-[READ], 4, 147
-[READ], 5, 133
-[READ], 6, 102
-[READ], 7, 80
-[READ], 8, 58
-[READ], 9, 50
-[READ], 10, 39
+[READ], 99thPercentileLatency(ms), 26
+[READ], Return=0, 4972
+[READ], 0, 2649
+[READ], 1, 689
+[READ], 2, 404
+[READ], 3, 258
+[READ], 4, 199
+[READ], 5, 147
+[READ], 6, 115
+[READ], 7, 81
+[READ], 8, 75
+[READ], 9, 49
+[READ], 10, 42
 [READ], 11, 34
-[READ], 12, 30
+[READ], 12, 26
 [READ], 13, 26
-[READ], 14, 22
-[READ], 15, 24
-[READ], 16, 13
-[READ], 17, 12
-[READ], 18, 11
-[READ], 19, 10
+[READ], 14, 25
+[READ], 15, 16
+[READ], 16, 16
+[READ], 17, 16
+[READ], 18, 7
+[READ], 19, 7
 [READ], 20, 10
-[READ], 21, 8
-[READ], 22, 4
-[READ], 23, 10
-[READ], 24, 2
-[READ], 25, 10
-[READ], 26, 2
+[READ], 21, 9
+[READ], 22, 12
+[READ], 23, 1
+[READ], 24, 4
+[READ], 25, 3
+[READ], 26, 5
 [READ], 27, 3
-[READ], 28, 5
-[READ], 29, 0
-[READ], 30, 5
-[READ], 31, 3
-[READ], 32, 0
-[READ], 33, 2
-[READ], 34, 3
+[READ], 28, 6
+[READ], 29, 3
+[READ], 30, 4
+[READ], 31, 2
+[READ], 32, 3
+[READ], 33, 0
+[READ], 34, 2
 [READ], 35, 1
-[READ], 36, 1
-[READ], 37, 1
+[READ], 36, 2
+[READ], 37, 0
 [READ], 38, 1
 [READ], 39, 1
 [READ], 40, 0
 [READ], 41, 0
-[READ], 42, 0
-[READ], 43, 0
+[READ], 42, 3
+[READ], 43, 1
 [READ], 44, 1
 [READ], 45, 0
 [READ], 46, 0
 [READ], 47, 1
-[READ], 48, 1
-[READ], 49, 0
+[READ], 48, 0
+[READ], 49, 1
 [READ], 50, 0
-[READ], 51, 1
+[READ], 51, 0
 [READ], 52, 0
 [READ], 53, 0
 [READ], 54, 0
 [READ], 55, 0
 [READ], 56, 0
-[READ], 57, 1
+[READ], 57, 0
 [READ], 58, 0
 [READ], 59, 0
 [READ], 60, 0
 [READ], 61, 0
-[READ], 62, 1
-[READ], 63, 1
+[READ], 62, 0
+[READ], 63, 0
 [READ], 64, 0
 [READ], 65, 0
-[READ], 66, 0
+[READ], 66, 1
 [READ], 67, 0
 [READ], 68, 0
 [READ], 69, 0
@@ -1192,11 +1172,11 @@ serverIp=192.168.0.2
 [READ], 79, 0
 [READ], 80, 0
 [READ], 81, 0
-[READ], 82, 0
-[READ], 83, 0
-[READ], 84, 1
+[READ], 82, 1
+[READ], 83, 1
+[READ], 84, 0
 [READ], 85, 0
-[READ], 86, 1
+[READ], 86, 0
 [READ], 87, 0
 [READ], 88, 0
 [READ], 89, 0
@@ -1237,7 +1217,7 @@ serverIp=192.168.0.2
 [READ], 124, 0
 [READ], 125, 0
 [READ], 126, 0
-[READ], 127, 0
+[READ], 127, 1
 [READ], 128, 0
 [READ], 129, 0
 [READ], 130, 0
@@ -1270,7 +1250,7 @@ serverIp=192.168.0.2
 [READ], 157, 0
 [READ], 158, 0
 [READ], 159, 0
-[READ], 160, 0
+[READ], 160, 1
 [READ], 161, 0
 [READ], 162, 0
 [READ], 163, 0
@@ -1388,7 +1368,7 @@ serverIp=192.168.0.2
 [READ], 275, 0
 [READ], 276, 0
 [READ], 277, 0
-[READ], 278, 0
+[READ], 278, 1
 [READ], 279, 0
 [READ], 280, 0
 [READ], 281, 0
@@ -1542,7 +1522,7 @@ serverIp=192.168.0.2
 [READ], 429, 0
 [READ], 430, 0
 [READ], 431, 0
-[READ], 432, 0
+[READ], 432, 1
 [READ], 433, 0
 [READ], 434, 0
 [READ], 435, 0
@@ -1731,7 +1711,7 @@ serverIp=192.168.0.2
 [READ], 618, 0
 [READ], 619, 0
 [READ], 620, 0
-[READ], 621, 1
+[READ], 621, 0
 [READ], 622, 0
 [READ], 623, 0
 [READ], 624, 0
@@ -1766,7 +1746,7 @@ serverIp=192.168.0.2
 [READ], 653, 0
 [READ], 654, 0
 [READ], 655, 0
-[READ], 656, 1
+[READ], 656, 0
 [READ], 657, 0
 [READ], 658, 0
 [READ], 659, 0
@@ -2056,7 +2036,7 @@ serverIp=192.168.0.2
 [READ], 943, 0
 [READ], 944, 0
 [READ], 945, 0
-[READ], 946, 1
+[READ], 946, 0
 [READ], 947, 0
 [READ], 948, 0
 [READ], 949, 0
@@ -2110,11 +2090,11 @@ serverIp=192.168.0.2
 [READ], 997, 0
 [READ], 998, 0
 [READ], 999, 0
-[READ], >1000, 10
+[READ], >1000, 5
 [CLEANUP], Operations, 1
-[CLEANUP], AverageLatency(us), 10.0
-[CLEANUP], MinLatency(us), 10
-[CLEANUP], MaxLatency(us), 10
+[CLEANUP], AverageLatency(us), 31.0
+[CLEANUP], MinLatency(us), 31
+[CLEANUP], MaxLatency(us), 31
 [CLEANUP], 95thPercentileLatency(ms), 0
 [CLEANUP], 99thPercentileLatency(ms), 0
 [CLEANUP], 0, 1

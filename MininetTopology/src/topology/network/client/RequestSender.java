@@ -1,3 +1,4 @@
+/*
 package network.client;
 
 import java.io.IOException;
@@ -40,3 +41,4 @@ public class RequestSender {
         }
 	}
 }
+*/
