@@ -1,6 +1,6 @@
 package com.kth.csd.node.operation;
 
-import com.kth.csd.node.executors.KvsExecutor.KvsExecutable;
+import com.kth.csd.node.executors.KvsExecutable;
 import com.kth.csd.node.executors.KvsReader;
 import com.kth.csd.node.executors.KvsWriter;
 import com.kth.csd.node.operation.KvsOperation.YCSB_OPERATION;

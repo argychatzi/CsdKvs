@@ -5,7 +5,6 @@ import java.util.HashMap;
 import com.kth.csd.networking.messages.AbstractNetworkMessage;
 import com.kth.csd.networking.messages.OperationWriteMessage;
 import com.kth.csd.node.core.ApplicationContext;
-import com.kth.csd.node.executors.KvsExecutor.KvsExecutable;
 import com.kth.csd.node.operation.KeyValueEntry;
 import com.kth.csd.node.operation.KvsOperation;
 import com.kth.csd.utils.Logger;

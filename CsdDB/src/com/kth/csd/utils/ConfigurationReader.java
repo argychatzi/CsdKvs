@@ -1,11 +1,8 @@
 package com.kth.csd.utils;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.FileSystems;
-import java.nio.file.PathMatcher;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -38,5 +35,4 @@ public class ConfigurationReader {
         
         return gson.fromJson(jsonObject, Configuration.class);
 	}
-	
 }
