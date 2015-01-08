@@ -28,7 +28,11 @@ public class KeyValueEntry implements Serializable {
 	}
 	
 	public HashMap<String,String> getValues() {
-		return values;
+		if  (values == null ){
+			return new HashMap<String, String>();
+		} else{
+			return values;
+		}
 	}
 	
 	public void setValue(HashMap<String,String> values) {
