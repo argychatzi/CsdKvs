@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1411393540986_0" label="Window Working Set" name="Aggregate for window 1411393540985"/>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1418491727065_1" label="root" name="root">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/elasticsearch-binding" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1418400182545_0" label="Window Working Set" name="Aggregate for window 1411393540985"/>
 </workingSetManager>

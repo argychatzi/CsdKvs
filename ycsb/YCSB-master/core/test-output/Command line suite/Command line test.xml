@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite hostname="s83-191-240-81.cust.tele2.se" name="com.yahoo.ycsb.TestByteIterator" tests="1" failures="0" timestamp="12 Oct 2014 19:44:48 GMT" time="0.026" errors="0">
+  <testcase name="testRandomByteIterator" time="0.011" classname="com.yahoo.ycsb.TestByteIterator"/>
+</testsuite>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project CsdDB">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="./output/CsdDBServer.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="com.kth.csd.node.core.KvsNode"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="./bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="./libs/core-0.1.4.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="./libs/mina-core-2.0.9.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="./libs/slf4j-api-1.7.7.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="./libs/metrics-core-4.0.0-SNAPSHOT.jar"/>
+
+        	<zipfileset excludes="META-INF/*.SF" src="./libs/gson-2.3.jar"/>
+        </jar>
+   	<copy file="./output/CsdDBServer.jar" todir="../ycsb/YCSB-master/csd/libs/"/>
+	<copy file="./output/CsdDBServer.jar" todir="../MininetTopology/src/topology/network/server"/>
+    </target>
+</project>
+

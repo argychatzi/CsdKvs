@@ -1,22 +1,20 @@
 #!/usr/bin/python
-'''
-Created on Oct 5, 2014
-
-@author: georgios.savvidis
-
 
 '''
+This simpleTopology.py is used to show the demo case: (DATAREPLICATION
+client1 first try to read and fails at master Node, than client2 write at master node,
+these changes are broadcasted to the slave nodes, and then 
+client3 only reads from slave node. 
+'''
 
+from __future__ import print_function    
 from mininet.cli import CLI
 from mininet.log import setLogLevel
 from mininet.net import Mininet
 from mininet.topo import Topo
 from mininet.util import dumpNodeConnections
 from mininet.node import Node, Host
-
-#class CustomHost(Host):
-#	def __init__(self, name, inNamespace=True, **params):
-#		Host.__init__(self, name, inNamespace=inNamespace, **params)
+import time
 
 class SingleSwitchNetwork():
     
@@ -58,32 +56,29 @@ class CsdTopology(Topo):
         s1 = 's1.1'
         s2 = 's2.1'
         s3 = 's3.1'
-        #s4 = self.addSwitch('s4.1') #for redundancy purposes
 
         self.addLink(s1, s2)
         self.addLink(s2, s3)
-        #self.addLink(s1, s4)
-        #self.addLink(s3, s4)
    
 
-#Test SimpleTopology
 def run():
     "Create and test a simple network"
     topo = CsdTopology()
     net = Mininet(topo)
     net.start()
-    print 'Dumping host connections'
+    print( 'Dumping host connections' )
     dumpNodeConnections(net.hosts)
     
     hosts = net.hosts
     for i in range(len(hosts)):
-        print "%s IP: %s" % (hosts[i], hosts[i].IP())
+        print( '%s IP: %s' % (hosts[i], hosts[i].IP()) )
 
-    print "Executing Java program..."
-    net.get('c1.1').cmd('javac network/HelloWorld.java')
-    result = net.get('c1.1').cmd('java network/HelloWorld')
-    print result
-    
+    #print "Compaling Java classes..."
+    #compileJavaClasses(net)
+
+    print( 'Deploying servers and clients...' )
+    runNetworkClasses(net)
+
     #print "Testing network connectivity"
     #net.pingAll()
 
@@ -91,8 +86,81 @@ def run():
     
     net.stop()
 
+    
+def runNetworkClasses(net):
+    pathToYcsb = getYcsbPath()
+
+    n1_1 = net.get('n1.1')
+    n2_2 = net.get('n2.2')
+    n3_3 = net.get('n3.3')
+    
+    c1_1 = net.get('c1.1')
+    c2_1 = net.get('c2.1')
+    c3_1 = net.get('c3.1')
+    
+    # Starting servers...
+    print( 'Starting servers in switched network 1...' )
+    for i in range(4):
+        node = net.get('n1.%s' % (i+1))
+        print( 'Starting server %s...' % node.name )
+        node.cmd('java -jar network/server/CsdDBServer.jar ' + str(i+1) + '&> logs/' + node.name + '.txt &')
+
+    print( 'Starting servers in switched network 2...' )
+    for i in range(2):
+        node = net.get('n2.%s' % (i+1))
+        print( 'Starting server %s...' % node.name )
+        node.cmd('java -jar network/server/CsdDBServer.jar ' + str(i+5) + ' &> logs/' + node.name + '.txt &')
+
+    print( 'Starting servers in switched network 3...' )
+    for i in range(4):
+        node = net.get('n3.%s' % (i+1))
+        print( 'Starting server %s...' % node.name )
+        node.cmd('java -jar network/server/CsdDBServer.jar ' + str(i+7) + ' &> logs/' + node.name + '.txt &')
+        
+    time.sleep(100)        
+    # Starting clients...
+
+    print( 'Starting client %s...' % c1_1.name )
+    #setServerIP( n1_1.IP() )
+    result = c1_1.cmd( pathToYcsb + '/bin/ycsb run elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_readonly &> logs/' + c1_1.name + '.txt &')
+    print( 'Client result %s' % result )
+
+    time.sleep(10)        
+  
+    print( 'Starting client %s...' % c2_1.name )    
+    #setServerIP( n2_2.IP() )
+    result = c2_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_readonly &> logs/' + c2_1.name + '.txt &')
+    #result = c2_1.cmd( pathToYcsb + '/bin/ycsb load elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_readonly &> logs/' + c2_1.name + '.txt &')
+    print( 'Client result %s' % result )
+    
+    time.sleep(10)
+    print( 'Starting client %s...' % c3_1.name )
+    setServerIP( n3_3.IP() ) # setting the server ip to be 192.168.0.12
+    #setServerIP( n2_2.IP() ) # setting server ip to be n2.2 
+    
+    result = c3_1.cmd( pathToYcsb + '/bin/ycsb run elasticsearch -s -P ' + pathToYcsb + '/workloads/workload_readonly &> logs/' + c3_1.name + '.txt')
+    print( 'Client result %s' % result )
+    
+    
+    time.sleep(10)
+    
+def setServerIP(serverIP):
+    propertiesFile = 'properties/server_ip.txt'
+
+    with open(propertiesFile, 'w') as f:
+        print(serverIP, file=f)
+    f.close()
+    
+def getYcsbPath():
+    propertiesFile = 'properties/ycsb_path.txt'
+
+    with open(propertiesFile) as f:
+        ycsbPath = f.readline()
+    f.close()
+    
+    return ycsbPath
+
 if __name__ == '__main__':
 # Tell mininet to print useful information
-    #print "test"
     setLogLevel('info')
     run()

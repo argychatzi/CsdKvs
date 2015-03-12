@@ -1,6 +1,4 @@
-
-
-
+.DS_Store
 #Generic Java gitignore 
 
 *.class
@@ -9,7 +7,7 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
+.jar
 *.war
 *.ear
 
@@ -22,7 +20,7 @@ hs_err_pid*
 *.pydevproject
 .metadata
 .gradle
-bin/
+
 tmp/
 *.tmp
 *.bak
@@ -49,3 +47,10 @@ local.properties
 
 # TeXlipse plugin
 .texlipse
+
+/ycsb/YCSB-master/csd/libs/
+
+/CsdDB/csd_build.xml
+
+/MininetTopology/src/topology/network/server/CsdDBServer.jar
+/CsdDB/output/CsdDBServer.jar
